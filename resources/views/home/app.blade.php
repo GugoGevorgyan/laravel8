@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -89,34 +88,51 @@
                             </span>
                         </div>
                     </li>
-                    <li>
-                        <div  class="menu_ellipse"></div>
-                    </li>
-                    <li class="">
-                        <div>
-                            <div>
-                                <img src="" alt="Favorites">
-                                <p>Favorites</p>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu_ellipse " href="#" id="DropdownMenuLink" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+
+                    <div class="dropdown-menu" aria-labelledby="DropdownMenuLink" id="hidden_menu">
+                        <div class="dropdown-item flex_column just_around ">
+                            <div class="flex_row align_center">
+                                <img class="menu_icon" src="{{asset('storage/Cart-with-plus.png')}}" alt="Favorites">
+                                <p class="menu_txt">Favorites</p>
                             </div>
-                            <div>
-                                <img src="" alt="Cart">
-                                <p>Cart</p>
+                            <div  class="flex_row align_center">
+                                <img class="menu_icon" src="{{asset('storage/add-to-favorites.png')}}" alt="Cart">
+                                <p class="menu_txt" >Cart</p>
                             </div>
-                            <div>
-                                <p> Currency</p>
+                            <div  class="flex_row  justify-content-between">
+                                <p class="menu_txt"> Currency</p>
+                                <div class="center">
+                                    <div class="flex_row  menu_img">
                                 <input type="radio" id="amd" name="Currency" value="AMD">
-                                <label for="amd">AMD</label>
+                                <label class="menu_txt" for="amd">AMD</label>
+                                    </div>
+                                    <div class="flex_row menu_img">
                                 <input type="radio" id="usd" name="Currency" value="USD">
-                                <label for="usd">USD</label>
+                                <label class="menu_txt" for="usd">USD</label>
+                                    </div>
+                                </div>
+                            </div >
+                            <div class="flex_row justify-content-between">
+                                <p class="menu_txt"> Language</p>
+                                <div class="center">
+                                    <div class="flex_row menu_img">
+                                        <input type="radio" id="usa" name="Language" value="usa">
+                                        <label for="usa"><img src="{{asset('storage/usa.png')}}" alt="usa"></label>
+                                    </div>
+
+                                    <div class="flex_row menu_img">
+                                        <input type="radio" id="arm" name="Language" value="arm">
+                                        <label for="arm"><img src="{{asset('storage/arm.png')}}" alt="arm"></label>
+                                    </div>
+
                             </div>
-                            <div>
-                                <p> Language</p>
-                                <input type="radio" id="usa" name="Currency" value="usa">
-                                <label for="usa"><img src="" alt="usa"></label>
-                                <input type="radio" id="arm" name="Currency" value="arm">
-                                <label for="arm"><img src="" alt="arm"></label>
                             </div>
                         </div>
+                    </div>
                     </li>
                 </ul>
 

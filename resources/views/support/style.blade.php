@@ -128,6 +128,7 @@
             font-size: 24px;
             line-height: 50px;
             margin-top: 30px;
+            color: black;
         }
 
         .popular_categories_container {
@@ -446,6 +447,37 @@
         span[aria-current="page"] > span{
             background-color: #E11D1D !important;
             color: #FFFFFF !important;
+        }
+        .menu_icon{
+            width: 29px;
+            height: 29px;
+        }
+
+        .menu_txt{
+            font-family: Montserrat;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: #333333;
+        }
+
+        .align_center{
+            align-items: center;
+        }
+        #hidden_menu{
+            width: 180px;
+            left: -120px ;
+            top: 70px ;
+        }
+        #hidden_menu > div.dropdown-item{
+            padding: 0 10px ;
+            height: 300px;
+
+        }
+
+        .menu_img{
+            width: 60px;
+            justify-content: space-between;
         }
 </style>
 
