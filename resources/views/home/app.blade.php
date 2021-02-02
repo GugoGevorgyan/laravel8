@@ -40,41 +40,30 @@
                 <ul class="navbar-nav container_select">
                     <li>
                         <select class="select font18_size22">
-                            <option value="Computers">Computers</option>
-                            <option value="Computers">Computers</option>
+{{--                            <option value="Computers">Computers</option>--}}
+{{--                            <option value="Computers">Computers</option>--}}
                             <option value="Computers" selected>Computers</option>
-                            <option value="Computers">Computers</option>
+{{--                            <option value="Computers">Computers</option>--}}
                         </select>
                     </li>
                     <li><select class="select font18_size22">
-                            <option value="Printers">Printers</option>
-                            <option value="Printers">Printers</option>
+{{--                            <option value="Printers">Printers</option>--}}
+{{--                            <option value="Printers">Printers</option>--}}
                             <option value="Printers" selected>Printers</option>
-                            <option value="Printers">Printers</option>
+{{--                            <option value="Printers">Printers</option>--}}
                         </select>
                     </li>
-{{--//////////////////////////////////////////////////////////////////////--}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle select font18_size22" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Accesories
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Headphones</a>
-                            <a class="dropdown-item" href="#">Airpods</a>
-                            <a class="dropdown-item" href="#">Earbuds</a>
-                            <a class="dropdown-item" href="#">Speakers</a>
+                        <div class="dropdown-menu menu_txt" aria-labelledby="navbarDropdownMenuLink" id="menu_Accesories">
+                            <a class="dropdown-item align_center" href="#">Headphones</a>
+                            <a class="dropdown-item align_center" href="#">Airpods</a>
+                            <a class="dropdown-item align_center" href="#">Earbuds</a>
+                            <a class="dropdown-item align_center" href="#">Speakers</a>
                         </div>
                     </li>
-{{--                    ///////////////////////////////////////////////////////////--}}
-{{--                    <li><select class="select font18_size22">--}}
-{{--                            <option value="Accesories" selected>Accesories</option>--}}
-{{--                            <option value="Headphones">Headphones</option>--}}
-{{--                            <option value="Airpods">Airpods</option>--}}
-{{--                            <option value="Earbuds" >Earbuds</option>--}}
-{{--                            <option value="Speakers">Speakers</option>--}}
-{{--                        </select>--}}
-{{--                    </li>--}}
-
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -95,15 +84,15 @@
 
                     <div class="dropdown-menu" aria-labelledby="DropdownMenuLink" id="hidden_menu">
                         <div class="dropdown-item flex_column just_around ">
-                            <div class="flex_row align_center">
+                            <div class="flex_row align_center menu_content">
                                 <img class="menu_icon" src="{{asset('storage/Cart-with-plus.png')}}" alt="Favorites">
                                 <p class="menu_txt">Favorites</p>
                             </div>
-                            <div  class="flex_row align_center">
+                            <div  class="flex_row align_center menu_content">
                                 <img class="menu_icon" src="{{asset('storage/add-to-favorites.png')}}" alt="Cart">
                                 <p class="menu_txt" >Cart</p>
                             </div>
-                            <div  class="flex_row  justify-content-between">
+                            <div  class="flex_row  justify-content-between menu_content">
                                 <p class="menu_txt"> Currency</p>
                                 <div class="center">
                                     <div class="flex_row  menu_img">
@@ -116,7 +105,7 @@
                                     </div>
                                 </div>
                             </div >
-                            <div class="flex_row justify-content-between">
+                            <div class="flex_row justify-content-between menu_content">
                                 <p class="menu_txt"> Language</p>
                                 <div class="center">
                                     <div class="flex_row menu_img">
@@ -169,13 +158,25 @@
     <div class="flex_row col-lg-8 justify-content-around footer__list__container">
     <div class="center justify-content-between align-items-baseline ">
         <h5 class="footer_contact mb-2">Contact</h5>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled contact">
             <li>
-                <img src="{{asset('storage/VectorGps.png')}}" alt="">
+                <div class="center">
+                    <img src="{{asset('storage/VectorGps.png')}}" alt="">
+                </div>
+
                 Rich Plaza, Yerevan, Armenia</li>
-            <li> <img src="{{asset('storage/mail.png')}}" alt="">
+
+            <li>
+                <div class="center">
+                    <img src="{{asset('storage/mail.png')}}" alt="">
+                </div>
+
                 mg@gmail.com</li>
-            <li> <img src="{{asset('storage/phone.png')}}" alt="">
+            <li>
+                <div class="center">
+                    <img src="{{asset('storage/phone.png')}}" alt="">
+                </div>
+
                 +374 95 84 84 54</li>
         </ul>
             <div class="flex_column">

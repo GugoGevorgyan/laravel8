@@ -1,7 +1,7 @@
 @extends('home.app')
 @extends('home.footer')
 @section('content')
-    <img src="{{asset('storage/currency.png')}}" alt="">
+{{--    <img src="{{asset('storage/currency.png')}}" alt="">--}}
     <div class="home_content center">
         <div class="w-100 h-500 Rectangle Rectangle1 d-flex justify-content-end">
             <div class="description text-white d-flex">
@@ -63,10 +63,11 @@
                             </div>
                             <div>
                                 <div class="sale flex_row">
-                                    <p class="price_sale">${{$computer ->price}}</p>
                                     @if($computer -> old_price)
-                                        <strike class="old_price font18_size22"><p>${{$computer ->old_price}}</p>
-                                        </strike>
+                                        <p class="price_sale">${{$computer ->price}}</p>
+                                        <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
+                                    @else
+                                        <p class="price_sale" style="color: #151414 !important;">${{$computer ->price}}</p>
                                     @endif
                                 </div>
                                 <div>
@@ -75,7 +76,7 @@
                             </div>
                             <div class="d-flex justify-content-around">
                                 <button type="button" class="order_now center sales_name text-white">ORDER NOW</button>
-                                <img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment">
+                                <a href="{{url("home/{$computer->id}/edit")}}"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                             </div>
 
                         </div>
@@ -87,12 +88,7 @@
                         {{ $computers->onEachSide(1)->links() }}
                     </div>
                 </div>
-{{--                <P class="popular_text  pt-5 pb-4">Brands we deliver</P>--}}
-{{--                <div class="flex_row align-items-baseline justify-content-sm-between pb-sm-5">--}}
-{{--                    @foreach($brands as $brand)--}}
-{{--                        <div class="brand"><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
+
             </div>
             @yield('footer')
         </div>

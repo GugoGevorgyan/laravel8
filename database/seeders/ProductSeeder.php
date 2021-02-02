@@ -14,173 +14,108 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $products = [
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => null],
-            [
-                 'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => null],
-             [
-                 'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500
-            ],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => null],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => null],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500
-            ],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => null],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => null],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500
-            ],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => null],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => null],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            [
-                'name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500
-            ],
-        ];
+        for($i = 1 ; $i <= 30 ; $i++) {
+            $products = [
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => null],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => null],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500
+                ],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => null],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => null],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500
+                ],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => null],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'price' => 1500,
+                    'old_price' => 2500],
 
+            ];
+        }
         foreach ($products as $product) {
             Product::create($product);
         }

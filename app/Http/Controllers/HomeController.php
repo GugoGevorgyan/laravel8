@@ -117,7 +117,10 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $colors = ['#F03A4B','#000000' ,'#2672FF','#74AB2E','#C31FEC','#EABD1C'];
+        $product = Product::find($id);
+        return response()->view('home.productSinglePage',
+            ['product' => $product, 'colors'=>$colors]);
     }
 
     /**

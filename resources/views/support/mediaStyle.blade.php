@@ -5,6 +5,10 @@
                 width: 130px;
                 height: 130px;
             }
+            .order_now {
+                width: 130px;
+                height: 50px;
+            }
 
             .hot_sales_imgs_container {
                 width: 190px;
