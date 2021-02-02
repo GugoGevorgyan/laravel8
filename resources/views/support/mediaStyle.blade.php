@@ -22,6 +22,9 @@
             .hot_sales_img > img {
                 width: inherit;
             }
+            .single_container{
+                width: 87%;
+            }
         }
 
 

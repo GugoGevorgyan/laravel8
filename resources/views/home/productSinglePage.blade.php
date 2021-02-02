@@ -2,7 +2,7 @@
 @extends('home.footer')
 @section('content')
     <div class="home_content center">
-        <div class="hot_sales_container">
+        <div class="single_container">
             <div class="flex_row  single_container_1 ">
                 <div class="flex_row img_container">
                     <div class="center img_zoom">
@@ -15,7 +15,7 @@
                         <img src="{{asset('storage/accesuar_1.png')}}" alt="">
                     </div>
                 </div>
-                <div class="single_more just_between .h-500 ">
+                <div class="single_more just_between ">
                     <div class="flex_row justify-content-between">
                         <div class="flex_column">
                             <p class="font29_size24 uppercase">Beats by dr. dre</p>
