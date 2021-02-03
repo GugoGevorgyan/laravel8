@@ -86,7 +86,7 @@
                 <div class="row">
                     <div class="col">
                         {{ $computers->onEachSide(1)->links() }}
-                    </div>
+        </div>
                 </div>
 
             </div>

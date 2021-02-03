@@ -224,7 +224,7 @@
         .hot_sales_imgs_container {
             /*width: 270px;*/
             height: 380px;
-            margin: 30px 0;
+            /*margin: 30px 0;*/
             background: #FFFFFF;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             border-radius: 5px;

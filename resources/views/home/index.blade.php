@@ -17,33 +17,33 @@
                 </button>
             </div>
         </div>
-{{--        ///////////////////////////////////////////////////////////////////////////--}}
-{{--        <div class="container py-5 bg-primary">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-12 d-flex justify-content-between text-white">--}}
-{{--                    <div class="bg-danger">--}}
-{{--                        Hello1--}}
-{{--                    </div>--}}
-{{--                    <div class="bg-danger">--}}
-{{--                        Hello2--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="row bg-success">--}}
-{{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
-{{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
-{{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
-{{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        ////////////////////////////////////////////////////////////////////////////////////////--}}
+        {{--        ///////////////////////////////////////////////////////////////////////////--}}
+        {{--        <div class="container py-5 bg-primary">--}}
+        {{--            <div class="row">--}}
+        {{--                <div class="col-12 d-flex justify-content-between text-white">--}}
+        {{--                    <div class="bg-danger">--}}
+        {{--                        Hello1--}}
+        {{--                    </div>--}}
+        {{--                    <div class="bg-danger">--}}
+        {{--                        Hello2--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--            <div class="row bg-success">--}}
+        {{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
+        {{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
+        {{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
+        {{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
+        {{--        ////////////////////////////////////////////////////////////////////////////////////////--}}
         <div class="popular_categories_container center container">
             <h2 class="popular_text">Popular Categories</h2>
 
             <div class="flex_row justify-content-between pt-5 container">
                 @for ($i = 0; $i < count($imgs) ; $i++)
-                    <figure>
-                        <div class="popular_categories_img">
+                    <figure class="col-2 p-0">
+                        <div class="popular_categories_img container">
                             <img src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
                         </div>
 
@@ -76,10 +76,10 @@
                 {{--            <div class="btn bg-white  explore"> EXPLORE</div>--}}
             </div>
         </div>
-        <div class="center w-100 container pt-4" >
+        <div class="center w-100 container pt-4">
             <div class="hot_sales_container ">
                 <h3 class="popular_text  pt-4 pb-4 container">Hot Sales</h3>
-                <div class="container">
+                <div class="container pb-3">
                     <div class="line"></div>
                     <div class="vector_left_container center"><a href="#">
                             <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
@@ -90,41 +90,46 @@
                 </div>
                 <div class="evenly flex_row ">
                     @foreach($hot_sales as $sales)
-                        <div class="hot_sales_imgs_container col-3  just_around ">
-                            <div class="d-flex flex-row position-relative h-15">
-                                @if($sales -> old_price)
-                                    <div class="yes_sale center"> Sale</div>
-                                @endif
-                                <div class="heart">
-                                    <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
-                                         alt="favorites">
-                                </div>
-                            </div>
-
-
-                            <div class="hot_sales_img center">
-                                <img src="{{asset('storage/'.$sales->img)}}" alt="computers">
-                            </div>
-                            <div class="sale_container">
-                                <div class="sale flex_row">
+                        <div class="col-3 p-3 ">
+                            <div class="hot_sales_imgs_container   just_around ">
+                                <div class="d-flex flex-row position-relative h-15">
                                     @if($sales -> old_price)
-                                        <p class="price_sale">${{$sales ->price}}</p>
-                                        <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
-                                    @else
-                                        <p class="price_sale" style="color: #151414 !important;">${{$sales ->price}}</p>
+                                        <div class="yes_sale center"> Sale</div>
                                     @endif
-
+                                    <div class="heart">
+                                        <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                             alt="favorites">
+                                    </div>
                                 </div>
-                                <div>
-                                    <p class="sales_name">{{$sales ->name}} </p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-around">
-                                <button type="button" class="order_now center sales_name text-white">ORDER NOW</button>
-                                <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
-                            </div>
 
+
+                                <div class="hot_sales_img center">
+                                    <img src="{{asset('storage/'.$sales->img)}}" alt="computers">
+                                </div>
+                                <div class="container">
+                                    <div class="sale flex_row">
+                                        @if($sales -> old_price)
+                                            <p class="price_sale">${{$sales ->price}}</p>
+                                            <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
+                                        @else
+                                            <p class="price_sale" style="color: #151414 !important;">
+                                                ${{$sales ->price}}</p>
+                                        @endif
+
+                                    </div>
+                                    <div>
+                                        <p class="sales_name">{{$sales ->name}} </p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-around">
+                                    <button type="button" class="order_now center sales_name text-white">ORDER NOW
+                                    </button>
+                                    <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                </div>
+
+                            </div>
                         </div>
+
                     @endforeach
                 </div>
                 <div class="all_computers container">
@@ -141,7 +146,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container pb-3">
                     <div class="line"></div>
                     <div class="vector_left_container center"><a href="#">
                             <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
@@ -154,46 +159,51 @@
                 <div class="evenly1 flex_row ">
 
                     @foreach($computers as $computer)
-                        <div class="hot_sales_imgs_container just_around col-3">
-                            <div class="d-flex flex-row position-relative h-15">
-                                @if($computer -> old_price)
-                                    <div class="yes_sale center"> Sale</div>
-                                @endif
-                                <div class="heart">
-                                    <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
-                                         alt="favorites">
-                                </div>
-                            </div>
-                            <div class="hot_sales_img center">
-                                <img src="{{asset('storage/'.$computer->img)}}" alt="computers">
-                            </div>
-                            <div>
-                                <div class="sale flex_row">
-                                    @if($sales -> old_price)
-                                        <p class="price_sale">${{$sales ->price}}</p>
-                                        <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
-                                    @else
-                                        <p class="price_sale" style="color: #151414 !important;">${{$sales ->price}}</p>
+                        <div class="col-3 p-3 ">
+                            <div class="hot_sales_imgs_container just_around ">
+                                <div class="d-flex flex-row position-relative h-15">
+                                    @if($computer -> old_price)
+                                        <div class="yes_sale center"> Sale</div>
                                     @endif
+                                    <div class="heart">
+                                        <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                             alt="favorites">
+                                    </div>
                                 </div>
-                                <div>
-                                    <p class="sales_name">{{$computer ->name}} </p>
+                                <div class="hot_sales_img center">
+                                    <img src="{{asset('storage/'.$computer->img)}}" alt="computers">
                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-around">
-                                <button type="button" class="order_now center sales_name text-white">ORDER NOW</button>
-                                <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                <div class="container">
+                                    <div class="sale flex_row">
+                                        @if($sales -> old_price)
+                                            <p class="price_sale">${{$sales ->price}}</p>
+                                            <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
+                                        @else
+                                            <p class="price_sale" style="color: #151414 !important;">
+                                                ${{$sales ->price}}</p>
+                                        @endif
+                                    </div>
+                                    <div>
+                                        <p class="sales_name">{{$computer ->name}} </p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-around">
+                                    <button type="button" class="order_now center sales_name text-white">ORDER NOW
+                                    </button>
+                                    <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+
+                                </div>
 
                             </div>
-
                         </div>
+
                     @endforeach
                 </div>
 
                 <P class="popular_text  pt-5 pb-4 container">Brands we deliver</P>
                 <div class="flex_row align-items-baseline justify-content-sm-between pb-sm-5 container">
                     @foreach($brands as $brand)
-                    <div class="brand"><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
+                        <div class="brand"><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
                     @endforeach
                 </div>
             </div>

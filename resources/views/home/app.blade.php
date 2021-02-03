@@ -29,33 +29,80 @@
 
 </head>
 <body>
+
+{{--//////////////////////////////////////////////////////////--}}
+{{--<nav class="navbar navbar-expand-lg  navbar-light bg-light">--}}
+{{--    <div class="container-fluid">--}}
+{{--        <a class="navbar-brand" href="#">Navbar w/ text</a>--}}
+{{--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">--}}
+{{--            <span class="navbar-toggler-icon"></span>--}}
+{{--        </button>--}}
+{{--        <div class="collapse navbar-collapse" id="navbarText">--}}
+{{--            <ul class="navbar-nav me-auto mb-2 mb-lg-0">--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link active" aria-current="page" href="#">Home</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Features</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Pricing</a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--            <span class="navbar-text">--}}
+{{--        Navbar text with an inline element--}}
+{{--      </span>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</nav>--}}
+{{--////////////////////////////////////////////////////////////////--}}
+
+
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
 
-            <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid" alt="logo">
+            <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid navbar-brand" alt="logo">
+            <!-- @media -->
 
+            <ul class="navbar-toggler  media_menu_icons list-unstyled d-lg-none  d-sm-flex m-0 border-0">
+                <li class="media_heart container">
+                    <a href="">
+                        <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}" alt="">
+                    </a>
+                </li>
+                <li class="container">
+                    <a href="">
+                        <img class="img_heart" src="{{asset('storage/Cart-with-plus.png')}}" alt="">
+                    </a>
+                </li>
+                <li class="container">
+                    <a href="">
+                        <img class="img_heart" src="{{asset('storage/menu-alt-2.png')}}" alt="">
+                    </a>
+                </li>
+            </ul>
 
-            <div class="menu">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav container_select d-md-none d-sm-none d-xs-none d-lg-flex d-xl-flex ">
-                    <li>
-                        <select class="select font18_size22">
-                            <option value="Computers" selected>Computers</option>
-                        </select>
+            {{--            <button class="navbar-toggler">--}}
+{{--                <span class="navbar-toggler-icon"></span>--}}
+{{--            </button>--}}
+            <div class="collapse navbar-collapse pt-5" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-6 justify-content-around">
+                    <li class="nav-item d-flex flex-row col-3 align-items-center p-0 justify-content-between">
+                        <a class="nav-link p-0 active font18_size22" aria-current="page" href="{{asset('home/create')}}">Computers</a>
+                        <img class="h-75" src="{{asset('storage/Vector.png')}}" alt="">
                     </li>
-                    <li><select class="select font18_size22">
-                            {{--                            <option value="Printers">Printers</option>--}}
-                            {{--                            <option value="Printers">Printers</option>--}}
-                            <option value="Printers" selected>Printers</option>
-                            {{--                            <option value="Printers">Printers</option>--}}
-                        </select>
+                    <li class="nav-item d-flex flex-row col-3 align-items-center p-0 justify-content-between">
+                        <a class="nav-link font18_size22" href="{{asset('home/create')}}">Printers</a>
+                        <img class="h-75" src="{{asset('storage/Vector.png')}}" alt="">
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle select font18_size22" href="#" id="navbarDropdownMenuLink"
+
+                    <li class="nav-item dropdown col-3  d-flex flex-row col-3 align-items-center p-0 justify-content-between">
+                        <a class="nav-link p-0 select font18_size22" href="#" id="navbarDropdownMenuLink"
                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Accesories
                         </a>
+                        <img class="h-75" src="{{asset('storage/Vector.png')}}" alt="">
                         <div class="dropdown-menu menu_txt" aria-labelledby="navbarDropdownMenuLink"
                              id="menu_Accesories">
                             <a class="dropdown-item align_center" href="#">Headphones</a>
@@ -67,7 +114,7 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav search_container d-md-none d-sm-none d-xs-none d-lg-flex d-xl-flex">
+                <ul class="col-6 navbar-nav search_container ">
                     <li class="search">
                         <div class="input-group rounded">
                             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
@@ -126,25 +173,6 @@
                     </li>
                 </ul>
 
-                <!-- @media -->
-
-                <ul class="navbar-nav media_menu_icons d-md-flex d-sm-flex d-xs-flex d-lg-none d-xl-none ">
-                    <li class="media_heart">
-                        <a href="">
-                            <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img class="img_heart" src="{{asset('storage/Cart-with-plus.png')}}" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img class="img_heart" src="{{asset('storage/menu-alt-2.png')}}" alt="">
-                        </a>
-                    </li>
-                </ul>
 
 
             </div>
@@ -156,9 +184,9 @@
         @yield('footer')
     </main>
     <div class="flex_row center footer__list">
-        <div class="flex_row col-lg-8 center  container footer__list__container">
+        <div class="flex_row col-6 ">
 
-            <div class="center col-4 justify-content-between align-items-baseline ">
+            <div class="center col-9 justify-content-between align-items-baseline ">
                 <h5 class="footer_contact mb-2">Contact</h5>
                 <ul class="list-unstyled contact">
                     <li>

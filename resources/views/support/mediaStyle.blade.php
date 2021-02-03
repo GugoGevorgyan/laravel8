@@ -1,5 +1,5 @@
-{{--@push('mediaStyle')--}}
-{{--    <style>--}}
+@push('mediaStyle')
+    <style>
 {{--        @media all and (min-width: 994px) and (max-width: 1900px) {--}}
 {{--            .popular_categories_img {--}}
 {{--                /*width: 130px;*/--}}
@@ -28,7 +28,7 @@
 {{--        }--}}
 
 
-{{--        @media all and (min-width: 413px) and (max-width: 993px) {--}}
+        @media all and (min-width: 413px) and (max-width: 993px) {
 {{--            .vector_left_container, .vector_right_container, .search_container, .container_select {--}}
 {{--                display: none !important;--}}
 {{--            }--}}
@@ -111,13 +111,13 @@
 {{--                justify-content: space-between;--}}
 {{--            }--}}
 
-{{--            .Rectangle1 {--}}
-{{--                background-image: url("{{asset('storage/Rectangle3.png')}}");--}}
-{{--            }--}}
+            .Rectangle1 {
+                background-image: url("{{asset('storage/Rectangle3.png')}}");
+            }
 
-{{--            .Rectangle2 {--}}
-{{--                background-image: url("{{asset('storage/Rectangle4.png')}}");--}}
-{{--            }--}}
+            .Rectangle2 {
+                background-image: url("{{asset('storage/Rectangle4.png')}}");
+            }
 
 {{--            .Rectangle {--}}
 {{--                padding-right: 40px;--}}
@@ -226,7 +226,7 @@
 {{--                height: 400px;--}}
 {{--            }--}}
 
-{{--        }--}}
+        }
 {{--        @media all and (min-width: 412px) and (max-width: 768px) {--}}
 
 {{--            .follow_us,.about_us__container{--}}
@@ -260,5 +260,5 @@
 {{--                display: none;--}}
 {{--            }--}}
 {{--        }--}}
-{{--    </style>--}}
-{{--@endpush--}}
+    </style>
+@endpush
