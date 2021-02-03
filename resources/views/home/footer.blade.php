@@ -7,7 +7,7 @@
                     <input class="input_subscribe" type="text" placeholder="name">
                     <input class="input_subscribe" type="text" placeholder="E-Mail">
                 </div>
-                <button class="subscribe center" type="button">Subscribe</button>
+                <button class="subscribe center btn-danger" type="button">Subscribe</button>
             </form>
         </div>
     </div>

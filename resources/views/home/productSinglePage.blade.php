@@ -112,7 +112,57 @@
                 </div>
             </div>
 {{--                   similar Items               --}}
-            <div></div>
+            <div class="similar_items_container">
+                <p class="popular_text  p-4">similar Items</p>
+                <div>
+                    <div class="line"></div>
+                    <div class="vector_left_container center"><a href="#">
+                            <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
+                        </a></div>
+                    <div class="vector_right_container center"><a href="#">
+                            <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
+                        </a></div>
+                </div>
+                <div class="evenly flex_row ">
+                    @foreach($computers as $computer)
+                        <div class="hot_sales_imgs_container just_around ">
+                            <div class="d-flex flex-row position-relative h-15">
+                                @if($computer -> old_price)
+                                    <div class="yes_sale center"> Sale</div>
+                                @endif
+                                <div class="heart">
+                                    <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                         alt="favorites">
+                                </div>
+                            </div>
+
+
+                            <div class="hot_sales_img center">
+                                <img src="{{asset('storage/'.$computer->img)}}" alt="computers">
+                            </div>
+                            <div class="sale_container">
+                                <div class="sale flex_row">
+                                    @if($computer -> old_price)
+                                        <p class="price_sale">${{$computer ->price}}</p>
+                                        <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
+                                    @else
+                                        <p class="price_sale" style="color: #151414 !important;">${{$computer ->price}}</p>
+                                    @endif
+
+                                </div>
+                                <div>
+                                    <p class="sales_name">{{$computer ->name}} </p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <button type="button" class="order_now center sales_name text-white">ORDER NOW</button>
+                                <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                            </div>
+
+                        </div>
+                    @endforeach
+                </div>
+            </div>
 
         </div>
 

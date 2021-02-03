@@ -115,9 +115,11 @@ class ProductSeeder extends Seeder
                     'old_price' => 2500],
 
             ];
-        }
         foreach ($products as $product) {
             Product::create($product);
         }
+
+        }
+//        Product::factory()->count(100)->make();
     }
 }

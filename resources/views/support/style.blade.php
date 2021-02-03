@@ -41,7 +41,7 @@
             display: flex;
             justify-content: space-around;
             width: 100%;
-            align-items: flex-end;
+            align-items: baseline;
         }
 
         .menu_ellipse {
@@ -68,7 +68,7 @@
             width: 500px;
             background-size: 100% 100%;
             align-items: center;
-            padding-right: 180px;
+            /*padding-right: 180px;*/
         }
 
         .down {
@@ -135,7 +135,7 @@
         .popular_categories_container {
             justify-content: space-evenly;
             padding: 46px 0;
-            width: 70%;
+            /*width: 70%;*/
         }
 
         .evenly1, .evenly {
@@ -200,7 +200,7 @@
         }
 
        .single_container, .hot_sales_container {
-            width: 61%;
+            /*width: 61%;*/
             position: relative;
         }
 
@@ -222,7 +222,7 @@
         }
 
         .hot_sales_imgs_container {
-            width: 270px;
+            /*width: 270px;*/
             height: 380px;
             margin: 30px 0;
             background: #FFFFFF;
@@ -286,7 +286,7 @@
             border-radius: 50%;
             border: 1px solid #DEDEDE;
             right: 0;
-            transform: translate(-40px, -20px);
+            transform: translate(-55px, -20px);
         }
 
         /*.vector_right{*/
@@ -298,9 +298,9 @@
             width: 37px;
             height: 37px;
             border-radius: 50%;
-            border: 1px solid grey;
+            border: 1px solid #DEDEDE;;
             right: 0;
-            transform: translate(0, -20px);
+            transform: translate(-15px, -20px);
         }
 
         .all_computers > div > div > a {
@@ -338,10 +338,8 @@
         .subscribe {
             width: 439px;
             height: 60px;
-            background: #E11D1D;
             box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
             border-radius: 30px;
-            color: #FFFFFF;
             font-weight: 600;
             border: none;
         }
@@ -534,13 +532,14 @@
         #menu_Accesories > .dropdown-item:focus {
             border-left: 6px solid #E11D1D;
             padding: 0 18px !important;
+            background: #F2ECEC;
         }
 
         .menu_content:hover, .menu_content:focus {
             border-left: 6px solid #E11D1D;
-            padding: 0 4px !important;
-        }
+            padding: 0 10px 0 4px !important;
 
+        }
         .dropdown-item:hover, .dropdown-item:focus {
             background-color: inherit;
 
@@ -664,6 +663,10 @@
         }
         .description_half > ul>li{
             list-style-type: disc
+        }
+
+        .similar_items_container{
+            padding: 60px 0;
         }
 
     </style>

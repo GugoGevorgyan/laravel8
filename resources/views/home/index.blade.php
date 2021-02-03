@@ -3,7 +3,7 @@
 @section('content')
     <div class="home_content center">
         <div class="w-100 h-500 Rectangle Rectangle1 d-flex justify-content-end">
-            <div class="description text-white d-flex">
+            <div class="description text-white d-flex container">
                 <div class="text-white description_name">
                     <p class="font-weight-lighter">MACBOOK</p>
                     <p class="font-weight-bold">PRO</p>
@@ -17,10 +17,30 @@
                 </button>
             </div>
         </div>
-        <div class="popular_categories_container center">
-            <p class="popular_text">Popular Categories</p>
+{{--        ///////////////////////////////////////////////////////////////////////////--}}
+{{--        <div class="container py-5 bg-primary">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-12 d-flex justify-content-between text-white">--}}
+{{--                    <div class="bg-danger">--}}
+{{--                        Hello1--}}
+{{--                    </div>--}}
+{{--                    <div class="bg-danger">--}}
+{{--                        Hello2--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row bg-success">--}}
+{{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
+{{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
+{{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
+{{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        ////////////////////////////////////////////////////////////////////////////////////////--}}
+        <div class="popular_categories_container center container">
+            <h2 class="popular_text">Popular Categories</h2>
 
-            <div class="flex_row justify-content-center">
+            <div class="flex_row justify-content-between pt-5 container">
                 @for ($i = 0; $i < count($imgs) ; $i++)
                     <figure>
                         <div class="popular_categories_img">
@@ -35,19 +55,19 @@
         </div>
 
         <div class="w-100 h-500 Rectangle Rectangle2 d-flex justify-content-end">
-            <div class="description text-white d-flex">
-                <div class="text-white description_name">
+            <div class="description text-white d-flex container">
+                <div class="text-white display-4 ">
                     <p class="font-weight-lighter">TURN THE</p>
                     <p class="font-weight-bold">WORLD</p>
                 </div>
                 <div class="description_param">
                     <div class='d-flex align-items-baseline justify-content-sm-between h-160'>
-                        <p class="font-weight-lighter mr-2">UPSIDE</p>
-                        <p class="down">DOWN</p>
+                        <p class="font-weight-lighter display-4 mr-2">UPSIDE</p>
+                        <p class="c display-2">DOWN</p>
                     </div>
                     <div>
-                        <p class="font-weight-lighter mr-2">WITH BRAND NEW</p>
-                        <p class="font-weight-normal font_size mb-3">HEADPHONES</p>
+                        <p class="font-weight-lighter h4 mr-2">WITH BRAND NEW</p>
+                        <p class="font-weight-normal  display-3 mb-3">HEADPHONES</p>
                     </div>
                 </div>
                 <button type="button" class="bg-white  explore">
@@ -56,10 +76,10 @@
                 {{--            <div class="btn bg-white  explore"> EXPLORE</div>--}}
             </div>
         </div>
-        <div class="center w-100">
-            <div class="hot_sales_container">
-                <p class="popular_text  p-4">Hot Sales</p>
-                <div>
+        <div class="center w-100 container pt-4" >
+            <div class="hot_sales_container ">
+                <h3 class="popular_text  pt-4 pb-4 container">Hot Sales</h3>
+                <div class="container">
                     <div class="line"></div>
                     <div class="vector_left_container center"><a href="#">
                             <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
@@ -70,7 +90,7 @@
                 </div>
                 <div class="evenly flex_row ">
                     @foreach($hot_sales as $sales)
-                        <div class="hot_sales_imgs_container just_around ">
+                        <div class="hot_sales_imgs_container col-3  just_around ">
                             <div class="d-flex flex-row position-relative h-15">
                                 @if($sales -> old_price)
                                     <div class="yes_sale center"> Sale</div>
@@ -107,8 +127,8 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="all_computers">
-                    <div><p class="popular_text  pt-4">Computers</p></div>
+                <div class="all_computers container">
+                    <div><h3 class="popular_text  pt-4">Computers</h3></div>
                     <div class="just_between flex-row pb-4 pt-2">
                         <div class="all_computers__sort flex_row justify-content-between">
                             <a href="#">Notebook</a>
@@ -121,7 +141,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="container">
                     <div class="line"></div>
                     <div class="vector_left_container center"><a href="#">
                             <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
@@ -131,10 +151,10 @@
                         </a></div>
                 </div>
 
-                <div class="evenly1 flex_row">
+                <div class="evenly1 flex_row ">
 
                     @foreach($computers as $computer)
-                        <div class="hot_sales_imgs_container just_around">
+                        <div class="hot_sales_imgs_container just_around col-3">
                             <div class="d-flex flex-row position-relative h-15">
                                 @if($computer -> old_price)
                                     <div class="yes_sale center"> Sale</div>
@@ -170,8 +190,8 @@
                     @endforeach
                 </div>
 
-                <P class="popular_text  pt-5 pb-4">Brands we deliver</P>
-                <div class="flex_row align-items-baseline justify-content-sm-between pb-sm-5">
+                <P class="popular_text  pt-5 pb-4 container">Brands we deliver</P>
+                <div class="flex_row align-items-baseline justify-content-sm-between pb-sm-5 container">
                     @foreach($brands as $brand)
                     <div class="brand"><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
                     @endforeach

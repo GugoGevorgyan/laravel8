@@ -1,228 +1,264 @@
-@push('mediaStyle')
-    <style>
-        @media all and (min-width: 994px) and (max-width: 1900px) {
-            .popular_categories_img {
-                width: 130px;
-                height: 130px;
-            }
-            .order_now {
-                width: 130px;
-                height: 50px;
-            }
+{{--@push('mediaStyle')--}}
+{{--    <style>--}}
+{{--        @media all and (min-width: 994px) and (max-width: 1900px) {--}}
+{{--            .popular_categories_img {--}}
+{{--                /*width: 130px;*/--}}
+{{--                /*height: 130px;*/--}}
+{{--            }--}}
+{{--            .order_now {--}}
+{{--                width: 130px;--}}
+{{--                height: 50px;--}}
+{{--            }--}}
 
-            .hot_sales_imgs_container {
-                width: 190px;
-                height: 330px;
-            }
+{{--            .hot_sales_imgs_container {--}}
+{{--                /*width: 190px;*/--}}
+{{--                /*height: 330px;*/--}}
+{{--            }--}}
 
-            .hot_sales_img {
-                width: calc(100% - 10px);
-            }
+{{--            .hot_sales_img {--}}
+{{--                width: calc(100% - 10px);--}}
+{{--            }--}}
 
-            .hot_sales_img > img {
-                width: inherit;
-            }
-            .single_container{
-                width: 87%;
-            }
-        }
+{{--            .hot_sales_img > img {--}}
+{{--                width: inherit;--}}
+{{--            }--}}
+{{--            .single_container{--}}
+{{--                width: 87%;--}}
+{{--            }--}}
+{{--        }--}}
 
 
-        @media all and (min-width: 413px) and (max-width: 993px) {
-            .vector_left_container, .vector_right_container, .search_container, .container_select {
-                display: none !important;
-            }
+{{--        @media all and (min-width: 413px) and (max-width: 993px) {--}}
+{{--            .vector_left_container, .vector_right_container, .search_container, .container_select {--}}
+{{--                display: none !important;--}}
+{{--            }--}}
+{{--            .img_zoom {--}}
+{{--                width: 100%;--}}
+{{--                flex-direction: row;--}}
+{{--            }--}}
 
-            .pt-2 {
-                align-items: center !important;
-            }
+{{--            .single_img  {--}}
+{{--                width: 100%;--}}
+{{--            }--}}
 
-            .see_more {
-                position: absolute;
-                bottom: 240px;
-                right: 0
-            }
+{{--            .single_container_1{--}}
+{{--                flex-direction: column ;--}}
+{{--                height: auto;--}}
+{{--            }--}}
+{{--            .img_container{--}}
+{{--                height: auto;--}}
+{{--                width: 100%;--}}
+{{--                flex-direction: column-reverse;--}}
+{{--            }--}}
+{{--            .single_img{--}}
+{{--                width: 100%;--}}
+{{--            }--}}
+{{--            .img_zoom > div {--}}
+{{--                width: 24%;--}}
+{{--            }--}}
 
-            .evenly > div:nth-child(1n+3) {
-                display: none;
-            }
+{{--            .pt-2 {--}}
+{{--                align-items: center !important;--}}
+{{--            }--}}
 
-            .img-fluid {
-                width: 80px;
-            }
+{{--            .see_more {--}}
+{{--                position: absolute;--}}
+{{--                bottom: 240px;--}}
+{{--                right: 0--}}
+{{--            }--}}
 
-            .menu {
-                width: auto;
-            }
+{{--            .evenly > div:nth-child(1n+3) {--}}
+{{--                display: none;--}}
+{{--            }--}}
 
-            .navbar-expand-md, .navbar-nav {
-                flex-direction: row !important;
-            }
+{{--            .img-fluid {--}}
+{{--                width: 80px;--}}
+{{--            }--}}
 
-            .hot_sales_container {
-                width: 90%;
-            }
+{{--            .menu {--}}
+{{--                width: auto;--}}
+{{--            }--}}
 
-            .hot_sales_imgs_container {
-                width: 182px;
-                height: 250px;
-            }
+{{--            .navbar-expand-md, .navbar-nav {--}}
+{{--                flex-direction: row !important;--}}
+{{--            }--}}
 
-            .hot_sales_img {
-                width: calc(100% - 10px);
-            }
+{{--            .hot_sales_container {--}}
+{{--                width: 90%;--}}
+{{--            }--}}
 
-            .hot_sales_img > img {
-                width: inherit;
-            }
+{{--            .hot_sales_imgs_container {--}}
+{{--                /*width: 182px;*/--}}
+{{--                /*height: 250px;*/--}}
+{{--            }--}}
 
-            .popular_text {
-                display: flex;
-                justify-content: center;
-            }
+{{--            .hot_sales_img {--}}
+{{--                width: calc(100% - 10px);--}}
+{{--            }--}}
 
-            .media_menu_icons {
-                display: flex !important;
-                width: 150px;
-                justify-content: space-between;
-            }
+{{--            .hot_sales_img > img {--}}
+{{--                width: inherit;--}}
+{{--            }--}}
 
-            .Rectangle1 {
-                background-image: url("{{asset('storage/Rectangle3.png')}}");
-            }
+{{--            .popular_text {--}}
+{{--                display: flex;--}}
+{{--                justify-content: center;--}}
+{{--            }--}}
 
-            .Rectangle2 {
-                background-image: url("{{asset('storage/Rectangle4.png')}}");
-            }
+{{--            .media_menu_icons {--}}
+{{--                display: flex !important;--}}
+{{--                width: 150px;--}}
+{{--                justify-content: space-between;--}}
+{{--            }--}}
 
-            .Rectangle {
-                padding-right: 40px;
-            }
+{{--            .Rectangle1 {--}}
+{{--                background-image: url("{{asset('storage/Rectangle3.png')}}");--}}
+{{--            }--}}
 
-            .description_param {
-                font-size: 16px;
-                line-height: 34px;
-            }
+{{--            .Rectangle2 {--}}
+{{--                background-image: url("{{asset('storage/Rectangle4.png')}}");--}}
+{{--            }--}}
 
-            .description_name {
-                font-size: 24px;
-                line-height: 29px;
-            }
+{{--            .Rectangle {--}}
+{{--                padding-right: 40px;--}}
+{{--            }--}}
 
-            .explore {
-                width: 120px;
-                height: 30px;
-                font-size: 14px;
-                line-height: 28px;
-            }
+{{--            .description_param {--}}
+{{--                font-size: 16px;--}}
+{{--                line-height: 34px;--}}
+{{--            }--}}
 
-            .down {
-                font-size: 36px;
-                line-height: 44px;
-            }
+{{--            .description_name {--}}
+{{--                font-size: 24px;--}}
+{{--                line-height: 29px;--}}
+{{--            }--}}
 
-            .font_size {
-                font-size: 26px;
-            }
+{{--            .explore {--}}
+{{--                width: 120px;--}}
+{{--                height: 30px;--}}
+{{--                font-size: 14px;--}}
+{{--                line-height: 28px;--}}
+{{--            }--}}
 
-            .h-500 {
-                height: 300px;
-            }
+{{--            .down {--}}
+{{--                font-size: 36px;--}}
+{{--                line-height: 44px;--}}
+{{--            }--}}
 
-            .popular_categories_container {
-                width: 90%;
-            }
+{{--            .font_size {--}}
+{{--                font-size: 26px;--}}
+{{--            }--}}
 
-            .h-15 {
-                height: 15%;
-            }
-            .subscribe_text {
-                font-size: 18px;
-                line-height: 22px;
-            }
+{{--            .h-500 {--}}
+{{--                height: 300px;--}}
+{{--            }--}}
 
-            .subscribe {
-                Width: 275px;
-                Height: 37px;
-            }
-            .subscribe_form{
-                height: 200px;
-            }
-            .subscribe_form_container{
-                height: 240px;
-            }
+{{--            .popular_categories_container {--}}
+{{--                width: 90%;--}}
+{{--            }--}}
 
-            .input_subscribe {
-                width: 275px;
-                height: 35px;
-            }
-            .subscribe_container{
-                min-height: 400px;
-            }
-        }
+{{--            .h-15 {--}}
+{{--                height: 15%;--}}
+{{--            }--}}
+{{--            .subscribe_text {--}}
+{{--                font-size: 18px;--}}
+{{--                line-height: 22px;--}}
+{{--            }--}}
 
-        @media all and (min-width: 767px) and (max-width: 993px) {
-            .description_param {
-                font-size: 24px;
-                line-height: 38px;
-            }
+{{--            .subscribe {--}}
+{{--                Width: 275px;--}}
+{{--                Height: 37px;--}}
+{{--            }--}}
+{{--            .subscribe_form{--}}
+{{--                height: 200px;--}}
+{{--            }--}}
+{{--            .subscribe_form_container{--}}
+{{--                height: 240px;--}}
+{{--            }--}}
 
-            .description_name {
-                font-size: 28px;
-                line-height: 38px;
-            }
+{{--            .input_subscribe {--}}
+{{--                width: 275px;--}}
+{{--                height: 35px;--}}
+{{--            }--}}
+{{--            .subscribe_container{--}}
+{{--                min-height: 400px;--}}
+{{--            }--}}
+{{--        }--}}
 
-            .explore {
-                width: 200px;
-                height: 50px;
-                font-size: 24px;
-                line-height: 29px;
-            }
+{{--        @media all and (min-width: 767px) and (max-width: 993px) {--}}
+{{--            .description_param {--}}
+{{--                font-size: 24px;--}}
+{{--                line-height: 38px;--}}
+{{--            }--}}
+{{--            .single_img >img {--}}
+{{--                transform: scale(0.6);--}}
+{{--            }--}}
+{{--            .single_img  {--}}
+{{--                height: 350px;--}}
+{{--            }--}}
 
-            .Rectangle {
-                padding-right: 110px;
-            }
+{{--            .description_name {--}}
+{{--                font-size: 28px;--}}
+{{--                line-height: 38px;--}}
+{{--            }--}}
 
-            .down {
-                font-size: 46px;
-                line-height: 60px;
-            }
+{{--            .explore {--}}
+{{--                width: 200px;--}}
+{{--                height: 50px;--}}
+{{--                font-size: 24px;--}}
+{{--                line-height: 29px;--}}
+{{--            }--}}
 
-            .font_size {
-                font-size: 35px;
-            }
+{{--            .Rectangle {--}}
+{{--                padding-right: 110px;--}}
+{{--            }--}}
 
-            .h-500 {
-                height: 400px;
-            }
+{{--            .down {--}}
+{{--                font-size: 46px;--}}
+{{--                line-height: 60px;--}}
+{{--            }--}}
 
-        }
-        @media all and (min-width: 412px) and (max-width: 768px) {
+{{--            .font_size {--}}
+{{--                font-size: 35px;--}}
+{{--            }--}}
 
-            .follow_us,.about_us__container{
-                display: block;
-            }
-            .footer__list__container{
-                flex-direction: column-reverse;
-                height: 90%;
-            }
-            .about_us{
-                margin-bottom: 20px;
-            }
-            .footer__list{
-                height: 900px;
-            }
-            .follow_us{
-                margin-top: 55px;
-            }
-            .all_computers > div > div > a {
-                font-family: Montserrat;
-                font-size: 14px;
-                line-height: 18px;
-            }
-            .brand:nth-child(1n+4) {
-                display: none;
-            }
-        }
-    </style>
-@endpush
+{{--            .h-500 {--}}
+{{--                height: 400px;--}}
+{{--            }--}}
+
+{{--        }--}}
+{{--        @media all and (min-width: 412px) and (max-width: 768px) {--}}
+
+{{--            .follow_us,.about_us__container{--}}
+{{--                display: block;--}}
+{{--            }--}}
+{{--            .single_img >img {--}}
+{{--                transform: scale(0.6);--}}
+{{--            }--}}
+{{--            .single_img  {--}}
+{{--                height: 270px;--}}
+{{--            }--}}
+{{--            .footer__list__container{--}}
+{{--                flex-direction: column-reverse;--}}
+{{--                height: 90%;--}}
+{{--            }--}}
+{{--            .about_us{--}}
+{{--                margin-bottom: 20px;--}}
+{{--            }--}}
+{{--            .footer__list{--}}
+{{--                height: 900px;--}}
+{{--            }--}}
+{{--            .follow_us{--}}
+{{--                margin-top: 55px;--}}
+{{--            }--}}
+{{--            .all_computers > div > div > a {--}}
+{{--                font-family: Montserrat;--}}
+{{--                font-size: 14px;--}}
+{{--                line-height: 18px;--}}
+{{--            }--}}
+{{--            .brand:nth-child(1n+4) {--}}
+{{--                display: none;--}}
+{{--            }--}}
+{{--        }--}}
+{{--    </style>--}}
+{{--@endpush--}}

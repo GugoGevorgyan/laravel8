@@ -11,9 +11,33 @@ $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66d9b;
-$red: #e3342f;
+$red: #E11D1D;
 $orange: #f6993f;
 $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+    sm: 374px,
+    md: 720px,
+    lg: 960px,
+    xl: 1170px
+) !default;
+$display4-size:               2.25rem !default ;
+$display3-size:               2.81rem !default;
+$display2-size:               4rem !default;
+$grid-columns:                13 !default;
