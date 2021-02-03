@@ -17,15 +17,17 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        @include('includes.header')
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate ea esse exercitationem minus molestiae quam quas tempora? Alias, beatae cumque ducimus ea expedita harum itaque neque quia quos voluptatibus?</p>
+{{--        @include('includes.header')--}}
         <main>
-            @yield('content')
+{{--            @yield('content')--}}
         </main>
-        @include('includes.footer')
+{{--        @include('includes.footer')--}}
     </div>
 </body>
 </html>
