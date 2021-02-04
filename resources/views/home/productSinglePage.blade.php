@@ -1,5 +1,5 @@
-@extends('home.app')
-@extends('home.footer')
+@extends('layouts.app')
+@include('home.subscribe')
 @section('content')
     <div class="home_content center">
         <div class="single_container">

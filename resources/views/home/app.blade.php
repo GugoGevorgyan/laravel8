@@ -21,7 +21,7 @@
           crossorigin="anonymous"/>
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="{{ mix('css/tailwind.css') }}" rel="stylesheet">
+{{--    <link href="{{ mix('css/tailwind.css') }}" rel="stylesheet">--}}
     @include('support.style')
     @include('support.mediaStyle')
     @stack('style')
@@ -65,7 +65,7 @@
             <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid navbar-brand" alt="logo">
             <!-- @media -->
 
-            <ul class="navbar-toggler  media_menu_icons list-unstyled d-lg-none  d-sm-flex m-0 border-0">
+            <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0">
                 <li class="media_heart container">
                     <a href="">
                         <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}" alt="">
@@ -103,18 +103,18 @@
                             Accesories
                         </a>
                         <img class="h-75" src="{{asset('storage/Vector.png')}}" alt="">
-                        <div class="dropdown-menu menu_txt" aria-labelledby="navbarDropdownMenuLink"
+                        <div class="dropdown-menu menu_txt p-0 top" aria-labelledby="navbarDropdownMenuLink"
                              id="menu_Accesories">
-                            <a class="dropdown-item align_center" href="#">Headphones</a>
-                            <a class="dropdown-item align_center" href="#">Airpods</a>
-                            <a class="dropdown-item align_center" href="#">Earbuds</a>
-                            <a class="dropdown-item align_center" href="#">Speakers</a>
+                            <a class="dropdown-item d-flex  align-items-center" href="#">Headphones</a>
+                            <a class="dropdown-item d-flex  align-items-center" href="#">Airpods</a>
+                            <a class="dropdown-item d-flex  align-items-center" href="#">Earbuds</a>
+                            <a class="dropdown-item d-flex  align-items-center" href="#">Speakers</a>
                         </div>
                     </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="col-6 navbar-nav search_container ">
+                <ul class="col-6 navbar-nav search_container  ">
                     <li class="search">
                         <div class="input-group rounded">
                             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
@@ -131,12 +131,12 @@
 
                         <div class="dropdown-menu" aria-labelledby="DropdownMenuLink" id="hidden_menu">
                             <div class="dropdown-item flex_column just_around ">
-                                <div class="flex_row align_center menu_content">
+                                <div class="flex_row d-flex  align-items-center menu_content">
                                     <img class="menu_icon" src="{{asset('storage/Cart-with-plus.png')}}"
                                          alt="Favorites">
                                     <p class="menu_txt">Favorites</p>
                                 </div>
-                                <div class="flex_row align_center menu_content">
+                                <div class="flex_row d-flex  align-items-center menu_content">
                                     <img class="menu_icon" src="{{asset('storage/add-to-favorites.png')}}" alt="Cart">
                                     <p class="menu_txt">Cart</p>
                                 </div>

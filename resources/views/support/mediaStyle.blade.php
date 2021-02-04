@@ -1,19 +1,19 @@
 @push('mediaStyle')
     <style>
-{{--        @media all and (min-width: 994px) and (max-width: 1900px) {--}}
+        /*@media all and (min-width: 994px) and (max-width: 1900px) {*/
 {{--            .popular_categories_img {--}}
 {{--                /*width: 130px;*/--}}
 {{--                /*height: 130px;*/--}}
 {{--            }--}}
-{{--            .order_now {--}}
-{{--                width: 130px;--}}
-{{--                height: 50px;--}}
-{{--            }--}}
+/*            .order_now {*/
+/*                width: 130px;*/
+/*                height: 50px;*/
+/*            }*/
 
-{{--            .hot_sales_imgs_container {--}}
-{{--                /*width: 190px;*/--}}
-{{--                /*height: 330px;*/--}}
-{{--            }--}}
+            /*.hot_sales_imgs_container {*/
+            /*    width: 190px;*/
+            /*    height: 330px;*/
+            /*}*/
 
 {{--            .hot_sales_img {--}}
 {{--                width: calc(100% - 10px);--}}
@@ -61,40 +61,46 @@
 {{--                align-items: center !important;--}}
 {{--            }--}}
 
-{{--            .see_more {--}}
-{{--                position: absolute;--}}
-{{--                bottom: 240px;--}}
-{{--                right: 0--}}
-{{--            }--}}
+            .see_more {
+                position: absolute;
+                bottom: 200px;
+                right: 0
+            }
 
-{{--            .evenly > div:nth-child(1n+3) {--}}
-{{--                display: none;--}}
-{{--            }--}}
+            .evenly > div:nth-child(1n+3) {
+                display: none;
+            }
+    .order_now{
+        font-size: 14px;
+        line-height: 17px;
+        height: auto;
+    }
 
-{{--            .img-fluid {--}}
-{{--                width: 80px;--}}
-{{--            }--}}
+    {{--            .img-fluid {--}}
+    {{--                width: 80px;--}}
+    {{--            }--}}
 
-{{--            .menu {--}}
-{{--                width: auto;--}}
-{{--            }--}}
+    {{--            .menu {--}}
+    {{--                width: auto;--}}
+    {{--            }--}}
 
-{{--            .navbar-expand-md, .navbar-nav {--}}
-{{--                flex-direction: row !important;--}}
-{{--            }--}}
+    {{--            .navbar-expand-md, .navbar-nav {--}}
+    {{--                flex-direction: row !important;--}}
+    {{--            }--}}
 
-{{--            .hot_sales_container {--}}
-{{--                width: 90%;--}}
-{{--            }--}}
+/*.hot_sales_container {*/
+            /*    width: 90%;*/
+            /*}*/
 
-{{--            .hot_sales_imgs_container {--}}
-{{--                /*width: 182px;*/--}}
-{{--                /*height: 250px;*/--}}
-{{--            }--}}
+            .hot_sales_imgs_container {
+                /*width: 182px;*/
+                height: 250px;
+            }
 
-{{--            .hot_sales_img {--}}
-{{--                width: calc(100% - 10px);--}}
-{{--            }--}}
+            /*.hot_sales_img {*/
+            /*    width: calc(100% - 10px);*/
+            /*}*/
+
 
 {{--            .hot_sales_img > img {--}}
 {{--                width: inherit;--}}
@@ -160,10 +166,10 @@
 {{--            .h-15 {--}}
 {{--                height: 15%;--}}
 {{--            }--}}
-{{--            .subscribe_text {--}}
-{{--                font-size: 18px;--}}
-{{--                line-height: 22px;--}}
-{{--            }--}}
+                .subscribe_text {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
 
 {{--            .subscribe {--}}
 {{--                Width: 275px;--}}
@@ -227,7 +233,7 @@
 {{--            }--}}
 
         }
-{{--        @media all and (min-width: 412px) and (max-width: 768px) {--}}
+        @media all and (min-width: 412px) and (max-width: 768px) {
 
 {{--            .follow_us,.about_us__container{--}}
 {{--                display: block;--}}
@@ -251,14 +257,11 @@
 {{--            .follow_us{--}}
 {{--                margin-top: 55px;--}}
 {{--            }--}}
-{{--            .all_computers > div > div > a {--}}
-{{--                font-family: Montserrat;--}}
-{{--                font-size: 14px;--}}
-{{--                line-height: 18px;--}}
-{{--            }--}}
-{{--            .brand:nth-child(1n+4) {--}}
-{{--                display: none;--}}
-{{--            }--}}
-{{--        }--}}
+            .all_computers > div > div > a {
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+        }
     </style>
 @endpush

@@ -1,48 +1,15 @@
-@extends('home.app')
-@extends('home.footer')
+@extends('layouts.app')
+@include('home.macbook')
+@include('home.subscribe')
 @section('content')
     <div class="home_content center">
-        <div class="w-100 h-500 Rectangle Rectangle1 d-flex justify-content-end">
-            <div class="description text-white d-flex container">
-                <div class="text-white description_name">
-                    <p class="font-weight-lighter">MACBOOK</p>
-                    <p class="font-weight-bold">PRO</p>
-                </div>
-                <div class="description_param">
-                    <p>16 INCH</p>
-                    <p>268GB MEMORY</p>
-                </div>
-                <button type="button" class="bg-white  explore">
-                    EXPLORE
-                </button>
-            </div>
-        </div>
-        {{--        ///////////////////////////////////////////////////////////////////////////--}}
-        {{--        <div class="container py-5 bg-primary">--}}
-        {{--            <div class="row">--}}
-        {{--                <div class="col-12 d-flex justify-content-between text-white">--}}
-        {{--                    <div class="bg-danger">--}}
-        {{--                        Hello1--}}
-        {{--                    </div>--}}
-        {{--                    <div class="bg-danger">--}}
-        {{--                        Hello2--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--            <div class="row bg-success">--}}
-        {{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
-        {{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
-        {{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
-        {{--                <div class="col-6 col-lg-3 bg-danger"><h3>Text</h3></div>--}}
-        {{--            </div>--}}
-        {{--        </div>--}}
-        {{--        ////////////////////////////////////////////////////////////////////////////////////////--}}
+        @stack('macbook')
         <div class="popular_categories_container center container">
             <h2 class="popular_text">Popular Categories</h2>
 
-            <div class="flex_row justify-content-between pt-5 container">
+            <div class="d-flex flex-row d-flex flex-row justify-content-between pt-5 flex-wrap container">
                 @for ($i = 0; $i < count($imgs) ; $i++)
-                    <figure class="col-2 p-0">
+                    <figure class="col-xl-2 p-0 col-md-4 col-sm-6 ">
                         <div class="popular_categories_img container">
                             <img src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
                         </div>
@@ -73,28 +40,27 @@
                 <button type="button" class="bg-white  explore">
                     EXPLORE
                 </button>
-                {{--            <div class="btn bg-white  explore"> EXPLORE</div>--}}
             </div>
         </div>
         <div class="center w-100 container pt-4">
             <div class="hot_sales_container ">
-                <h3 class="popular_text  pt-4 pb-4 container">Hot Sales</h3>
-                <div class="container pb-3">
+                <h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4 container">Hot Sales</h3>
+                <div class="container pb-4">
                     <div class="line"></div>
-                    <div class="vector_left_container center"><a href="#">
+                    <div class="vector_left_container d-md-flex d-none center"><a href="#">
                             <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
                         </a></div>
-                    <div class="vector_right_container center"><a href="#">
+                    <div class="vector_right_container d-md-flex d-none center"><a href="#">
                             <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
                         </a></div>
                 </div>
-                <div class="evenly flex_row ">
+                <div class="evenly d-flex flex-row flex-wrap ">
                     @foreach($hot_sales as $sales)
-                        <div class="col-3 p-3 ">
+                        <div class="col-xl-3 p-3   col-md-4 col-sm-6 ">
                             <div class="hot_sales_imgs_container   just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
                                     @if($sales -> old_price)
-                                        <div class="yes_sale center"> Sale</div>
+                                        <div class="yes_sale bg-danger center"> Sale</div>
                                     @endif
                                     <div class="heart">
                                         <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
@@ -102,14 +68,13 @@
                                     </div>
                                 </div>
 
-
-                                <div class="hot_sales_img center">
-                                    <img src="{{asset('storage/'.$sales->img)}}" alt="computers">
+                                <div class="hot_sales_img center mt-4">
+                                    <img class="container" src="{{asset('storage/'.$sales->img)}}" alt="computers">
                                 </div>
                                 <div class="container">
-                                    <div class="sale flex_row">
+                                    <div class="sale d-flex flex-row">
                                         @if($sales -> old_price)
-                                            <p class="price_sale">${{$sales ->price}}</p>
+                                            <p class="price_sale text-danger">${{$sales ->price}}</p>
                                             <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
                                         @else
                                             <p class="price_sale" style="color: #151414 !important;">
@@ -121,8 +86,8 @@
                                         <p class="sales_name">{{$sales ->name}} </p>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-around">
-                                    <button type="button" class="order_now center sales_name text-white">ORDER NOW
+                                <div class="d-flex justify-content-around container pb-1">
+                                    <button type="button" class=" order_now center sales_name text-white col-11 p-0">ORDER NOW
                                     </button>
                                     <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                                 </div>
@@ -132,37 +97,38 @@
 
                     @endforeach
                 </div>
+
                 <div class="all_computers container">
-                    <div><h3 class="popular_text  pt-4">Computers</h3></div>
-                    <div class="just_between flex-row pb-4 pt-2">
-                        <div class="all_computers__sort flex_row justify-content-between">
-                            <a href="#">Notebook</a>
-                            <a href="#">Netbook</a>
-                            <a href="#">All in one</a>
-                            <a href="#">Stacionary</a>
+                    <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">Computers</h3></div>
+                    <div class="just_between flex-row pb-4 pt-2 ">
+                        <div class=" d-flex flex-row justify-content-between col-lg-6 col-md-12">
+                            <a class="p-0" href="#">Notebook</a>
+                            <a class="p-0" href="#">Netbook</a>
+                            <a class="p-0" href="#">All in one</a>
+                            <a class="p-0" href="#">Stacionary</a>
                         </div>
-                        <div class="see_more">
-                            <a href="#">see more</a>
+                        <div  class="see_more ">
+                            <a class="  " href="{{asset('home/create')}}">see more</a>
                         </div>
                     </div>
                 </div>
-                <div class="container pb-3">
+                <div class="container pb-4">
                     <div class="line"></div>
-                    <div class="vector_left_container center"><a href="#">
+                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">
                             <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
                         </a></div>
-                    <div class="vector_right_container center"><a href="#">
+                    <div class="vector_right_container center d-md-flex d-none"><a href="#">
                             <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
                         </a></div>
                 </div>
 
-                <div class="evenly1 flex_row ">
+                <div class="evenly1 d-flex flex-row flex-wrap ">
 
                     @foreach($computers as $computer)
-                        <div class="col-3 p-3 ">
+                        <div class="col-xl-3 p-3   col-md-4 col-sm-6 ">
                             <div class="hot_sales_imgs_container just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
-                                    @if($computer -> old_price)
+                                    @if($sales -> old_price)
                                         <div class="yes_sale center"> Sale</div>
                                     @endif
                                     <div class="heart">
@@ -170,13 +136,13 @@
                                              alt="favorites">
                                     </div>
                                 </div>
-                                <div class="hot_sales_img center">
-                                    <img src="{{asset('storage/'.$computer->img)}}" alt="computers">
+                                <div class="hot_sales_img center mt-4">
+                                    <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
                                 </div>
                                 <div class="container">
-                                    <div class="sale flex_row">
+                                    <div class="sale d-flex flex-row">
                                         @if($sales -> old_price)
-                                            <p class="price_sale">${{$sales ->price}}</p>
+                                            <p class="price_sale text-danger">${{$sales ->price}}</p>
                                             <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
                                         @else
                                             <p class="price_sale" style="color: #151414 !important;">
@@ -200,14 +166,16 @@
                     @endforeach
                 </div>
 
-                <P class="popular_text  pt-5 pb-4 container">Brands we deliver</P>
-                <div class="flex_row align-items-baseline justify-content-sm-between pb-sm-5 container">
+                <P class="justify-content-sm-center d-flex d-lg-block popular_text  pt-5 pb-4 container display-2">Brands we deliver</P>
+                <div class="d-flex flex-row align-items-baseline justify-content-sm-between pb-sm-5 container overflow-hidden">
                     @foreach($brands as $brand)
-                        <div class="brand"><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
+                        <div class="brand container"><img  src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
+
                     @endforeach
                 </div>
             </div>
-            @yield('footer')
+
         </div>
+        @stack('subscribe')
     </div>
 @endsection

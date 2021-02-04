@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -15,19 +15,28 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,500,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+          crossorigin="anonymous"/>
     <!-- Styles -->
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @include('support.style')
+    @include('support.mediaStyle')
+    @stack('style')
+    @stack('mediaStyle')
+
 </head>
 <body>
     <div id="app">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate ea esse exercitationem minus molestiae quam quas tempora? Alias, beatae cumque ducimus ea expedita harum itaque neque quia quos voluptatibus?</p>
-{{--        @include('includes.header')--}}
+        @include('layouts.header')
+        @stack('header')
         <main>
-{{--            @yield('content')--}}
+            @yield('content')
         </main>
-{{--        @include('includes.footer')--}}
+        @include('layouts.footer')
+        @stack('footer')
     </div>
 </body>
 </html>

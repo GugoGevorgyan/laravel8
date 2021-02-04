@@ -150,7 +150,6 @@
             border-radius: 50%;
             border: 1px solid #DEDEDE;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            margin: 10px;
         }
 
         .flex_row {
@@ -313,10 +312,6 @@
             color: #E11D1D;
         }
 
-        .all_computers__sort {
-            width: 500px;
-        }
-
         .subscribe_container {
             min-height: 660px;
             background-image: url("{{asset('storage/Rectangle38.png')}}");
@@ -324,7 +319,7 @@
 
 
         .input_subscribe {
-            width: 570px;
+            /*width: 570px;*/
             height: 54px;
             background: #F5F5F5;
             border-radius: 100px;
@@ -351,12 +346,12 @@
         }
 
         .subscribe_form_container {
-            height: 285px;
+            /*height: 285px;*/
             justify-content: space-between;
         }
 
         .subscribe_form {
-            height: 235px;
+            /*height: 235px;*/
             justify-content: space-between;
         }
 
@@ -488,7 +483,7 @@
 
         #hidden_menu {
             left: -120px;
-            top: 70px;
+            top: 52px;
         }
 
         .dropdown-menu {
@@ -497,8 +492,7 @@
 
         #menu_Accesories {
             left: -30px;
-            top: 52px;
-            padding: 0;
+            top: 44px;
         }
 
         #menu_Accesories > a.dropdown-item {

@@ -1,24 +1,11 @@
-@extends('home.app')
-@extends('home.footer')
-@section('content')
-{{--    <img src="{{asset('storage/currency.png')}}" alt="">--}}
-    <div class="home_content center">
-        <div class="w-100 h-500 Rectangle Rectangle1 d-flex justify-content-end">
-            <div class="description text-white d-flex">
-                <div class="text-white description_name">
-                    <p class="font-weight-lighter">MACBOOK</p>
-                    <p class="font-weight-bold">PRO</p>
-                </div>
-                <div class="description_param">
-                    <p>16 INCH</p>
-                    <p>268GB MEMORY</p>
-                </div>
-                <button type="button" class="bg-white  explore">
-                    EXPLORE
-                </button>
-            </div>
-        </div>
+@extends('layouts.app')
+@include('home.macbook')
+@include('home.subscribe')
 
+@section('content')
+    {{--    <img src="{{asset('storage/currency.png')}}" alt="">--}}
+    <div class="home_content center">
+        @stack('macbook')
         <div class="center w-100">
             <div class="hot_sales_container">
                 <div class="all_computers">
@@ -67,7 +54,8 @@
                                         <p class="price_sale">${{$computer ->price}}</p>
                                         <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
                                     @else
-                                        <p class="price_sale" style="color: #151414 !important;">${{$computer ->price}}</p>
+                                        <p class="price_sale" style="color: #151414 !important;">
+                                            ${{$computer ->price}}</p>
                                     @endif
                                 </div>
                                 <div>
@@ -76,7 +64,8 @@
                             </div>
                             <div class="d-flex justify-content-around">
                                 <button type="button" class="order_now center sales_name text-white">ORDER NOW</button>
-                                <a href="{{url("home/{$computer->id}/edit")}}"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                <a href="{{url("home/{$computer->id}/edit")}}"><img
+                                        src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                             </div>
 
                         </div>
@@ -86,11 +75,11 @@
                 <div class="row">
                     <div class="col">
                         {{ $computers->onEachSide(1)->links() }}
-        </div>
+                    </div>
                 </div>
 
             </div>
-            @yield('footer')
+            @stack('subscribe')
         </div>
     </div>
 @endsection
