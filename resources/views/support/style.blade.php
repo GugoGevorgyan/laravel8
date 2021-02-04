@@ -50,7 +50,7 @@
             height: 100%;
         }
 
-        .center, .popular_categories_img {
+        .center {
             align-items: center;
             justify-content: center;
         }
@@ -72,10 +72,10 @@
         }
 
         .down {
-            font-weight: 300;
-            font-size: 64px;
-            line-height: 78px;
-            text-transform: uppercase;
+            /*font-weight: 300;*/
+            /*font-size: 64px;*/
+            /*line-height: 78px;*/
+            /*text-transform: uppercase;*/
             transform: rotate(180deg);
         }
 
@@ -102,12 +102,13 @@
             justify-content: space-around;
         }
 
-        .description_param, .description_name {
+        .description_param{
             font-size: 30px;
         }
 
         .description_name {
             font-size: 45px;
+            line-height: 1.2;
         }
 
         .font_size {
@@ -132,22 +133,14 @@
             color: black;
         }
 
-        .popular_categories_container {
-            justify-content: space-evenly;
-            padding: 46px 0;
-            /*width: 70%;*/
-        }
 
         .evenly1, .evenly {
             justify-content: space-evenly;
         }
 
         .popular_categories_img {
-            display: flex;
             width: 160px;
             height: 160px;
-            overflow: hidden;
-            border-radius: 50%;
             border: 1px solid #DEDEDE;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
@@ -261,7 +254,6 @@
         .order_now {
             width: 160px;
             height: 50px;
-            background: #333333;
             border-radius: 30px;
         }
 
@@ -369,7 +361,6 @@
         .social_container {
             width: 50px;
             height: 50px;
-            background: #DEDEDE;
             border-radius: 50%;
             margin: 20px 14px 0 0;
         }
@@ -473,7 +464,6 @@
             font-weight: normal;
             font-size: 16px;
             line-height: 20px;
-            color: #333333;
         }
 
         .align_center {

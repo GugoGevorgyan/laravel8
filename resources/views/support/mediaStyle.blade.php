@@ -129,35 +129,32 @@
 {{--                padding-right: 40px;--}}
 {{--            }--}}
 
-{{--            .description_param {--}}
-{{--                font-size: 16px;--}}
-{{--                line-height: 34px;--}}
-{{--            }--}}
+            .description_param {
+                font-size: 16px;
+                line-height: 34px;
+            }
 
-{{--            .description_name {--}}
-{{--                font-size: 24px;--}}
-{{--                line-height: 29px;--}}
-{{--            }--}}
+            .description_name {
+                font-size: 24px;
+                line-height: 29px;
+            }
 
-{{--            .explore {--}}
-{{--                width: 120px;--}}
-{{--                height: 30px;--}}
-{{--                font-size: 14px;--}}
-{{--                line-height: 28px;--}}
-{{--            }--}}
+            .explore {
+                width: 120px;
+                height: 30px;
+                font-size: 14px;
+                line-height: 28px;
+                margin-top: 20px;
+            }
 
-{{--            .down {--}}
-{{--                font-size: 36px;--}}
-{{--                line-height: 44px;--}}
-{{--            }--}}
+            .down {
+                font-size: 36px;
+                line-height: 44px;
+            }
 
-{{--            .font_size {--}}
-{{--                font-size: 26px;--}}
-{{--            }--}}
-
-{{--            .h-500 {--}}
-{{--                height: 300px;--}}
-{{--            }--}}
+            .h-500 {
+                height: 300px;
+            }
 
 {{--            .popular_categories_container {--}}
 {{--                width: 90%;--}}
@@ -189,13 +186,16 @@
 {{--            .subscribe_container{--}}
 {{--                min-height: 400px;--}}
 {{--            }--}}
-{{--        }--}}
+        }
 
-{{--        @media all and (min-width: 767px) and (max-width: 993px) {--}}
-{{--            .description_param {--}}
-{{--                font-size: 24px;--}}
-{{--                line-height: 38px;--}}
-{{--            }--}}
+        @media all and (min-width: 767px) and (max-width: 993px) {
+            .description_param {
+                font-size: 24px;
+                line-height: 38px;
+            }
+            .h4{
+                font-size: 1.125rem;
+            }
 {{--            .single_img >img {--}}
 {{--                transform: scale(0.6);--}}
 {{--            }--}}
@@ -203,38 +203,40 @@
 {{--                height: 350px;--}}
 {{--            }--}}
 
-{{--            .description_name {--}}
-{{--                font-size: 28px;--}}
-{{--                line-height: 38px;--}}
-{{--            }--}}
+            .description_name {
+                font-size: 28px;
+                line-height: 38px;
+            }
 
-{{--            .explore {--}}
-{{--                width: 200px;--}}
-{{--                height: 50px;--}}
-{{--                font-size: 24px;--}}
-{{--                line-height: 29px;--}}
-{{--            }--}}
+            .explore {
+                width: 200px;
+                height: 50px;
+                font-size: 24px;
+                line-height: 29px;
+            }
 
 {{--            .Rectangle {--}}
 {{--                padding-right: 110px;--}}
 {{--            }--}}
 
-{{--            .down {--}}
-{{--                font-size: 46px;--}}
-{{--                line-height: 60px;--}}
-{{--            }--}}
+            .down {
+                font-size: 46px;
+                line-height: 60px;
+            }
 
-{{--            .font_size {--}}
-{{--                font-size: 35px;--}}
-{{--            }--}}
+            .font_size {
+                font-size: 35px;
+            }
 
-{{--            .h-500 {--}}
-{{--                height: 400px;--}}
-{{--            }--}}
+            .h-500 {
+                height: 400px;
+            }
 
         }
         @media all and (min-width: 412px) and (max-width: 768px) {
-
+.h4{
+    font-size: 0.9rem;
+}
 {{--            .follow_us,.about_us__container{--}}
 {{--                display: block;--}}
 {{--            }--}}

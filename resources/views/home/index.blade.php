@@ -2,15 +2,15 @@
 @include('home.macbook')
 @include('home.subscribe')
 @section('content')
-    <div class="home_content center">
+    <div class=" center">
         @stack('macbook')
-        <div class="popular_categories_container center container">
+        <div class="evenly pt-5 pb-5 center container-md container-fluid">
             <h2 class="popular_text">Popular Categories</h2>
 
-            <div class="d-flex flex-row d-flex flex-row justify-content-between pt-5 flex-wrap container">
+            <div class="d-flex flex-row d-flex flex-row justify-content-between pt-5 flex-wrap container-md container-fluid">
                 @for ($i = 0; $i < count($imgs) ; $i++)
                     <figure class="col-xl-2 p-0 col-md-4 col-sm-6 ">
-                        <div class="popular_categories_img container">
+                        <div class="d-flex rounded-circle  popular_categories_img center container">
                             <img src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
                         </div>
 
@@ -22,19 +22,19 @@
         </div>
 
         <div class="w-100 h-500 Rectangle Rectangle2 d-flex justify-content-end">
-            <div class="description text-white d-flex container">
-                <div class="text-white display-4 ">
+            <div class="description text-white d-flex container-md container-fluid">
+                <div class="text-white description_name ">
                     <p class="font-weight-lighter">TURN THE</p>
                     <p class="font-weight-bold">WORLD</p>
                 </div>
                 <div class="description_param">
-                    <div class='d-flex align-items-baseline justify-content-sm-between h-160'>
-                        <p class="font-weight-lighter display-4 mr-2">UPSIDE</p>
-                        <p class="c display-2">DOWN</p>
+                    <div class='d-flex justify-content-sm-end align-items-baseline'>
+                        <p class="font-weight-lighter display-4 mr-2 d-none d-lg-block ">UPSIDE</p>
+                        <p class="display-2 down">DOWN</p>
                     </div>
                     <div>
                         <p class="font-weight-lighter h4 mr-2">WITH BRAND NEW</p>
-                        <p class="font-weight-normal  display-3 mb-3">HEADPHONES</p>
+                        <p class="font-weight-normal  description_name mb-3">HEADPHONES</p>
                     </div>
                 </div>
                 <button type="button" class="bg-white  explore">
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around container pb-1">
-                                    <button type="button" class=" order_now center sales_name text-white col-11 p-0">ORDER NOW
+                                    <button type="button" class=" order_now bg-dark   center sales_name text-white col-11 p-0">ORDER NOW
                                     </button>
                                     <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                                 </div>
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around">
-                                    <button type="button" class="order_now center sales_name text-white">ORDER NOW
+                                    <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW
                                     </button>
                                     <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
 

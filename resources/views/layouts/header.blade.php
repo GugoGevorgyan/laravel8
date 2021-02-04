@@ -5,7 +5,7 @@
                 <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid navbar-brand" alt="logo">
                 <!-- @media -->
 
-                <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0">
+                <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0 p-0">
                     <li class="media_heart container">
                         <a href="">
                             <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}" alt="">
@@ -16,7 +16,7 @@
                             <img class="img_heart" src="{{asset('storage/Cart-with-plus.png')}}" alt="">
                         </a>
                     </li>
-                    <li class="container">
+                    <li class="container pr-0">
                         <a href="">
                             <img class="img_heart" src="{{asset('storage/menu-alt-2.png')}}" alt="">
                         </a>
@@ -43,7 +43,7 @@
                                 Accesories
                             </a>
                             <img class="h-75" src="{{asset('storage/Vector.png')}}" alt="">
-                            <div class="dropdown-menu menu_txt p-0 top" aria-labelledby="navbarDropdownMenuLink"
+                            <div class="dropdown-menu menu_txt text-dark p-0 top" aria-labelledby="navbarDropdownMenuLink"
                                  id="menu_Accesories">
                                 <a class="dropdown-item d-flex  align-items-center" href="#">Headphones</a>
                                 <a class="dropdown-item d-flex  align-items-center" href="#">Airpods</a>
@@ -74,27 +74,27 @@
                                     <div class="flex_row d-flex  align-items-center menu_content">
                                         <img class="menu_icon" src="{{asset('storage/Cart-with-plus.png')}}"
                                              alt="Favorites">
-                                        <p class="menu_txt">Favorites</p>
+                                        <p class="menu_txt text-dark">Favorites</p>
                                     </div>
                                     <div class="flex_row d-flex  align-items-center menu_content">
                                         <img class="menu_icon" src="{{asset('storage/add-to-favorites.png')}}" alt="Cart">
-                                        <p class="menu_txt">Cart</p>
+                                        <p class="menu_txt text-dark">Cart</p>
                                     </div>
                                     <div class="flex_row  justify-content-between menu_content">
-                                        <p class="menu_txt"> Currency</p>
+                                        <p class="menu_txt text-dark"> Currency</p>
                                         <div class="center">
                                             <div class="flex_row  menu_img">
                                                 <input type="radio" id="amd" name="Currency" value="AMD">
-                                                <label class="menu_txt" for="amd">AMD</label>
+                                                <label class="menu_txt text-dark" for="amd">AMD</label>
                                             </div>
                                             <div class="flex_row menu_img">
                                                 <input type="radio" id="usd" name="Currency" value="USD">
-                                                <label class="menu_txt" for="usd">USD</label>
+                                                <label class="menu_txt text-dark" for="usd">USD</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="flex_row justify-content-between menu_content">
-                                        <p class="menu_txt"> Language</p>
+                                        <p class="menu_txt text-dark"> Language</p>
                                         <div class="center">
                                             <div class="flex_row menu_img">
                                                 <input type="radio" id="usa" name="Language" value="usa">

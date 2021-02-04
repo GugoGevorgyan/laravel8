@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-around">
-                                <button type="button" class="order_now center sales_name text-white">ORDER NOW</button>
+                                <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW</button>
                                 <a href="{{url("home/{$computer->id}/edit")}}"><img
                                         src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                             </div>

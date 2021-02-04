@@ -31,8 +31,8 @@
                 <div class="flex_column">
                     <p class="follow_us footer_contact">Follow us on</p>
                     <div class="flex_row">
-                        <div class="social_container center"><img src="{{asset('storage/fb.png')}}" alt=""></div>
-                        <div class="social_container center"><img src="{{asset('storage/insta.png')}}" alt=""></div>
+                        <div class="social_container bg-light center"><img src="{{asset('storage/fb.png')}}" alt=""></div>
+                        <div class="social_container bg-light center"><img src="{{asset('storage/insta.png')}}" alt=""></div>
                     </div>
 
                 </div>
