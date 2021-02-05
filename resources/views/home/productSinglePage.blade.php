@@ -1,23 +1,49 @@
 @extends('layouts.app')
 @include('home.subscribe')
 @section('content')
-    <div class="home_content center">
-        <div class="single_container">
-            <div class="flex_row  single_container_1 ">
-                <div class="flex_row img_container">
-                    <div class="center img_zoom">
-                        <div><img src="{{asset('storage/accesuar_2.png')}}" alt=""></div>
-                        <div><img src="{{asset('storage/accesuar_3.png')}}" alt=""></div>
-                        <div><img src="{{asset('storage/accesuar_4.png')}}" alt=""></div>
-                        <div><img src="{{asset('storage/accesuar_5.png')}}" alt=""></div>
+    <div class=" center">
+        <div class=" container">
+            <div class="d-flex flex-row flex-wrap pt-5 pb-5 justify-content-between">
+                <div class="d-flex flex-row flex-wrap  col-7 p-0">
+                    <div class="center  col-3 p-0">
+                        <div class="container-fluid p-0 pt-2 pb-2  ">
+                            <div class=" border rounded w-100 float-right">
+                                <img class=" float-right" src="{{asset('storage/accesuar_2.png')}}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="container-fluid p-0 pt-2 pb-2   ">
+                            <div class=" border rounded w-100">
+                                <img  src="{{asset('storage/accesuar_3.png')}}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="container-fluid p-0 pt-2 pb-2 ">
+                            <div class=" border rounded w-100">
+                                <img src="{{asset('storage/accesuar_4.png')}}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="container-fluid p-0 pt-2 pb-2 ">
+                            <div class=" border rounded w-100 float-right">
+                                <img class="float-right" src="{{asset('storage/accesuar_5.png')}}" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="single_img center">
-                        <img src="{{asset('storage/accesuar_1.png')}}" alt="">
+                    <div class=" center col-9 p-0">
+                        <div class="container-fluid p-2 pl-3 pr-3 h-100  ">
+                        <div  class="center border rounded float-right w-100  h-100 ">
+                            <div >
+                            <img src="{{asset('storage/accesuar_1.png')}}" alt="">
+                            </div>
+                        </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="single_more just_between ">
-                    <div class="flex_row justify-content-between">
-                        <div class="flex_column">
+                <div class=" col-5 ">
+                    <div class="flex_row justify-content-between pb-4">
+                        <div class="">
                             <p class="font29_size24 uppercase">Beats by dr. dre</p>
                             <p class="single_currency"> US $1500</p>
                         </div>
@@ -26,7 +52,7 @@
                         </div>
                     </div>
                     <div class="line"></div>
-                    <div>
+                    <div class="pt-4 pb-3">
                         <p class="single_text">
                             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
                             Velit officia consequat duis enim velit mollit.
@@ -34,11 +60,13 @@
                         </p>
                     </div>
                     {{--                    color --}}
-                    <div class="color_container just_around">
+                    <div class="container p-0">
                         <p class="font18_size22">Color</p>
-                        <div class="color flex_row ">
+                        <div class=" flex_row container p-0 ">
                             @foreach($colors as $color)
-                                <div style="background:{{$color}}"></div>
+                                <div class="col-2 container pr-2 p-0 ">
+                                    <div class="col-12 pt-3 pb-4" style="background:{{$color}}"></div>
+                                </div>
                             @endforeach
                         </div>
                     </div>
@@ -64,7 +92,7 @@
                 </div>
 
             </div>
-{{--            description  --}}
+            {{--            description  --}}
 
             <div class="single_description_container just_between">
                 <div class="single_description center">
@@ -111,7 +139,7 @@
                     </div>
                 </div>
             </div>
-{{--                   similar Items               --}}
+            {{--                   similar Items               --}}
             <div class="similar_items_container">
                 <p class="popular_text  p-4">similar Items</p>
                 <div>
@@ -146,7 +174,8 @@
                                         <p class="price_sale">${{$computer ->price}}</p>
                                         <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
                                     @else
-                                        <p class="price_sale" style="color: #151414 !important;">${{$computer ->price}}</p>
+                                        <p class="price_sale" style="color: #151414 !important;">
+                                            ${{$computer ->price}}</p>
                                     @endif
 
                                 </div>
@@ -155,7 +184,8 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-around">
-                                <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW</button>
+                                <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW
+                                </button>
                                 <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                             </div>
 

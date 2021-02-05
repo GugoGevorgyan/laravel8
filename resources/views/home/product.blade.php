@@ -3,83 +3,86 @@
 @include('home.subscribe')
 
 @section('content')
-    {{--    <img src="{{asset('storage/currency.png')}}" alt="">--}}
+{{--        <img class="position-absolute currency" src="{{asset('storage/currency.png')}}" alt="">--}}
     <div class="home_content center">
         @stack('macbook')
-        <div class="center w-100">
-            <div class="hot_sales_container">
-                <div class="all_computers">
-                    <div><p class="popular_text  pt-4">Computers</p></div>
-                    <div class="just_between flex-row pb-4 pt-2">
-                        <div class="all_computers__sort flex_row justify-content-between">
-                            <a href="#">Notebook</a>
-                            <a href="#">Netbook</a>
-                            <a href="#">All in one</a>
-                            <a href="#">Stacionary</a>
-                        </div>
-                        <div class="see_more">
-                            <a href="#">see more</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="line"></div>
-                    <div class="vector_left_container center"><a href="#">
-                            <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
-                        </a></div>
-                    <div class="vector_right_container center"><a href="#">
-                            <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
-                        </a></div>
-                </div>
-
-                <div class="evenly1 flex_row">
-
-                    @foreach($computers as $computer)
-                        <div class="hot_sales_imgs_container just_around">
-                            <div class="d-flex flex-row position-relative h-15">
-                                @if($computer -> old_price)
-                                    <div class="yes_sale center"> Sale</div>
-                                @endif
-                                <div class="heart">
-                                    <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
-                                         alt="favorites">
-                                </div>
-                            </div>
-                            <div class="hot_sales_img center">
-                                <img src="{{asset('storage/'.$computer->img)}}" alt="computers">
-                            </div>
-                            <div>
-                                <div class="sale flex_row">
-                                    @if($computer -> old_price)
-                                        <p class="price_sale">${{$computer ->price}}</p>
-                                        <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
-                                    @else
-                                        <p class="price_sale" style="color: #151414 !important;">
-                                            ${{$computer ->price}}</p>
-                                    @endif
-                                </div>
-                                <div>
-                                    <p class="sales_name">{{$computer ->name}} </p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-around">
-                                <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW</button>
-                                <a href="{{url("home/{$computer->id}/edit")}}"><img
-                                        src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
-                            </div>
-
-                        </div>
-                    @endforeach
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        {{ $computers->onEachSide(1)->links() }}
-                    </div>
+        <div class="center w-100 container p-0 pt-4 position-relative">
+        <div class="all_computers container">
+            <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">Computers</h3></div>
+            <div class="just_between flex-row pb-4 pt-2 justify-content-sm-between">
+                <div class="d-flex flex-row justify-content-md-between col-lg-6 col-md-8 p-0">
+                    <a class="p-0 mr-2" href="#">Notebook</a>
+                    <a class="p-0 mr-2" href="#">Netbook</a>
+                    <a class="p-0 mr-2" href="#">All in one</a>
+                    <a class="p-0 mr-2" href="#">Stacionary</a>
                 </div>
 
             </div>
-            @stack('subscribe')
         </div>
+{{--        <div class="center w-100 container pt-4">--}}
+        <div class="container pb-4">
+            <div class="line"></div>
+            <div class="vector_left_container  d-md-flex d-none center"><a href="#">
+                    <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
+                </a></div>
+            <div class="vector_right_container center d-md-flex d-none"><a href="#">
+                    <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
+                </a></div>
+        </div>
+
+        <div class="evenly1 d-flex flex-row flex-wrap ">
+
+            @foreach($computers as $computer)
+                <div class="col-xl-3 p-3   col-md-4 col-sm-6 ">
+                    <div class="hot_sales_imgs_container just_around ">
+                        <div class="d-flex flex-row position-relative h-15">
+                            @if($computer -> old_price)
+                                <div class="yes_sale center"> Sale</div>
+                            @endif
+                            <div class="heart">
+                                <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                     alt="favorites">
+                            </div>
+                        </div>
+                        <div class="hot_sales_img center mt-4">
+                            <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
+                        </div>
+                        <div class="container">
+                            <div class="sale d-flex flex-row">
+                                @if($computer -> old_price)
+                                    <p class="price_sale text-danger">${{$computer ->price}}</p>
+                                    <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
+                                @else
+                                    <p class="price_sale" style="color: #151414 !important;">
+                                        ${{$computer ->price}}</p>
+                                @endif
+                            </div>
+                            <div>
+                                <p class="sales_name">{{$computer ->name}} </p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW
+                            </button>
+                            <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            @endforeach
+        </div>
+        </div>
+
+
+                        <div class="row container">
+                            <div class="col-6 d-flex justify-content-end ">
+                                {{ $computers->onEachSide(1)->links() }}
+                            </div>
+                        </div>
+
+
+                    @stack('subscribe')
     </div>
 @endsection

@@ -9,6 +9,6 @@
                 </div>
                 <button class="subscribe center btn-danger p-0 col-md-8 col-sm-12 flex-fill mt-5" type="button">Subscribe</button>
             </form>
-        </div>
+           </div>
     </div>
 @endpush

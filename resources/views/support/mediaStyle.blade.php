@@ -1,5 +1,14 @@
 @push('mediaStyle')
     <style>
+        @media all and (min-width: 994px) and (max-width: 1200px) {
+            .nav-link{
+                font-size: 14px;
+            }
+            .nav-item > img{
+                height: 9px !important;
+                width: 8px;
+            }
+        }
         /*@media all and (min-width: 994px) and (max-width: 1900px) {*/
 {{--            .popular_categories_img {--}}
 {{--                /*width: 130px;*/--}}
@@ -29,6 +38,13 @@
 
 
         @media all and (min-width: 413px) and (max-width: 993px) {
+    span[aria-current="page"] > span, span[aria-disabled="true"] > span, .rounded-md > a {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        line-height: 19px;
+        margin: 2px;
+    }
 {{--            .vector_left_container, .vector_right_container, .search_container, .container_select {--}}
 {{--                display: none !important;--}}
 {{--            }--}}
@@ -246,7 +262,7 @@
 {{--            .single_img  {--}}
 {{--                height: 270px;--}}
 {{--            }--}}
-{{--            .footer__list__container{--}}
+    {{--            .footer__list__container{--}}
 {{--                flex-direction: column-reverse;--}}
 {{--                height: 90%;--}}
 {{--            }--}}
@@ -261,7 +277,7 @@
 {{--            }--}}
             .all_computers > div > div > a {
                 font-size: 14px;
-                line-height: 18px;
+                line-height: 17px;
             }
 
         }

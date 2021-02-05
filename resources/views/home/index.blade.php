@@ -2,7 +2,7 @@
 @include('home.macbook')
 @include('home.subscribe')
 @section('content')
-    <div class=" center">
+    <div class="center">
         @stack('macbook')
         <div class="evenly pt-5 pb-5 center container-md container-fluid">
             <h2 class="popular_text">Popular Categories</h2>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="center w-100 container pt-4">
-            <div class="hot_sales_container ">
+            <div class="position-relative">
                 <h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4 container">Hot Sales</h3>
                 <div class="container pb-4">
                     <div class="line"></div>
@@ -101,7 +101,7 @@
                 <div class="all_computers container">
                     <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">Computers</h3></div>
                     <div class="just_between flex-row pb-4 pt-2 ">
-                        <div class=" d-flex flex-row justify-content-between col-lg-6 col-md-12">
+                        <div class=" d-flex flex-row justify-content-between col-lg-6 col-md-12 p-0">
                             <a class="p-0" href="#">Notebook</a>
                             <a class="p-0" href="#">Netbook</a>
                             <a class="p-0" href="#">All in one</a>
