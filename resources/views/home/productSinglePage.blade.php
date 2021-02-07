@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="flex_row">
-                            <button type="button" class="order_now center sales_name text-white">ORDER NOW</button>
+                            <button type="button" class="order_now center sales_name text-white col-md-9 col-11 p-0">ORDER NOW</button>
                             <a href="#"><img class="single_cart" src="http://design/storage/Cart-with-plus.png"
                                              alt="paiment"></a>
                         </div>
@@ -168,8 +168,8 @@
                             <div class="hot_sales_img center">
                                 <img src="{{asset('storage/'.$computer->img)}}" alt="computers">
                             </div>
-                            <div class="sale_container">
-                                <div class="sale flex_row">
+                            <div class="ml-1">
+                                <div class="align-items-end flex_row">
                                     @if($computer -> old_price)
                                         <p class="price_sale">${{$computer ->price}}</p>
                                         <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
@@ -184,7 +184,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-around">
-                                <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW
+                                <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-11 p-0">ORDER NOW
                                 </button>
                                 <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                             </div>

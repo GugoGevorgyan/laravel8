@@ -48,7 +48,7 @@
                             <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
                         </div>
                         <div class="container">
-                            <div class="sale d-flex flex-row">
+                            <div class="align-items-end d-flex flex-row">
                                 @if($computer -> old_price)
                                     <p class="price_sale text-danger">${{$computer ->price}}</p>
                                     <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-around">
-                            <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW
+                            <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-11 p-0">ORDER NOW
                             </button>
                             <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
 

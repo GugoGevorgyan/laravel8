@@ -38,7 +38,7 @@
                         </li>
 
                         <li class="nav-item dropdown col-3  d-flex flex-row col-3 align-items-center p-0 justify-content-between">
-                            <a class="nav-link p-0 select font18_size22" href="#" id="navbarDropdownMenuLink"
+                            <a class="nav-link p-0  font18_size22" href="#" id="navbarDropdownMenuLink"
                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Accesories
                             </a>
@@ -54,18 +54,18 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="col-6 navbar-nav search_container  ">
-                        <li class="search">
+                    <ul class="col-6 navbar-nav  justify-content-around ">
+                        <li class="search overflow-hidden col-7 p-0 border border-dark">
                             <div class="input-group rounded">
-                                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                                <input type="search" class="form-control border-0 rounded" placeholder="Search" aria-label="Search"
                                        aria-describedby="search-addon"/>
-                                <span class="input-group-text border-0" id="search-addon">
+                                <span class="input-group-text bg-white border-0" id="search-addon">
                                 <i class="fas fa-search"></i>
                             </span>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link menu_ellipse " href="#" id="DropdownMenuLink" role="button"
+                            <a class="nav-link menu_ellipse h-100" href="#" id="DropdownMenuLink" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </a>
 

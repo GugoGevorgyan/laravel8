@@ -21,13 +21,13 @@
             </div>
         </div>
 
-        <div class="w-100 h-500 Rectangle Rectangle2 d-flex justify-content-end">
+        <div class="w-100 h-500 Rectangle Rectangle2 d-flex justify-content-end align-items-center">
             <div class="description text-white d-flex container-md container-fluid">
                 <div class="text-white description_name ">
                     <p class="font-weight-lighter">TURN THE</p>
                     <p class="font-weight-bold">WORLD</p>
                 </div>
-                <div class="description_param">
+                <div>
                     <div class='d-flex justify-content-sm-end align-items-baseline'>
                         <p class="font-weight-lighter display-4 mr-2 d-none d-lg-block ">UPSIDE</p>
                         <p class="display-2 down">DOWN</p>
@@ -37,7 +37,7 @@
                         <p class="font-weight-normal  description_name mb-3">HEADPHONES</p>
                     </div>
                 </div>
-                <button type="button" class="bg-white  explore">
+                <button type="button" class="bg-white  explore border-0">
                     EXPLORE
                 </button>
             </div>
@@ -48,7 +48,7 @@
                 <div class="container pb-4">
                     <div class="line"></div>
                     <div class="vector_left_container d-md-flex d-none center"><a href="#">
-                            <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_left rotate-180" src="{{asset('storage/Vector.png')}}" alt="">
                         </a></div>
                     <div class="vector_right_container d-md-flex d-none center"><a href="#">
                             <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
@@ -72,7 +72,7 @@
                                     <img class="container" src="{{asset('storage/'.$sales->img)}}" alt="computers">
                                 </div>
                                 <div class="container">
-                                    <div class="sale d-flex flex-row">
+                                    <div class="align-items-end d-flex flex-row">
                                         @if($sales -> old_price)
                                             <p class="price_sale text-danger">${{$sales ->price}}</p>
                                             <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around container pb-1">
-                                    <button type="button" class=" order_now bg-dark   center sales_name text-white col-11 p-0">ORDER NOW
+                                    <button type="button" class="order_now   bg-dark   center sales_name text-white col-md-9 col-11 p-0">ORDER NOW
                                     </button>
                                     <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                                 </div>
@@ -140,7 +140,7 @@
                                     <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
                                 </div>
                                 <div class="container">
-                                    <div class="sale d-flex flex-row">
+                                    <div class="align-items-end d-flex flex-row">
                                         @if($sales -> old_price)
                                             <p class="price_sale text-danger">${{$sales ->price}}</p>
                                             <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around">
-                                    <button type="button" class="order_now bg-dark center sales_name text-white">ORDER NOW
+                                    <button type="button" class="order_now bg-dark center sales_name text-white  col-11 col-md-9 p-0">ORDER NOW
                                     </button>
                                     <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
 
