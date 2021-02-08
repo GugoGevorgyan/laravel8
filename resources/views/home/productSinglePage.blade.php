@@ -6,32 +6,32 @@
             <div class="d-flex flex-lg-row flex-column flex-wrap pt-5 pb-5 justify-content-between">
                 <div class="d-flex flex-lg-row flex-column-reverse flex-wrap  col-lg-7 col-12 p-0">
                     <div class="center flex-lg-column flex-row  col-lg-3 col-12 p-0 ">
-                        <div class="container-lg-fluid container p-lg-0 pt-lg-2 pb-2 pr-3 pl-3 col-lg-12  col-3">
+                        <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100 float-right">
-                                <img class=" float-right" src="{{asset('storage/accesuar_2.png')}}" alt="">
+                                <img class="col-12 p-0 float-right" src="{{asset('storage/accesuar_2.png')}}" alt="">
                             </div>
 
                         </div>
-                        <div class="container-lg-fluid container p-lg-0 pt-lg-2 pb-2 pr-3 pl-3 col-lg-12  col-3">
+                        <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100">
-                                <img  src="{{asset('storage/accesuar_3.png')}}" alt="">
+                                <img class="col-8 p-0" src="{{asset('storage/accesuar_3.png')}}" alt="">
                             </div>
 
                         </div>
-                        <div class="container-lg-fluid container p-lg-0 pt-lg-2 pb-2 pr-3 pl-3 col-lg-12  col-3">
+                        <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100">
-                                <img src="{{asset('storage/accesuar_4.png')}}" alt="">
+                                <img class="col-12 p-0" src="{{asset('storage/accesuar_4.png')}}" alt="">
                             </div>
 
                         </div>
-                        <div class="container-lg-fluid container p-lg-0 pt-lg-2 pb-2 pr-3 pl-3 col-lg-12  col-3">
+                        <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100 float-right">
-                                <img class="float-right" src="{{asset('storage/accesuar_5.png')}}" alt="">
+                                <img class="col-10 p-0 float-right" src="{{asset('storage/accesuar_5.png')}}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class=" center col-lg-9 col-12 p-0">
-                        <div class="container-fluid p-2 pl-3 pr-3 h-100">
+                        <div class="container-fluid pl-sm-2 pr-sm-2 pt-2 pl-3 pr-3 pb-lg-0 pb-3 h-100">
                         <div  class="center border rounded float-right w-100  h-100 ">
                             <div >
                             <img class="img_single" src="{{asset('storage/accesuar_1.png')}}" alt="">
@@ -94,13 +94,13 @@
             </div>
             {{--            description  --}}
 
-            <div class="single_description_container just_between">
-                <div class="single_description center">
-                    <p class="font29_size24 p-lg-0 p-3">Description</p>
+            <div class="container">
+                <div class="center">
+                    <p class="font29_size24 p-lg-4 p-3">Description</p>
                 </div>
                 <div class="line"></div>
                 <div>
-                    <p class="single_description_text  pb-4 pt-4">
+                    <p class="single_description_text  pt-4">
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
                         Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
@@ -113,8 +113,8 @@
                     </p>
                 </div>
 
-                <div class="description_half flex_row justify-content-between">
-                    <ul class="w-100">
+                <div class="description_half flex_row justify-content-between mt-4">
+                    <ul class="w-100 pl-3">
                         <li>
                             <div class="d-flex justify-content-between">
                                 <p>Amet minim mollit non deserunt ullamco </p>
@@ -153,7 +153,7 @@
 {{--*****************************************************--}}
             <div class="center w-100 container p-0 pt-4 pb-5 position-relative">
                 <div class="all_computers container">
-                    <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-5">Similar Items</h3></div>
+                    <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4">Similar Items</h3></div>
                 </div>
                 <div class="container pb-4">
                     <div class="line"></div>
@@ -165,7 +165,7 @@
                         </a></div>
                 </div>
 
-                <div class="evenly1 d-flex flex-row flex-wrap ">
+                <div class="evenly1 d-flex flex-row flex-wrap container p-0">
 
                     @foreach($computers as $computer)
                         <div class="col-xl-3 p-3   col-md-4 col-sm-6 ">

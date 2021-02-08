@@ -59,6 +59,17 @@
                 border-top: 1.25rem solid  #EAEEF4;
                 border-bottom: 1.25rem solid  #EAEEF4;
             }
+            .single_description_text{
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow-y: hidden;
+            }
+            .description_half, .single_description_text{
+                font-size: 12px;
+                line-height: 18px;
+            }
+
 
             {{--            .vector_left_container, .vector_right_container, .search_container, .container_select {--}}
 {{--                display: none !important;--}}
@@ -280,10 +291,7 @@
             .h4 {
                 font-size: 0.9rem;
             }
-            .description_half, .single_description_text{
-                font-size: 12px;
-                line-height: 18px       ;
-            }
+
             .img_single {
                 transform: scale(.6);
             }

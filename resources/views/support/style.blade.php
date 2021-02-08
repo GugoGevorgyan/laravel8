@@ -504,7 +504,6 @@
         .description_half, .single_description_text {
             font-size: 18px;
             line-height: 30px;
-            text-align: justify;
             text-transform: capitalize;
         }
 
