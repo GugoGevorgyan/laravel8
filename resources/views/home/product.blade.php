@@ -61,8 +61,8 @@
                                 <p class="sales_name">{{$computer ->name}} </p>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-around">
-                            <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-11 p-0">ORDER NOW
+                        <div class="d-flex justify-content-around container">
+                            <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">ORDER NOW
                             </button>
                             <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
 

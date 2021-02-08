@@ -400,6 +400,10 @@
 
         }
 
+        .hover-color:hover{
+            padding-bottom: 0 !important;
+            padding-top: 0.5rem !important;
+        }
         /* single page */
 
         /*.img_zoom {*/
@@ -440,7 +444,6 @@
             font-weight: 600;
             font-size: 36px;
             line-height: 44px;
-            color: #000000;
         }
 
         .uppercase {
@@ -494,9 +497,9 @@
             margin-left: 20px;
         }
 
-        .single_description_container {
-            height: 470px;
-        }
+        /*.single_description_container {*/
+        /*    height: 470px;*/
+        /*}*/
 
         .description_half, .single_description_text {
             font-size: 18px;
@@ -551,6 +554,8 @@
         }
 
         /*    *************************************/
+
+
     </style>
 
 

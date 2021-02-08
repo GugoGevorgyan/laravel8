@@ -1,51 +1,66 @@
 @push('mediaStyle')
     <style>
         @media all and (min-width: 994px) and (max-width: 1200px) {
-            .nav-link{
+            .nav-link {
                 font-size: 14px;
             }
-            .nav-item > img{
+
+            .nav-item > img {
                 height: 9px !important;
                 width: 8px;
             }
         }
+
         /*@media all and (min-width: 994px) and (max-width: 1900px) {*/
-{{--            .popular_categories_img {--}}
-{{--                /*width: 130px;*/--}}
-{{--                /*height: 130px;*/--}}
-{{--            }--}}
-/*            .order_now {*/
-/*                width: 130px;*/
-/*                height: 50px;*/
-/*            }*/
+        {{--            .popular_categories_img {--}}
+        {{--                /*width: 130px;*/--}}
+        {{--                /*height: 130px;*/--}}
+        {{--            }--}}
+ /*            .order_now {*/
+        /*                width: 130px;*/
+        /*                height: 50px;*/
+        /*            }*/
 
-            /*.hot_sales_imgs_container {*/
-            /*    width: 190px;*/
-            /*    height: 330px;*/
-            /*}*/
+        /*.hot_sales_imgs_container {*/
+        /*    width: 190px;*/
+        /*    height: 330px;*/
+        /*}*/
 
-{{--            .hot_sales_img {--}}
-{{--                width: calc(100% - 10px);--}}
-{{--            }--}}
+        {{--            .hot_sales_img {--}}
+        {{--                width: calc(100% - 10px);--}}
+        {{--            }--}}
 
-{{--            .hot_sales_img > img {--}}
-{{--                width: inherit;--}}
-{{--            }--}}
-{{--            .single_container{--}}
-{{--                width: 87%;--}}
-{{--            }--}}
-{{--        }--}}
+        {{--            .hot_sales_img > img {--}}
+        {{--                width: inherit;--}}
+        {{--            }--}}
+        {{--            .single_container{--}}
+        {{--                width: 87%;--}}
+        {{--            }--}}
+        {{--        }--}}
 
 
-        @media all and (min-width: 413px) and (max-width: 993px) {
-    span[aria-current="page"] > span, span[aria-disabled="true"] > span, .rounded-md > a {
-        width: 30px;
-        height: 30px;
-        font-size: 15px;
-        line-height: 19px;
-        margin: 2px;
-    }
-{{--            .vector_left_container, .vector_right_container, .search_container, .container_select {--}}
+@media all and (min-width: 413px) and (max-width: 993px) {
+            span[aria-current="page"] > span, span[aria-disabled="true"] > span, .rounded-md > a {
+                width: 30px;
+                height: 30px;
+                font-size: 15px;
+                line-height: 19px;
+                margin: 2px;
+            }
+
+            .font29_size24 {
+                font-size: 18px;
+                line-height: 22px;
+            }
+            .description_half > ul >li:nth-child(2n+2){
+                background: rgba(234, 238, 244, 0.5);
+            }
+            .description_half{
+                border-top: 1.25rem solid  #EAEEF4;
+                border-bottom: 1.25rem solid  #EAEEF4;
+            }
+
+            {{--            .vector_left_container, .vector_right_container, .search_container, .container_select {--}}
 {{--                display: none !important;--}}
 {{--            }--}}
 {{--            .img_zoom {--}}
@@ -86,28 +101,28 @@
             .evenly > div:nth-child(1n+3) {
                 display: none;
             }
-    .order_now{
-        font-size: 14px;
-        line-height: 17px;
-        height: auto;
-    }
 
-    {{--            .img-fluid {--}}
-    {{--                width: 80px;--}}
-    {{--            }--}}
+            .order_now {
+                font-size: 14px;
+                line-height: 17px;
+                height: auto;
+            }
 
-    {{--            .menu {--}}
-    {{--                width: auto;--}}
-    {{--            }--}}
+        {{--            .img-fluid {--}}
+        {{--                width: 80px;--}}
+        {{--            }--}}
 
-    {{--            .navbar-expand-md, .navbar-nav {--}}
-    {{--                flex-direction: row !important;--}}
-    {{--            }--}}
+        {{--            .menu {--}}
+        {{--                width: auto;--}}
+        {{--            }--}}
+
+        {{--            .navbar-expand-md, .navbar-nav {--}}
+        {{--                flex-direction: row !important;--}}
+        {{--            }--}}
 
 /*.hot_sales_container {*/
             /*    width: 90%;*/
             /*}*/
-
             .hot_sales_imgs_container {
                 /*width: 182px;*/
                 height: 250px;
@@ -116,9 +131,7 @@
             /*.hot_sales_img {*/
             /*    width: calc(100% - 10px);*/
             /*}*/
-
-
-{{--            .hot_sales_img > img {--}}
+            {{--            .hot_sales_img > img {--}}
 {{--                width: inherit;--}}
 {{--            }--}}
 
@@ -141,7 +154,7 @@
                 background-image: url("{{asset('storage/Rectangle4.png')}}");
             }
 
-{{--            .Rectangle {--}}
+            {{--            .Rectangle {--}}
 {{--                padding-right: 40px;--}}
 {{--            }--}}
 
@@ -172,7 +185,7 @@
                 height: 300px;
             }
 
-{{--            .popular_categories_container {--}}
+            {{--            .popular_categories_container {--}}
 {{--                width: 90%;--}}
 {{--            }--}}
 
@@ -180,28 +193,29 @@
 {{--                height: 15%;--}}
 {{--            }--}}
                 .subscribe_text {
-                    font-size: 18px;
-                    line-height: 22px;
-                }
+                font-size: 18px;
+                line-height: 22px;
+            }
 
-{{--            .subscribe {--}}
-{{--                Width: 275px;--}}
-{{--                Height: 37px;--}}
-{{--            }--}}
-{{--            .subscribe_form{--}}
-{{--                height: 200px;--}}
-{{--            }--}}
-{{--            .subscribe_form_container{--}}
-{{--                height: 240px;--}}
-{{--            }--}}
+        {{--            .subscribe {--}}
+        {{--                Width: 275px;--}}
+        {{--                Height: 37px;--}}
+        {{--            }--}}
+        {{--            .subscribe_form{--}}
+        {{--                height: 200px;--}}
+        {{--            }--}}
+        {{--            .subscribe_form_container{--}}
+        {{--                height: 240px;--}}
+        {{--            }--}}
 
-{{--            .input_subscribe {--}}
-{{--                width: 275px;--}}
-{{--                height: 35px;--}}
-{{--            }--}}
-{{--            .subscribe_container{--}}
-{{--                min-height: 400px;--}}
-{{--            }--}}
+        {{--            .input_subscribe {--}}
+        {{--                width: 275px;--}}
+        {{--                height: 35px;--}}
+        {{--            }--}}
+        {{--            .subscribe_container{--}}
+        {{--                min-height: 400px;--}}
+        {{--            }--}}
+
         }
 
         @media all and (min-width: 767px) and (max-width: 993px) {
@@ -209,17 +223,23 @@
                 font-size: 24px;
                 line-height: 38px;
             }
-            .h4{
+
+            .h4 {
                 font-size: 1.125rem;
             }
-{{--            .single_img >img {--}}
+
+            .img_single {
+                transform: scale(.8);
+            }
+
+            {{--            .single_img >img {--}}
 {{--                transform: scale(0.6);--}}
 {{--            }--}}
 {{--            .single_img  {--}}
 {{--                height: 350px;--}}
 {{--            }--}}
 
-            .description_name {
+            .single_currency, .description_name {
                 font-size: 28px;
                 line-height: 38px;
             }
@@ -231,7 +251,7 @@
                 line-height: 29px;
             }
 
-{{--            .Rectangle {--}}
+            {{--            .Rectangle {--}}
 {{--                padding-right: 110px;--}}
 {{--            }--}}
 
@@ -248,12 +268,42 @@
                 height: 400px;
             }
 
+            .single_text {
+                font-size: 16px;
+                line-height: 140%;
+            }
+
         }
+
         @media all and (min-width: 412px) and (max-width: 768px) {
-.h4{
-    font-size: 0.9rem;
-}
-{{--            .follow_us,.about_us__container{--}}
+
+            .h4 {
+                font-size: 0.9rem;
+            }
+            .description_half, .single_description_text{
+                font-size: 12px;
+                line-height: 18px       ;
+            }
+            .img_single {
+                transform: scale(.6);
+            }
+
+
+            /*.font29_size24{*/
+            /*    font-size: 12px;*/
+            /*    line-height: 22px;*/
+            /*}*/
+            .single_currency {
+                font-size: 26px;
+                line-height: 31px;
+            }
+
+            .single_text {
+                font-size: 16px;
+                line-height: 18px;
+            }
+
+            {{--            .follow_us,.about_us__container{--}}
 {{--                display: block;--}}
 {{--            }--}}
 {{--            .single_img >img {--}}

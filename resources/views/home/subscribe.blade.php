@@ -7,7 +7,7 @@
                     <input class="input_subscribe pl-4 col-md-10  flex-fill" type="text" placeholder="name">
                     <input class="input_subscribe pl-4 col-md-10   flex-fill " type="text" placeholder="E-Mail">
                 </div>
-                <button class="subscribe border-0 center btn-danger p-0 col-md-8 col-sm-12 flex-fill mt-5"
+                <button class="subscribe border-0 center btn-danger p-0 col-md-8 col-sm-12 flex-fill mt-lg-3 mt-5"
                         type="button">Subscribe
                 </button>
             </form>
