@@ -13,10 +13,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 Route::resource('/home', HomeController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/cart', [HomeController::class, 'cart'])->name('cart');

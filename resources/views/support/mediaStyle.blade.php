@@ -11,33 +11,6 @@
             }
         }
 
-        /*@media all and (min-width: 994px) and (max-width: 1900px) {*/
-        {{--            .popular_categories_img {--}}
-        {{--                /*width: 130px;*/--}}
-        {{--                /*height: 130px;*/--}}
-        {{--            }--}}
- /*            .order_now {*/
-        /*                width: 130px;*/
-        /*                height: 50px;*/
-        /*            }*/
-
-        /*.hot_sales_imgs_container {*/
-        /*    width: 190px;*/
-        /*    height: 330px;*/
-        /*}*/
-
-        {{--            .hot_sales_img {--}}
-        {{--                width: calc(100% - 10px);--}}
-        {{--            }--}}
-
-        {{--            .hot_sales_img > img {--}}
-        {{--                width: inherit;--}}
-        {{--            }--}}
-        {{--            .single_container{--}}
-        {{--                width: 87%;--}}
-        {{--            }--}}
-        {{--        }--}}
-
 
 @media all and (min-width: 413px) and (max-width: 993px) {
             span[aria-current="page"] > span, span[aria-disabled="true"] > span, .rounded-md > a {
@@ -70,39 +43,6 @@
                 line-height: 18px;
             }
 
-
-            {{--            .vector_left_container, .vector_right_container, .search_container, .container_select {--}}
-{{--                display: none !important;--}}
-{{--            }--}}
-{{--            .img_zoom {--}}
-{{--                width: 100%;--}}
-{{--                flex-direction: row;--}}
-{{--            }--}}
-
-{{--            .single_img  {--}}
-{{--                width: 100%;--}}
-{{--            }--}}
-
-{{--            .single_container_1{--}}
-{{--                flex-direction: column ;--}}
-{{--                height: auto;--}}
-{{--            }--}}
-{{--            .img_container{--}}
-{{--                height: auto;--}}
-{{--                width: 100%;--}}
-{{--                flex-direction: column-reverse;--}}
-{{--            }--}}
-{{--            .single_img{--}}
-{{--                width: 100%;--}}
-{{--            }--}}
-{{--            .img_zoom > div {--}}
-{{--                width: 24%;--}}
-{{--            }--}}
-
-{{--            .pt-2 {--}}
-{{--                align-items: center !important;--}}
-{{--            }--}}
-
             .see_more {
                 position: absolute;
                 bottom: 200px;
@@ -119,43 +59,9 @@
                 height: auto;
             }
 
-        {{--            .img-fluid {--}}
-        {{--                width: 80px;--}}
-        {{--            }--}}
-
-        {{--            .menu {--}}
-        {{--                width: auto;--}}
-        {{--            }--}}
-
-        {{--            .navbar-expand-md, .navbar-nav {--}}
-        {{--                flex-direction: row !important;--}}
-        {{--            }--}}
-
-/*.hot_sales_container {*/
-            /*    width: 90%;*/
-            /*}*/
             .hot_sales_imgs_container {
-                /*width: 182px;*/
                 height: 250px;
             }
-
-            /*.hot_sales_img {*/
-            /*    width: calc(100% - 10px);*/
-            /*}*/
-            {{--            .hot_sales_img > img {--}}
-{{--                width: inherit;--}}
-{{--            }--}}
-
-{{--            .popular_text {--}}
-{{--                display: flex;--}}
-{{--                justify-content: center;--}}
-{{--            }--}}
-
-{{--            .media_menu_icons {--}}
-{{--                display: flex !important;--}}
-{{--                width: 150px;--}}
-{{--                justify-content: space-between;--}}
-{{--            }--}}
 
             .Rectangle1 {
                 background-image: url("{{asset('storage/Rectangle3.png')}}");
@@ -164,10 +70,6 @@
             .Rectangle2 {
                 background-image: url("{{asset('storage/Rectangle4.png')}}");
             }
-
-            {{--            .Rectangle {--}}
-{{--                padding-right: 40px;--}}
-{{--            }--}}
 
             .description_param {
                 font-size: 16px;
@@ -195,37 +97,10 @@
             .h-500 {
                 height: 300px;
             }
-
-            {{--            .popular_categories_container {--}}
-{{--                width: 90%;--}}
-{{--            }--}}
-
-{{--            .h-15 {--}}
-{{--                height: 15%;--}}
-{{--            }--}}
                 .subscribe_text {
                 font-size: 18px;
                 line-height: 22px;
             }
-
-        {{--            .subscribe {--}}
-        {{--                Width: 275px;--}}
-        {{--                Height: 37px;--}}
-        {{--            }--}}
-        {{--            .subscribe_form{--}}
-        {{--                height: 200px;--}}
-        {{--            }--}}
-        {{--            .subscribe_form_container{--}}
-        {{--                height: 240px;--}}
-        {{--            }--}}
-
-        {{--            .input_subscribe {--}}
-        {{--                width: 275px;--}}
-        {{--                height: 35px;--}}
-        {{--            }--}}
-        {{--            .subscribe_container{--}}
-        {{--                min-height: 400px;--}}
-        {{--            }--}}
 
         }
 
@@ -243,13 +118,6 @@
                 transform: scale(.8);
             }
 
-            {{--            .single_img >img {--}}
-{{--                transform: scale(0.6);--}}
-{{--            }--}}
-{{--            .single_img  {--}}
-{{--                height: 350px;--}}
-{{--            }--}}
-
             .single_currency, .description_name {
                 font-size: 28px;
                 line-height: 38px;
@@ -261,10 +129,6 @@
                 font-size: 24px;
                 line-height: 29px;
             }
-
-            {{--            .Rectangle {--}}
-{{--                padding-right: 110px;--}}
-{{--            }--}}
 
             .down {
                 font-size: 46px;
@@ -296,11 +160,10 @@
                 transform: scale(.6);
             }
 
+            .disp2-none:nth-child(1n+3){
+                display: none;
+            }
 
-            /*.font29_size24{*/
-            /*    font-size: 12px;*/
-            /*    line-height: 22px;*/
-            /*}*/
             .single_currency {
                 font-size: 26px;
                 line-height: 31px;
@@ -311,28 +174,6 @@
                 line-height: 18px;
             }
 
-            {{--            .follow_us,.about_us__container{--}}
-{{--                display: block;--}}
-{{--            }--}}
-{{--            .single_img >img {--}}
-{{--                transform: scale(0.6);--}}
-{{--            }--}}
-{{--            .single_img  {--}}
-{{--                height: 270px;--}}
-{{--            }--}}
-    {{--            .footer__list__container{--}}
-{{--                flex-direction: column-reverse;--}}
-{{--                height: 90%;--}}
-{{--            }--}}
-{{--            .about_us{--}}
-{{--                margin-bottom: 20px;--}}
-{{--            }--}}
-{{--            .footer__list{--}}
-{{--                height: 900px;--}}
-{{--            }--}}
-{{--            .follow_us{--}}
-{{--                margin-top: 55px;--}}
-{{--            }--}}
             .all_computers > div > div > a {
                 font-size: 14px;
                 line-height: 17px;

@@ -148,9 +148,9 @@
                     </ul>
                 </div>
             </div>
+
             {{--                   similar Items               --}}
 
-{{--*****************************************************--}}
             <div class="center w-100 container p-0 pt-4 pb-5 position-relative">
                 <div class="all_computers container">
                     <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4">Similar Items</h3></div>
@@ -165,10 +165,10 @@
                         </a></div>
                 </div>
 
-                <div class="evenly1 d-flex flex-row flex-wrap container p-0">
+                <div class="evenly d-flex flex-row flex-wrap container p-0">
 
                     @foreach($computers as $computer)
-                        <div class="col-xl-3 p-3   col-md-4 col-sm-6 ">
+                        <div class="col-xl-3 p-3   col-md-4 col-sm-6  disp2-none">
                             <div class="hot_sales_imgs_container just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
                                     @if($computer -> old_price)
@@ -209,7 +209,7 @@
                     @endforeach
                 </div>
             </div>
-{{--            **************************************************************--}}
+{{--  --}}
         </div>
         @stack('subscribe')
     </div>

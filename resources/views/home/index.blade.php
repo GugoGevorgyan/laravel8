@@ -54,9 +54,9 @@
                             <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
                         </a></div>
                 </div>
-                <div class="evenly d-flex flex-row flex-wrap ">
+                <div class="evenly d-flex flex-row flex-wrap">
                     @foreach($hot_sales as $sales)
-                        <div class="col-xl-3 p-3   col-md-4 col-sm-6 ">
+                        <div class="col-xl-3 p-3   col-md-4 col-sm-6  disp2-none">
                             <div class="hot_sales_imgs_container   just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
                                     @if($sales -> old_price)
@@ -122,7 +122,7 @@
                         </a></div>
                 </div>
 
-                <div class="evenly1 d-flex flex-row flex-wrap ">
+                <div class="evenly d-flex flex-row flex-wrap ">
 
                     @foreach($computers as $computer)
                         <div class="col-xl-3 p-3   col-md-4 col-sm-6 ">
@@ -166,7 +166,7 @@
                     @endforeach
                 </div>
 
-                <P class="justify-content-sm-center d-flex d-lg-block popular_text  pt-5 pb-4 container display-2">Brands we deliver</P>
+                <P class="justify-content-sm-center d-flex d-lg-block popular_text  pt-5 pb-4 container">Brands we deliver</P>
                 <div class="d-flex flex-row align-items-baseline justify-content-sm-between pb-sm-5 container overflow-hidden">
                     @foreach($brands as $brand)
                         <div class="brand container"><img  src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>

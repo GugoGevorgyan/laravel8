@@ -24,14 +24,14 @@ class HomeController extends Controller
                 'img' => 'computer.png',
                 'price' => 1500,
                 'old_price' => ''],
-            (object) ['name' => 'Samsung Earbuds',
+            (object)['name' => 'Samsung Earbuds',
                 'img' => 'computer.png',
                 'price' => 1500,
                 'old_price' => 2500],
             (object)['name' => 'Samsung Earbuds',
                 'img' => 'computer.png',
                 'price' => 1500,
-                    'old_price' => 2500],
+                'old_price' => 2500],
         ];
         $computers = [
             (object)['name' => 'Samsung Earbuds',
@@ -42,14 +42,14 @@ class HomeController extends Controller
                 'img' => 'computer.png',
                 'price' => 1500,
                 'old_price' => ''],
-            (object) ['name' => 'Samsung Earbuds',
+            (object)['name' => 'Samsung Earbuds',
                 'img' => 'computer.png',
                 'price' => 1500,
                 'old_price' => 2500],
             (object)['name' => 'Samsung Earbuds',
                 'img' => 'computer.png',
                 'price' => 1500,
-                    'old_price' => 2500],
+                'old_price' => 2500],
             (object)['name' => 'Samsung Earbuds',
                 'img' => 'computer.png',
                 'price' => 1500,
@@ -58,22 +58,22 @@ class HomeController extends Controller
                 'img' => 'computer.png',
                 'price' => 1500,
                 'old_price' => ''],
-            (object) ['name' => 'Samsung Earbuds',
+            (object)['name' => 'Samsung Earbuds',
                 'img' => 'computer.png',
                 'price' => 1500,
                 'old_price' => 2500],
             (object)['name' => 'Samsung Earbuds',
                 'img' => 'computer.png',
                 'price' => 1500,
-                    'old_price' => 2500],
+                'old_price' => 2500],
         ];
 //        $computers = Product::paginate(5);
 
-        $brands = ['image10.png','image15.png','image16.png','image17.png','image18.png','image19.png'];
+        $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
         $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
         $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];
-        return response()->view('home/index', ['imgs' => $imgs, 'figcaption' => $figcaption ,
-            'hot_sales'=>$hot_sales, 'computers'=>$computers, 'brands'=>$brands]);
+        return response()->view('home/index', ['imgs' => $imgs, 'figcaption' => $figcaption,
+            'hot_sales' => $hot_sales, 'computers' => $computers, 'brands' => $brands]);
     }
 
     /**
@@ -84,7 +84,8 @@ class HomeController extends Controller
     public function create()
     {
         $computers = Product::paginate(20);
-        return response()->view('home/product', ['computers'=>$computers]);
+        $similar = Product::paginate(4);
+        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar]);
     }
 
     /**
@@ -106,7 +107,9 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        $computers = Product::paginate(2);
+        $similar = Product::paginate(4);
+        return response()->view('home/favorites', ['computers' => $computers, 'similar' => $similar]);
     }
 
     /**
@@ -118,10 +121,10 @@ class HomeController extends Controller
     public function edit($id)
     {
         $computers = Product::paginate(4);
-        $colors = ['#F03A4B','#000000' ,'#2672FF','#74AB2E','#C31FEC','#EABD1C'];
+        $colors = ['#F03A4B', '#000000', '#2672FF', '#74AB2E', '#C31FEC', '#EABD1C'];
         $product = Product::find($id);
         return response()->view('home.productSinglePage',
-            ['product' => $product, 'colors'=>$colors, 'computers'=>$computers]);
+            ['product' => $product, 'colors' => $colors, 'computers' => $computers]);
     }
 
     /**
@@ -145,5 +148,12 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function cart()
+    {
+        $computers = Product::paginate(2);
+        $similar = Product::paginate(4);
+        return response()->view('home/cart', ['computers' => $computers, 'similar' => $similar]);
     }
 }

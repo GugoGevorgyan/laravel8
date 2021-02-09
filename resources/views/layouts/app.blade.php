@@ -22,10 +22,10 @@
     <!-- Styles -->
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    @include('support.style')
-    @include('support.mediaStyle')
-    @stack('style')
-    @stack('mediaStyle')
+{{--    @include('support.style')--}}
+{{--    @include('support.mediaStyle')--}}
+{{--    @stack('style')--}}
+{{--    @stack('mediaStyle')--}}
 
 </head>
 <body>
