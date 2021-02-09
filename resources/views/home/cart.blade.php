@@ -40,10 +40,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="container p-0 col-2 m-0">
+                        <div class="container p-0 col-3 m-0">
                                 <div class="d-flex flex-row justify-content-between">
                                     {{--                                                @if($computer -> old_price)--}}
-                                    <div class="yes_sale position-relative center"> Sale</div>
+                                    <div class="yes_sale text-white bg-danger position-relative center"> Sale</div>
                                     {{--                                                @endif--}}
                                     <div class="heart position-relative">
                                         <img class="img_heart"

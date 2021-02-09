@@ -137,12 +137,8 @@ p {
 .yes_sale {
     Width: 70px;
     Height: 30px;
-    background: #E11D1D;
-
     font-weight: 600;
     left: 20px;
-    position: absolute;
-    color: #FFFFFF;
 }
 
 .hot_sales_imgs_container {
@@ -499,6 +495,21 @@ span[aria-current="page"] > span {
 
 .rounded-md > a:nth-child(6n+3) {
     display: none;
+}
+.z-index-n1{
+    z-index: -1;
+}
+
+.radio_input:checked {
+    padding: 5px;
+    margin-right: 2.5px;
+    border-radius: 50%;
+    background: black;
+    color: black;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    outline: none;
 }
 
 @media all and (min-width: 994px) and (max-width: 1200px) {

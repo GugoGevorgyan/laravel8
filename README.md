@@ -1,5 +1,6 @@
 composer install
-copy .env.example and create .env file or "copy .env.example .env"
+
+1.copy .env.example and create .env file or "copy .env.example .env"
 php artisan storage:link
 npm install
 npm run dev

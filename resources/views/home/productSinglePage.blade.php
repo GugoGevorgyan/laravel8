@@ -3,9 +3,9 @@
 @section('content')
     <div class=" center">
         <div class="container-md container-fluid">
-            <div class="d-flex flex-lg-row flex-column flex-wrap pt-5 pb-5 justify-content-between">
+            <div class="d-flex flex-lg-row flex-column flex-wrap pt-5 pb-5 justify-content-between position-relative z-index-n1">
                 <div class="d-flex flex-lg-row flex-column-reverse flex-wrap  col-lg-7 col-12 p-0">
-                    <div class="center flex-lg-column flex-row  col-lg-3 col-12 p-0 ">
+                    <div class="z-10 center flex-lg-column flex-row  col-lg-3 col-12 p-0 ">
                         <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100 float-right">
                                 <img class="col-12 p-0 float-right" src="{{asset('storage/accesuar_2.png')}}" alt="">
@@ -41,7 +41,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-5 col-12 pt-5">
+                <div class="col-lg-5 col-12 pt-5 pt-lg-0">
                     <div class="d-flex flex-row flex-wrap justify-content-between pb-4">
                         <div class="">
                             <p class="font29_size24 uppercase">Beats by dr. dre</p>
@@ -172,7 +172,7 @@
                             <div class="hot_sales_imgs_container just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
                                     @if($computer -> old_price)
-                                        <div class="yes_sale center"> Sale</div>
+                                        <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                     @endif
                                     <div class="heart">
                                         <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"

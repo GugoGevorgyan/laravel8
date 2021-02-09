@@ -7,7 +7,7 @@
 
             <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0 p-0">
                 <li class="media_heart container">
-                    <a href="">
+                    <a href="#">
                         <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}" alt="">
                     </a>
                 </li>
@@ -71,25 +71,32 @@
 
                         <div class="dropdown-menu" aria-labelledby="DropdownMenuLink" id="hidden_menu">
                             <div class="dropdown-item flex_column just_around d-flex ">
+                                <a href="{{asset('/home/favorites')}}">
                                 <div class="flex_row d-flex  align-items-center menu_content">
                                     <img class="menu_icon" src="{{asset('storage/Cart-with-plus.png')}}"
                                          alt="Favorites">
                                     <p class="menu_txt text-dark">Favorites</p>
                                 </div>
+                                </a>
+                                <a href="{{asset('/cart')}}">
                                 <div class="flex_row d-flex  align-items-center menu_content">
-                                    <img class="menu_icon" src="{{asset('storage/add-to-favorites.png')}}" alt="Cart">
+
+                                        <img class="menu_icon" src="{{asset('storage/add-to-favorites.png')}}" alt="Cart">
+
+
                                     <p class="menu_txt text-dark">Cart</p>
                                 </div>
+                                </a>
                                 <div class="flex_row  justify-content-between menu_content">
                                     <p class="menu_txt text-dark"> Currency</p>
                                     <div class="center">
-                                        <div class="flex_row  menu_img">
-                                            <input type="radio" id="amd" name="Currency" value="AMD">
+                                        <div class="menu_img">
+                                            <input type="radio" id="amd" name="Currency" value="AMD" class="radio_input">
                                             <label class="menu_txt text-dark" for="amd">AMD</label>
                                         </div>
 
-                                        <div class="flex_row menu_img">
-                                            <input type="radio" id="usd" name="Currency" value="USD">
+                                        <div class="menu_img">
+                                            <input type="radio" id="usd" name="Currency" value="USD" class="radio_input">
                                             <label class="menu_txt text-dark" for="usd">USD</label>
                                         </div>
                                     </div>
@@ -98,13 +105,13 @@
                                 <div class="flex_row justify-content-between menu_content">
                                     <p class="menu_txt text-dark"> Language</p>
                                     <div class="center">
-                                        <div class="flex_row menu_img">
-                                            <input type="radio" id="usa" name="Language" value="usa">
+                                        <div class="menu_img">
+                                            <input type="radio" id="usa" name="Language" value="usa" class="radio_input">
                                             <label for="usa"><img src="{{asset('storage/usa.png')}}" alt="usa"></label>
                                         </div>
 
-                                        <div class="flex_row menu_img">
-                                            <input type="radio" id="arm" name="Language" value="arm">
+                                        <div class="menu_img">
+                                            <input type="radio" id="arm" name="Language" value="arm" class="radio_input">
                                             <label for="arm"><img src="{{asset('storage/arm.png')}}" alt="arm"></label>
                                         </div>
 

@@ -10,7 +10,7 @@
                         <div class="hot_sales_imgs_container just_around ">
                             <div class="d-flex flex-row position-relative h-15">
                                 @if($computer -> old_price)
-                                    <div class="yes_sale center"> Sale</div>
+                                    <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                 @endif
                                 <div class="heart">
                                     <img class="img_heart" src="{{asset('storage/favorites_black.png')}}"
@@ -72,7 +72,7 @@
                             <div class="hot_sales_imgs_container just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
                                     @if($computer -> old_price)
-                                        <div class="yes_sale center"> Sale</div>
+                                        <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                     @endif
                                     <div class="heart">
                                         <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
