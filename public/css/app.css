@@ -2,7 +2,13 @@
 .navbar {
     filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.25));
 }
-
+.appearance{
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 1px solid;
+    outline: none;
+}
 .subscribe_container,
 .no_repeat, .menu_ellipse, .Rectangle {
     background-repeat: no-repeat;
@@ -159,9 +165,8 @@ p {
 }
 
 .price_sale {
-
     text-transform: capitalize;
-    color: #E11D1D;
+    /*color: #E11D1D;*/
     margin: 0 10px 0 0;
 }
 
@@ -237,7 +242,7 @@ p {
 
 .subscribe {
     height: 60px;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
     font-weight: 600;
 }
@@ -423,8 +428,8 @@ span.shadow-sm{
     min-height: 50px;
 }
 
-.color > div {
-    box-shadow: 02px 6px rgba(0, 0, 0, 0.1);
+ .color > div {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .color > div:hover, .color > div:focus {
@@ -512,6 +517,7 @@ span[aria-current="page"] > span {
     outline: none;
 }
 
+
 @media all and (min-width: 994px) and (max-width: 1200px) {
     .nav-link {
         font-size: 14px;
@@ -531,6 +537,13 @@ span[aria-current="page"] > span {
         font-size: 15px;
         line-height: 19px;
         margin: 2px;
+    }
+
+    .text-cart {
+        font-size: 10px !important;
+        line-height: 12px !important;
+        font-weight: normal;
+        color: #747474;
     }
 
     .font29_size24 {
@@ -554,7 +567,7 @@ span[aria-current="page"] > span {
         overflow-y: hidden;
     }
 
-    .description_half, .single_description_text {
+    .old_price, .description_half, .single_description_text {
         font-size: 12px;
         line-height: 18px;
     }
@@ -686,14 +699,18 @@ span[aria-current="page"] > span {
         line-height: 31px;
     }
 
-    .single_text {
+    .price_sale, .single_text {
         font-size: 16px;
         line-height: 18px;
     }
 
-    .all_computers > div > div > a {
+    .summary_content,.all_computers > div > div > a {
         font-size: 14px;
         line-height: 17px;
+    }
+
+    div.shadow_none {
+        box-shadow: none !important;
     }
 
 }

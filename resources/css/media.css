@@ -19,6 +19,13 @@
         margin: 2px;
     }
 
+    .text-cart {
+        font-size: 10px !important;
+        line-height: 12px !important;
+        font-weight: normal;
+        color: #747474;
+    }
+
     .font29_size24 {
         font-size: 18px;
         line-height: 22px;
@@ -40,7 +47,7 @@
         overflow-y: hidden;
     }
 
-    .description_half, .single_description_text {
+    .old_price, .description_half, .single_description_text {
         font-size: 12px;
         line-height: 18px;
     }
@@ -172,14 +179,18 @@
         line-height: 31px;
     }
 
-    .single_text {
+    .price_sale, .single_text {
         font-size: 16px;
         line-height: 18px;
     }
 
-    .all_computers > div > div > a {
+    .summary_content,.all_computers > div > div > a {
         font-size: 14px;
         line-height: 17px;
+    }
+
+    div.shadow_none {
+        box-shadow: none !important;
     }
 
 }
