@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+{{--    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">--}}
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,500,800" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
@@ -22,11 +22,6 @@
     <!-- Styles -->
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-{{--    @include('support.style')--}}
-{{--    @include('support.mediaStyle')--}}
-{{--    @stack('style')--}}
-{{--    @stack('mediaStyle')--}}
-
 </head>
 <body>
     <div id="app">

@@ -156,4 +156,9 @@ class HomeController extends Controller
         $similar = Product::paginate(4);
         return response()->view('home/cart', ['computers' => $computers, 'similar' => $similar]);
     }
+
+    public function shipping()
+    {
+        return view('home/shipping');
+    }
 }
