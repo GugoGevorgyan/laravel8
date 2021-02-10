@@ -57,10 +57,10 @@
                 </div>
                 <div class="container pb-4">
                     <div class="line"></div>
-                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">
+                    <div class="vector_left_container  d-lg-flex d-none center"><a href="#">
                             <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
                         </a></div>
-                    <div class="vector_right_container center d-md-flex d-none"><a href="#">
+                    <div class="vector_right_container center d-lg-flex d-none"><a href="#">
                             <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
                         </a></div>
                 </div>
