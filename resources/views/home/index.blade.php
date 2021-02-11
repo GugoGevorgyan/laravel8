@@ -4,17 +4,16 @@
 @section('content')
     <div class="center">
         @stack('macbook')
-        <div class="evenly pt-5 pb-5 center container-md container-fluid">
+        <div class="evenly p-0 pt-5 pb-md-5 center container-md container-fluid">
             <h2 class="popular_text">Popular Categories</h2>
 
-            <div class="d-flex flex-row d-flex flex-row justify-content-between pt-5 flex-wrap container-md container-fluid">
+            <div class="d-flex flex-row pt-5 flex-wrap container">
                 @for ($i = 0; $i < count($imgs) ; $i++)
-                    <figure class="container col-xl-2 pl-2 pr-2  col-md-4 col-sm-6">
-                        <div class="d-flex rounded-circle  popular_categories_img center container pt-2 pb-1 h-100">
-                            <img class="container" src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
+                    <figure class="col-xl-2 p-0 col-md-4 col-sm-6 ">
+                        <div class="d-flex rounded-circle  popular_categories_img center container">
+                            <img src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
                         </div>
-
-                        <figcaption class="d-flex justify-content-center">{{$figcaption[$i]}}</figcaption>
+                        <figcaption class="d-flex justify-content-center pt-2 pt-md-4 ">{{$figcaption[$i]}}</figcaption>
                     </figure>
                 @endfor
 
@@ -56,7 +55,7 @@
                 </div>
                 <div class="evenly d-flex flex-row flex-wrap">
                     @foreach($hot_sales as $sales)
-                        <div class="col-xl-3 p-3   col-md-4 col-sm-6  disp2-none">
+                        <div class="col-xl-3 p-md-3 p-2  col-md-4 col-sm-6  disp2-none">
                             <div class="hot_sales_imgs_container   just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
                                     @if($sales -> old_price)
@@ -87,7 +86,9 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around container pb-1">
-                                    <button type="button" class="order_now   bg-dark   center sales_name text-white col-md-9 col-10 p-0">ORDER NOW
+                                    <button type="button"
+                                            class="order_now   bg-dark   center sales_name text-white col-md-9 col-10 p-0">
+                                        ORDER NOW
                                     </button>
                                     <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
                                 </div>
@@ -107,7 +108,7 @@
                             <a class="p-0" href="#">All in one</a>
                             <a class="p-0" href="#">Stacionary</a>
                         </div>
-                        <div  class="see_more ">
+                        <div class="see_more ">
                             <a class="  " href="{{asset('home/create')}}">see more</a>
                         </div>
                     </div>
@@ -125,7 +126,7 @@
                 <div class="evenly d-flex flex-row flex-wrap ">
 
                     @foreach($computers as $computer)
-                        <div class="col-xl-3 p-3   col-md-4 col-sm-6 ">
+                        <div class="col-xl-3 p-md-3 p-2 col-md-4 col-sm-6 ">
                             <div class="hot_sales_imgs_container just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
                                     @if($sales -> old_price)
@@ -154,7 +155,9 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around container">
-                                    <button type="button" class="order_now bg-dark center sales_name text-white  col-10 col-md-9 p-0">ORDER NOW
+                                    <button type="button"
+                                            class="order_now bg-dark center sales_name text-white  col-10 col-md-9 p-0">
+                                        ORDER NOW
                                     </button>
                                     <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
 
@@ -166,10 +169,12 @@
                     @endforeach
                 </div>
 
-                <P class="justify-content-sm-center d-flex d-lg-block popular_text  pt-5 pb-4 container">Brands we deliver</P>
+                <P class="justify-content-sm-center d-flex d-lg-block popular_text  pt-5 pb-4 container">Brands we
+                    deliver</P>
                 <div class="d-flex flex-row align-items-baseline justify-content-sm-between pb-sm-5 container overflow-hidden">
                     @foreach($brands as $brand)
-                        <div class="brand container"><img  src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
+
+                            <div class="brand container "><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
 
                     @endforeach
                 </div>
@@ -178,4 +183,6 @@
         </div>
         @stack('subscribe')
     </div>
+
+
 @endsection

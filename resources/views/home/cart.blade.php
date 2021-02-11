@@ -2,10 +2,10 @@
 @include('home.subscribe')
 @section('content')
     <div class="center">
-        <div class="container-md container-fluid pt-lg-5">
+        <div class="container-md container-fluid pt-lg-5 p-0">
             <div class="container col-12 m-0 pb-lg-5 p-0 d-flex flex-lg-row flex-column position-static">
                 <div class="col-lg-8 col-12 m-0 p-0 position-static d-lg-block d-flex flex-row">
-                    <div class="p-3 col-lg-12 col-6 m-0 position-static">
+                    <div class="pt-3 pb-2 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">
                         <div class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0
                                     pt-lg-4 pb-lg-4 m-0 rounded shadow position-static">
                             <div class="container col-lg-1 pb-lg-0 pb-4 col-12 m-0 center order-lg-0 order-2">
@@ -40,7 +40,7 @@
                             <div class="container pl-3 pr-2 p-0 col-lg-3 col-12 m-0 position-static order-lg-3">
                                 <div class="d-lg-flex d-none flex-row justify-content-between">
                                     <div class="font_16_20 pr-3 pl-3 text-white bg-danger center"> Sale</div>
-                                    <div class="">
+                                    <div class="pr-3">
                                         <img class=""
                                              src="{{asset('storage/add-to-favorites.png')}}"
                                              alt="favorites">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     {{--                    two--}}
-                    <div class="p-3 col-lg-12 col-6 m-0 position-static">
+                    <div class="pt-3 pb-3 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">
                         <div
                             class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0 pt-lg-4 pb-lg-4 m-0 rounded shadow position-static">
                             <div class="container col-lg-1 pb-lg-0 pb-4 col-12 m-0 center order-lg-0 order-2">
@@ -86,7 +86,7 @@
                             <div class="container pl-3 pr-2 p-0 col-lg-3 col-12 m-0 position-static order-lg-3">
                                 <div class="d-lg-flex d-none flex-row justify-content-end">
                                     <div class="d-none font_16_20 pr-3 pl-3 text-white bg-danger center"> Sale</div>
-                                    <div class="">
+                                    <div class="pr-3">
                                         <img class=""
                                              src="{{asset('storage/add-to-favorites.png')}}"
                                              alt="favorites">
@@ -101,7 +101,7 @@
 
 {{--                Summary     --}}
                 <div class="container col-lg-4 col-12 m-0 p-0 position-static">
-                    <div class="container-lg container-fluid p-lg-3 m-0">
+                    <div class="container-lg container-fluid  m-0 pt-lg-3 pb-lg-3 pr-lg-0 pl-lg-3">
                         <div class="container shadow shadow_none pr-4 pl-4">
                             <div class="pt-4 pb-3">
                                 <h2 class="font-weight-bold m-0 font29_size24">Summary</h2>

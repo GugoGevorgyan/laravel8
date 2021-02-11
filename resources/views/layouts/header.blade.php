@@ -16,12 +16,31 @@
                         <img class="img_heart" src="{{asset('storage/Cart-with-plus.png')}}" alt="">
                     </a>
                 </li>
-                <li class="container pr-0">
-                    <a class="nav-link" id="dropDownMenMedia" role="button"
+                <li class="container pr-0 nav-item dropdown">
+                    <a class="nav-link" id="dropDownMenuMedia" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-                            <img class="img_heart" src="{{asset('storage/menu-alt-2.png')}}" alt="">
+                        <img class="img_heart" src="{{asset('storage/menu-alt-2.png')}}" alt="">
                     </a>
-
+                    <div class="dropdown-menu" aria-labelledby="dropDownMenuMedia">
+                        <ul class="dropdown-item">
+                            <li><a tabindex="-1" href="#">HTML</a></li>
+                            <li><a tabindex="-1" href="#">CSS</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                                    <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">3rd level dropdown</a></li>
+                                            <li><a href="#">3rd level dropdown</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
 
@@ -72,31 +91,34 @@
                         <div class="dropdown-menu" aria-labelledby="DropdownMenuLink" id="hidden_menu">
                             <div class="dropdown-item flex_column just_around d-flex ">
                                 <a href="{{asset('/home/favorites')}}">
-                                <div class="flex_row d-flex  align-items-center menu_content">
-                                    <img class="menu_icon" src="{{asset('storage/Cart-with-plus.png')}}"
-                                         alt="Favorites">
-                                    <p class="menu_txt text-dark">Favorites</p>
-                                </div>
+                                    <div class="flex_row d-flex  align-items-center menu_content">
+                                        <img class="menu_icon" src="{{asset('storage/Cart-with-plus.png')}}"
+                                             alt="Favorites">
+                                        <p class="menu_txt text-dark">Favorites</p>
+                                    </div>
                                 </a>
                                 <a href="{{asset('/cart')}}">
-                                <div class="flex_row d-flex  align-items-center menu_content">
+                                    <div class="flex_row d-flex  align-items-center menu_content">
 
-                                        <img class="menu_icon" src="{{asset('storage/add-to-favorites.png')}}" alt="Cart">
+                                        <img class="menu_icon" src="{{asset('storage/add-to-favorites.png')}}"
+                                             alt="Cart">
 
 
-                                    <p class="menu_txt text-dark">Cart</p>
-                                </div>
+                                        <p class="menu_txt text-dark">Cart</p>
+                                    </div>
                                 </a>
                                 <div class="flex_row  justify-content-between menu_content">
                                     <p class="menu_txt text-dark"> Currency</p>
                                     <div class="center">
                                         <div class="menu_img">
-                                            <input type="radio" id="amd" name="Currency" value="AMD" class="radio_input">
+                                            <input type="radio" id="amd" name="Currency" value="AMD"
+                                                   class="radio_input">
                                             <label class="menu_txt text-dark" for="amd">AMD</label>
                                         </div>
 
                                         <div class="menu_img">
-                                            <input type="radio" id="usd" name="Currency" value="USD" class="radio_input">
+                                            <input type="radio" id="usd" name="Currency" value="USD"
+                                                   class="radio_input">
                                             <label class="menu_txt text-dark" for="usd">USD</label>
                                         </div>
                                     </div>
@@ -106,12 +128,14 @@
                                     <p class="menu_txt text-dark"> Language</p>
                                     <div class="center">
                                         <div class="menu_img">
-                                            <input type="radio" id="usa" name="Language" value="usa" class="radio_input">
+                                            <input type="radio" id="usa" name="Language" value="usa"
+                                                   class="radio_input">
                                             <label for="usa"><img src="{{asset('storage/usa.png')}}" alt="usa"></label>
                                         </div>
 
                                         <div class="menu_img">
-                                            <input type="radio" id="arm" name="Language" value="arm" class="radio_input">
+                                            <input type="radio" id="arm" name="Language" value="arm"
+                                                   class="radio_input">
                                             <label for="arm"><img src="{{asset('storage/arm.png')}}" alt="arm"></label>
                                         </div>
 

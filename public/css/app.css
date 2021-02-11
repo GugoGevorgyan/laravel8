@@ -112,10 +112,11 @@ p {
 }
 
 .popular_categories_img {
-    width: 160px !important;
-    height: 160px;
+    width: 170px !important;
+    height: 170px;
     border: 1px solid #DEDEDE;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 .flex_row {
@@ -677,6 +678,10 @@ span[aria-current="page"] > span {
         font-size: 16px;
         line-height: 140%;
     }
+    .popular_categories_img {
+        width: 160px !important;
+        height: 160px;
+    }
 
 }
 
@@ -703,7 +708,10 @@ span[aria-current="page"] > span {
         font-size: 16px;
         line-height: 18px;
     }
-
+    .popular_categories_img {
+        width: 150px !important;
+        height: 150px;
+    }
     .summary_content,.all_computers > div > div > a {
         font-size: 14px;
         line-height: 17px;

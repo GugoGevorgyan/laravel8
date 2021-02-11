@@ -157,6 +157,10 @@
         font-size: 16px;
         line-height: 140%;
     }
+    .popular_categories_img {
+        width: 160px !important;
+        height: 160px;
+    }
 
 }
 
@@ -183,7 +187,10 @@
         font-size: 16px;
         line-height: 18px;
     }
-
+    .popular_categories_img {
+        width: 150px !important;
+        height: 150px;
+    }
     .summary_content,.all_computers > div > div > a {
         font-size: 14px;
         line-height: 17px;

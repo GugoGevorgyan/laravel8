@@ -32,6 +32,9 @@
         </main>
         @include('layouts.footer')
         @stack('footer')
+
+        </div>
+     
     </div>
 </body>
 </html>
