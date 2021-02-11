@@ -23,21 +23,43 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropDownMenuMedia">
                         <ul class="dropdown-item">
-                            <li><a tabindex="-1" href="#">HTML</a></li>
-                            <li><a tabindex="-1" href="#">CSS</a></li>
                             <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                                <a tabindex="-1" href="#">Computers  <span class="caret"></span> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                                    <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                                    <li class="dropdown-submenu">
-                                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">3rd level dropdown</a></li>
-                                            <li><a href="#">3rd level dropdown</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a tabindex="-1" href="#">Headphones</a></li>
+                                    <li><a tabindex="-1" href="#">Airpods</a></li>
+                                    <li><a tabindex="-1" href="#">Earbuds</a></li>
+                                    <li><a tabindex="-1" href="#">Speakers</a></li>
                                 </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Printers  <span class="caret"></span> </a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#">Headphones</a></li>
+                                    <li><a tabindex="-1" href="#">Airpods</a></li>
+                                    <li><a tabindex="-1" href="#">Earbuds</a></li>
+                                    <li><a tabindex="-1" href="#">Speakers</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">Accesories <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#">Headphones</a></li>
+                                    <li><a tabindex="-1" href="#">Airpods</a></li>
+                                    <li><a tabindex="-1" href="#">Earbuds</a></li>
+                                    <li><a tabindex="-1" href="#">Speakers</a></li>
+                                </ul>
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    <li><a tabindex="-1" href="#">2nd level dropdown</a></li>--}}
+{{--                                    <li><a tabindex="-1" href="#">2nd level dropdown</a></li>--}}
+{{--                                    <li class="dropdown-submenu">--}}
+{{--                                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>--}}
+{{--                                        <ul class="dropdown-menu">--}}
+{{--                                            <li><a href="#">3rd level dropdown</a></li>--}}
+{{--                                            <li><a href="#">3rd level dropdown</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
                             </li>
                         </ul>
                     </div>
