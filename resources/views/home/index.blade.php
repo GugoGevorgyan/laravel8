@@ -9,9 +9,9 @@
 
             <div class="d-flex flex-row d-flex flex-row justify-content-between pt-5 flex-wrap container-md container-fluid">
                 @for ($i = 0; $i < count($imgs) ; $i++)
-                    <figure class="col-xl-2 p-0 col-md-4 col-sm-6 ">
-                        <div class="d-flex rounded-circle  popular_categories_img center container">
-                            <img src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
+                    <figure class="container col-xl-2 pl-2 pr-2  col-md-4 col-sm-6">
+                        <div class="d-flex rounded-circle  popular_categories_img center container pt-2 pb-1 h-100">
+                            <img class="container" src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
                         </div>
 
                         <figcaption class="d-flex justify-content-center">{{$figcaption[$i]}}</figcaption>

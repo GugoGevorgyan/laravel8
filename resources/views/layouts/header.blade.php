@@ -1,6 +1,6 @@
 @push('header')
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container-lg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm pb-3">
+        <div class="container-lg pb-1">
 
             <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid navbar-brand" alt="logo">
             <!-- @media -->
@@ -53,8 +53,8 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="col-6 navbar-nav  justify-content-around ">
-                    <li class="search overflow-hidden col-7 p-0 border border-dark">
+                <ul class="col-6 p-0 pl-3 pr-1 navbar-nav  justify-content-around ">
+                    <li class="container search overflow-hidden col-9 pb-1 pt-2 border border-dark">
                         <div class="input-group rounded">
                             <input type="search" class="form-control border-0 rounded" placeholder="Search"
                                    aria-label="Search"
@@ -64,7 +64,7 @@
                             </span>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown col-1 p-0">
                         <a class="nav-link menu_ellipse h-100" href="#" id="DropdownMenuLink" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         </a>
