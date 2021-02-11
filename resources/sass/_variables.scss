@@ -19,7 +19,8 @@ $teal: #4dc0b5;
 $cyan: #6cb2eb;
 $gray-100: #DEDEDE;
 $gray-800: #333333;
-
+$gray-600: #000000;
+$gray-200: #F5F5F5;
 
 $grid-breakpoints: (
     xs: 0,
@@ -32,15 +33,20 @@ $grid-breakpoints: (
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
-$border-radius:               .31rem !default;
+$border-radius: .31rem !default;
 $container-max-widths: (
     sm: 374px,
     md: 720px,
     lg: 960px,
     xl: 1170px
 ) !default;
-$display4-size:               2.25rem !default ;
-$display3-size:               2.81rem !default;
-$display2-size:               4rem !default;
-$h1-font-size:                $font-size-base * 2.8 !default;
-
+$display4-size: 2.25rem !default;
+$display3-size: 2.81rem !default;
+$display2-size: 4rem !default;
+$h1-font-size: $font-size-base * 2.8 !default;
+.text-muted {
+    text-decoration: none !important;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+}

@@ -1,5 +1,5 @@
 @push('header')
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm pb-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm pb-3 m-0">
         <div class="container-lg pb-1">
 
             <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid navbar-brand" alt="logo">
@@ -16,50 +16,39 @@
                         <img class="img_heart" src="{{asset('storage/Cart-with-plus.png')}}" alt="">
                     </a>
                 </li>
-                <li class="container pr-0 nav-item dropdown">
+                <li class="container pr-0 nav-item dropdown dropleft">
                     <a class="nav-link" id="dropDownMenuMedia" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
                         <img class="img_heart" src="{{asset('storage/menu-alt-2.png')}}" alt="">
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="dropDownMenuMedia">
-                        <ul class="dropdown-item">
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="#">Computers  <span class="caret"></span> </a>
-                                <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="#">Headphones</a></li>
-                                    <li><a tabindex="-1" href="#">Airpods</a></li>
-                                    <li><a tabindex="-1" href="#">Earbuds</a></li>
-                                    <li><a tabindex="-1" href="#">Speakers</a></li>
+                    <div class="dropdown-menu p-0" aria-labelledby="dropDownMenuMedia">
+                        <ul class="dropdown-item  p-0">
+                            <li class="dropdown-submenu p-0">
+                                <a class="text-muted media_subMenu pb-3 pt-3" tabindex="-1" href="#">Computers  <span class="fa fa-angle-right"></span> </a>
+                                <ul class="dropdown-menu p-0 position-static float-none">
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="#">Printers  <span class="caret"></span> </a>
-                                <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="#">Headphones</a></li>
-                                    <li><a tabindex="-1" href="#">Airpods</a></li>
-                                    <li><a tabindex="-1" href="#">Earbuds</a></li>
-                                    <li><a tabindex="-1" href="#">Speakers</a></li>
+                            <li class="dropdown-submenu p-0">
+                                <a class="pb-3 pt-3 text-muted media_subMenu" tabindex="-1" href="#">Printers  <span class="fa fa-angle-right"></span> </a>
+                                <ul class="dropdown-menu p-0 position-static float-none">
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">Accesories <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="#">Headphones</a></li>
-                                    <li><a tabindex="-1" href="#">Airpods</a></li>
-                                    <li><a tabindex="-1" href="#">Earbuds</a></li>
-                                    <li><a tabindex="-1" href="#">Speakers</a></li>
+                            <li class="dropdown-submenu p-0">
+                                <a class="pb-3 pt-3  text-muted media_subMenu" tabindex="-1" href="#">Accesories <span class="fa fa-angle-right"></span></a>
+                                <ul class="dropdown-menu position-static float-none">
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>
                                 </ul>
-{{--                                <ul class="dropdown-menu">--}}
-{{--                                    <li><a tabindex="-1" href="#">2nd level dropdown</a></li>--}}
-{{--                                    <li><a tabindex="-1" href="#">2nd level dropdown</a></li>--}}
-{{--                                    <li class="dropdown-submenu">--}}
-{{--                                        <a class="test" href="#">Another dropdown <span class="caret"></span></a>--}}
-{{--                                        <ul class="dropdown-menu">--}}
-{{--                                            <li><a href="#">3rd level dropdown</a></li>--}}
-{{--                                            <li><a href="#">3rd level dropdown</a></li>--}}
-{{--                                        </ul>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
                             </li>
                         </ul>
                     </div>
