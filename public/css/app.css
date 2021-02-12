@@ -530,9 +530,7 @@ li.dropdown-submenu {
     display: block;
     background-color: #F5F5F5;
 }
-/*.dropdown-item:hover, .dropdown-item:focus {*/
-/*    background-color: #F5F5F5 !important;*/
-/*}*/
+
 .text-muted:visited {
     font-weight: 600;
 }
@@ -592,11 +590,16 @@ li.dropdown-submenu {
         overflow-y: hidden;
     }
 
-    .old_price, .description_half, .single_description_text {
+   .shipping_text, .old_price, .description_half, .single_description_text {
         font-size: 12px;
         line-height: 18px;
     }
-
+    .shipping_text{
+        line-height: 15px!important;
+    }
+    .shipping_text select{
+        height: 14px!important;
+    }
     .see_more {
         position: absolute;
         bottom: 200px;

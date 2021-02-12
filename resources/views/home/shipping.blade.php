@@ -26,98 +26,91 @@
 <body>
 <div id="app">
     <main>
-        <div class="container col-8 p-0">
-            <div class=" col-7 m-0">
+        <div class="container col-12 p-1">
+            <div class=" col-12 p-3 m-0">
                 <div>
                     <img src="" alt="">
                 </div>
-                <form class="center pr-5 pl-4" action="">
-                    <div class="pr-4 pl-4 bg-white">
+                <form class="center pr-4 pl-4 border bg-white shipping_text" action="">
+                    <div class="mr-1 ml-1 bg-white">
                         <div class="form-row center">
                             <div class="col-12 p-0 m-0 form-row">
-                                <div class="form-group pr-2  m-0 col-6">
-                                    <label for="firstName" class="d-block"></label>
-                                    <input type="text"
-                                           class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100"
-                                           id="firstName" placeholder="First Name">
+                                <div class="form-group pr-2 pl-2 m-0 col-6">
+                                    <div class="border-bottom w-100 pt-3 pl-2">
+                                        <label for="firstName" class="ml-1 mt-1 m-0 d-block">First Name</label>
+                                        <input type="text" class="d-block border-0 w-100 p-0 m-0" id="firstName"
+                                               placeholder="">
+                                    </div>
                                 </div>
-                                <div class="form-group pl-2 m-0 col-6">
-                                    <label for="lastName" class="d-block"></label>
-                                    <input type="text"
-                                           class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100"
-                                           id="lastName" placeholder="Last Name">
+                                <div class="form-group pl-2 pr-2 m-0 col-6">
+                                    <div class="border-bottom w-100 pt-3 pl-2 text-left">
+                                        <label for="lastName" class="ml-1 mt-1 m-0 d-block">Last Name</label>
+                                        <input type="text" class="d-block border-0 w-100 p-0 m-0" id="lastName"
+                                               placeholder="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row center">
                             <div class="col-12 p-0 m-0 form-row">
-                            <div class="form-group pr-2 m-0 col-6">
-                                <label for="country"></label>
-                                <select id="country" class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100">
-                                    <option selected>Country</option>
-                                    <option>...</option>
-                                </select>
+                                <div class="form-group pr-2 pl-2 m-0 col-6">
+                                    <div class="border-bottom w-100 pt-3 pb-3 pl-2">
+                                        <label for="country" class="ml-1 mt-1 m-0 d-block"></label>
+                                        <select id="country" class="col-10 d-block bg-white border-0 w-100 p-0 m-0">
+                                            <option selected>Country</option>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group pl-2 pr-2 m-0 col-6">
+                                    <div class="border-bottom w-100 pt-3 pb-3 pl-2 text-left">
+                                        <label for="state" class="ml-1 mt-1 m-0 d-block"></label>
+                                        <select id="state" class="col-10 d-block bg-white border-0 w-100 p-0 m-0">
+                                            <option selected>State</option>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group pl-2 m-0 col-6">
-                                <label for="state"></label>
-                                <select id="state" class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100">
-                                    <option selected>State</option>
-                                    <option>...</option>
-                                </select>
-                            </div>
-                        </div>
                         </div>
                         <div class="form-row center">
                             <div class="col-12 p-0 m-0 form-row">
-                            <div class="form-group pr-2 pt-1 m-0 col-6">
-{{--                                <div class="  border-top-0 border-left-0 border-right-0 border-bottom w-100">--}}
-                                    <label for="city"></label>
-                                    <select id="city" class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100">
-                                        <option selected>City</option>
-                                        <option>...</option>
-                                    </select>
-{{--                                </div>--}}
-
+                                <div class="form-group pr-2 pl-2 m-0 col-6">
+                                    <div class="border-bottom w-100 pt-3 pb-3 pl-2">
+                                        <label for="city" class="ml-1 mt-1 m-0 d-block"></label>
+                                        <select id="city" class="col-10 d-block bg-white border-0 w-100 p-0 m-0">
+                                            <option selected>City</option>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group pl-2 pr-2 m-0 col-6">
+                                    <div class="border-bottom w-100 pt-3 pl-2 text-left">
+                                        <label for="zipCode" class="ml-1 mt-1 m-0 d-block">Zip Code</label>
+                                        <input type="text" class="d-block border-0 w-100 p-0 m-0" id="zipCode">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group pl-2 m-0 col-6">
-                                <label for="zipCode" ></label>
-                                <input type="text"
-                                       class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100"
-                                       id="zipCode" placeholder="Zip Code">
-                            </div>
-                        </div>
                         </div>
                         <div class="form-row center">
                             <div class="col-12 p-0 m-0 form-row">
-                            <div class="form-group m-0 col-12">
-                                <label for="email"></label>
-                                <input type="email" class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100" id="email" placeholder="E-Mail">
-                            </div>
-                            <div class="form-group m-0 col-12">
-                                <label for="phone" class="d-block"></label>
-                                <input type="number"
-                                       class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100"
-                                       id="phone" placeholder="Phone Number">
+                                <div class="form-group pr-2 pl-2 m-0 col-12">
+                                    <div class="border-bottom w-100 pt-3 pl-2">
+                                        <label for="email" class="ml-1 mt-1 m-0 d-block">E-Mail</label>
+                                        <input type="email" class="d-block border-0 w-100 p-0 m-0" id="email">
+                                    </div>
+                                </div>
+                                <div class="form-group pr-2 pl-2 m-0 col-12">
+                                    <div class="border-bottom w-100 pt-3 pl-2">
+                                        <label for="phone" class="ml-1 mt-1 m-0 d-block">Phone Number</label>
+                                        <input type="number" class="d-block border-0 w-100 p-0 m-0" id="phone">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>
-
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
                     </div>
-
-                    {{--                    <div class="form-group">--}}
-                    {{--                        <div class="form-check">--}}
-                    {{--                            <input class="form-check-input" type="checkbox" id="gridCheck">--}}
-                    {{--                            <label class="form-check-label" for="gridCheck">--}}
-                    {{--                                Check me out--}}
-                    {{--                            </label>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                    {{--                    <button type="submit" class="btn btn-primary">Sign in</button>--}}
+                    <button type="submit" class="btn btn-dark">Sign in</button>
+                    <button type="submit" class="btn rounded-pill btn-dark order_now uppercase">save</button>
                 </form>
             </div>
         </div>

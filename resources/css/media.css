@@ -47,11 +47,16 @@
         overflow-y: hidden;
     }
 
-    .old_price, .description_half, .single_description_text {
+   .shipping_text, .old_price, .description_half, .single_description_text {
         font-size: 12px;
         line-height: 18px;
     }
-
+    .shipping_text{
+        line-height: 15px!important;
+    }
+    .shipping_text select{
+        height: 14px!important;
+    }
     .see_more {
         position: absolute;
         bottom: 200px;

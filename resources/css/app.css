@@ -525,9 +525,7 @@ li.dropdown-submenu {
     display: block;
     background-color: #F5F5F5;
 }
-/*.dropdown-item:hover, .dropdown-item:focus {*/
-/*    background-color: #F5F5F5 !important;*/
-/*}*/
+
 .text-muted:visited {
     font-weight: 600;
 }
