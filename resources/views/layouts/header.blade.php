@@ -1,8 +1,9 @@
 @push('header')
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm pb-3 m-0">
-        <div class="container-lg pb-1">
-
-            <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid navbar-brand" alt="logo">
+        <div class="container-lg pb-lg-1">
+            <div class="container col-md-1 col-2 p-0 m-0">
+                <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid navbar-brand" alt="logo">
+            </div>
             <!-- @media -->
 
             <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0 p-0">
@@ -11,40 +12,65 @@
                         <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}" alt="">
                     </a>
                 </li>
-                <li class="container">
+                <li class="container p-md-3 p-0">
                     <a href="">
                         <img class="img_heart" src="{{asset('storage/Cart-with-plus.png')}}" alt="">
                     </a>
                 </li>
-                <li class="container pr-0 nav-item dropdown dropleft">
+                <li class="container p-0 pl-md-3 nav-item dropdown dropleft">
                     <a class="nav-link" id="dropDownMenuMedia" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
                         <img class="img_heart" src="{{asset('storage/menu-alt-2.png')}}" alt="">
                     </a>
-                    <div class="dropdown-menu p-0" aria-labelledby="dropDownMenuMedia">
-                        <ul class="dropdown-item  p-0">
-                            <li class="dropdown-submenu p-0">
-                                <a class="text-muted media_subMenu pb-3 pt-3" tabindex="-1" href="#">Computers  <span class="fa fa-angle-right"></span> </a>
-                                <ul class="dropdown-menu p-0 position-static float-none">
-                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a></li>
+                    <div class="dropdown-menu border-0 bg-white p-0 transform106" aria-labelledby="dropDownMenuMedia">
+                        <ul class="dropdown-item container flex_column bg-white p-0">
+                            <li class="list-unstyled col-12 d-flex justify-content-end pb-3 pt-3 mt-1 mb-1 pr-3">
+                                <img class="pr-1" src="{{asset('storage/menu-alt2-2.png')}}" alt="menu">
+                            </li>
+                            <li class="dropdown-submenu p-0 mb-1 w-100">
+                                <a class="container text-muted media_subMenu flex-nowrap pl-4 pr-5 pb-3 pt-3 font-weight-bold"
+                                   tabindex="-1" href="#">
+                                    <div class="pr-3 mr-4 pl-3">
+                                        Computers
+                                    </div>
+                                    <span class="fa fa-angle-right ml-1 pl-5"></span>
+                                </a>
+                                <ul class="dropdown-menu border-0 rounded-0 pl-5 ml-1 p-0 position-static float-none">
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a>
+                                    </li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown-submenu p-0">
-                                <a class="pb-3 pt-3 text-muted media_subMenu" tabindex="-1" href="#">Printers  <span class="fa fa-angle-right"></span> </a>
-                                <ul class="dropdown-menu p-0 position-static float-none">
-                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a></li>
+                            <li class="dropdown-submenu  p-0 mb-1 w-100">
+                                <a class="container pb-3 pt-3 text-muted media_subMenu flex-nowrap pl-4 pr-5 font-weight-bold"
+                                   tabindex="-1" href="#">
+                                    <div class="pr-3 mr-4 pl-3">
+                                        Printers
+                                    </div>
+                                    <span class="fa fa-angle-right "></span>
+                                </a>
+                                <ul class="dropdown-menu border-0 p-0 pl-5 ml-1 rounded-0 position-static float-none">
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a>
+                                    </li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown-submenu p-0">
-                                <a class="pb-3 pt-3  text-muted media_subMenu" tabindex="-1" href="#">Accesories <span class="fa fa-angle-right"></span></a>
-                                <ul class="dropdown-menu position-static float-none">
-                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a></li>
+                            <li class="dropdown-submenu p-0 w-100">
+                                <a class="container pb-3 pt-3  text-muted media_subMenu flex-nowrap pl-4 pr-5 font-weight-bold"
+                                   tabindex="-1" href="#">
+                                    <div class="pr-3 mr-4 pl-3">
+                                        Accesories
+                                    </div>
+                                    <span class="fa fa-angle-right"></span>
+                                </a>
+
+                                <ul class="dropdown-menu border-0 rounded-0 pl-5 ml-1 p-0  position-static float-none">
+                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a>
+                                    </li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>
                                     <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>

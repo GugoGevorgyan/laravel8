@@ -6,7 +6,7 @@
     {{--        <img class="position-absolute currency" src="{{asset('storage/currency.png')}}" alt="">--}}
     <div class="home_content center">
         @stack('macbook')
-        <div class="center w-100 container p-0 pt-4 position-relative">
+        <div class="center w-100 container p-0 pt-4 position-lg-relative">
             <div class="all_computers container">
                 <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">Computers</h3></div>
                 <div class="just_between flex-row pb-4 pt-2 justify-content-sm-between">
@@ -84,7 +84,7 @@
             </div>
         </div>
         {{-- similar item--}}
-        <div class="center w-100 container p-0 pt-4 pb-5 position-relative">
+        <div class="center w-100 container p-0 pt-4 pb-5 position-lg-relative">
             <div class="all_computers container">
                 <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4">Similar Items</h3>
                 </div>

@@ -523,10 +523,17 @@ li::marker {
 
 li.dropdown-submenu {
     display: block;
+    background-color: #F5F5F5;
 }
 /*.dropdown-item:hover, .dropdown-item:focus {*/
 /*    background-color: #F5F5F5 !important;*/
 /*}*/
 .text-muted:visited {
     font-weight: 600;
+}
+.transform106{
+    transform: translate(90px, -10px);
+}
+.navbar-brand{
+    padding-bottom: 0 !important;
 }

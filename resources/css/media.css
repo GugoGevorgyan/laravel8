@@ -169,6 +169,9 @@
     .h4 {
         font-size: 0.9rem !important;
     }
+    .navbar-brand{
+        /*transform: scale(0.7);*/
+    }
 
     .img_single {
         transform: scale(.6);

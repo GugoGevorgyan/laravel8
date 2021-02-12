@@ -26,39 +26,82 @@
 <body>
 <div id="app">
     <main>
-        <div class="container p-0">
-            <div>
+        <div class="container col-8 p-0">
+            <div class=" col-7 m-0">
                 <div>
                     <img src="" alt="">
                 </div>
-                <form action="">
-                    <div>
-                        <div class="form-row">
-                            <div class="form-group m-0 col-5">
-                                <label for="firstName" class="d-block"></label>
-                                <input type="text" class="form-control border-bottom border-right-0 border-left-0 border-top-0"
-                                       id="firstName" placeholder="First Name">
+                <form class="center pr-5 pl-4" action="">
+                    <div class="pr-4 pl-4 bg-white">
+                        <div class="form-row center">
+                            <div class="col-12 p-0 m-0 form-row">
+                                <div class="form-group pr-2  m-0 col-6">
+                                    <label for="firstName" class="d-block"></label>
+                                    <input type="text"
+                                           class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100"
+                                           id="firstName" placeholder="First Name">
+                                </div>
+                                <div class="form-group pl-2 m-0 col-6">
+                                    <label for="lastName" class="d-block"></label>
+                                    <input type="text"
+                                           class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100"
+                                           id="lastName" placeholder="Last Name">
+                                </div>
                             </div>
-                            <div class="form-group m-0 col-5">
-                                <label for="lastName" class="d-block"></label>
-                                <input type="text" class="form-control border-bottom border-right-0 border-left-0 border-top-0"
-                                       id="lastName" placeholder="Last Name">
-                            </div>
-
                         </div>
-                        <div class="form-row">
-                            <div class="form-group m-0 col-5">
-                                <label for="firstName" class="d-block"></label>
-                                <input type="text" class="form-control  border-bottom border-right-0 border-left-0 border-top-0"
-                                       id="firstName" placeholder="First Name">
+                        <div class="form-row center">
+                            <div class="col-12 p-0 m-0 form-row">
+                            <div class="form-group pr-2 m-0 col-6">
+                                <label for="country"></label>
+                                <select id="country" class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100">
+                                    <option selected>Country</option>
+                                    <option>...</option>
+                                </select>
                             </div>
-                            <div class="form-group  col-5">
-                                <label for="lastName" class="d-block"></label>
-                                <input type="text" class="form-control border-bottom border-right-0 border-left-0 border-top-0"
-                                       id="lastName" placeholder="Last Name">
+                            <div class="form-group pl-2 m-0 col-6">
+                                <label for="state"></label>
+                                <select id="state" class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100">
+                                    <option selected>State</option>
+                                    <option>...</option>
+                                </select>
                             </div>
-
                         </div>
+                        </div>
+                        <div class="form-row center">
+                            <div class="col-12 p-0 m-0 form-row">
+                            <div class="form-group pr-2 pt-1 m-0 col-6">
+{{--                                <div class="  border-top-0 border-left-0 border-right-0 border-bottom w-100">--}}
+                                    <label for="city"></label>
+                                    <select id="city" class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100">
+                                        <option selected>City</option>
+                                        <option>...</option>
+                                    </select>
+{{--                                </div>--}}
+
+                            </div>
+                            <div class="form-group pl-2 m-0 col-6">
+                                <label for="zipCode" ></label>
+                                <input type="text"
+                                       class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100"
+                                       id="zipCode" placeholder="Zip Code">
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-row center">
+                            <div class="col-12 p-0 m-0 form-row">
+                            <div class="form-group m-0 col-12">
+                                <label for="email"></label>
+                                <input type="email" class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100" id="email" placeholder="E-Mail">
+                            </div>
+                            <div class="form-group m-0 col-12">
+                                <label for="phone" class="d-block"></label>
+                                <input type="number"
+                                       class="d-block  border-top-0 border-left-0 border-right-0 border-bottom w-100"
+                                       id="phone" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        </div>
+
                         <div></div>
                         <div></div>
                         <div></div>
@@ -66,41 +109,6 @@
                         <div></div>
                     </div>
 
-                    {{--                    <div class="form-row">--}}
-                    {{--                        <div class="form-group col-md-6">--}}
-                    {{--                            <label for="inputEmail4">Email</label>--}}
-                    {{--                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">--}}
-                    {{--                        </div>--}}
-                    {{--                        <div class="form-group col-md-6">--}}
-                    {{--                            <label for="inputPassword4">Password</label>--}}
-                    {{--                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                    {{--                    <div class="form-group">--}}
-                    {{--                        <label for="inputAddress">Address</label>--}}
-                    {{--                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">--}}
-                    {{--                    </div>--}}
-                    {{--                    <div class="form-group">--}}
-                    {{--                        <label for="inputAddress2">Address 2</label>--}}
-                    {{--                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">--}}
-                    {{--                    </div>--}}
-                    {{--                    <div class="form-row">--}}
-                    {{--                        <div class="form-group col-md-6">--}}
-                    {{--                            <label for="inputCity">City</label>--}}
-                    {{--                            <input type="text" class="form-control" id="inputCity">--}}
-                    {{--                        </div>--}}
-                    {{--                        <div class="form-group col-md-4">--}}
-                    {{--                            <label for="inputState">State</label>--}}
-                    {{--                            <select id="inputState" class="form-control">--}}
-                    {{--                                <option selected>Choose...</option>--}}
-                    {{--                                <option>...</option>--}}
-                    {{--                            </select>--}}
-                    {{--                        </div>--}}
-                    {{--                        <div class="form-group col-md-2">--}}
-                    {{--                            <label for="inputZip">Zip</label>--}}
-                    {{--                            <input type="text" class="form-control" id="inputZip">--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
                     {{--                    <div class="form-group">--}}
                     {{--                        <div class="form-check">--}}
                     {{--                            <input class="form-check-input" type="checkbox" id="gridCheck">--}}
@@ -113,6 +121,7 @@
                 </form>
             </div>
         </div>
+
     </main>
 
 </div>

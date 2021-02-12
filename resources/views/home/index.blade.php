@@ -173,9 +173,7 @@
                     deliver</P>
                 <div class="d-flex flex-row align-items-baseline justify-content-sm-between pb-sm-5 container overflow-hidden">
                     @foreach($brands as $brand)
-
                             <div class="brand container "><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
-
                     @endforeach
                 </div>
             </div>
