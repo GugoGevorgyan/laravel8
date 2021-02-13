@@ -26,23 +26,27 @@
 <body>
 <div id="app">
     <main>
-        <div class="container col-12 p-1">
-            <div class=" col-12 p-3 m-0">
-                <div>
-                    <img src="" alt="">
+        <div class="container-md container-fluid p-sm-0 p-1">
+        <div class="container center col-12 col-lg-6 col-md-10 pl-sm-2 pr-sm-2 p-sm-0 p-3">
+            <div class="col-12 col-sm-11 bg-white p-sm-3 p-0 m-0">
+                <div class="center">
+                    <h6 class="font29_size24 pt-5 m-0 mt-2 position-absolute top_0">Shipping Address</h6>
+                    <div class="pb-4 mb-1 m-sm-0 pt-3 pt-sm-0">
+                        <img src="{{asset('storage/pana.jpg')}}" alt="shipping">
+                    </div>
                 </div>
-                <form class="center pr-4 pl-4 border bg-white shipping_text" action="">
-                    <div class="mr-1 ml-1 bg-white">
-                        <div class="form-row center">
-                            <div class="col-12 p-0 m-0 form-row">
-                                <div class="form-group pr-2 pl-2 m-0 col-6">
+                <form class="pr-sm-4 pl-sm-4 pr-3 pl-3  shipping_text" method="get" action='{{route('home.index')}}'>
+                    <div class="mr-1 ml-1 m-sm-0 bg-white">
+                        <div class="flex-wrap center">
+                            <div class="col-12 p-0 m-0 d-flex flex-wrap">
+                                <div class="d-flex flex-wrap pr-2 pl-2 m-0 col-6">
                                     <div class="border-bottom w-100 pt-3 pl-2">
                                         <label for="firstName" class="ml-1 mt-1 m-0 d-block">First Name</label>
                                         <input type="text" class="d-block border-0 w-100 p-0 m-0" id="firstName"
                                                placeholder="">
                                     </div>
                                 </div>
-                                <div class="form-group pl-2 pr-2 m-0 col-6">
+                                <div class="d-flex flex-wrap pl-2 pr-2 m-0 col-6">
                                     <div class="border-bottom w-100 pt-3 pl-2 text-left">
                                         <label for="lastName" class="ml-1 mt-1 m-0 d-block">Last Name</label>
                                         <input type="text" class="d-block border-0 w-100 p-0 m-0" id="lastName"
@@ -51,9 +55,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row center">
-                            <div class="col-12 p-0 m-0 form-row">
-                                <div class="form-group pr-2 pl-2 m-0 col-6">
+                        <div class="flex-wrap center">
+                            <div class="col-12 p-0 m-0 d-flex flex-wrap">
+                                <div class=" pr-2 pl-2 m-0 col-6">
                                     <div class="border-bottom w-100 pt-3 pb-3 pl-2">
                                         <label for="country" class="ml-1 mt-1 m-0 d-block"></label>
                                         <select id="country" class="col-10 d-block bg-white border-0 w-100 p-0 m-0">
@@ -62,7 +66,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group pl-2 pr-2 m-0 col-6">
+                                <div class=" pl-2 pr-2 m-0 col-6">
                                     <div class="border-bottom w-100 pt-3 pb-3 pl-2 text-left">
                                         <label for="state" class="ml-1 mt-1 m-0 d-block"></label>
                                         <select id="state" class="col-10 d-block bg-white border-0 w-100 p-0 m-0">
@@ -73,10 +77,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row center">
-                            <div class="col-12 p-0 m-0 form-row">
-                                <div class="form-group pr-2 pl-2 m-0 col-6">
-                                    <div class="border-bottom w-100 pt-3 pb-3 pl-2">
+                        <div class="flex-wrap center">
+                            <div class="col-12 p-0 m-0 d-flex flex-wrap">
+                                <div class=" pr-2 pl-2 m-0 col-6">
+                                    <div class="border-bottom w-100 pt-3 pb-3 pb-lg-4 pl-2">
                                         <label for="city" class="ml-1 mt-1 m-0 d-block"></label>
                                         <select id="city" class="col-10 d-block bg-white border-0 w-100 p-0 m-0">
                                             <option selected>City</option>
@@ -84,7 +88,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group pl-2 pr-2 m-0 col-6">
+                                <div class=" pl-2 pr-2 m-0 col-6">
                                     <div class="border-bottom w-100 pt-3 pl-2 text-left">
                                         <label for="zipCode" class="ml-1 mt-1 m-0 d-block">Zip Code</label>
                                         <input type="text" class="d-block border-0 w-100 p-0 m-0" id="zipCode">
@@ -92,15 +96,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row center">
-                            <div class="col-12 p-0 m-0 form-row">
-                                <div class="form-group pr-2 pl-2 m-0 col-12">
+                        <div class="flex-wrap center">
+                            <div class="col-12 p-0 m-0 d-flex flex-wrap">
+                                <div class=" pr-2 pl-2 m-0 col-12">
                                     <div class="border-bottom w-100 pt-3 pl-2">
                                         <label for="email" class="ml-1 mt-1 m-0 d-block">E-Mail</label>
                                         <input type="email" class="d-block border-0 w-100 p-0 m-0" id="email">
                                     </div>
                                 </div>
-                                <div class="form-group pr-2 pl-2 m-0 col-12">
+                                <div class=" pr-2 pl-2 m-0 col-12">
                                     <div class="border-bottom w-100 pt-3 pl-2">
                                         <label for="phone" class="ml-1 mt-1 m-0 d-block">Phone Number</label>
                                         <input type="number" class="d-block border-0 w-100 p-0 m-0" id="phone">
@@ -108,13 +112,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="pt-5 pb-5 pl-lg-2 pr-lg-3 mt-2 mb-2 d-flex justify-content-center">
+                                <button type="reset" class="btn focus rounded-pill capitalize pt-2 pb-2 pb-md-3 pt-md-3 col-5">Cancel</button>
+                            <button type="submit" class="btn rounded-pill btn-dark uppercase pt-2 pb-2 pb-md-3 pt-md-3 col-5">save
+                            </button>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-dark">Sign in</button>
-                    <button type="submit" class="btn rounded-pill btn-dark order_now uppercase">save</button>
                 </form>
             </div>
         </div>
-
+        </div>
     </main>
 
 </div>

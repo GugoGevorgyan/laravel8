@@ -540,6 +540,9 @@ li.dropdown-submenu {
 .navbar-brand{
     padding-bottom: 0 !important;
 }
+.top_0{
+    top: 0;
+}
 
 @media all and (min-width: 994px) and (max-width: 1200px) {
     .nav-link {
@@ -3793,6 +3796,10 @@ li.dropdown-submenu {
   font-size: 16px;
   line-height: 20px;
   display: flex;
+}
+
+.btn:focus, .btn.focus {
+  box-shadow: none !important;
 }
 
 /*!

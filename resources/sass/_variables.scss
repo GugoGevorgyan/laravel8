@@ -50,3 +50,7 @@ $h1-font-size: $font-size-base * 2.8 !default;
     line-height: 20px;
     display: flex;
 }
+.btn:focus, .btn.focus {
+
+    box-shadow: none !important;
+}

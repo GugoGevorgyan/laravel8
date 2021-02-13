@@ -85,8 +85,7 @@
                         </div>
                         <div class="d-flex flex-row flex-wrap">
                             <button type="button" class="order_now bg-dark center sales_name text-white col-5 p-0">ORDER NOW</button>
-                            <a  class="center" href="#"><img class="single_cart" src="http://design/storage/Cart-with-plus.png"
-                                             alt="paiment"></a>
+                            <a  class="center" href="#"><img class="single_cart" src="http://design/storage/Cart-with-plus.png" alt="paiment"></a>
                         </div>
                     </div>
                 </div>

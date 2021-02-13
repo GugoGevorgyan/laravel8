@@ -8,12 +8,12 @@
 
             <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0 p-0">
                 <li class="media_heart container">
-                    <a href="#">
+                    <a href="{{asset('/cart')}}">
                         <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}" alt="">
                     </a>
                 </li>
                 <li class="container p-md-3 p-0">
-                    <a href="">
+                    <a href="{{asset('/home/favorites')}}">
                         <img class="img_heart" src="{{asset('storage/Cart-with-plus.png')}}" alt="">
                     </a>
                 </li>

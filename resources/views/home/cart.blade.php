@@ -95,93 +95,99 @@
                             </div>
                         </div>
                     </div>
-
-                    {{--                    end--}}
                 </div>
 
-{{--                Summary     --}}
+                {{--                Summary     --}}
+
                 <div class="container col-lg-4 col-12 m-0 p-0 position-static">
                     <div class="container-lg container-fluid  m-0 pt-lg-3 pb-lg-3 pr-lg-0 pl-lg-3">
                         <div class="container shadow shadow_none pr-4 pl-4">
-                            <div class="pt-4 pb-3">
-                                <h2 class="font-weight-bold m-0 font29_size24">Summary</h2>
+                            <form method="get" action="{{route('shipping')}}">
+                                <div class="pt-4 pb-3">
+                                    <h2 class="font-weight-bold m-0 font29_size24">Summary</h2>
 
-                            </div>
-                            <div class="d-flex flex-column border-top font18_size22 summary_content">
-                                <div class="d-flex flex-row justify-content-between pt-3 pb-2">
-                                    <div class="">
-                                        <p> Total</p>
+                                </div>
+                                <div class="d-flex flex-column border-top font18_size22 summary_content">
+                                    <div class="d-flex flex-row justify-content-between pt-3 pb-2">
+                                        <div class="">
+                                            <p> Total</p>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <div>
+                                                <p class="text-uppercase">us$</p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    4500
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between  pt-2 pb-2">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <input type="radio" id="shipping" name="summary"
+                                                   value="shipping"
+                                                   class="radio_input appearance p-2 rounded-circle m-0 mr-2">
+                                            <label class="" for="shipping">Shipping</label>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <div>
+                                                <p class="text-uppercase">us$</p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    20
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between pt-2 pb-2 pb-lg-5">
+                                        <div class="d-flex flex-row align-items-start">
+                                            <input type="radio" id="sale" name="summary"
+                                                   value="sale"
+                                                   class="radio_input appearance p-2 rounded-circle m-0 mr-2">
+                                            <label class="pb-3" for="sale">Sale</label>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <div>
+                                                <p class="text-uppercase">us$</p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    10
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row justify-content-between border-top pt-3">
+                                    <div>
+                                        <h2 class="text-dark font29_size24">Subtotal</h2>
                                     </div>
                                     <div class="d-flex flex-row">
-                                        <div>
-                                            <p class="text-uppercase">us$</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                4500
-                                            </p>
-                                        </div>
+                                        <h2 class="text-dark font29_size24 text-uppercase">us</h2>
+                                        <h2 class="text-dark font29_size24">$4510</h2>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-row justify-content-between  pt-2 pb-2">
-                                    <div class="d-flex flex-row align-items-start">
-                                        <input type="radio" id="shipping" name="summary"
-                                               value="shipping" class="radio_input appearance p-2 rounded-circle m-0 mr-2">
-                                        <label class="" for="shipping">Shipping</label>
-                                    </div>
-                                    <div class="d-flex flex-row">
-                                        <div>
-                                            <p class="text-uppercase">us$</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                20
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-row justify-content-between pt-2 pb-2 pb-lg-5">
-                                    <div class="d-flex flex-row align-items-start">
-                                        <input type="radio" id="sale" name="summary"
-                                               value="sale" class="radio_input appearance p-2 rounded-circle m-0 mr-2">
-                                        <label class="pb-3" for="sale">Sale</label>
-                                    </div>
-                                    <div class="d-flex flex-row">
-                                        <div>
-                                            <p class="text-uppercase">us$</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                10
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row justify-content-between border-top pt-3">
-                                <div>
-                                    <h2 class="text-dark font29_size24">Subtotal</h2>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <h2 class="text-dark font29_size24 text-uppercase">us</h2>
-                                    <h2 class="text-dark font29_size24">$4510</h2>
-                                </div>
-                            </div>
-                            <div class="container-fluid p-0 d-flex justify-content-end pt-4 pb-lg-4 pb-5">
-                                <button type="button" class="order_now bg-dark center sales_name
+                                <div class="container-fluid p-0 d-flex justify-content-end pt-4 pb-lg-4 pb-5">
+                                    <button type="submit" class="order_now bg-dark center sales_name
                                         text-white col-lg-7 col-7 p-0 pb-lg-0 pt-lg-0 pt-3 pb-3 text-uppercase">checkout
-                                </button>
-                            </div>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-{{--                --}}
                 {{--                   similar Items               --}}
 
                 <div class="d-lg-none center w-100 container p-0 pt-4 pb-5 position-relative">
                     <div class="all_computers container">
-                        <div class="d-none d-lg-block"><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4">Similar Items</h3></div>
-                        <div class="d-block d-lg-none"><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4">Recommended for you</h3></div>
+                        <div class="d-none d-lg-block"><h3
+                                class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4">Similar
+                                Items</h3></div>
+                        <div class="d-block d-lg-none"><h3
+                                class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4">Recommended
+                                for you</h3></div>
                     </div>
                     <div class="container pb-4">
                         <div class="line"></div>
@@ -200,7 +206,8 @@
                                 <div class="hot_sales_imgs_container just_around ">
                                     <div class="d-flex flex-row position-relative h-15">
                                         @if($computer -> old_price)
-                                            <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
+                                            <div class="yes_sale text-white position-absolute bg-danger center"> Sale
+                                            </div>
                                         @endif
                                         <div class="heart">
                                             <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
@@ -208,7 +215,8 @@
                                         </div>
                                     </div>
                                     <div class="hot_sales_img center mt-4">
-                                        <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
+                                        <img class="container" src="{{asset('storage/'.$computer->img)}}"
+                                             alt="computers">
                                     </div>
                                     <div class="container">
                                         <div class="align-items-end d-flex flex-row">
@@ -225,9 +233,12 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-around container">
-                                        <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">ORDER NOW
+                                        <button type="button"
+                                                class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
+                                            ORDER NOW
                                         </button>
-                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}"
+                                                         alt="paiment"></a>
 
                                     </div>
 
