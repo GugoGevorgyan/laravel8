@@ -15,58 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $hot_sales = [
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => ''],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-        ];
-        $computers = [
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => ''],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => ''],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-            (object)['name' => 'Samsung Earbuds',
-                'img' => 'computer.png',
-                'price' => 1500,
-                'old_price' => 2500],
-        ];
+        $hot_sales = Product::paginate(4);
+        $computers = Product::paginate(8);
 //        $computers = Product::paginate(5);
 
         $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
@@ -160,5 +110,10 @@ class HomeController extends Controller
     public function shipping()
     {
         return view('home/shipping');
+    }
+
+    public function orderNow()
+    {
+        return view('home/orderNow');
     }
 }
