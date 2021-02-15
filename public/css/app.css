@@ -543,6 +543,15 @@ li.dropdown-submenu {
 .top_0{
     top: 0;
 }
+.owl-stage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.owl-item{
+    display: flex;
+    justify-content: center;
+}
 
 @media all and (min-width: 994px) and (max-width: 1200px) {
     .nav-link {
@@ -719,9 +728,6 @@ li.dropdown-submenu {
 
     .h4 {
         font-size: 0.9rem !important;
-    }
-    .navbar-brand{
-        /*transform: scale(0.7);*/
     }
 
     .img_single {

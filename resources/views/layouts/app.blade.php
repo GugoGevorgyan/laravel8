@@ -11,10 +11,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('vendor/owl-carousel/owl.carousel.js') }}"></script>
-
+{{--    <script src="{{ asset('vendor/owl-carousel/owl.carousel.js') }}"></script>--}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+{{--    <link rel="dns-prefetch" href="//fonts.gstatic.com">--}}
 {{--    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">--}}
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,500,800" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -26,7 +26,7 @@
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <!-- Important Owl stylesheet -->
-    <link rel="stylesheet" href="{{asset('vendor/owl-carousel/owl.carousel.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('vendor/owl-carousel/owl.carousel.css')}}">--}}
 
     <!-- Default Theme -->
     <link rel="stylesheet" href="{{asset('vendor/owl-carousel/owl.theme.css')}}">
@@ -43,6 +43,7 @@
 
         </div>
     <!-- Include js plugin -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </body>
 </html>

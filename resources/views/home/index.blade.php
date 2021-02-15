@@ -186,16 +186,25 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
-                    </ol>
-                    <div role="listbox" class="carousel-inner d-flex flex-row align-items-baseline justify-content-sm-between pb-sm-5 container" >
-                        @foreach($brands as  $slider)
-                            <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }} container  center  m-0">
-                                <img src="{{asset('storage/'.$slider)}}"   alt="...">
-                            </div>
-                        @endforeach
+                    <div class=" row p-0 ">
+                        <div class="owl-carousel owl-theme pb-sm-5 container">
+                            @foreach($brands as $brand)
+                                <div class="item row p-3">
+                                    <img class="w-100" src="{{asset('storage/'.$brand)}}" alt="{{$brand}}">
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+{{--                <div id="myCarousel" class="carousel slide" data-ride="carousel">--}}
+{{--                    <ol class="carousel-indicators">--}}
+{{--                        <li data-target="#myCarousel" data-slide-to="3" class="active"></li>--}}
+{{--                    </ol>--}}
+{{--                    <div role="listbox" class="carousel-inner d-flex flex-row align-items-baseline justify-content-sm-between pb-sm-5 container" >--}}
+{{--                        @foreach($brands as  $slider)--}}
+{{--                            <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }} container  center  m-0">--}}
+{{--                                <img src="{{asset('storage/'.$slider)}}"   alt="...">--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
 {{--                            @foreach( $brands as $photo )--}}
 {{--                                <div class="carousel-item {{ $loop->index < 6 ? 'active' : '' }}">--}}
 {{--                                    <img class="d-block img-fluid" src="{{asset('storage/'.$photo)}}" alt="">--}}

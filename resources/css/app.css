@@ -538,3 +538,12 @@ li.dropdown-submenu {
 .top_0{
     top: 0;
 }
+.owl-stage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.owl-item{
+    display: flex;
+    justify-content: center;
+}

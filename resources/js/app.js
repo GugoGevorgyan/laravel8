@@ -3,18 +3,22 @@ require('./dropdownMenu');
 
 $(document).ready(function () {
     $('.owl-carousel').owlCarousel({
-        // loop:false,
-        // margin:0,
-        pagination: false,
+        loop:false ,
+        // margin:10,
+        nav:false,
+        dots:false,
         responsive:{
-            0:{
-                items:1
+            412:{
+                items:3
             },
-            600:{
-                items:1
+            760:{
+                items:3
             },
-            1000:{
-                items:1
+            992:{
+                items:4
+            },
+            1200:{
+                items:6
             }
         }
     })
