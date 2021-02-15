@@ -10,7 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('vendor/owl-carousel/owl.carousel.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +25,11 @@
     <!-- Styles -->
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <!-- Important Owl stylesheet -->
+    <link rel="stylesheet" href="{{asset('vendor/owl-carousel/owl.carousel.css')}}">
+
+    <!-- Default Theme -->
+    <link rel="stylesheet" href="{{asset('vendor/owl-carousel/owl.theme.css')}}">
 </head>
 <body>
     <div id="app">
@@ -36,7 +42,7 @@
         @stack('footer')
 
         </div>
+    <!-- Include js plugin -->
 
-    </div>
 </body>
 </html>

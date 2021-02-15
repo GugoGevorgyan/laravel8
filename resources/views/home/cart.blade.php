@@ -4,7 +4,7 @@
     <div class="center">
         <div class="container-md container-fluid pt-lg-5 p-0">
             <div class="container col-12 m-0 pb-lg-5 p-0 d-flex flex-lg-row flex-column position-static">
-                <div class="col-lg-8 col-12 m-0 p-0 position-static d-lg-block d-flex flex-row">
+                <div class="col-lg-8 col-12 m-0 row position-static d-lg-block d-flex flex-row">
                     <div class="pt-3 pb-2 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">
                         <div class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0
                                     pt-lg-4 pb-lg-4 m-0 rounded shadow position-static">
