@@ -4,7 +4,6 @@
     <div class=" center">
         <div class="container-md container-fluid pt-4">
             <div class="d-flex flex-row flex-wrap container p-0">
-
                 @foreach($computers as $computer)
                     <div class="col-xl-3 p-3 position-static col-md-4 col-sm-6 ">
                         <div class="hot_sales_imgs_container just_around ">

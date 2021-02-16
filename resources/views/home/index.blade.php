@@ -9,7 +9,7 @@
 
             <div class="d-flex flex-row pt-5 flex-wrap container">
                 @for ($i = 0; $i < count($imgs) ; $i++)
-                    <figure class="col-xl-2 p-0 col-md-4 col-sm-6 ">
+                    <figure class="col-xl-2 p-0 col-md-4 col-sm-6 position-static ">
                         <div class="d-flex rounded-circle  popular_categories_img center container">
                             <img src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
                         </div>
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="center w-100 container pt-4">
-            <div class="position-relative">
+            <div class="position-relative row">
                 <h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4 container">Hot Sales</h3>
                 <div class="container pb-4">
                     <div class="line"></div>
@@ -60,7 +60,8 @@
                                 <div class="hot_sales_imgs_container   just_around ">
                                     <div class="d-flex flex-row position-relative h-15">
                                         @if($sales -> old_price)
-                                            <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
+                                            <div class="yes_sale text-white position-absolute bg-danger center"> Sale
+                                            </div>
                                         @endif
                                         <div class="heart">
                                             <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
@@ -91,7 +92,8 @@
                                                 class="order_now   bg-dark   center sales_name text-white col-md-9 col-10 p-0">
                                             ORDER NOW
                                         </button>
-                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}"
+                                                         alt="paiment"></a>
                                     </div>
 
                                 </div>
@@ -126,7 +128,7 @@
                         </a></div>
                 </div>
 
-                <div class="container">
+                <div class="container pb-md-0 pb-5">
                     <div class="evenly row">
 
                         @foreach($computers as $computer)
@@ -134,7 +136,8 @@
                                 <div class="hot_sales_imgs_container just_around ">
                                     <div class="d-flex flex-row position-relative h-15">
                                         @if($sales -> old_price)
-                                            <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
+                                            <div class="yes_sale text-white position-absolute bg-danger center"> Sale
+                                            </div>
                                         @endif
                                         <div class="heart">
                                             <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
@@ -142,7 +145,8 @@
                                         </div>
                                     </div>
                                     <div class="hot_sales_img center mt-4">
-                                        <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
+                                        <img class="container" src="{{asset('storage/'.$computer->img)}}"
+                                             alt="computers">
                                     </div>
                                     <div class="container">
                                         <div class="align-items-end d-flex flex-row">
@@ -163,7 +167,8 @@
                                                 class="order_now bg-dark center sales_name text-white  col-10 col-md-9 p-0">
                                             ORDER NOW
                                         </button>
-                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}"
+                                                         alt="paiment"></a>
 
                                     </div>
 
@@ -175,50 +180,19 @@
 
                 </div>
 
-                <P class="justify-content-sm-center d-flex d-lg-block popular_text  pt-5 pb-4 container">Brands we
+                <P class="justify-content-sm-center d-flex d-lg-block popular_text  pt-5  container">Brands we
                     deliver</P>
-{{--                <div class="row">--}}
-{{--                    <div class="container row">--}}
-{{--                        <div class="owl-carousel row align-items-baseline justify-content-sm-between pb-sm-5    ">--}}
-{{--                            @foreach($brands as $brand)--}}
-{{--                                <div class=""><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>--}}
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-                    <div class=" row p-0 ">
-                        <div class="owl-carousel owl-theme pb-sm-5 container">
-                            @foreach($brands as $brand)
-                                <div class="item row p-3">
-                                    <img class="w-100" src="{{asset('storage/'.$brand)}}" alt="{{$brand}}">
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-{{--                <div id="myCarousel" class="carousel slide" data-ride="carousel">--}}
-{{--                    <ol class="carousel-indicators">--}}
-{{--                        <li data-target="#myCarousel" data-slide-to="3" class="active"></li>--}}
-{{--                    </ol>--}}
-{{--                    <div role="listbox" class="carousel-inner d-flex flex-row align-items-baseline justify-content-sm-between pb-sm-5 container" >--}}
-{{--                        @foreach($brands as  $slider)--}}
-{{--                            <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }} container  center  m-0">--}}
-{{--                                <img src="{{asset('storage/'.$slider)}}"   alt="...">--}}
-{{--                            </div>--}}
-{{--                        @endforeach--}}
-{{--                            @foreach( $brands as $photo )--}}
-{{--                                <div class="carousel-item {{ $loop->index < 6 ? 'active' : '' }}">--}}
-{{--                                    <img class="d-block img-fluid" src="{{asset('storage/'.$photo)}}" alt="">--}}
-{{--                                    <div class="carousel-caption d-none d-md-block">--}}
-{{--                                        <h3>{{ $photo->title }}</h3>--}}
-{{--                                        <p>{{ $photo->descriptoin }}</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            @endforeach`--}}
+                <div class="container row p-0 ">
+                    <div class="owl-carousel pb-lg-5 owl-theme  container" id="owl_1">
+                        @foreach($brands as $brand)
+                                <div class="item center p-3">
+                                    <img class="w-auto" src="{{asset('storage/'.$brand)}}" alt="{{$brand}}">
+                            </div>
+
+                        @endforeach
                     </div>
                 </div>
-
             </div>
-
         </div>
         @stack('subscribe')
     </div>

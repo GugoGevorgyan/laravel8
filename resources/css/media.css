@@ -204,6 +204,9 @@
     div.shadow_none {
         box-shadow: none !important;
     }
-
+    .order_faster_text{
+        font-size: 26px;
+        line-height: 32px;
+    }
 }
 
