@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->bigInteger('role_id')->unsigned();
+            $table->bigInteger('role_id')->unsigned()->nullable();
             $table->string('status')->default(0);
 //            $table->unsignedTinyInteger('is_super_admin')->default(0);
             $table->rememberToken();
@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->foreign('role_id')
                 ->references('id')
                 ->on('roles')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
     }
