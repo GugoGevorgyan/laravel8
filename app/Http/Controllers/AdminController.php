@@ -139,7 +139,7 @@ if ($toEmail === "true"){
 
     public function verify(Request $request)
     {
-        DB::table('users')->where('status', $request->code)->update(['status' => 1]);
+//        DB::table('users')->where('status', $request->code)->update(['status' => 1]);
         return response()->view('admin/confirmPassword');
     }
 }
