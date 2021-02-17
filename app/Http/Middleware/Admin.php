@@ -2,12 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
 use Closure;
 use Illuminate\Http\Request;
 
-class Role
+class Admin
 {
     /**
      * Handle an incoming request.
@@ -18,9 +16,11 @@ class Role
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user() && auth()->user()->role_id == 1){
-            return redirect()->route('admin.index');
+        if(auth()->user() && (auth()->user()->role_id === 1 ||
+            auth()->user()->role_id === 2) ){
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->route('admin/login')->with(['message' => 'oypss ! you are not the  admin']);
+
     }
 }

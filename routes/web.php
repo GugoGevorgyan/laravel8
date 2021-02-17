@@ -13,8 +13,10 @@ use App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('/home', HomeController::class);
-Route::get('/admin/login', [AdminController::class, 'login']);
+Route::resource('/home', HomeController::class)->middleware('role');
+
+Route::get('/admin/login', [AdminController::class, 'login'])->name('admin/login');
+Route::resource('/admin', AdminController::class)->middleware('admin');
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,3 +26,4 @@ Auth::routes();
 Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
 Route::get('/shipping', [HomeController::class, 'shipping'])->name('shipping');
 Route::get('/ordernow', [HomeController::class, 'orderNow'])->name('ordernow');
+Route::get('/verify', [AdminController::class,'verify']);
