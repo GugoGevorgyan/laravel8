@@ -122,8 +122,7 @@ class AdminController extends Controller
 
     public function login()
     {
-//        dd('login');
-        return response()->view('admin/login');
+        return response()->view('admin/sign-in-cover');
     }
 
     public function send($code, $email, $password)
@@ -137,9 +136,4 @@ class AdminController extends Controller
         return 'true';
     }
 
-    public function verify(Request $request)
-    {
-//        DB::table('users')->where('status', $request->code)->update(['status' => 1]);
-        return response()->view('admin/confirmPassword');
-    }
 }

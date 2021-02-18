@@ -28,4 +28,3 @@ Auth::routes();
 Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
 Route::get('/shipping', [HomeController::class, 'shipping'])->name('shipping');
 Route::get('/ordernow', [HomeController::class, 'orderNow'])->name('ordernow');
-//Route::get('/verify', [AdminController::class,'verify']);
