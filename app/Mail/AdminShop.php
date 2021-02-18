@@ -11,16 +11,16 @@ class AdminShop extends Mailable
 {
     use Queueable, SerializesModels;
     public $feedback;
-    public $parole;
+    public $password;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($feedback, $parole)
+    public function __construct($feedback, $password)
     {
         $this->feedback = $feedback;
-        $this->parole = $parole;
+        $this->password = $password;
     }
 
     /**

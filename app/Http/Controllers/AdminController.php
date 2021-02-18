@@ -49,7 +49,7 @@ class AdminController extends Controller
     {
         $rules = [
             'name' => 'required|string|alpha',
-            'email' => 'sometimes|required|email',
+            'email' => 'sometimes|required|email|unique:users',
             'password' => 'required|string|min:4|confirmed',
         ];
         $customMessages = [
@@ -126,10 +126,10 @@ class AdminController extends Controller
         return response()->view('admin/login');
     }
 
-    public function send($code, $email, $parole)
+    public function send($code, $email, $password)
     {
         try {
-            Mail::to($email)->send(new AdminShop($code, $parole));
+            Mail::to($email)->send(new AdminShop($code, $password));
 
         } catch (\Exception $err) {
             return $err;
