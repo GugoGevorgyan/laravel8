@@ -18,7 +18,8 @@ class Role
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user() && auth()->user()->role_id == 1){
+        if (auth()->user() && (auth()->user()->role_id === 1 ||
+                auth()->user()->role_id === 2)){
             return redirect()->route('admin.index');
         }
         return $next($request);

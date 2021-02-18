@@ -7,7 +7,7 @@
                 @if(Session::has('message'))
                     <p class="alert alert-info">{{ Session::get('message') }}</p>
                 @endif
-{{--                @if( Auth::user()->role_id === 1)--}}
+                @if( Auth::user()->role_id === 1)
 
                 <div class="card">
                     <div class="card-header">{{ __('Super Admin') }}</div>
@@ -22,7 +22,7 @@
 
                     </div>
                 </div>
-{{--                    @endif--}}
+                    @endif
             </div>
         </div>
     </div>

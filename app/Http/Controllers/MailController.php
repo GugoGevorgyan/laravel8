@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class MailController extends Controller
 {
@@ -46,8 +47,7 @@ class MailController extends Controller
      */
     public function show($code)
     {
-        $user_id = User::all()->where('status', $code)[1]->id;
-
+        $user_id = User::where('remember_token', $code)->first()->id;
         return response()->view('admin/confirmPassword', ['id' => $user_id]);
     }
 
@@ -71,9 +71,21 @@ class MailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request, $id);
+        $user = User::find($id);
+        $password = $user->password;
+        $checkPassword = Hash::check($request->password,$password);
+        if ($checkPassword){
+            $user -> update([
+                'password' => Hash::make($request->password_new),
+                'status' => 1,
+                'email_verified_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            return redirect('admin')->
+            with(['message' => 'your password has been changed']);
+        }
+        return redirect()->back()->with(['message'=>'Your password was incorrect']);
     }
-
     /**
      * Remove the specified resource from storage.
      *

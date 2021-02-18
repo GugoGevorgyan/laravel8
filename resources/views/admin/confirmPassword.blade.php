@@ -4,6 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                @if(Session::has('message'))
+                    <p class="alert alert-info">{{ Session::get('message') }}</p>
+                @endif
                 <div class="card">
                     <div class="card-header">{{ __('update Password') }}</div>
 
@@ -11,8 +14,6 @@
                         <form method="POST" action="{{asset('mail/'.$id)}}">
                             @csrf
                             @method("PUT")
-                            <input type="hidden" name="id" value="{{$id}}">
-
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

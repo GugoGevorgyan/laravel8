@@ -36,7 +36,7 @@ class AdminController extends Controller
             return redirect('admin')->
             with(['message' => 'you are not an SuperAdmin']);
         }
-        return response()->view('admin/superAdmin');
+        return response()->view('admin/creatAdmin');
     }
 
     /**
@@ -59,20 +59,20 @@ class AdminController extends Controller
 
         $code = Str::random(10) . time();
 
-        $toEmail = $this->send($code, $request['email'],$request['password'] );
-if ($toEmail === "true"){
-    User::create([
-        'name' => $request['name'],
-        'email' => $request['email'],
-        'password' => Hash::make($request['password']),
-        'role_id' => 2,
-        'status' => $code,
-    ]);
-    return redirect('admin')
-        ->with(['message' => 'The admin successfully created']);
-}
+        $toEmail = $this->send($code, $request['email'], $request['password']);
+        if ($toEmail === "true") {
+            User::create([
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+                'role_id' => 2,
+                'remember_token' => $code,
+            ]);
+            return redirect('admin')
+                ->with(['message' => 'The admin successfully created']);
+        }
         return redirect('admin')
-            ->with(['message' => $toEmail]);
+            ->with(['message' => $toEmail->getMessage()]);
     }
 
     /**
@@ -126,7 +126,7 @@ if ($toEmail === "true"){
         return response()->view('admin/login');
     }
 
-    public function send($code, $email,$parole)
+    public function send($code, $email, $parole)
     {
         try {
             Mail::to($email)->send(new AdminShop($code, $parole));
