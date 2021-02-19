@@ -82,7 +82,7 @@
                             <!-- Icon -->
                                 <div class="input-group-append">
                                   <span class="input-group-text">
-                                    <i class="fe fe-eye"></i>
+{{--                                    <i class="fe fe-eye"></i>--}}
                                   </span>
                                 </div>
                             </div>

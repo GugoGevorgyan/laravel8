@@ -20,7 +20,6 @@ class Admin
             auth()->user()->role_id === 2) ){
             return $next($request);
         }
-        return redirect()->route('admin/login')->with(['message' => 'oypss ! you are not the  admin']);
-
+        return redirect()->route('admin/login');
     }
 }
