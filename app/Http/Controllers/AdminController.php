@@ -7,7 +7,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use app\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -83,7 +82,8 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $admins = User::all()->where('role_id', 2);
+        return response()->view('admin/profile-admins',['admins'=>$admins]);
     }
 
     /**
@@ -122,6 +122,7 @@ class AdminController extends Controller
 
     public function login()
     {
+//        return response()->view('admin/login');
         return response()->view('admin/sign-in-cover');
     }
 

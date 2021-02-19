@@ -18,7 +18,7 @@
 
                     <!-- Subheading -->
                     <p class="text-muted text-center mb-5">
-                        Free access to our dashboard.
+                        login as admin
                     </p>
 
                     <!-- Form -->
@@ -40,17 +40,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                    {{--                        <div class="form-group">--}}
-
-                    {{--                            <!-- Label -->--}}
-                    {{--                            <label>Email Address</label>--}}
-
-                    {{--                            <!-- Input -->--}}
-                    {{--                            <input type="email" class="form-control" placeholder="name@address.com">--}}
-
-                    {{--                        </div>--}}
-
 
                     <!-- Password -->
 
@@ -103,14 +92,6 @@
                         <button type="submit" class="btn btn-lg btn-block btn-primary mb-3">
                             Sign in
                         </button>
-
-                        <!-- Link -->
-                        <p class="text-center">
-                            <small class="text-muted text-center">
-                                Don't have an account yet? <a href="sign-up-cover.html">Sign up</a>.
-                            </small>
-                        </p>
-
                     </form>
 
                 </div>

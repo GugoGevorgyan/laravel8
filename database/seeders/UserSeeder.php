@@ -44,6 +44,7 @@ class UserSeeder extends Seeder
                     'password' => Hash::make('1111'),
                     'role_id' => 1,
                     'status' => 1,
+                    'email_verified_at' => now(),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class MailController extends Controller
@@ -71,6 +72,13 @@ class MailController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'password_new' => 'required|string|min:4|same:password_confirmation',
+        ];
+        $customMessages = [
+            'required' => 'The :attribute field is required.'
+        ];
+        $this->validate($request, $rules, $customMessages);
         $user = User::find($id);
         $password = $user->password;
         $checkPassword = Hash::check($request->password,$password);
@@ -78,9 +86,10 @@ class MailController extends Controller
             $user -> update([
                 'password' => Hash::make($request->password_new),
                 'status' => 1,
-                'email_verified_at' => date('Y-m-d H:i:s'),
+                'email_verified_at' => now(),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
+           Auth::login($user);
             return redirect('admin')->
             with(['message' => 'your password has been changed']);
         }
