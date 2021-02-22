@@ -6,78 +6,131 @@
     <div class="main-content">
         <!-- CONTENT -->
         <div class="container-fluid">
-            <div class="row">
-                @foreach($admins as $admin)
-                    <div class="col-12 col-md-6 col-xl-4">
+            <div class="row justify-content-center">
+                <div class="col-12">
 
-                        <!-- Card -->
-                        <div class="card">
+                    <!-- Header -->
+                    <div class="header mt-md-5">
+                        <div class="header-body">
+                            <div class="row align-items-center">
+                                <div class="col">
 
-                            <div class="dropdown card-dropdown">
-                                <a href="#!" class="dropdown-ellipses dropdown-toggle text-white" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fe fe-more-vertical"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="#!" class="dropdown-item">
-                                        Action
-                                    </a>
-                                    <a href="#!" class="dropdown-item">
-                                        Another action
-                                    </a>
-                                    <a href="#!" class="dropdown-item">
-                                        Something else here
-                                    </a>
+                                    <!-- message -->
+                                    @if(Session::has('message'))
+                                        <p class="alert alert-info">{{ Session::get('message') }}</p>
+                                @endif
+
+                                    <!-- Title -->
+                                    <h1 class="header-title">
+                                        Admins
+                                    </h1>
+
                                 </div>
-                            </div>
+                                <div class="col-auto">
 
-                            <img src="{{asset('vendor/admin/assets/img/covers/profile-cover-2.jpg')}}" alt="..."
-                                 class="card-img-top">
+                                    <!-- Button -->
 
-                            <div class="card-body text-center">
-
-                                <a href="#!" class="avatar avatar-xl card-avatar card-avatar-top">
-                                    <img src="{{asset('vendor/admin/assets/img/avatars/profiles/avatar-2.jpg')}}"
-                                         class="avatar-img rounded-circle border border-4 border-card" alt="...">
-                                </a>
-
-                                <h2 class="card-title">
-
-                                    <a href="profile-posts.html">{{$admin->name}}</a>
-                                </h2>
-
-                                <p class="card-text text-muted">
-                                    <small>
-                                        {{$admin->email}}
-                                    </small>
-                                </p>
-                                <hr>
-
-                                <div class="row align-items-center justify-content-between">
-                                    <div class="col-auto">
-                                        <small>
-                                            @if($admin->status === '1')
-                                            <span class="text-success">●</span>
-                                                verify
-                                            @else<span class="text-success"></span>
-                                            no verify
-                                            @endif
-                                        </small>
-                                    </div>
-                                    <div class="col-auto">
-                                        <a href="#!" class="btn btn-sm btn-primary">
-                                            action
+                                    @if( Auth::user()->role_id === 1)
+                                        <a href="{{url('admin/create')}}" class="btn btn-primary">
+                                            {{ __('Create Admin') }}
                                         </a>
-                                    </div>
+                                    @endif
+
                                 </div>
-
-                            </div>
-
+                            </div> <!-- / .row -->
                         </div>
-
                     </div>
-                @endforeach
-            </div>
+
+                    <!-- Card -->
+                    <div class="card" data-toggle="lists"
+                         data-lists-values='["admin-name", "admin-email", "admin-status"]'>
+
+                        <div class="table-responsive">
+                            <table class="table table-sm table-nowrap card-table">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <a href="#" class="text-muted sort" data-sort="admin-name">
+                                            Name
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a href="#" class="text-muted sort" data-sort="admin-email">
+                                            E-mail
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a href="#" class="text-muted sort" data-sort="admin-status">
+                                            Status
+                                        </a>
+                                    </th>
+                                </tr>
+                                </thead>
+
+                                <tbody class="list">
+                                @foreach($admins as $admin)
+                                    <tr>
+
+                                        <td class="admin-name">
+                                            {{$admin->name}}
+                                        </td>
+                                        <td class="admin-email">
+                                            {{$admin->email}}
+                                        </td>
+
+                                        <td class="admin-status">
+                                            @if($admin->status)
+                                                <div class="badge badge-soft-success">
+                                                    {{$admin->status}}
+                                                </div>
+                                            @else
+                                                <div class="badge badge-soft-danger">
+                                                    {{$admin->status}}
+                                                </div>
+                                            @endif
+                                        </td>
+                                        <td class="text-right">
+                                            <div class="dropdown">
+                                                <a href="#!" class="dropdown-ellipses dropdown-toggle" role="button"
+                                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                   data-boundary="window">
+                                                    <i class="fe fe-more-vertical"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <div class="dropdown-item d-flex flex-column">
+                                                        <form action="/admin/status/{{$admin->id}}" method="post" class="py-2">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            @if(!$admin->status)
+                                                                <input type="submit" value="Activate"
+                                                                       class="btn btn-success w-100">
+                                                            @else
+                                                                <input type="submit" value="Deactivate"
+                                                                       class="btn  btn-warning w-100">
+                                                            @endif
+
+                                                        </form>
+                                                        <form action="{{url("admin/{$admin->id}")}}" method="post" class="py-2">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            <input type="submit" value="Delete"
+                                                                   class="btn btn-danger w-100">
+                                                        </form>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- / .row -->
         </div>
 
     </div> <!-- / .main-content -->

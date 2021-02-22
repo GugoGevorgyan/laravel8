@@ -18,6 +18,10 @@ class Admin
     {
         if(auth()->user() && (auth()->user()->role_id === 1 ||
             auth()->user()->role_id === 2) ){
+            if (auth()->user()->role_id === 2
+                && auth()->user()->status == 0){
+                return response()->view('admin/error');
+            }
             return $next($request);
         }
         return redirect()->route('admin/login');

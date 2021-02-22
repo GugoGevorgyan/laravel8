@@ -13,7 +13,9 @@
             <div class="header-body">
                 <div class="row align-items-end">
                     <div class="col">
-
+                        @if(Session::has('message'))
+                            <p class="alert alert-info">{{ Session::get('message') }}</p>
+                    @endif
                         <!-- Pretitle -->
                         <h6 class="header-pretitle text-secondary">
                             Overview

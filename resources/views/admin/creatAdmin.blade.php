@@ -22,10 +22,9 @@
                             </div> <!-- / .row -->
                         </div>
                     </div>
-{{------------------------------------------------------------------------------------}}
 
                     <!-- Form -->
-                    @if(Session::has('message'))--}}
+                    @if(Session::has('message'))
                                             <p class="alert alert-info">{{ Session::get('message') }}</p>
                                     @endif
 

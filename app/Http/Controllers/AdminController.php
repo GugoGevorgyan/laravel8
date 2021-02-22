@@ -67,8 +67,8 @@ class AdminController extends Controller
                 'role_id' => 2,
                 'remember_token' => $code,
             ]);
-            return redirect('admin')
-                ->with(['message' => 'The admin successfully created']);
+
+            return redirect('admin/profile-admins')->with(['message' => 'The admin successfully created']);
         }
         return redirect('admin')
             ->with(['message' => $toEmail->getMessage()]);
@@ -94,7 +94,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return response()->view('admin/edit',['user'=>$user]);
     }
 
     /**
@@ -106,7 +107,21 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(Auth::id() != $id){
+            return redirect('admin');
+        };
+        $rules = [
+            'name' => 'required|string|alpha',
+        ];
+        $customMessages = [
+            'required' => 'The :attribute field is required.'
+        ];
+        $this->validate($request, $rules, $customMessages);
+        User::find($id) ->update([
+            'name'=> $request->name,
+        ]);
+            return redirect('admin')->
+            with(['message' => 'your data has been successfully changed']);
     }
 
     /**
@@ -117,7 +132,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
     }
 
     public function login()
@@ -135,6 +150,37 @@ class AdminController extends Controller
             return $err;
         }
         return 'true';
+    }
+
+    public function status(Request $request, $id){
+        $status = User::find($id)->status === '1' ? 0 : 1;
+        User::find($id)->update([
+            'status' => $status,
+        ]);
+        return redirect('admin/'.Auth::id());
+    }
+
+    public function update_password(Request $request, $id){
+        $rules = [
+            '_token' => 'required',
+            'password_new' => 'required|string|min:5|same:password_confirmation',
+        ];
+        $customMessages = [
+            'required' => 'The :attribute field is required.'
+        ];
+
+        $this->validate($request, $rules, $customMessages);
+
+        $checkPassword = Hash::check($request->password,Auth::user()->password);
+        if ($checkPassword){
+            Auth::user() -> update([
+                'password' => Hash::make($request->password_new),
+            ]);
+            return redirect('admin')->
+            with(['message' => 'your password has been changed']);
+        }
+
+        return redirect()->back()->with(['message'=>'Your password was incorrect']);
     }
 
 }

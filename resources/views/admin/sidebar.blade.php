@@ -830,21 +830,12 @@
                                                 Admins
                                             </a>
                                         </li>
-
-                                            @if( Auth::user()->role_id === 1)
-                                            <li class="nav-item">
-                                                    <a href="{{url('admin/create')}}" class="nav-link">
-                                                        {{ __('create admin') }}
-                                                    </a>
-                                            </li>
-                                            @endif
                                     </ul>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </li>
-
                 <li class="nav-item d-md-none">
                     <a class="nav-link" href="#sidebarModalActivity" data-toggle="modal">
                         <span class="fe fe-bell"></span> Notifications
@@ -856,13 +847,13 @@
             <hr class="navbar-divider my-3">
 
             <!-- Heading -->
-            <h6 class="navbar-heading">
-                Documentation
-            </h6>
+{{--            <h6 class="navbar-heading">--}}
+{{--                Documentation--}}
+{{--            </h6>--}}
 
 
             <!-- Push content down -->
-            <div class="mt-auto"></div>
+{{--            <div class="mt-auto"></div>--}}
 
 
             <!-- Customize -->
@@ -895,8 +886,8 @@
 
                     <!-- Menu -->
                     <div class="dropdown-menu" aria-labelledby="sidebarIconCopy">
-                        <a href="profile-posts.html" class="dropdown-item">Profile</a>
-                        <a href="settings.html" class="dropdown-item">Settings</a>
+                        <a href="{{asset('admin/'.Auth::id().'/edit')}}" class="dropdown-item">Edit</a>
+{{--                        <a href="" class="dropdown-item">Settings</a>--}}
                         <hr class="dropdown-divider">
                         <a href="{{ route('logout') }}"  onclick="event.preventDefault();
                     document.getElementById('logout-form1').submit();" class="dropdown-item">{{ __('Logout') }}
