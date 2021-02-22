@@ -21,7 +21,7 @@ Route::resource('/admin', AdminController::class)->middleware('admin');
 Route::put('/admin/status/{admin}', [AdminController::class, 'status']);
 Route::put('/admin/password/{id}', [AdminController::class, 'update_password']);
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
 
 
