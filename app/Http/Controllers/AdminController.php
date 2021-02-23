@@ -32,7 +32,7 @@ class AdminController extends Controller
     public function create()
     {
         if (Auth::user()->role_id !== 1) {
-            return redirect('admin')->
+            return redirect()->back()->
             with(['message' => 'you are not an SuperAdmin']);
         }
         return response()->view('admin/creatAdmin');
@@ -132,7 +132,9 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
+        $name = User::find($id)->name;
         User::destroy($id);
+        return redirect()->back()->with(['message'=>'you have successfully removed '. $name.' from admin']);
     }
 
     public function login()

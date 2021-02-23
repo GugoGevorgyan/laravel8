@@ -20,7 +20,7 @@
                                         <p class="alert alert-info">{{ Session::get('message') }}</p>
                                 @endif
 
-                                    <!-- Title -->
+                                <!-- Title -->
                                     <h1 class="header-title">
                                         Admins
                                     </h1>
@@ -98,7 +98,8 @@
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <div class="dropdown-item d-flex flex-column">
-                                                        <form action="/admin/status/{{$admin->id}}" method="post" class="py-2">
+                                                        <form action="/admin/status/{{$admin->id}}" method="post"
+                                                              class="py-2">
                                                             @csrf
                                                             @method('PUT')
                                                             @if(!$admin->status)
@@ -110,17 +111,53 @@
                                                             @endif
 
                                                         </form>
-                                                        <form action="{{url("admin/{$admin->id}")}}" method="post" class="py-2">
-                                                            @method('DELETE')
-                                                            @csrf
-                                                            <input type="submit" value="Delete"
-                                                                   class="btn btn-danger w-100">
-                                                        </form>
+
+                                                    {{--                             delete                           --}}
+                                                    <!-- Button trigger modal -->
+                                                        <div class="py-2">
+                                                            <input type="button" value="Delete"
+                                                                   class="btn btn-danger w-100" data-toggle="modal"
+                                                                   data-target="#deleteModal">
+                                                        </div>
                                                     </div>
-
-
                                                 </div>
                                             </div>
+
+                                            {{--                modal Delete                            --}}
+                                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                                                 aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="deleteModalLabel">Delete Admin
+                                                                "{{$admin->name}} "</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body row display-4">
+                                                            do you really want to delete .<p
+                                                                class="text-danger"> {{$admin->name}} </p>
+                                                            ?
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">NO
+                                                            </button>
+                                                            <form action="{{url("admin/{$admin->id}")}}" method="post">
+                                                                @method('DELETE')
+                                                                @csrf
+                                                                <button type="submit" class="btn btn-danger">YES
+                                                                </button>
+                                                            </form>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{--                      / modal delete                      --}}
                                         </td>
                                     </tr>
                                 @endforeach

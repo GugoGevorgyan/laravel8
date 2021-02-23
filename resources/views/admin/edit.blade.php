@@ -40,7 +40,7 @@
                                     <label for="name">
                                          name
                                     </label>
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="{{$user->name}}">
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$user->name}} ">
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

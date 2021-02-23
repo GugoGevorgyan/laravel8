@@ -19,7 +19,15 @@ class CreateProductsTable extends Migration
             $table->string('img');
             $table->float('price', 10, 2);
             $table->float('old_price', 10, 2)->nullable();
+            $table->string('description')->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
