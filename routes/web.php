@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\AdminProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,8 @@ Route::resource('/mail', MailController::class);
 Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
 Route::get('/shipping', [HomeController::class, 'shipping'])->name('shipping');
 Route::get('/ordernow', [HomeController::class, 'orderNow'])->name('ordernow');
+
+
+//Route::prefix('/product')->middleware('admin')->group(function () {
+    Route::resource('/product', AdminProductController::class)->middleware('admin');
+//});

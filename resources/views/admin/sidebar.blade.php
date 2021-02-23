@@ -193,6 +193,11 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{asset('product')}}" class="nav-link">
+                                    Product
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>

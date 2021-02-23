@@ -19,7 +19,7 @@ class   HomeController extends Controller
     {
         $hot_sales = Product::paginate(4);
         $computers = Product::paginate(8);
-//        $computers = Product::paginate(5);
+
 
         $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
         $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];

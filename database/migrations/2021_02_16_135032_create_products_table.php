@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->float('old_price', 10, 2)->nullable();
             $table->string('description')->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')
