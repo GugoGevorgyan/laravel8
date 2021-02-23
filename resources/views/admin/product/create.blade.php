@@ -77,11 +77,12 @@
 
                         <div class="form-group">
                             <label for="img">{{ __('Image') }}</label>
-
-                            <div>
-                                <input id="img" type="file" class="form-control"
-                                       name="img" required >
-                            </div>
+                                <input id="img" type="file"  class="form-control @error('img') is-invalid @enderror" name="img" required >
+                            @error('img')
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
                         <div class="form-group">

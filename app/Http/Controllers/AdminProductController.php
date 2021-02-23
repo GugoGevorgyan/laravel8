@@ -38,6 +38,12 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'img' => 'required|file|image|mimes:jpeg,png,jpg,svg|max:960',
+            'description' => 'required|max:255',
+        ]);
+
         $products = new Product();
         if(isset($request->img) && $request->img->getClientOriginalName()){
             $ext = $request->img->getClientOriginalExtension();
@@ -48,12 +54,11 @@ class AdminProductController extends Controller
         }
         $products->img = $file;
         $products->name = $request->name;
-        $products->price = is_int($request->price);
+        $products->price = intval($request->price);
         $products->description = $request->description;
         $products->user_id = Auth::id();
         $products->save();
-        return  redirect('admin/product/index',['products'=>Product::all()])
-            ->with(['message' => 'The product was successfully created']);
+        return response()->view('admin/product/index',['products'=> Product::all(), 'message' => 'The product was successfully created']);
     }
 
     /**

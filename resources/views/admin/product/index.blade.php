@@ -38,14 +38,14 @@
 
                     <!-- Card -->
                     <div class="card" data-toggle="lists"
-                         data-lists-values='["admin-name", "admin-price", "admin-status", admin-description]'>
+                         data-lists-values='[ "admin-image", "admin-name", "admin-description", "admin-price", "admin-status"]'>
 
                         <div class="table-responsive">
                             <table class="table table-sm table-nowrap card-table">
                                 <thead>
                                 <tr>
                                     <th>
-                                        <a href="#" class="text-muted sort">
+                                        <a href="#" class="text-muted sort" data-sort="admin-image">
                                             image
                                         </a>
                                     </th>
@@ -76,7 +76,8 @@
                                 @foreach($products as $product)
                                     <tr>
                                         <td class="admin-image">
-                                            {{$product->img}}
+                                            <img class="" src="{{asset('storage/images/'.$product->img)}}">
+{{--                                            {{$product->img}}--}}
                                         </td>
                                         <td class="admin-name">
                                             {{$product->name}}

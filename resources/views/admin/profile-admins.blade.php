@@ -70,10 +70,10 @@
                                 <tbody class="list">
                                 @foreach($admins as $admin)
                                     <tr>
-
                                         <td class="admin-name">
                                             {{$admin->name}}
                                         </td>
+
                                         <td class="admin-email">
                                             {{$admin->email}}
                                         </td>
