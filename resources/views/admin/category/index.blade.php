@@ -28,8 +28,8 @@
                                 <div class="col-auto">
 
                                     <!-- Button -->
-                                    <a href="{{url('categorie/create')}}" class="btn btn-primary">
-                                        {{ __('Create Categorie / SubCategorie') }}
+                                    <a href="{{url('category/create')}}" class="btn btn-primary">
+                                        {{ __('Create Category / SubCategory') }}
                                     </a>
                                 </div>
                             </div> <!-- / .row -->
@@ -38,41 +38,43 @@
 
                     <!-- Card -->
                     <div class="card" data-toggle="lists"
-                         data-lists-values='["categorie-id", "categorie-name",  "categorie-parent"]'>
+                         data-lists-values='["category-id", "category-name",  "category-parent"]'>
 
                         <div class="table-responsive">
                             <table class="table table-sm table-nowrap card-table">
                                 <thead>
                                 <tr>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="categorie-id">
+                                        <a href="#" class="text-muted sort" data-sort="category-id">
                                             id
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="categorie-name">
+                                        <a href="#" class="text-muted sort" data-sort="category-name">
                                             Name
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="categorie-parent">
-                                            Parent Categorie
+                                        <a href="#" class="text-muted sort" data-sort="category-parent">
+                                            Parent Category
                                         </a>
                                     </th>
                                 </tr>
                                 </thead>
 
                                 <tbody class="list">
-                                @foreach($categories as $categorie)
+                                @foreach($categories as $category)
                                     <tr>
-                                        <td class="categorie-id">
-                                            {{$categorie->id}}
+                                        <td class="category-id">
+                                            {{$category->id}}
                                         </td>
-                                        <td class="categorie-name">
-                                            {{$categorie->name}}
+                                        <td class="category-name">
+                                            {{$category->name}}
                                         </td>
-                                        <td class="categorie-parent">
-                                            {{$categorie->parent}}
+                                        <td class="category-parent">
+                                            @if($category->category)
+                                            {{$category->category->name}}
+                                            @endif
                                         </td>
                                         <td class="">
                                             <div class="dropdown">
@@ -85,7 +87,7 @@
                                                     <div class="dropdown-item d-flex flex-column">
                                                     {{--                delete          --}}
                                                     <!-- Button trigger modal -->
-                                                        <a href="{{asset("categorie/{$categorie->id}/edit")}}" class="py-2">
+                                                        <a href="{{asset("category/{$category->id}/edit")}}" class="py-2">
                                                             <input type="submit" value="Edit" class="btn btn-primary w-100" >
                                                         </a>
                                                         <div class="py-2">
@@ -105,7 +107,7 @@
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="deleteModalProductLabel">Delete
                                                                 product
-                                                                "{{$categorie->name}} "</h5>
+                                                                "{{$category->name}} "</h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                     aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
@@ -113,14 +115,14 @@
                                                         </div>
                                                         <div class="modal-body row display-4">
                                                             do you really want to delete .<p
-                                                                class="text-danger"> {{$categorie->name}} </p>
+                                                                class="text-danger"> {{$category->name}} </p>
                                                             ?
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
                                                                     data-dismiss="modal">NO
                                                             </button>
-                                                            <form action="{{url("categorie/{$categorie->id}")}}" method="post">
+                                                            <form action="{{url("category/{$category->id}")}}" method="post">
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">YES

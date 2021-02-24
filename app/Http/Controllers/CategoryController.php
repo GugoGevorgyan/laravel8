@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class CategorieController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::all();
-        return response()->view('admin/categorie/index', ['categories' => $categories]);
+        $categories = Category::with('category')->get();
+        return response()->view('admin/category/index', ['categories' => $categories]);
     }
 
     /**
@@ -25,10 +25,8 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        $categorie = Categorie::with('categorie')->where('id','=',1)->get();
-       dd($categorie);
-        $categories = Categorie::all();
-        return response()->view('admin/categorie/create',['categories' => $categories]);
+        $categories = Category::with('category')->get();
+        return response()->view('admin/category/create',['categories' => $categories]);
 
     }
 
@@ -41,28 +39,28 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
 
-        $parent = intval($request->parent_categorie) ;
-        if ($request->parent_categorie === 'main'){
+        $parent = intval($request->parent_category) ;
+        if ($request->parent_category === 'main'){
             $parent = null;
         }
         $request->validate([
             'name' => 'required|max:20|unique:categories',
         ]);
-        $categorie = new Categorie();
-        $categorie->name = $request->name;
-        $categorie->parent_id = $parent;
-        $categorie->save();
-        $categories = Categorie::all();
-        return response()->view('admin/categorie/index', ['categories' => $categories]);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->parent_id = $parent;
+        $category->save();
+        $categories = Category::all();
+        return response()->view('admin/category/index', ['categories' => $categories]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $categorie)
+    public function show(Category $category)
     {
         //
     }
@@ -70,10 +68,10 @@ class CategorieController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categorie)
+    public function edit(Category $category)
     {
         //
     }
@@ -82,10 +80,10 @@ class CategorieController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -93,10 +91,10 @@ class CategorieController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $categorie)
+    public function destroy(Category $category)
     {
         //
     }

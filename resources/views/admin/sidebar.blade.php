@@ -194,7 +194,7 @@
                                 <a href="{{asset('product')}}" class="nav-link">
                                     Product
                                 </a>
-                                <a href="{{asset('categorie')}}" class="nav-link">
+                                <a href="{{asset('category')}}" class="nav-link">
                                     Categories
                                 </a>
 {{--                            </li>--}}

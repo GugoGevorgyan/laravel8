@@ -15,7 +15,7 @@
                                 <div class="col">
                                     <!-- Title -->
                                     <h1 class="header-title">
-                                        Create Categorie
+                                        Create Category
                                     </h1>
 
                                 </div>
@@ -28,7 +28,7 @@
                         <p class="alert alert-info">{{ Session::get('message') }}</p>
                 @endif
                 <!-- Form -->
-                    <form method="POST" action="{{asset('/categorie')}}" autocomplete="on">
+                    <form method="POST" action="{{asset('/category')}}" autocomplete="on">
                         @csrf
                         <div class="form-group">
                             <label for="name">{{ __('Name') }}</label>
@@ -45,16 +45,16 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="parent-categorie">{{ __('Parent Categorie') }}</label>
+                            <label for="parent-category">{{ __('Parent Category') }}</label>
 
                             <div>
-                                <select name="parent_categorie" id="parent-categorie" class="form-control">
+                                <select name="parent_category" id="parent-category" class="form-control">
                                     <option value="main" class="text-success">Main</option>
-                                    @foreach($categories as $categorie)
-                                    <option value="{{$categorie->id}}">{{$categorie->name}}</option>
+                                    @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
-                                @error('parent-categorie')
+                                @error('parent-category')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
