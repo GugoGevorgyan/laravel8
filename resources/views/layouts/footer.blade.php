@@ -6,7 +6,7 @@
                 <ul class="list-unstyled contact  ">
                     <li>
                         <div class="center">
-                            <img src="{{asset('storage/VectorGps.png')}}" alt="">
+                            <img src="{{asset('storage/images/VectorGps.png')}}" alt="">
                         </div>
 
                         Rich Plaza, Yerevan, Armenia
@@ -14,14 +14,14 @@
 
                     <li>
                         <div class="center">
-                            <img src="{{asset('storage/mail.png')}}" alt="">
+                            <img src="{{asset('storage/images/mail.png')}}" alt="">
                         </div>
 
                         mg@gmail.com
                     </li>
                     <li>
                         <div class="center">
-                            <img src="{{asset('storage/phone.png')}}" alt="">
+                            <img src="{{asset('storage/images/phone.png')}}" alt="">
                         </div>
 
                         +374 95 84 84 54
@@ -30,8 +30,8 @@
                 <div class="flex_column m-lg-0 mb-5">
                     <p class="follow_us footer_contact d-lg-none font-weight-bold text-white mt-5">Follow us on</p>
                     <div class="flex_row">
-                        <div class="social_container bg-light center"><img src="{{asset('storage/fb.png')}}" alt=""></div>
-                        <div class="social_container bg-light center"><img src="{{asset('storage/insta.png')}}" alt=""></div>
+                        <div class="social_container bg-light center"><img src="{{asset('storage/images/fb.png')}}" alt=""></div>
+                        <div class="social_container bg-light center"><img src="{{asset('storage/images/insta.png')}}" alt=""></div>
                     </div>
 
                 </div>

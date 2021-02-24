@@ -36,7 +36,7 @@
 
 
 .menu_ellipse {
-    background-image: url("/storage/Group221.png");
+    background-image: url("/storage/images/Group221.png");
 }
 
 .center {
@@ -57,11 +57,11 @@
 }
 
 .Rectangle1 {
-    background-image: url("/storage/Rectangle1.png");
+    background-image: url("/storage/images/Rectangle1.png");
 }
 
 .Rectangle2 {
-    background-image: url("/storage/Rectangle2.png");
+    background-image: url("/storage/images/Rectangle2.png");
 }
 
 .description {
@@ -226,7 +226,7 @@ p {
 
 .subscribe_container {
     min-height: 660px;
-    background-image: url("/storage/Rectangle38.png");
+    background-image: url("/storage/images/Rectangle38.png");
 }
 
 

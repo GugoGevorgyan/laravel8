@@ -14208,3 +14208,55 @@ a:focus, button:focus {
 .form-control-lg + .select2-container--default .select2-selection--multiple .select2-selection__choice {
     line-height: 1.59375rem
 }
+
+/*    paggination*/
+
+div.sm\:hidden {
+    display: none;
+}
+
+span.z-0 {
+    display: flex;
+}
+
+span[aria-current="page"] > span, span[aria-disabled="true"] > span, .rounded-md > a {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+    padding: 0 !important;
+    justify-content: center;
+    margin: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #333333;
+}
+
+span[aria-current="page"] > span {
+    background-color: #E11D1D !important;
+    color: #FFFFFF !important;
+}
+
+.rounded-md > a:nth-child(6n+3) {
+    display: none;
+}
+
+.z-index-n1 {
+    z-index: -1;
+}
+
+.radio_input:checked {
+    padding: 5px;
+    margin-right: 2.5px;
+    border-radius: 50%;
+    background: black;
+    color: black;
+    appearance: none;
+    outline: none;
+}
+.sm\:flex-1>div:first-child{
+    display: none;
+}
+
+

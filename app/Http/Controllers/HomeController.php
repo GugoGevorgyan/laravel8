@@ -8,8 +8,6 @@ use App\Models\Product;
 
 class   HomeController extends Controller
 {
-    const index = '/home';
-
     /**
      * Display a listing of the resource.
      *

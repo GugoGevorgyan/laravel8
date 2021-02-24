@@ -15,7 +15,7 @@
                                 <div class="col">
                                     <!-- Title -->
                                     <h1 class="header-title">
-                                        create product
+                                        Create Categorie
                                     </h1>
 
                                 </div>
@@ -28,9 +28,8 @@
                         <p class="alert alert-info">{{ Session::get('message') }}</p>
                 @endif
                 <!-- Form -->
-                    <form method="POST" action="{{asset('/product')}}" enctype="multipart/form-data" autocomplete="on">
+                    <form method="POST" action="{{asset('/categorie')}}" autocomplete="on">
                         @csrf
-
                         <div class="form-group">
                             <label for="name">{{ __('Name') }}</label>
                             <div>
@@ -46,47 +45,24 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="description">{{ __('Description') }}</label>
+                            <label for="parent-categorie">{{ __('Parent Categorie') }}</label>
 
                             <div>
-                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror"
-                                       name="description" required>
-                                </textarea>
-                                @error('description')
+                                <select name="parent_categorie" id="parent-categorie" class="form-control">
+                                    <option value="main" class="text-success">Main</option>
+                                    @foreach($categories as $categorie)
+                                    <option value="{{$categorie->id}}">{{$categorie->name}}</option>
+                                    @endforeach
+                                </select>
+                                @error('parent-categorie')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="price">{{ __('Price') }}</label>
-
-                            <div>
-                                <input id="price" type="number"
-                                       class="form-control @error('price') is-invalid @enderror" name="price" required>
-                                @error('price')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="img">{{ __('Image') }}</label>
-                                <input id="img" type="file"  class="form-control @error('img') is-invalid @enderror" name="img" required >
-                            @error('img')
-                            <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
                         <div class="form-group">
                             <div>
-
                                 <button type="submit" class="btn btn-lg btn-block btn-primary mb-3 col-4">
                                     Create
                                 </button>

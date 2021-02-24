@@ -32,7 +32,7 @@
                         <div class="col-12 col-sm-11 bg-white p-4 m-0">
                             <div class="center p-md-5 pt-4 mt-2 m-1 mb-md-1 mb-4 pb-3 ">
                                 <div class="mb-md-3 m-md-2 pt-5 pb-4">
-                                    <img class="container p-0" src="{{asset('storage/image27.png')}}" alt="shipping">
+                                    <img class="container p-0" src="{{asset('storage/images/image27.png')}}" alt="shipping">
                                 </div>
                             </div>
 

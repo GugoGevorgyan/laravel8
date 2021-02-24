@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\CategorieController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,5 +35,7 @@ Route::get('/ordernow', [HomeController::class, 'orderNow'])->name('ordernow');
 
 
 //Route::prefix('/product')->middleware('admin')->group(function () {
-    Route::resource('/product', AdminProductController::class)->middleware('admin');
+Route::resource('/product', AdminProductController::class)->middleware('admin');
+Route::resource('/categorie', CategorieController::class)->middleware('admin');
+Route::put('/product/status/{admin}', [AdminProductController::class, 'status'])->middleware('admin');
 //});

@@ -113,13 +113,10 @@
                 <div class="modal-body">
 
                     <!-- List group -->
-
-
                 </div>
             </div>
         </div>
     </div>
-
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light" id="sidebar">
     <div class="container-fluid">
 
@@ -131,7 +128,7 @@
         <!-- Brand -->
 
         <a class="navbar-brand" href="#!">
-            <img src="{{asset('storage/MGlogo.png')}}" class="navbar-brand-img mx-auto" alt="MGlogo">
+            <img src="{{asset('storage/images/MGlogo.png')}}" class="navbar-brand-img mx-auto" alt="MGlogo">
         </a>
 
         <!-- User (xs) -->
@@ -174,12 +171,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#sidebarPages" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
-                        <i class="fe fe-file"></i> Pages
-                    </a>
-                    <div class="collapse " id="sidebarPages">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
+{{--                    <a class="nav-link" href="#sidebarPages" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">--}}
+{{--                        <i class="fe fe-file"></i> Pages--}}
+{{--                    </a>--}}
+{{--                    <div class="collapse " id="sidebarPages">--}}
+{{--                        <ul class="nav nav-sm flex-column">--}}
+{{--                            <li class="nav-item">--}}
                                 <a href="#sidebarProfile" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProfile">
                                     Profile
                                 </a>
@@ -197,9 +194,12 @@
                                 <a href="{{asset('product')}}" class="nav-link">
                                     Product
                                 </a>
-                            </li>
-                        </ul>
-                    </div>
+                                <a href="{{asset('categorie')}}" class="nav-link">
+                                    Categories
+                                </a>
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                 </li>
                 <li class="nav-item d-md-none">
                     <a class="nav-link" href="#sidebarModalActivity" data-toggle="modal">

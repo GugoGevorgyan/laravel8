@@ -32,7 +32,7 @@
                 <div class="center">
                     <h6 class="font29_size24 pt-5 m-0 mt-2 position-absolute top_0">Shipping Address</h6>
                     <div class="pb-4 mb-1 m-sm-0 pt-3 pt-sm-0">
-                        <img src="{{asset('storage/pana.jpg')}}" alt="shipping">
+                        <img src="{{asset('storage/images/pana.jpg')}}" alt="shipping">
                     </div>
                 </div>
                 <form class="pr-sm-4 pl-sm-4 pr-3 pl-3  shipping_text" method="get" action='{{route('home.index')}}'>

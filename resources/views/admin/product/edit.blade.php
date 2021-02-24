@@ -15,7 +15,7 @@
                                 <div class="col">
                                     <!-- Title -->
                                     <h1 class="header-title">
-                                        create product
+                                        update {{$product->name}} id:{{$product->id}}
                                     </h1>
 
                                 </div>
@@ -27,15 +27,16 @@
                     @if(Session::has('message'))
                         <p class="alert alert-info">{{ Session::get('message') }}</p>
                 @endif
-                <!-- Form -->
-                    <form method="POST" action="{{asset('/product')}}" enctype="multipart/form-data" autocomplete="on">
-                        @csrf
 
+                <!-- Form -->
+                    <form method="POST" action="{{url('product/'.$product->id)}}" enctype="multipart/form-data" autocomplete="on">
+                        @csrf
+                        @method("PUT")
                         <div class="form-group">
                             <label for="name">{{ __('Name') }}</label>
                             <div>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                       name="name" required autofocus>
+                                       name="name" autofocus value={{$product->name}}>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -49,8 +50,8 @@
                             <label for="description">{{ __('Description') }}</label>
 
                             <div>
-                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror"
-                                       name="description" required>
+                                <textarea id="description" class="form-control @error('description') is-invalid @enderror"
+                                          name="description" >{{$product->description}}
                                 </textarea>
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
@@ -64,8 +65,8 @@
                             <label for="price">{{ __('Price') }}</label>
 
                             <div>
-                                <input id="price" type="number"
-                                       class="form-control @error('price') is-invalid @enderror" name="price" required>
+                                <input id="price" type="number" class="form-control @error('price') is-invalid @enderror"
+                                       name="price" value={{$product->price}}>
                                 @error('price')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -76,7 +77,8 @@
 
                         <div class="form-group">
                             <label for="img">{{ __('Image') }}</label>
-                                <input id="img" type="file"  class="form-control @error('img') is-invalid @enderror" name="img" required >
+                            <input id="img" type="file"  class="form-control @error('img') is-invalid @enderror"
+                                   name="img">
                             @error('img')
                             <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -88,7 +90,7 @@
                             <div>
 
                                 <button type="submit" class="btn btn-lg btn-block btn-primary mb-3 col-4">
-                                    Create
+                                    update
                                 </button>
                             </div>
                         </div>

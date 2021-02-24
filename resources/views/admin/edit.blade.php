@@ -31,7 +31,7 @@
                     </div>
                     <h2 class="text-center">change info</h2>
                     <!-- Form -->
-                    <form method="POST" action="{{asset('admin/'.$user->id)}}" class="mb-4">
+                    <form method="POST" action="{{url('admin/'.$user->id)}}" class="mb-4">
                         @csrf
                         @method("PUT")
                         <div class="d-flex flex-column">

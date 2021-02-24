@@ -12,12 +12,12 @@
                                     <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                 @endif
                                 <div class="heart">
-                                    <img class="img_heart" src="{{asset('storage/favorites_black.png')}}"
+                                    <img class="img_heart" src="{{asset('storage/images/favorites_black.png')}}"
                                          alt="favorites">
                                 </div>
                             </div>
                             <div class="hot_sales_img center mt-4">
-                                <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
+                                <img class="container" src="{{asset('storage/images/'.$computer->img)}}" alt="computers">
                             </div>
                             <div class="container">
                                 <div class="align-items-end d-flex flex-row">
@@ -38,7 +38,7 @@
                                         class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
                                     ORDER NOW
                                 </button>
-                                <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
 
                             </div>
 
@@ -57,10 +57,10 @@
                 <div class="container pb-4">
                     <div class="line"></div>
                     <div class="vector_left_container  d-lg-flex d-none center"><a href="#">
-                            <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                     <div class="vector_right_container center d-lg-flex d-none"><a href="#">
-                            <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                 </div>
 
@@ -74,12 +74,12 @@
                                         <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                     @endif
                                     <div class="heart">
-                                        <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                        <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
                                              alt="favorites">
                                     </div>
                                 </div>
                                 <div class="hot_sales_img center mt-4">
-                                    <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
+                                    <img class="container" src="{{asset('storage/images/'.$computer->img)}}" alt="computers">
                                 </div>
                                 <div class="container">
                                     <div class="align-items-end d-flex flex-row">
@@ -98,7 +98,7 @@
                                 <div class="d-flex justify-content-around container">
                                     <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">ORDER NOW
                                     </button>
-                                    <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                    <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
 
                                 </div>
 

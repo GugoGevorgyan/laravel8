@@ -11,7 +11,7 @@
                 @for ($i = 0; $i < count($imgs) ; $i++)
                     <figure class="col-xl-2 p-0 col-md-4 col-sm-6 position-static ">
                         <div class="d-flex rounded-circle  popular_categories_img center container">
-                            <img src="{{asset('storage/'.$imgs[$i])}}" alt="photo">
+                            <img src="{{asset('storage/images/'.$imgs[$i])}}" alt="photo">
                         </div>
                         <figcaption class="d-flex justify-content-center pt-2 pt-md-4 ">{{$figcaption[$i]}}</figcaption>
                     </figure>
@@ -47,10 +47,10 @@
                 <div class="container pb-4">
                     <div class="line"></div>
                     <div class="vector_left_container d-md-flex d-none center"><a href="#">
-                            <img class="vector_left rotate-180" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_left rotate-180" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                     <div class="vector_right_container d-md-flex d-none center"><a href="#">
-                            <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                 </div>
                 <div class="container">
@@ -64,13 +64,13 @@
                                             </div>
                                         @endif
                                         <div class="heart">
-                                            <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                            <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">
                                         </div>
                                     </div>
 
                                     <div class="hot_sales_img center mt-4">
-                                        <img class="container" src="{{asset('storage/'.$sales->img)}}" alt="computers">
+                                        <img class="container" src="{{asset('storage/images/'.$sales->img)}}" alt="computers">
                                     </div>
                                     <div class="container">
                                         <div class="align-items-end d-flex flex-row">
@@ -92,7 +92,7 @@
                                                 class="order_now   bg-dark   center sales_name text-white col-md-9 col-10 p-0">
                                             ORDER NOW
                                         </button>
-                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}"
+                                        <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
                                     </div>
 
@@ -121,10 +121,10 @@
                 <div class="container pb-4">
                     <div class="line"></div>
                     <div class="vector_left_container  d-md-flex d-none center"><a href="#">
-                            <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                     <div class="vector_right_container center d-md-flex d-none"><a href="#">
-                            <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                 </div>
 
@@ -140,12 +140,12 @@
                                             </div>
                                         @endif
                                         <div class="heart">
-                                            <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                            <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">
                                         </div>
                                     </div>
                                     <div class="hot_sales_img center mt-4">
-                                        <img class="container" src="{{asset('storage/'.$computer->img)}}"
+                                        <img class="container" src="{{asset('storage/images/'.$computer->img)}}"
                                              alt="computers">
                                     </div>
                                     <div class="container">
@@ -167,7 +167,7 @@
                                                 class="order_now bg-dark center sales_name text-white  col-10 col-md-9 p-0">
                                             ORDER NOW
                                         </button>
-                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}"
+                                        <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
 
                                     </div>
@@ -186,7 +186,7 @@
                     <div class="owl-carousel pb-lg-5 owl-theme  container" id="owl_1">
                         @foreach($brands as $brand)
                                 <div class="item center p-3">
-                                    <img class="w-auto" src="{{asset('storage/'.$brand)}}" alt="{{$brand}}">
+                                    <img class="w-auto" src="{{asset('storage/images/'.$brand)}}" alt="{{$brand}}">
                             </div>
 
                         @endforeach

@@ -14,7 +14,7 @@
                             <div class="container p-0 pt-lg-0 pt-4 col-lg-4 col-12 m-0 position-static
                                         order-lg-1 order-0">
                                 <div class="hot_sales_img center">
-                                    <img class="container p-0" src="{{asset('storage/computer.png')}}" alt="computers">
+                                    <img class="container p-0" src="{{asset('storage/images/computer.png')}}" alt="computers">
                                 </div>
                             </div>
                             <div class="d-lg-block d-flex flex-column-reverse
@@ -42,7 +42,7 @@
                                     <div class="font_16_20 pr-3 pl-3 text-white bg-danger center"> Sale</div>
                                     <div class="pr-3">
                                         <img class=""
-                                             src="{{asset('storage/add-to-favorites.png')}}"
+                                             src="{{asset('storage/images/add-to-favorites.png')}}"
                                              alt="favorites">
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                             <div
                                 class="container p-0 pt-lg-0 pt-4 col-lg-4 col-12 m-0 position-static order-lg-1 order-0">
                                 <div class="hot_sales_img center">
-                                    <img class="container p-0" src="{{asset('storage/computer.png')}}" alt="computers">
+                                    <img class="container p-0" src="{{asset('storage/images/computer.png')}}" alt="computers">
                                 </div>
                             </div>
                             <div class="d-lg-block d-flex flex-column-reverse
@@ -88,7 +88,7 @@
                                     <div class="d-none font_16_20 pr-3 pl-3 text-white bg-danger center"> Sale</div>
                                     <div class="pr-3">
                                         <img class=""
-                                             src="{{asset('storage/add-to-favorites.png')}}"
+                                             src="{{asset('storage/images/add-to-favorites.png')}}"
                                              alt="favorites">
                                     </div>
                                 </div>
@@ -192,10 +192,10 @@
                     <div class="container pb-4">
                         <div class="line"></div>
                         <div class="vector_left_container  d-lg-flex d-none center"><a href="#">
-                                <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
+                                <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">
                             </a></div>
                         <div class="vector_right_container center d-lg-flex d-none"><a href="#">
-                                <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
+                                <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
                             </a></div>
                     </div>
 
@@ -210,12 +210,12 @@
                                             </div>
                                         @endif
                                         <div class="heart">
-                                            <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                            <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">
                                         </div>
                                     </div>
                                     <div class="hot_sales_img center mt-4">
-                                        <img class="container" src="{{asset('storage/'.$computer->img)}}"
+                                        <img class="container" src="{{asset('storage/images/'.$computer->img)}}"
                                              alt="computers">
                                     </div>
                                     <div class="container">
@@ -237,7 +237,7 @@
                                                 class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
                                             ORDER NOW
                                         </button>
-                                        <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}"
+                                        <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
 
                                     </div>

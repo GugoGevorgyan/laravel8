@@ -8,25 +8,25 @@
                     <div class="z-10 center flex-lg-column flex-row  col-lg-3 col-12 p-0 ">
                         <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100 float-right">
-                                <img class="col-12 p-0 float-right" src="{{asset('storage/accesuar_2.png')}}" alt="">
+                                <img class="col-12 p-0 float-right" src="{{asset('storage/images/accesuar_2.png')}}" alt="">
                             </div>
 
                         </div>
                         <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100">
-                                <img class="col-8 p-0" src="{{asset('storage/accesuar_3.png')}}" alt="">
+                                <img class="col-8 p-0" src="{{asset('storage/images/accesuar_3.png')}}" alt="">
                             </div>
 
                         </div>
                         <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100">
-                                <img class="col-12 p-0" src="{{asset('storage/accesuar_4.png')}}" alt="">
+                                <img class="col-12 p-0" src="{{asset('storage/images/accesuar_4.png')}}" alt="">
                             </div>
 
                         </div>
                         <div class="container-lg-fluid container pl-sm-2 pr-sm-2 p-lg-0 pt-lg-2 pb-md-2 pr-md-3 pl-md-3 col-lg-12  col-3">
                             <div class=" border rounded w-100 float-right">
-                                <img class="col-10 p-0 float-right" src="{{asset('storage/accesuar_5.png')}}" alt="">
+                                <img class="col-10 p-0 float-right" src="{{asset('storage/images/accesuar_5.png')}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="container-fluid pl-sm-2 pr-sm-2 pt-2 pl-3 pr-3 pb-lg-0 pb-3 h-100">
                         <div  class="center border rounded float-right w-100  h-100 ">
                             <div >
-                            <img class="img_single" src="{{asset('storage/accesuar_1.png')}}" alt="">
+                            <img class="img_single" src="{{asset('storage/images/accesuar_1.png')}}" alt="">
                             </div>
                         </div>
                         </div>
@@ -48,7 +48,7 @@
                             <p class="single_currency"> US $1500</p>
                         </div>
                         <div class="d-lg-block d-none">
-                            <img src="{{asset('storage/add-to-favorites.png')}}" alt="">
+                            <img src="{{asset('storage/images/add-to-favorites.png')}}" alt="">
                         </div>
                     </div>
                     <div class="line"></div>
@@ -157,10 +157,10 @@
                 <div class="container pb-4">
                     <div class="line"></div>
                     <div class="vector_left_container  d-md-flex d-none center"><a href="#">
-                            <img class="vector_left" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                     <div class="vector_right_container center d-md-flex d-none"><a href="#">
-                            <img class="vector_right" src="{{asset('storage/Vector.png')}}" alt="">
+                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                 </div>
 
@@ -174,12 +174,12 @@
                                         <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                     @endif
                                     <div class="heart">
-                                        <img class="img_heart" src="{{asset('storage/add-to-favorites.png')}}"
+                                        <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
                                              alt="favorites">
                                     </div>
                                 </div>
                                 <div class="hot_sales_img center mt-4">
-                                    <img class="container" src="{{asset('storage/'.$computer->img)}}" alt="computers">
+                                    <img class="container" src="{{asset('storage/images/'.$computer->img)}}" alt="computers">
                                 </div>
                                 <div class="container">
                                     <div class="align-items-end d-flex flex-row">
@@ -198,7 +198,7 @@
                                 <div class="d-flex justify-content-around container">
                                     <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">ORDER NOW
                                     </button>
-                                    <a href="#"><img src="{{asset('storage/Cart-with-plus.png')}}" alt="paiment"></a>
+                                    <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
 
                                 </div>
 

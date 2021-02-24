@@ -15,9 +15,8 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
         $products = Product::paginate(8);
-        return response()->view('admin/product/index',['products'=> $products]);
+        return response()->view('admin/product/index', ['products' => $products]);
     }
 
     /**
@@ -33,7 +32,7 @@ class AdminProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,29 +41,30 @@ class AdminProductController extends Controller
             'name' => 'required|max:255',
             'img' => 'required|file|image|mimes:jpeg,png,jpg,svg|max:960',
             'description' => 'required|max:255',
+            'price' => 'required|max:8'
         ]);
-
-        $products = new Product();
-        if(isset($request->img) && $request->img->getClientOriginalName()){
+        $products = Product::paginate(8);
+        $product = new Product();
+        if (isset($request->img) && $request->img->getClientOriginalName()) {
             $ext = $request->img->getClientOriginalExtension();
-            $file = rand(1,100).time()."."."$ext";
+            $file = rand(1, 100) . time() . "." . "$ext";
             $request->img->storeAs('public/images', $file);
-        }else{
-                $file = '';
+        } else {
+            $file = '';
         }
-        $products->img = $file;
-        $products->name = $request->name;
-        $products->price = intval($request->price);
-        $products->description = $request->description;
-        $products->user_id = Auth::id();
-        $products->save();
-        return response()->view('admin/product/index',['products'=> Product::all(), 'message' => 'The product was successfully created']);
+        $product->img = $file;
+        $product->name = $request->name;
+        $product->price = intval($request->price);
+        $product->description = $request->description;
+        $product->user_id = Auth::id();
+        $product->save();
+        return response()->view('admin/product/index', ['products' => $products]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,34 +75,75 @@ class AdminProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        dd($id,'edit');
+        $product = Product::find($id);
+        return response()->view('admin/product/edit', ['product' => $product]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'img' => 'file|image|mimes:jpeg,png,jpg,svg|max:960',
+            'description' => 'required|max:255',
+            'price' => 'required|max:8'
+        ]);
+
+        $product = new Product();
+        if (isset($request->img) && $request->img->getClientOriginalName()) {
+            $ext = $request->img->getClientOriginalExtension();
+            $file = rand(1, 100) . time() . "." . "$ext";
+            $request->img->storeAs('public/images', $file);
+        } else {
+            $file = Product::find($id)->img;
+        }
+        $old_price = intval(Product::find($id)->price);
+
+        if ( $old_price === intval($request->price) ){
+            $old_price = null;
+        }
+        Product::find($id)->update([
+            'img' => $file,
+            'name' => $request->name,
+            'price' => intval($request->price),
+            'old_price' => $old_price,
+            'description' => $request->description,
+            'user_id' => Auth::id(),
+        ]);
+        return redirect('product')->
+        with(['message' => 'The product was successfully updated']);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $name = Product::find($id)->name;
+        Product::destroy($id);
+        return redirect()->back()->with(['message' => 'you have successfully removed ' . $name . ' product ']);
+    }
+
+    public function status(Request $request, $id)
+    {
+        $status = Product::find($id)->status === '1' ? 0 : 1;
+        Product::find($id)->update([
+            'status' => $status,
+        ]);
+        return redirect()->back();
     }
 }
