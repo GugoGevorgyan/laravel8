@@ -135,7 +135,7 @@
                             <div class="col-xl-3 p-md-3 p-2 col-md-4 col-sm-6 ">
                                 <div class="hot_sales_imgs_container just_around ">
                                     <div class="d-flex flex-row position-relative h-15">
-                                        @if($sales -> old_price)
+                                        @if($sales -> sale)
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
@@ -150,9 +150,9 @@
                                     </div>
                                     <div class="container">
                                         <div class="align-items-end d-flex flex-row">
-                                            @if($sales -> old_price)
-                                                <p class="price_sale text-danger">${{$sales ->price}}</p>
-                                                <strike class="old_price"><p>${{$sales ->old_price}}</p></strike>
+                                            @if($sales -> sale)
+                                                <p class="price_sale text-danger">${{$sales ->sale}}</p>
+                                                <strike class="old_price"><p>${{$sales ->price}}</p></strike>
                                             @else
                                                 <p class="price_sale" style="color: #151414 !important;">
                                                     ${{$sales ->price}}</p>

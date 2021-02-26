@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,8 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        return response()->view('admin/product/create');
+        $categories = Category::with('subCategory')->get();
+        return response()->view('admin/product/create',['categories'=>$categories]);
     }
 
     /**
@@ -82,8 +84,9 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::with('subCategory')->get();
         $product = Product::find($id);
-        return response()->view('admin/product/edit', ['product' => $product]);
+        return response()->view('admin/product/edit', ['product' => $product, 'categories'=>$categories]);
     }
 
     /**

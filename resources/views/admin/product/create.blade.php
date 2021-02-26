@@ -87,6 +87,24 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="category">{{ __('Category') }}</label>
+
+                            <div>
+                                <select name="category" id="category" class="form-control @error('category') is-invalid @enderror" required>
+                                    @foreach ($categories as $category)
+                                        @foreach ($category->subCategory as $subCategory)
+                                            <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
+                                    @endforeach
+                                    @endforeach
+                                </select>
+                                @error('parent-category')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="img">{{ __('Image') }}</label>
                                 <input id="img" type="file"  class="form-control @error('img') is-invalid @enderror" name="img" required >
                             @error('img')

@@ -38,7 +38,7 @@
 
                     <!-- Card -->
                     <div class="card" data-toggle="lists"
-                         data-lists-values='["prod-id", "prod-image", "prod-name", "prod-description", "prod-price", "prod-sale", "prod-status"]'>
+                         data-lists-values='["prod-id", "prod-image", "prod-name", "prod-description", "prod-price", "prod-sale", "prod-category", "prod-status"]'>
 
                         <div class="table-responsive">
                             <table class="table table-sm table-nowrap card-table">
@@ -72,6 +72,11 @@
                                     <th>
                                         <a href="#" class="text-muted sort" data-sort="prod-sale">
                                             Sale
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a href="#" class="text-muted sort" data-sort="prod-category">
+                                            Category
                                         </a>
                                     </th>
                                     <th>
@@ -109,6 +114,9 @@
                                                ${{$product ->sale}}
                                             @endif
                                         </td>
+                                        <td class="prod-category">
+                                                {{$product ->category}}
+                                        </td>
 
                                         <td class="prod-status">
                                             @if($product->status)
@@ -144,7 +152,7 @@
 
                                                         </form>
 
-                                                    {{--                                                                                 delete--}}
+                                                    {{--                     delete     --}}
                                                     <!-- Button trigger modal -->
                                                         <a href="{{asset("product/{$product->id}/edit")}}" class="py-2">
                                                             <input type="submit" value="Edit"
