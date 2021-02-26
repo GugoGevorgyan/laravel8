@@ -20,22 +20,17 @@ class CreateProductsTable extends Migration
             $table->float('price', 10, 2);
             $table->float('old_price', 10, 2)->nullable();
             $table->string('description')->nullable();
-            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreignId('user_id')->nullable()
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('status')->default(1);
-            $table->bigInteger('categorie_id')->unsigned()->nullable();
+            $table->foreignId('category_id')->nullable()
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->float('sale')->nullable();
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-
-            $table->foreign('categorie_id')
-                ->references('id')
-                ->on('categories')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
         });
     }
 

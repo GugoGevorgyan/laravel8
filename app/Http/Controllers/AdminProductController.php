@@ -41,7 +41,8 @@ class AdminProductController extends Controller
             'name' => 'required|max:255',
             'img' => 'required|file|image|mimes:jpeg,png,jpg,svg|max:960',
             'description' => 'required|max:255',
-            'price' => 'required|max:8'
+            'price' => 'required|max:8',
+            'sale' => 'max:8'
         ]);
         $products = Product::paginate(8);
         $product = new Product();
@@ -55,6 +56,7 @@ class AdminProductController extends Controller
         $product->img = $file;
         $product->name = $request->name;
         $product->price = intval($request->price);
+        $product->sale = intval($request->sale);
         $product->description = $request->description;
         $product->user_id = Auth::id();
         $product->save();
@@ -97,7 +99,8 @@ class AdminProductController extends Controller
             'name' => 'required|max:255',
             'img' => 'file|image|mimes:jpeg,png,jpg,svg|max:960',
             'description' => 'required|max:255',
-            'price' => 'required|max:8'
+            'price' => 'required|max:8',
+            'sale' => 'max:8'
         ]);
 
         $product = new Product();
@@ -117,6 +120,7 @@ class AdminProductController extends Controller
             'img' => $file,
             'name' => $request->name,
             'price' => intval($request->price),
+            'sale' => intval($request->sale),
             'old_price' => $old_price,
             'description' => $request->description,
             'user_id' => Auth::id(),

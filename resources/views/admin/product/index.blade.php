@@ -38,7 +38,7 @@
 
                     <!-- Card -->
                     <div class="card" data-toggle="lists"
-                         data-lists-values='["prod-id", "prod-image", "prod-name", "prod-description", "prod-price", "prod-status"]'>
+                         data-lists-values='["prod-id", "prod-image", "prod-name", "prod-description", "prod-price", "prod-sale", "prod-status"]'>
 
                         <div class="table-responsive">
                             <table class="table table-sm table-nowrap card-table">
@@ -70,6 +70,11 @@
                                         </a>
                                     </th>
                                     <th>
+                                        <a href="#" class="text-muted sort" data-sort="prod-sale">
+                                            Sale
+                                        </a>
+                                    </th>
+                                    <th>
                                         <a href="#" class="text-muted sort" data-sort="prod-status">
                                             Status
                                         </a>
@@ -84,7 +89,8 @@
                                             {{$product->id}}
                                         </td>
                                         <td class="prod-image">
-                                            <img class="" src="{{asset('storage/images/'.$product->img)}}" alt="{{$product->name}}">
+                                            <img class="" src="{{asset('storage/images/'.$product->img)}}"
+                                                 alt="{{$product->name}}">
                                         </td>
                                         <td class="prod-name">
                                             {{$product->name}}
@@ -93,10 +99,15 @@
                                             {{$product->description}}
                                         </td>
                                         <td class="prod-price">
-                                            @if($product->old_price)
-                                                <strike class="old_price"><p>${{$product ->old_price}}</p></strike>
-                                            @endif
+                                            {{--                                            @if($product->old_price)--}}
+                                            {{--                                                <strike class="old_price"><p>${{$product ->old_price}}</p></strike>--}}
+                                            {{--                                            @endif--}}
                                             ${{$product->price}}
+                                        </td>
+                                        <td class="prod-sale">
+                                            @if($product->sale)
+                                               ${{$product ->sale}}
+                                            @endif
                                         </td>
 
                                         <td class="prod-status">
@@ -136,7 +147,8 @@
                                                     {{--                                                                                 delete--}}
                                                     <!-- Button trigger modal -->
                                                         <a href="{{asset("product/{$product->id}/edit")}}" class="py-2">
-                                                            <input type="submit" value="Edit" class="btn btn-primary w-100" >
+                                                            <input type="submit" value="Edit"
+                                                                   class="btn btn-primary w-100">
                                                         </a>
                                                         <div class="py-2">
                                                             <input type="button" value="Delete"

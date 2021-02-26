@@ -73,7 +73,19 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="sale">{{ __('Sale') }}</label>
 
+                            <div>
+                                <input id="sale" type="number" class="form-control @error('sale') is-invalid @enderror"
+                                       name="sale">
+                                @error('sale')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="img">{{ __('Image') }}</label>
                                 <input id="img" type="file"  class="form-control @error('img') is-invalid @enderror" name="img" required >
