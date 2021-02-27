@@ -117,19 +117,19 @@
                                                         <div class="py-2">
                                                             <input type="button" value="Delete"
                                                                    class="btn btn-danger w-100" data-toggle="modal"
-                                                                   data-target="#deleteModal">
+                                                                   data-target="#deleteModal{{$admin->id}}">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             {{--                modal Delete                            --}}
-                                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
-                                                 aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="deleteModal{{$admin->id}}" tabindex="-1" role="dialog"
+                                                 aria-labelledby="deleteModalLabel{{$admin->id}}" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalLabel">Delete Admin
+                                                            <h5 class="modal-title" id="deleteModalLabel{{$admin->id}}">Delete Admin
                                                                 "{{$admin->name}} "</h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                     aria-label="Close">

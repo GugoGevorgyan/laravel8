@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdminProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -16,7 +17,9 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(8);
+        $products =  Product::with('category')->paginate(8);
+//        $prod = Product::with('category')->paginate(8)->get();
+
         return response()->view('admin/product/index', ['products' => $products]);
     }
 
@@ -37,15 +40,8 @@ class AdminProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminProductRequest $request)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'img' => 'required|file|image|mimes:jpeg,png,jpg,svg|max:960',
-            'description' => 'required|max:255',
-            'price' => 'required|max:8',
-            'sale' => 'max:8'
-        ]);
         $products = Product::paginate(8);
         $product = new Product();
         if (isset($request->img) && $request->img->getClientOriginalName()) {
@@ -61,6 +57,7 @@ class AdminProductController extends Controller
         $product->sale = intval($request->sale);
         $product->description = $request->description;
         $product->user_id = Auth::id();
+        $product->category_id = $request->category_id;;
         $product->save();
         return response()->view('admin/product/index', ['products' => $products]);
     }
@@ -84,8 +81,9 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
+
         $categories = Category::with('subCategory')->get();
-        $product = Product::find($id);
+        $product = Product::with('category')->find($id);
         return response()->view('admin/product/edit', ['product' => $product, 'categories'=>$categories]);
     }
 
@@ -96,15 +94,8 @@ class AdminProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminProductRequest $request, $id)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'img' => 'file|image|mimes:jpeg,png,jpg,svg|max:960',
-            'description' => 'required|max:255',
-            'price' => 'required|max:8',
-            'sale' => 'max:8'
-        ]);
 
         $product = new Product();
         if (isset($request->img) && $request->img->getClientOriginalName()) {
@@ -126,6 +117,7 @@ class AdminProductController extends Controller
             'sale' => intval($request->sale),
             'old_price' => $old_price,
             'description' => $request->description,
+            'category_id' => $request->category_id,
             'user_id' => Auth::id(),
         ]);
         return redirect('product')->

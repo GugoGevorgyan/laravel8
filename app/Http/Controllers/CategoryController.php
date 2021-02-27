@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -25,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::with('category')->get();
+        $categories = Category::all()->where('parent_id','=',Null);
         return response()->view('admin/category/create',['categories' => $categories]);
 
     }
@@ -38,7 +39,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
         $parent = intval($request->parent_category) ;
         if ($request->parent_category === 'main'){
             $parent = null;
@@ -68,12 +68,14 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $edit = Category::find($id);
+        $categories = Category::all()->where('parent_id','=',Null);
+        return response()->view('admin/category/edit',['categories' => $categories, 'edit'=>$edit]);
     }
 
     /**
@@ -85,7 +87,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $parent = intval($request->parent_category) ;
+        if ($request->parent_category === 'main'){
+            $parent = null;
+        }
+        $request->validate([
+            'name' => "required|max:20|unique:categories,name,{$category->id}"
+        ]);
+
+        $category->update([
+            'name'=> $request->name,
+            'parent_id'=>$parent
+        ]);
+        return redirect()-> route('category.index')
+            ->with(['message' => 'The category was successfully updated']);
+
     }
 
     /**
@@ -96,6 +112,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $name = $category->name;
+        $category->delete();
+        return redirect()->back()->with(['message' => 'you have successfully removed ' . $name . ' category ']);
     }
 }

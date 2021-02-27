@@ -29,15 +29,15 @@
                 @endif
 
                 <!-- Form -->
-                    <form method="POST" action="{{url('product/'.$product->id)}}" enctype="multipart/form-data" autocomplete="on">
+                    <form method="POST" action="{{url('product/'.$product->id)}}" enctype="multipart/form-data"
+                          autocomplete="on">
                         @csrf
                         @method("PUT")
                         <div class="form-group">
                             <label for="name">{{ __('Name') }}</label>
                             <div>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                       name="name" autofocus value={{$product->name}}>
-
+                                       name="name" autofocus value="{{old('name',$product->name) }}">
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -50,8 +50,9 @@
                             <label for="description">{{ __('Description') }}</label>
 
                             <div>
-                                <textarea id="description" class="form-control @error('description') is-invalid @enderror"
-                                          name="description" >{{$product->description}}
+                                <textarea id="description"
+                                          class="form-control @error('description') is-invalid @enderror"
+                                          name="description">{{old('description',$product->description) }}
                                 </textarea>
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
@@ -65,8 +66,9 @@
                             <label for="price">{{ __('Price') }}</label>
 
                             <div>
-                                <input id="price" type="number" class="form-control @error('price') is-invalid @enderror"
-                                       name="price" value={{$product->price}}>
+                                <input id="price" type="number"
+                                       class="form-control @error('price') is-invalid @enderror"
+                                       name="price" value="{{old('price',$product->price) }}">
                                 @error('price')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -79,7 +81,7 @@
 
                             <div>
                                 <input id="sale" type="number" class="form-control @error('sale') is-invalid @enderror"
-                                       name="sale" value={{$product->sale}}>
+                                       name="sale" value="{{old('sale',$product->sale) }}">
                                 @error('sale')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -91,10 +93,15 @@
                         <div class="form-group">
                             <label for="category">{{ __('Category') }}</label>
                             <div>
-                                <select name="category" id="category" class="form-control @error('category') is-invalid @enderror" required>
+                                <select name="category_id" id="category"
+                                        class="form-control @error('category') is-invalid @enderror" required>
                                     @foreach ($categories as $category)
                                         @foreach ($category->subCategory as $subCategory)
-                                            <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
+                                            @if($product->category && $product->category->name === $subCategory->name)
+                                                <option value="{{$subCategory->id}}" selected>{{$subCategory->name}}</option>
+                                            @else
+                                                <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
+                                            @endif
                                         @endforeach
                                     @endforeach
                                 </select>
@@ -108,7 +115,7 @@
 
                         <div class="form-group">
                             <label for="img">{{ __('Image') }}</label>
-                            <input id="img" type="file"  class="form-control @error('img') is-invalid @enderror"
+                            <input id="img" type="file" class="form-control @error('img') is-invalid @enderror"
                                    name="img">
                             @error('img')
                             <span class="invalid-feedback" role="alert">
@@ -116,17 +123,14 @@
                                 </span>
                             @enderror
                         </div>
-
                         <div class="form-group">
                             <div>
-
                                 <button type="submit" class="btn btn-lg btn-block btn-primary mb-3 col-4">
                                     update
                                 </button>
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div> <!-- / .row -->
         </div>

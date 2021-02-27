@@ -38,7 +38,7 @@
 
                     <!-- Card -->
                     <div class="card" data-toggle="lists"
-                         data-lists-values='["category-id", "category-name",  "category-parent"]'>
+                         data-lists-values='["category-id", "category-name", "category-parent"]'>
 
                         <div class="table-responsive">
                             <table class="table table-sm table-nowrap card-table">
@@ -93,21 +93,21 @@
                                                         <div class="py-2">
                                                             <input type="button" value="Delete"
                                                                    class="btn btn-danger w-100" data-toggle="modal"
-                                                                   data-target="#deleteModalProduct">
+                                                                   data-target="#deleteModalCategory{{$category->id}}">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             {{--                                                            modal Delete--}}
-                                            <div class="modal fade" id="deleteModalProduct" tabindex="-1" role="dialog"
-                                                 aria-labelledby="deleteModalProductLabel" aria-hidden="true">
+                                            <div class="modal fade" id="deleteModalCategory{{$category->id}}" tabindex="-1" role="dialog"
+                                                 aria-labelledby="deleteModalCategoryLabel{{$category->id}}" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalProductLabel">Delete
-                                                                product
-                                                                "{{$category->name}} "</h5>
+                                                            <h5 class="modal-title" id="deleteModalCategoryLabel{{$category->id}}">Delete
+                                                                Category
+                                                                {{$category->name}} </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                     aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>

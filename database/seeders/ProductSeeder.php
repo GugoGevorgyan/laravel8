@@ -19,8 +19,8 @@ class ProductSeeder extends Seeder
                 [
                     'name' => 'Samsung Earbuds',
                     'img' => 'computer.png',
-                    'price' => 1500,
-                    'old_price' => 2500,
+                    'sale' => 1500,
+                    'price' => 2500,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
@@ -29,7 +29,31 @@ class ProductSeeder extends Seeder
                     'name' => 'Samsung Earbuds',
                     'img' => 'computer.png',
                     'price' => 1500,
-                    'old_price' => null,
+                    'sale' => null,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'sale' => 1500,
+                    'price' => 2500,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'sale' => 1500,
+                    'price' => 2500,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ],
+                [
+                    'name' => 'Samsung Earbuds',
+                    'img' => 'computer.png',
+                    'sale' => 1500,
+                    'price' => 2500,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
@@ -37,31 +61,7 @@ class ProductSeeder extends Seeder
                     'name' => 'Samsung Earbuds',
                     'img' => 'computer.png',
                     'price' => 1500,
-                    'old_price' => 2500,
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Samsung Earbuds',
-                    'img' => 'computer.png',
-                    'price' => 1500,
-                    'old_price' => 2500,
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Samsung Earbuds',
-                    'img' => 'computer.png',
-                    'price' => 1500,
-                    'old_price' => 2500,
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Samsung Earbuds',
-                    'img' => 'computer.png',
-                    'price' => 1500,
-                    'old_price' => null,
+                    'sale' => null,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
@@ -71,6 +71,5 @@ class ProductSeeder extends Seeder
         }
 
         }
-//        Product::factory()->count(100)->make();
     }
 }

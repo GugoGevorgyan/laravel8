@@ -35,7 +35,7 @@
                             <label for="name">{{ __('Name') }}</label>
                             <div>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                       name="name" required autofocus>
+                                       name="name" value="{{old('name')}}" required autofocus>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -50,7 +50,7 @@
 
                             <div>
                                 <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror"
-                                       name="description" required>
+                                       name="description" required> {{old('description')}}
                                 </textarea>
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
@@ -65,7 +65,7 @@
 
                             <div>
                                 <input id="price" type="number"
-                                       class="form-control @error('price') is-invalid @enderror" name="price" required>
+                                       class="form-control @error('price') is-invalid @enderror" name="price" value="{{old('price')}}" required>
                                 @error('price')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -78,7 +78,7 @@
 
                             <div>
                                 <input id="sale" type="number" class="form-control @error('sale') is-invalid @enderror"
-                                       name="sale">
+                                       name="sale" value="{{old('sale')}}">
                                 @error('sale')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -90,7 +90,7 @@
                             <label for="category">{{ __('Category') }}</label>
 
                             <div>
-                                <select name="category" id="category" class="form-control @error('category') is-invalid @enderror" required>
+                                <select name="category_id" id="category" class="form-control @error('category') is-invalid @enderror" required>
                                     @foreach ($categories as $category)
                                         @foreach ($category->subCategory as $subCategory)
                                             <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>

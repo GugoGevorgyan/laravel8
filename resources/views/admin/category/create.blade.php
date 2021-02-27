@@ -34,7 +34,7 @@
                             <label for="name">{{ __('Name') }}</label>
                             <div>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                       name="name" required autofocus>
+                                       name="name" value="{{old('name')}}" required autofocus>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">

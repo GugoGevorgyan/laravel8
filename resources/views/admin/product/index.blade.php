@@ -115,7 +115,9 @@
                                             @endif
                                         </td>
                                         <td class="prod-category">
-                                                {{$product ->category}}
+                                            @if($product ->category)
+                                                {{$product ->category->name}}
+                                            @endif
                                         </td>
 
                                         <td class="prod-status">
@@ -161,19 +163,19 @@
                                                         <div class="py-2">
                                                             <input type="button" value="Delete"
                                                                    class="btn btn-danger w-100" data-toggle="modal"
-                                                                   data-target="#deleteModalProduct">
+                                                                   data-target="#deleteModalProduct{{$product->id}}">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             {{--                                                            modal Delete--}}
-                                            <div class="modal fade" id="deleteModalProduct" tabindex="-1" role="dialog"
-                                                 aria-labelledby="deleteModalProductLabel" aria-hidden="true">
+                                            <div class="modal fade" id="deleteModalProduct{{$product->id}}" tabindex="-1" role="dialog"
+                                                 aria-labelledby="deleteModalProductLabel{{$product->id}}" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalProductLabel">Delete
+                                                            <h5 class="modal-title" id="deleteModalProductLabel{{$product->id}}">Delete
                                                                 product
                                                                 "{{$product->name}} "</h5>
                                                             <button type="button" class="close" data-dismiss="modal"

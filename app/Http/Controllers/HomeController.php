@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 //use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -17,7 +18,16 @@ class   HomeController extends Controller
     {
         $hot_sales = Product::paginate(4);
         $computers = Product::paginate(8);
+        $categories = Category::with('category')->get();
+        $i = 1;
 
+        foreach ($categories as $category){
+            if (!$category->category){
+                $i ++;
+
+            }
+        }
+        dd($i);
 
         $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
         $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
