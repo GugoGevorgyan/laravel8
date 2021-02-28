@@ -16,24 +16,17 @@ class   HomeController extends Controller
      */
     public function index()
     {
-        $hot_sales = Product::paginate(4);
-        $computers = Product::paginate(8);
+        $hot_sales = Product::where('status',1)->paginate(4);
+        $computers = Product::where('status',1)->paginate(8);
         $categories = Category::with('category')->get();
-        $i = 1;
-
-        foreach ($categories as $category){
-            if (!$category->category){
-                $i ++;
-
-            }
-        }
-        dd($i);
+        $subCategories = Category::with('subCategory')->get();
 
         $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
         $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
         $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];
         return response()->view('home/index', ['imgs' => $imgs, 'figcaption' => $figcaption,
-            'hot_sales' => $hot_sales, 'computers' => $computers, 'brands' => $brands]);
+            'hot_sales' => $hot_sales, 'computers' => $computers, 'brands' => $brands,
+            'categories'=>$categories,'subCategories'=>$subCategories]);
     }
 
     /**
@@ -43,9 +36,12 @@ class   HomeController extends Controller
      */
     public function create()
     {
-        $computers = Product::paginate(20);
-        $similar = Product::paginate(4);
-        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar]);
+        $categories = Category::with('category')->get();
+        $subCategories = Category::with('subCategory')->get();
+        $computers = Product::where('status',1)->paginate(20);
+        $similar = Product::where('status',1)->paginate(4);
+        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar,
+            'categories'=>$categories,'subCategories'=>$subCategories]);
     }
 
     /**
@@ -67,9 +63,12 @@ class   HomeController extends Controller
      */
     public function show($id)
     {
-        $computers = Product::paginate(2);
-        $similar = Product::paginate(4);
-        return response()->view('home/favorites', ['computers' => $computers, 'similar' => $similar]);
+        $categories = Category::with('category')->get();
+        $subCategories = Category::with('subCategory')->get();
+        $computers = Product::where('status',1)->paginate(2);
+        $similar = Product::where('status',1)->paginate(4);
+        return response()->view('home/favorites', ['computers' => $computers, 'similar' => $similar,
+            'categories'=>$categories,'subCategories'=>$subCategories]);
     }
 
     /**
@@ -80,11 +79,14 @@ class   HomeController extends Controller
      */
     public function edit($id)
     {
-        $computers = Product::paginate(4);
+        $categories = Category::with('category')->get();
+        $subCategories = Category::with('subCategory')->get();
+        $computers = Product::where('status',1)->paginate(4);
         $colors = ['#F03A4B', '#000000', '#2672FF', '#74AB2E', '#C31FEC', '#EABD1C'];
         $product = Product::find($id);
         return response()->view('home.productSinglePage',
-            ['product' => $product, 'colors' => $colors, 'computers' => $computers]);
+            ['product' => $product, 'colors' => $colors, 'computers' => $computers,
+                'categories'=>$categories,'subCategories'=>$subCategories]);
     }
 
     /**
@@ -112,9 +114,12 @@ class   HomeController extends Controller
 
     public function cart()
     {
-        $computers = Product::paginate(2);
-        $similar = Product::paginate(4);
-        return response()->view('home/cart', ['computers' => $computers, 'similar' => $similar]);
+        $categories = Category::with('category')->get();
+        $subCategories = Category::with('subCategory')->get();
+        $computers = Product::where('status',1)->paginate(2);
+        $similar = Product::where('status',1)->paginate(4);
+        return response()->view('home/cart', ['computers' => $computers, 'similar' => $similar,
+            'categories'=>$categories,'subCategories'=>$subCategories]);
     }
 
     public function shipping()
@@ -125,5 +130,20 @@ class   HomeController extends Controller
     public function orderNow()
     {
         return view('home/orderNow');
+    }
+    /**
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function prod($prod)
+    {
+//        $categ=Product::with('prods')->get();
+
+////        $categ = $categ->category->name;
+//        dd($categ);
+        $product = Category::with('product')->where('name',$prod)->get();
+
+
     }
 }

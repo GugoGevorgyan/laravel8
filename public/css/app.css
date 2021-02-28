@@ -341,7 +341,7 @@ span.shadow-sm {
 
 #hidden_menu {
     left: -120px;
-    top: 52px;
+    top: 67px;
 }
 
 .dropdown-menu {
@@ -352,12 +352,12 @@ span.shadow-sm {
     background-color: inherit !important;
 }
 
-#menu_Accesories {
-    left: -30px;
-    top: 44px;
+.menu_Accesories {
+    left: -30px !important;
+    top: 53px !important;
 }
 
-#menu_Accesories > a.dropdown-item {
+.menu_Accesories > a.dropdown-item {
     padding: 0 24px;
     height: 52px;
 }
@@ -384,8 +384,8 @@ span.shadow-sm {
     padding: 0;
 }
 
-.menu_content:hover, #menu_Accesories > .dropdown-item:hover,
-#menu_Accesories > .dropdown-item:focus {
+.menu_content:hover, .menu_Accesories > .dropdown-item:hover,
+.menu_Accesories > .dropdown-item:focus {
     border-left: 6px solid #E11D1D;
     padding: 0 18px !important;
     background: #F2ECEC;

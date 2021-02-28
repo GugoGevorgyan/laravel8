@@ -31,8 +31,8 @@
                                 <div>
                                     <div class="container p-0 pt-lg-0 pb-lg-0 pt-1 pb-1 ">
                                         <div class="align-items-end d-flex flex-row">
-                                            <p class="price_sale text-danger ">${{$computers[1] ->price}}</p>
-                                            <strike class="old_price"><p>${{$computers[0] ->old_price}}</p></strike>
+                                            <p class="price_sale text-danger ">${{$computers[1] ->sale}}</p>
+                                            <strike class="old_price"><p>${{$computers[0] ->price}}</p></strike>
                                         </div>
                                     </div>
                                 </div>
@@ -76,8 +76,8 @@
                                 <div>
                                     <div class="container p-0 pt-lg-0 pb-lg-0 pt-1 pb-1 ">
                                         <div class="align-items-end d-flex flex-row">
-                                            <p class="price_sale ">${{$computers[1] ->price}}</p>
-                                            <strike class="old_price d-none"><p>${{$computers[0] ->old_price}}</p>
+                                            <p class="price_sale ">${{$computers[1] ->sale}}</p>
+                                            <strike class="old_price d-none"><p>${{$computers[0] ->price}}</p>
                                             </strike>
                                         </div>
                                     </div>
@@ -205,7 +205,7 @@
                             <div class="col-xl-3 p-3   col-md-4 col-sm-6  disp2-none">
                                 <div class="hot_sales_imgs_container just_around ">
                                     <div class="d-flex flex-row position-relative h-15">
-                                        @if($computer -> old_price)
+                                        @if($computer -> sale)
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
@@ -220,9 +220,9 @@
                                     </div>
                                     <div class="container">
                                         <div class="align-items-end d-flex flex-row">
-                                            @if($computer -> old_price)
-                                                <p class="price_sale text-danger">${{$computer ->price}}</p>
-                                                <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
+                                            @if($computer -> sale)
+                                                <p class="price_sale text-danger">${{$computer ->sale}}</p>
+                                                <strike class="old_price"><p>${{$computer ->price}}</p></strike>
                                             @else
                                                 <p class="price_sale" style="color: #151414 !important;">
                                                     ${{$computer ->price}}</p>

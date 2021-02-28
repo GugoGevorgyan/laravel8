@@ -14,6 +14,6 @@ composer install
 
 7.php artisan migrate --seed
 
-8.
+8.php artisan config:cache
 
 php artisan serv
