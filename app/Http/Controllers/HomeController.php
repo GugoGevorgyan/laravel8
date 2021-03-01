@@ -141,8 +141,7 @@ class   HomeController extends Controller
         $ProductSubCategory = Category::with('products')->where('name',$prod)->first();
         $checkCategoryProducts = Category::with('prods')->where('name',$prod)->first();
         $categoryProducts = $checkCategoryProducts->prods()->where('status',1)->paginate(20);
-
-        if (isset($pp[0]->name)){
+        if (isset($categoryProducts[0]->name)){
             $computers = $categoryProducts;
         }else{
             $computers = $ProductSubCategory->products()->where('status','=',1)->paginate(20);
