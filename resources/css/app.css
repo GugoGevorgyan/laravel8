@@ -350,8 +350,8 @@ span.shadow-sm {
 }
 
 .menu_Accesories {
-    left: -30px;
-    top: 44px;
+    left: -30px !important;
+    top: 32px !important;
 }
 
 .menu_Accesories > a.dropdown-item {
@@ -501,6 +501,16 @@ span[aria-current="page"] > span {
 
 .rounded-md > a:nth-child(6n+3) {
     display: none;
+}
+
+.dropdown:hover>.dropdown-menu{
+    display: block;
+}
+.dropdown:hover>.dropdown-menu>.dropdown-menu{
+    display: block;
+}
+.dropdown-menu:hover>.dropdown-menu{
+    display: block;
 }
 
 .z-index-n1 {

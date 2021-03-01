@@ -14,7 +14,7 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'category_id','id');
     }
 //    public function prods(){
-//        return $this->products->map->brand->flatten()->pluck('name');
+//        return $this->hasMAnyThrough(Category::class,Product::class,'category_id','parent_id','id','id');
 //    }
 
 

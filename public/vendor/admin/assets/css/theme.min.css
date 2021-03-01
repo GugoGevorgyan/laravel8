@@ -14255,7 +14255,8 @@ span[aria-current="page"] > span {
     appearance: none;
     outline: none;
 }
-.sm\:flex-1>div:first-child{
+
+.sm\:flex-1 > div:first-child {
     display: none;
 }
 

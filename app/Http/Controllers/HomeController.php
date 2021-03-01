@@ -138,12 +138,28 @@ class   HomeController extends Controller
      */
     public function prod($prod)
     {
-//        $categ=Product::with('prods')->get();
+        $ProductSubCategory = Category::with('products')->where('name',$prod)->first();
+        $checkCategoryProducts = Category::with('prods')->where('name',$prod)->first();
+        $categoryProducts = $checkCategoryProducts->prods()->where('status',1)->paginate(20);
 
-////        $categ = $categ->category->name;
-//        dd($categ);
-        $product = Category::with('product')->where('name',$prod)->get();
+        if (isset($pp[0]->name)){
+            $computers = $categoryProducts;
+        }else{
+            $computers = $ProductSubCategory->products()->where('status','=',1)->paginate(20);
+        }
 
+        $categories = Category::with('category')->get();
+        $subCategories = Category::with('subCategory')->get();
+        $productCategory = Category::with('category')->where('name', '=',$prod)->first()->category;
+
+        $similar = Product::where('status',1)->paginate(4);
+        if (isset($productCategory)){
+            $productCategory = $productCategory->name;
+        }else{
+            $productCategory = $prod;
+        }
+        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar,
+            'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory ]);
 
     }
 }

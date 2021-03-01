@@ -19,7 +19,7 @@
                 </li>
                 <li class="container p-0 pl-md-3 nav-item dropdown dropleft">
                     <a class="nav-link" id="dropDownMenuMedia" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                       data-toggle="dropdown" data-hover="dropdown"  aria-haspopup="true" aria-expanded="false" href="#">
                         <img class="img_heart" src="{{asset('storage/images/menu-alt-2.png')}}" alt="">
                     </a>
                     <div class="dropdown-menu border-0 bg-white p-0 transform106" aria-labelledby="dropDownMenuMedia">
@@ -37,7 +37,7 @@
                                     </div>
                                     <span class="fa fa-angle-right ml-1 pl-5"></span>
                                 </a>
-                                <ul class="dropdown-menu border-0 rounded-0 pl-5 ml-1 p-0 position-static float-none">
+                                <ul class="dropdown-menu m-0 border-0 rounded-0 pl-5 ml-1 p-0 position-static float-none">
                                     @foreach ($subCategories as $subCategory)
                                         @if ($subCategory->subCategory && $subCategory->name === $category->name)
                                             @foreach($subCategory->subCategory as $sub)
@@ -98,23 +98,24 @@
                     @foreach ($categories as $category)
                         @if (!$category->category)
                             <li class="nav-item dropdown col-3  d-flex flex-row col-3 align-items-center p-0 justify-content-between">
-                                <a class="nav-link p-0  font18_size22" href="#"
-                                   id="navbarDropdownMenuLink{{$category->name}}"
-                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link p-0 font18_size22" href="{{url('prod/'.$category->name)}}"
+                                   id="navbarDropdownMenuLink{{$category->name}}">
                                     {{$category->name}}
                                 </a>
                                 <img class="h-50" src="{{asset('storage/images/Vector.png')}}" alt=">">
-                                <div class="dropdown-menu menu_txt text-dark p-0 top menu_Accesories"
-                                     aria-labelledby="navbarDropdownMenuLink{{$category->name}}">
-                                    @foreach ($subCategories as $subCategory)
-                                        @if ($subCategory->subCategory && $subCategory->name === $category->name)
-                                            @foreach($subCategory->subCategory as $sub)
-                                                <a class="dropdown-item d-flex  align-items-center"
-                                                   href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a>
-                                            @endforeach
-                                        @endif
-                                    @endforeach
-                                </div>
+                               <div class="dropdown-menu border-0 bg-transparent m-0 pt-4">
+                                   <div class="dropdown-menu m-0 menu_txt text-dark p-0 top menu_Accesories"
+                                        aria-labelledby="navbarDropdownMenuLink{{$category->name}}">
+                                       @foreach ($subCategories as $subCategory)
+                                           @if ($subCategory->subCategory && $subCategory->name === $category->name)
+                                               @foreach($subCategory->subCategory as $sub)
+                                                   <a class="dropdown-item d-flex  align-items-center"
+                                                      href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a>
+                                               @endforeach
+                                           @endif
+                                       @endforeach
+                                   </div>
+                               </div>
                             </li>
                         @endif
                     @endforeach

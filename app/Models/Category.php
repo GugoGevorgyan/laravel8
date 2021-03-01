@@ -20,4 +20,7 @@ class Category extends Model
     public function products(){
         return $this->hasMany(Product::class);
     }
+    public function prods(){
+        return $this->hasMAnyThrough(Product::class,Category::class,'parent_id','category_id','id','id');
+    }
 }
