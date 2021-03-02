@@ -28,7 +28,7 @@
                         <p class="alert alert-info">{{ Session::get('message') }}</p>
                 @endif
                 <!-- Form -->
-                    <form method="POST" action="{{url('category/'.$edit->id)}}" autocomplete="on">
+                    <form method="POST" action="{{route('category.update',$edit->id)}}" autocomplete="on">
                         @csrf
                         @method('PUT')
                         <div class="form-group">

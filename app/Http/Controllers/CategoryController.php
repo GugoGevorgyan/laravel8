@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -51,7 +50,8 @@ class CategoryController extends Controller
         $category->parent_id = $parent;
         $category->save();
         $categories = Category::all();
-        return response()->view('admin/category/index', ['categories' => $categories]);
+        return redirect('admin/category')
+            ->with(['message' => 'The category successfully created']);
     }
 
     /**

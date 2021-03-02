@@ -28,7 +28,7 @@
                         <p class="alert alert-info">{{ Session::get('message') }}</p>
                 @endif
                 <!-- Form -->
-                    <form method="POST" action="{{asset('/product')}}" enctype="multipart/form-data" autocomplete="on">
+                    <form method="POST" action="{{route('product.store')}}" enctype="multipart/form-data" autocomplete="on">
                         @csrf
 
                         <div class="form-group">

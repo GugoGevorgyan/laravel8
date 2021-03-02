@@ -166,7 +166,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{asset('admin')}}" >
+                    <a class="nav-link" href="{{route('adminDashboard.index')}}" >
                         <i class="fe fe-home"></i> Dashboards
                     </a>
                 </li>
@@ -183,7 +183,7 @@
                                 <div class="collapse " id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="{{asset('/admin/'.Auth::user()->id)}}" class="nav-link ">
+                                            <a href="{{route('admin.index')}}" class="nav-link ">
                                                 Admins
                                             </a>
                                         </li>
@@ -191,10 +191,10 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="{{asset('product')}}" class="nav-link">
+                                <a href="{{route('product.index')}}" class="nav-link">
                                     Product
                                 </a>
-                                <a href="{{asset('category')}}" class="nav-link">
+                                <a href="{{route('category.index')}}" class="nav-link">
                                     Categories
                                 </a>
 {{--                            </li>--}}
@@ -251,7 +251,7 @@
 
                     <!-- Menu -->
                     <div class="dropdown-menu" aria-labelledby="sidebarIconCopy">
-                        <a href="{{asset('admin/'.Auth::id().'/edit')}}" class="dropdown-item">{{ __('Edit Page') }}</a>
+                        <a href="{{route('admin.edit',Auth::id())}}" class="dropdown-item">{{ __('Edit Page') }}</a>
 {{--                        <a href="" class="dropdown-item">Settings</a>--}}
                         <hr class="dropdown-divider">
                         <a href="{{ route('logout') }}"  onclick="event.preventDefault();

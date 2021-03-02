@@ -28,7 +28,7 @@
                                 <div class="col-auto">
 
                                     <!-- Button -->
-                                    <a href="{{url('category/create')}}" class="btn btn-primary">
+                                    <a href="{{route('category.create')}}" class="btn btn-primary">
                                         {{ __('Create Category / SubCategory') }}
                                     </a>
                                 </div>
@@ -87,7 +87,7 @@
                                                     <div class="dropdown-item d-flex flex-column">
                                                     {{--                delete          --}}
                                                     <!-- Button trigger modal -->
-                                                        <a href="{{asset("category/{$category->id}/edit")}}" class="py-2">
+                                                        <a href="{{route("category.edit",$category->id)}}" class="py-2">
                                                             <input type="submit" value="Edit" class="btn btn-primary w-100" >
                                                         </a>
                                                         <div class="py-2">
@@ -122,7 +122,7 @@
                                                             <button type="button" class="btn btn-secondary"
                                                                     data-dismiss="modal">NO
                                                             </button>
-                                                            <form action="{{url("category/{$category->id}")}}" method="post">
+                                                            <form action="{{route("category.destroy",$category->id)}}" method="post">
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">YES

@@ -29,7 +29,7 @@
                 @endif
 
                 <!-- Form -->
-                    <form method="POST" action="{{url('product/'.$product->id)}}" enctype="multipart/form-data"
+                    <form method="POST" action="{{route('product.update',$product->id)}}" enctype="multipart/form-data"
                           autocomplete="on">
                         @csrf
                         @method("PUT")

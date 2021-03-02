@@ -37,11 +37,11 @@ class AdminProductController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return string
      */
     public function store(AdminProductRequest $request)
     {
-        $products = Product::paginate(8);
+//        $products = Product::paginate(8);
         $product = new Product();
         if (isset($request->img) && $request->img->getClientOriginalName()) {
             $ext = $request->img->getClientOriginalExtension();
@@ -58,7 +58,8 @@ class AdminProductController extends Controller
         $product->user_id = Auth::id();
         $product->category_id = $request->category_id;;
         $product->save();
-        return response()->view('admin/product/index', ['products' => $products]);
+
+        return redirect('admin/product')->with(['message' => 'The product was successfully created']);
     }
 
     /**
@@ -80,7 +81,6 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
-
         $categories = Category::with('subCategory')->get();
         $product = Product::with('category')->find($id);
         return response()->view('admin/product/edit', ['product' => $product, 'categories'=>$categories]);
@@ -91,12 +91,11 @@ class AdminProductController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(AdminProductRequest $request, $id)
     {
 
-        $product = new Product();
         if (isset($request->img) && $request->img->getClientOriginalName()) {
             $ext = $request->img->getClientOriginalExtension();
             $file = rand(1, 100) . time() . "." . "$ext";
@@ -119,15 +118,15 @@ class AdminProductController extends Controller
             'category_id' => $request->category_id,
             'user_id' => Auth::id(),
         ]);
-        return redirect('product')->
-        with(['message' => 'The product was successfully updated']);
+        return redirect('admin/product')
+            ->with(['message' => 'The product was successfully updated']);
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {

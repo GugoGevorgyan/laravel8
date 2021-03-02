@@ -22,7 +22,7 @@
                     </p>
 
                     <!-- Form -->
-                    <form method="POST" action="{{asset('mail/'.$id)}}">
+                    <form method="POST" action="{{route('mail.update',$id)}}">
                         @csrf
                         @method("PUT")
                         <div class="form-group">

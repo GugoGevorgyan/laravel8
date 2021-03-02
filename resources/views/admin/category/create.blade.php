@@ -28,7 +28,7 @@
                         <p class="alert alert-info">{{ Session::get('message') }}</p>
                 @endif
                 <!-- Form -->
-                    <form method="POST" action="{{asset('/category')}}" autocomplete="on">
+                    <form method="POST" action="{{route('category.store')}}" autocomplete="on">
                         @csrf
                         <div class="form-group">
                             <label for="name">{{ __('Name') }}</label>

@@ -31,7 +31,7 @@
                                     <!-- Button -->
 
                                     @if( Auth::user()->role_id === 1)
-                                        <a href="{{url('admin/create')}}" class="btn btn-primary">
+                                        <a href="{{route('admin.create')}}" class="btn btn-primary">
                                             {{ __('Create Admin') }}
                                         </a>
                                     @endif
@@ -98,7 +98,7 @@
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <div class="dropdown-item d-flex flex-column">
-                                                        <form action="/admin/status/{{$admin->id}}" method="post"
+                                                        <form action="{{route('admin.status',$admin->id)}}" method="post"
                                                               class="py-2">
                                                             @csrf
                                                             @method('PUT')
@@ -146,7 +146,7 @@
                                                             <button type="button" class="btn btn-secondary"
                                                                     data-dismiss="modal">NO
                                                             </button>
-                                                            <form action="{{url("admin/{$admin->id}")}}" method="post">
+                                                            <form action="{{route("admin.destroy",$admin->id)}}" method="post">
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">YES

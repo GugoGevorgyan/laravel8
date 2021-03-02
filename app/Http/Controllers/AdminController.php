@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Mail\AdminShop;
+use App\Models\Category;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
-use app\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 class AdminController extends Controller
@@ -21,7 +21,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return response()->view('admin/index');
+//       $result = Product::with('categories')->find(10);
+//        dd($result);
+        $admins = User::all()->where('role_id', 2);
+        return response()->view('admin/profile-admins',['admins'=>$admins]);
     }
 
     /**
@@ -68,9 +71,10 @@ class AdminController extends Controller
                 'remember_token' => $code,
             ]);
 
-            return redirect('admin/profile-admins')->with(['message' => 'The admin successfully created']);
+            return redirect('admin')
+                ->with(['message' => 'The admin successfully created']);
         }
-        return redirect('admin')
+        return redirect()->back()
             ->with(['message' => $toEmail->getMessage()]);
     }
 
@@ -80,10 +84,9 @@ class AdminController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $admins = User::all()->where('role_id', 2);
-        return response()->view('admin/profile-admins',['admins'=>$admins]);
+
     }
 
     /**
@@ -139,7 +142,6 @@ class AdminController extends Controller
 
     public function login()
     {
-//        return response()->view('admin/login');
         return response()->view('admin/sign-in-cover');
     }
 
@@ -159,7 +161,9 @@ class AdminController extends Controller
         User::find($id)->update([
             'status' => $status,
         ]);
-        return redirect('admin/'.Auth::id());
+        return redirect('admin')
+            ->with(['message' => 'The admin successfully update status']);
+
     }
 
     public function update_password(Request $request, $id){

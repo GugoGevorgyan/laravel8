@@ -28,7 +28,7 @@
                                 <div class="col-auto">
 
                                     <!-- Button -->
-                                    <a href="{{url('product/create')}}" class="btn btn-primary">
+                                    <a href="{{route('product.create')}}" class="btn btn-primary">
                                         {{ __('Create Product') }}
                                     </a>
                                 </div>
@@ -140,7 +140,7 @@
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <div class="dropdown-item d-flex flex-column">
-                                                        <form action="/product/status/{{$product->id}}" method="post"
+                                                        <form action="{{route('admin.prduct.status',$product->id)}}" method="post"
                                                               class="py-2">
                                                             @csrf
                                                             @method('PUT')
@@ -156,7 +156,7 @@
 
                                                     {{--                     delete     --}}
                                                     <!-- Button trigger modal -->
-                                                        <a href="{{asset("product/{$product->id}/edit")}}" class="py-2">
+                                                        <a href="{{route("product.edit",$product->id)}}" class="py-2">
                                                             <input type="submit" value="Edit"
                                                                    class="btn btn-primary w-100">
                                                         </a>
@@ -192,8 +192,7 @@
                                                             <button type="button" class="btn btn-secondary"
                                                                     data-dismiss="modal">NO
                                                             </button>
-                                                            <form action="{{url("product/{$product->id}")}}"
-                                                                  method="post">
+                                                            <form action="{{route("product.destroy",$product->id)}}" method="post">
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">YES
