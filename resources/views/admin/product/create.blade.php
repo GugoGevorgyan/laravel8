@@ -28,7 +28,8 @@
                         <p class="alert alert-info">{{ Session::get('message') }}</p>
                 @endif
                 <!-- Form -->
-                    <form method="POST" action="{{route('product.store')}}" enctype="multipart/form-data" autocomplete="on">
+                    <form method="POST" action="{{route('product.store')}}" enctype="multipart/form-data"
+                          autocomplete="on">
                         @csrf
 
                         <div class="form-group">
@@ -49,9 +50,9 @@
                             <label for="description">{{ __('Description') }}</label>
 
                             <div>
-                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror"
-                                       name="description" required> {{old('description')}}
-                                </textarea>
+                                <textarea id="description" type="text"
+                                          class="form-control @error('description') is-invalid @enderror"
+                                          name="description" required>{{old('description')}}</textarea>
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -65,7 +66,8 @@
 
                             <div>
                                 <input id="price" type="number"
-                                       class="form-control @error('price') is-invalid @enderror" name="price" value="{{old('price')}}" required>
+                                       class="form-control @error('price') is-invalid @enderror" name="price"
+                                       value="{{old('price')}}" required>
                                 @error('price')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -87,33 +89,47 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="category">{{ __('Category') }}</label>
-
-                            <div>
-                                <select name="category_id" id="category" class="form-control @error('category') is-invalid @enderror" required>
-                                    @foreach ($categories as $category)
-                                        @foreach ($category->subCategory as $subCategory)
-                                            <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
-                                    @endforeach
-                                    @endforeach
-                                </select>
-                                @error('parent-category')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
+                            {{"Categories"}}
+                            <ul class="navbar-nav d-flex flex-row justify-content-around">
+                                @foreach ($categories as $category)
+                                    @if (!$category->category)
+                                        <li class="nav-item  justify-content-between">
+                                            <a href="#topnavDashboards{{$category->name}}"
+                                               class="nav-link" data-toggle="collapse" role="button"
+                                               aria-expanded="false"
+                                               aria-controls="topnavDashboards{{$category->name}}">
+                                                {{$category->name}}
+                                            </a>
+                                            <div class="collapse " id="topnavDashboards{{$category->name}}">
+                                                <ul class="nav nav-sm flex-column">
+                                                    @foreach ($subCategories as $subCategory)
+                                                        @if ($subCategory->subCategory && $subCategory->name === $category->name)
+                                                            @foreach($subCategory->subCategory as $sub)
+                                                                <li class="nav-item">
+                                                                    <input class=" " type="checkbox" id="{{$sub->name}}"
+                                                                           name="subCategory[]" value="{{$sub->id}}">
+                                                                    <label for="{{$sub->name}}"> {{$sub->name}}</label>
+                                                                </li>
+                                                            @endforeach
+                                                        @endif
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
                         </div>
                         <div class="form-group">
                             <label for="img">{{ __('Image') }}</label>
-                                <input id="img" type="file"  class="form-control @error('img') is-invalid @enderror" name="img" required >
+                            <input id="img" type="file" class="form-control @error('img') is-invalid @enderror"
+                                   name="img" required>
                             @error('img')
                             <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-
                         <div class="form-group">
                             <div>
 

@@ -115,8 +115,10 @@
                                             @endif
                                         </td>
                                         <td class="prod-category">
-                                            @if($product ->category)
-                                                {{$product ->category->name}}
+                                            @if($product ->categories)
+                                                @foreach($product ->categories as $category)
+                                               <p>{{$category->name}}</p>
+                                                @endforeach
                                             @endif
                                         </td>
 

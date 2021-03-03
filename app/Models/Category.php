@@ -17,10 +17,12 @@ class Category extends Model
     public function subCategory(){
         return $this->hasMany(Category::class, 'parent_id','id');
     }
-
 //    public function products(){
-//        return $this->belongsToMany(Product::class);
+//                return $this->hasMany(Product::class);
 //    }
+    public function products(){
+        return $this->belongsToMany(Product::class);
+    }
     public function prods(){
         return $this->hasMAnyThrough(Product::class,Category::class,'parent_id','category_id','id','id');
     }

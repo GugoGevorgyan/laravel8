@@ -114,7 +114,7 @@
                             <a class="p-0" href="#">Stacionary</a>
                         </div>
                         <div class="see_more ">
-                            <a class="  " href="{{asset('home/create')}}">see more</a>
+                            <a class="  " href="{{route('home.create')}}">see more</a>
                         </div>
                     </div>
                 </div>

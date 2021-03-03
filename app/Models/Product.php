@@ -15,13 +15,13 @@ class Product extends Model
     public function category(){
         return $this->belongsTo(Category::class, 'category_id','id');
     }
-
-    public function categories(){
-        $this->morphedByMany(Category::class,'category_product');
-    }
+//
 //    public function categories(){
-//       return $this->belongsToMany(Category::class);
+//        $this->morphedByMany(Category::class,'category_product');
 //    }
+    public function categories(){
+       return $this->belongsToMany(Category::class);
+    }
 
 
 }

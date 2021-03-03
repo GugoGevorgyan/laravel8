@@ -18,13 +18,11 @@ class CreateCategoryProductTable extends Migration
             $table->foreignId('category_id')->nullable()
                 ->constrained()
                 ->on('categories')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->onUpdate('cascade');
             $table->foreignId('product_id')->nullable()
                 ->constrained()
                 ->on('products')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

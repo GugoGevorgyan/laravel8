@@ -49,7 +49,6 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->parent_id = $parent;
         $category->save();
-        $categories = Category::all();
         return redirect('admin/category')
             ->with(['message' => 'The category successfully created']);
     }

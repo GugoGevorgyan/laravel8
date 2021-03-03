@@ -17,8 +17,7 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        $products =  Product::with('category')->paginate(8);
-
+        $products =  Product::with('categories')->paginate(8);
         return response()->view('admin/product/index', ['products' => $products]);
     }
 
@@ -29,8 +28,9 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::with('subCategory')->get();
-        return response()->view('admin/product/create',['categories'=>$categories]);
+        $categories = Category::with('category')->get();
+        $subCategories = Category::with('subCategory')->get();
+        return response()->view('admin/product/create',['subCategories'=>$subCategories,'categories'=>$categories]);
     }
 
     /**
@@ -41,7 +41,12 @@ class AdminProductController extends Controller
      */
     public function store(AdminProductRequest $request)
     {
-//        $products = Product::paginate(8);
+        if (!$request->subCategory){
+            return redirect()->back()->with(['message' => 'Select a category']);
+        }
+        $productCategoryId = Category::with('category')->find($request->subCategory[0])->category->id;
+        $sub = $request->subCategory;
+        array_push($sub,strval($productCategoryId));
         $product = new Product();
         if (isset($request->img) && $request->img->getClientOriginalName()) {
             $ext = $request->img->getClientOriginalExtension();
@@ -56,9 +61,9 @@ class AdminProductController extends Controller
         $product->sale = intval($request->sale);
         $product->description = $request->description;
         $product->user_id = Auth::id();
-        $product->category_id = $request->category_id;;
+        $product->category_id = $request->category_id;
         $product->save();
-
+        $product->categories()->attach($sub);
         return redirect('admin/product')->with(['message' => 'The product was successfully created']);
     }
 
@@ -81,9 +86,10 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::with('subCategory')->get();
-        $product = Product::with('category')->find($id);
-        return response()->view('admin/product/edit', ['product' => $product, 'categories'=>$categories]);
+        $categories = Category::with('category')->get();
+        $subCategories = Category::with('subCategory')->get();
+        $product = Product::with('categories')->find($id);
+        return response()->view('admin/product/edit', ['product' => $product, 'categories'=>$categories,'subCategories'=>$subCategories]);
     }
 
     /**
@@ -95,6 +101,14 @@ class AdminProductController extends Controller
      */
     public function update(AdminProductRequest $request, $id)
     {
+        $product = Product::find($id);
+        dd($product->categories());
+        if (!$request->subCategory){
+            return redirect()->back()->with(['message' => 'Select a category']);
+        }
+        $productCategoryid = Category::with('category')->find($request->subCategory[0])->category->id;
+        $sub = $request->subCategory;
+        $sub[] = $productCategoryid;
 
         if (isset($request->img) && $request->img->getClientOriginalName()) {
             $ext = $request->img->getClientOriginalExtension();
@@ -103,19 +117,15 @@ class AdminProductController extends Controller
         } else {
             $file = Product::find($id)->img;
         }
-        $old_price = intval(Product::find($id)->price);
-
-        if ( $old_price === intval($request->price) ){
-            $old_price = null;
-        }
-        Product::find($id)->update([
+            $product->categories()->detach($sub);
+        $product->categories()->attach($sub);
+        $product->update([
             'img' => $file,
             'name' => $request->name,
             'price' => intval($request->price),
             'sale' => intval($request->sale),
-            'old_price' => $old_price,
             'description' => $request->description,
-            'category_id' => $request->category_id,
+//            'category_id' => $request->category_id,
             'user_id' => Auth::id(),
         ]);
         return redirect('admin/product')
