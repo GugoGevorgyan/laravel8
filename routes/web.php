@@ -45,4 +45,5 @@ Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
 Route::get('/shipping', [HomeController::class, 'shipping'])->name('shipping');
 Route::get('/ordernow', [HomeController::class, 'orderNow'])->name('ordernow');
 Route::get('/prod/{prod}', [HomeController::class, 'prod'])->name('prod');
+Route::get('/prod/index/{prod}', [HomeController::class, 'homeProduct'])->name('prod.index');
 

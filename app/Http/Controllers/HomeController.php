@@ -16,35 +16,18 @@ class   HomeController extends Controller
      */
     public function index()
     {
-//        $prod = 'Computers';
-//
-//        $products = Category::with('products')->where('name','=',$prod)->first();
-//        $computers = $products->products()->where('status','=',1)->paginate(20);
+//        $hot_sales = Product::where('status',1)->paginate(4);
+//        $computers = Product::where('status',1)->paginate(8);
 //        $categories = Category::with('category')->get();
 //        $subCategories = Category::with('subCategory')->get();
-//        $productCategory = Category::with('category')->where('name', '=',$prod)->first()->category;
 //
-//        $similar = Product::where('status',1)->paginate(4);
-//        if (isset($productCategory)){
-//            $productCategory = $productCategory->name;
-//        }else{
-//            $productCategory = $prod;
-//        }
-//        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar,
-//            'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory ]);
-
-
-        $hot_sales = Product::where('status',1)->paginate(4);
-        $computers = Product::where('status',1)->paginate(8);
-        $categories = Category::with('category')->get();
-        $subCategories = Category::with('subCategory')->get();
-
-        $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
-        $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
-        $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];
-        return response()->view('home/index', ['imgs' => $imgs, 'figcaption' => $figcaption,
-            'hot_sales' => $hot_sales, 'computers' => $computers, 'brands' => $brands,
-            'categories'=>$categories,'subCategories'=>$subCategories]);
+//        $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
+//        $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
+//        $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];
+//        return response()->view('home/index', ['imgs' => $imgs, 'figcaption' => $figcaption,
+//            'hot_sales' => $hot_sales, 'computers' => $computers, 'brands' => $brands,
+//            'categories'=>$categories,'subCategories'=>$subCategories]);
+        $this->checkProducts('Computers','index',8);
     }
 
     /**
@@ -156,8 +139,36 @@ class   HomeController extends Controller
      */
     public function prod($prod)
     {
+//        $products = Category::with('products')->where('name','=',$prod)->first();
+//        $computers = $products->products()->where('status','=',1)->paginate(20);
+//        $categories = Category::with('category')->get();
+//        $subCategories = Category::with('subCategory')->get();
+//        $productCategory = Category::with('category')->where('name', '=',$prod)->first()->category;
+//
+//        $similar = Product::where('status',1)->paginate(4);
+//        if (isset($productCategory)){
+//            $productCategory = $productCategory->name;
+//        }else{
+//            $productCategory = $prod;
+//        }
+//        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar,
+//            'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory ]);
+        $this->checkProducts($prod,'product',20);
+
+    }
+    public function homeProduct($prod){
+        $this->checkProducts($prod,'index',8);
+    }
+
+    public function checkProducts($prod, $page, $amount){
+
+        $hot_sales = Product::where('status',1)->paginate(4);
+        $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
+        $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
+        $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];
+
         $products = Category::with('products')->where('name','=',$prod)->first();
-        $computers = $products->products()->where('status','=',1)->paginate(20);
+        $computers = $products->products()->where('status','=',1)->paginate($amount);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
         $productCategory = Category::with('category')->where('name', '=',$prod)->first()->category;
@@ -168,8 +179,8 @@ class   HomeController extends Controller
         }else{
             $productCategory = $prod;
         }
-        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar,
-            'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory ]);
-
+        return response()->view("home/$page", ['computers' => $computers, 'similar' => $similar,
+            'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory,
+            'imgs' => $imgs, 'figcaption' => $figcaption,'hot_sales' => $hot_sales,'brands' => $brands,]);
     }
 }

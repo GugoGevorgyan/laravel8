@@ -1,38 +1,33 @@
 let categories = document.querySelector('.categories');
+let dropdown = document.querySelectorAll('.category');
+
 if (categories){
     categories.addEventListener("click", start, false);
-    start();
 }
+
+const categoriesMap = new Map();
+
+dropdown.forEach(function (element) {
+    const el = element.children[0];
+    if (!categoriesMap.has(el)) {
+        categoriesMap.set(el, el.nextElementSibling);
+    }
+})
+
+
 function start() {
-    let dropdown = document.querySelectorAll('.category');
-    let subCategories = [];
-    dropdown.forEach(function (element) {
-        element.addEventListener("click", d_flex, false);
-        subCategories.push(element.lastElementChild.lastElementChild.children);
+    let checkedData = 0;
+    categoriesMap.forEach((el, index) => {
+        const subCategories = el.lastElementChild.children;
+        const checked = [...subCategories].some(el => el.children[0].checked);
+        // const checked = [].some.call(subCategories, el => el.children[0].checked);      //nuynn e
+        if (checked) checkedData = index + 1;
+        if (checkedData) {
+            categoriesMap.forEach((elem, index) => {
+                if (!(index + 1 === checkedData)) elem.classList.add('d-none')
+            })
+        } else {
+            el.classList.remove('d-none');
+        }
     })
-
-    function d_flex() {
-        for (let i = 0; i < subCategories.length; i++) {
-            dropdown[i].lastElementChild.classList.remove('d-none');
-        }
-        check_checked();
-    }
-
-    function check_checked() {
-        for (let i = 0; i < subCategories.length; i++) {
-            for (let j = 0; j < subCategories[i].length; j++) {
-                if (subCategories[i][j].children[0].checked) {
-                    let index = subCategories.indexOf(subCategories[i]);
-                    for (let n = 0; n < subCategories.length; n++) {
-                        if (n != index) {
-                            dropdown[n].lastElementChild.classList.add('d-none');
-                            j = subCategories[i].length + 1;
-                        }
-                    }
-                }
-            }
-        }
-
-    }
 }
-
