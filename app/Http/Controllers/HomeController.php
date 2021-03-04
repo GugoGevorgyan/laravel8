@@ -16,6 +16,24 @@ class   HomeController extends Controller
      */
     public function index()
     {
+//        $prod = 'Computers';
+//
+//        $products = Category::with('products')->where('name','=',$prod)->first();
+//        $computers = $products->products()->where('status','=',1)->paginate(20);
+//        $categories = Category::with('category')->get();
+//        $subCategories = Category::with('subCategory')->get();
+//        $productCategory = Category::with('category')->where('name', '=',$prod)->first()->category;
+//
+//        $similar = Product::where('status',1)->paginate(4);
+//        if (isset($productCategory)){
+//            $productCategory = $productCategory->name;
+//        }else{
+//            $productCategory = $prod;
+//        }
+//        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar,
+//            'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory ]);
+
+
         $hot_sales = Product::where('status',1)->paginate(4);
         $computers = Product::where('status',1)->paginate(8);
         $categories = Category::with('category')->get();
@@ -138,15 +156,8 @@ class   HomeController extends Controller
      */
     public function prod($prod)
     {
-        $ProductSubCategory = Category::with('products')->where('name',$prod)->first();
-        $checkCategoryProducts = Category::with('prods')->where('name',$prod)->first();
-        $categoryProducts = $checkCategoryProducts->prods()->where('status',1)->paginate(20);
-        if (isset($categoryProducts[0]->name)){
-            $computers = $categoryProducts;
-        }else{
-            $computers = $ProductSubCategory->products()->where('status','=',1)->paginate(20);
-        }
-
+        $products = Category::with('products')->where('name','=',$prod)->first();
+        $computers = $products->products()->where('status','=',1)->paginate(20);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
         $productCategory = Category::with('category')->where('name', '=',$prod)->first()->category;

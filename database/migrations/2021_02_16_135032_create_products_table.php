@@ -18,18 +18,18 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('img');
             $table->float('price', 10, 2);
-            $table->float('old_price', 10, 2)->nullable();
+//            $table->float('old_price', 10, 2)->nullable();
             $table->string('description')->nullable();
             $table->foreignId('user_id')->nullable()
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('status')->default(1);
-            $table->foreignId('category_id')->nullable()
-                ->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-            $table->float('sale')->nullable();
+//            $table->foreignId('category_id')->nullable()
+//                ->constrained()
+//                ->onUpdate('cascade')
+//                ->onDelete('cascade');
+            $table->float('sale',10,2)->nullable();
             $table->timestamps();
         });
     }

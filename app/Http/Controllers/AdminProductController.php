@@ -102,7 +102,9 @@ class AdminProductController extends Controller
     public function update(AdminProductRequest $request, $id)
     {
         $product = Product::find($id);
-        dd($product->categories());
+        $prodSub = $product->categories->map(function ($product){
+            return $product->id;
+        });
         if (!$request->subCategory){
             return redirect()->back()->with(['message' => 'Select a category']);
         }
@@ -117,7 +119,7 @@ class AdminProductController extends Controller
         } else {
             $file = Product::find($id)->img;
         }
-            $product->categories()->detach($sub);
+            $product->categories()->detach($prodSub);
         $product->categories()->attach($sub);
         $product->update([
             'img' => $file,

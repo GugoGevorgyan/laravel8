@@ -6,7 +6,6 @@
         @stack('macbook')
         <div class="evenly p-0 pt-5 pb-md-5 center container-md container-fluid">
             <h2 class="popular_text">Popular Categories</h2>
-
             <div class="d-flex flex-row pt-5 flex-wrap container">
                 @for ($i = 0; $i < count($imgs) ; $i++)
                     <figure class="col-xl-2 p-0 col-md-4 col-sm-6 position-static ">
@@ -16,7 +15,6 @@
                         <figcaption class="d-flex justify-content-center pt-2 pt-md-4 ">{{$figcaption[$i]}}</figcaption>
                     </figure>
                 @endfor
-
             </div>
         </div>
 
@@ -68,7 +66,6 @@
                                                  alt="favorites">
                                         </div>
                                     </div>
-
                                     <div class="hot_sales_img center mt-4">
                                         <img class="container" src="{{asset('storage/images/'.$sales->img)}}" alt="computers">
                                     </div>
@@ -81,7 +78,6 @@
                                                 <p class="price_sale" style="color: #151414 !important;">
                                                     ${{$sales ->price}}</p>
                                             @endif
-
                                         </div>
                                         <div>
                                             <p class="sales_name">{{$sales ->name}} </p>
@@ -95,17 +91,37 @@
                                         <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
                                     </div>
-
                                 </div>
                             </div>
-
                         @endforeach
                     </div>
                 </div>
 
 
+{{--             computers   --}}
+
+{{--                <div class="all_computers container">--}}
+{{--                    <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">--}}
+{{--                            {{$productCategory}}</h3>--}}
+{{--                    </div>--}}
+{{--                    <div class="just_between flex-row pb-4 pt-2 justify-content-sm-between">--}}
+{{--                        <div class="d-flex flex-row justify-content-md-between col-lg-6 col-md-8 p-0">--}}
+
+{{--                            @foreach ($subCategories as $subCategory)--}}
+{{--                                @if ($subCategory->subCategory && $subCategory->name === $productCategory)--}}
+{{--                                    @foreach($subCategory->subCategory as $sub)--}}
+{{--                                        <a class="p-0 mr-2" href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a>--}}
+{{--                                    @endforeach--}}
+{{--                                @endif--}}
+{{--                            @endforeach--}}
+{{--                        </div>--}}
+
+{{--                    </div>--}}
+{{--                </div>--}}
+
                 <div class="all_computers container">
-                    <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">Computers</h3></div>
+                    <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">
+                            Computers</h3></div>
                     <div class="just_between flex-row pb-4 pt-2 ">
                         <div class=" d-flex flex-row justify-content-between col-lg-6 col-md-12 p-0">
                             <a class="p-0" href="#">Notebook</a>
@@ -114,7 +130,7 @@
                             <a class="p-0" href="#">Stacionary</a>
                         </div>
                         <div class="see_more ">
-                            <a class="  " href="{{route('home.create')}}">see more</a>
+                            <a class=" " href="{{route('home.create')}}">see more</a>
                         </div>
                     </div>
                 </div>
@@ -127,10 +143,8 @@
                             <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
                         </a></div>
                 </div>
-
                 <div class="container pb-md-0 pb-5">
                     <div class="evenly row">
-
                         @foreach($computers as $computer)
                             <div class="col-xl-3 p-md-3 p-2 col-md-4 col-sm-6 ">
                                 <div class="hot_sales_imgs_container just_around ">
@@ -169,9 +183,7 @@
                                         </button>
                                         <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
-
                                     </div>
-
                                 </div>
                             </div>
 
@@ -188,7 +200,6 @@
                                 <div class="item center p-3">
                                     <img class="w-auto" src="{{asset('storage/images/'.$brand)}}" alt="{{$brand}}">
                             </div>
-
                         @endforeach
                     </div>
                 </div>

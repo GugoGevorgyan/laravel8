@@ -52,8 +52,7 @@
                             <div>
                                 <textarea id="description"
                                           class="form-control @error('description') is-invalid @enderror"
-                                          name="description">{{old('description',$product->description) }}
-                                </textarea>
+                                          name="description">{{old('description',$product->description) }}</textarea>
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -64,7 +63,6 @@
 
                         <div class="form-group">
                             <label for="price">{{ __('Price') }}</label>
-
                             <div>
                                 <input id="price" type="number"
                                        class="form-control @error('price') is-invalid @enderror"
@@ -92,22 +90,21 @@
 
                         <div class="form-group">
                             {{"Categories"}}
-                            <ul class="navbar-nav d-flex flex-row justify-content-around">
+                            <ul class="navbar-nav categories d-flex flex-row justify-content-around">
                                 @foreach ($categories as $category)
                                     @if (!$category->category)
-                                        <li class="nav-item  justify-content-between">
-                                            <a href="#topnavDashboards{{$category->name}}"
-                                               class="nav-link" data-toggle="collapse" role="button"
-                                               aria-expanded="false"
+                                        <li class="nav-item  justify-content-between category">
+                                            <a href="#topnavDashboards{{$category->name}}" class="nav-link"
+                                               data-toggle="collapse" role="button" aria-expanded="false"
                                                aria-controls="topnavDashboards{{$category->name}}">
                                                 {{$category->name}}
                                             </a>
-                                            <div class="collapse " id="topnavDashboards{{$category->name}}">
+                                            <div class="collapse" id="topnavDashboards{{$category->name}}">
                                                 <ul class="nav nav-sm flex-column">
                                                     @foreach ($subCategories as $subCategory)
                                                         @if ($subCategory->subCategory && $subCategory->name === $category->name)
                                                             @foreach($subCategory->subCategory as $sub)
-                                                                <li class="nav-item">
+                                                                <li class="nav-item subCategory">
                                                                     <input type="checkbox" id="{{$sub->name}}"
                                                                            name="subCategory[]" value="{{$sub->id}}"
                                                                            @foreach($product->categories as $mySubCategory)

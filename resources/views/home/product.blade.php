@@ -9,10 +9,10 @@
         <div class="center w-100 container p-0 pt-4 position-relative">
             <div class="all_computers container">
                 <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">
-                        {{$productCategory}}</h3></div>
+                        {{$productCategory}}</h3>
+                </div>
                 <div class="just_between flex-row pb-4 pt-2 justify-content-sm-between">
                     <div class="d-flex flex-row justify-content-md-between col-lg-6 col-md-8 p-0">
-
                         @foreach ($subCategories as $subCategory)
                             @if ($subCategory->subCategory && $subCategory->name === $productCategory)
                                 @foreach($subCategory->subCategory as $sub)
@@ -20,26 +20,13 @@
                                 @endforeach
                             @endif
                         @endforeach
-
-                        {{--                        <a class="p-0 mr-2" href="#">Notebook</a>--}}
-                        {{--                        <a class="p-0 mr-2" href="#">Netbook</a>--}}
-                        {{--                        <a class="p-0 mr-2" href="#">All in one</a>--}}
-                        {{--                        <a class="p-0 mr-2" href="#">Stacionary</a>--}}
                     </div>
 
                 </div>
             </div>
-            {{--        <div class="center w-100 container pt-4">--}}
             <div class="container pb-4">
                 <div class="line"></div>
-                <div class="vector_left_container  d-md-flex d-none center"><a href="#">
-                        <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">
-                    </a></div>
-                <div class="vector_right_container center d-md-flex d-none"><a href="#">
-                        <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
-                    </a></div>
             </div>
-
             <div class="container evenly d-flex flex-row flex-wrap ">
 
                 @foreach($computers as $computer)
@@ -78,9 +65,7 @@
                                     ORDER NOW
                                 </button>
                                 <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
-
                             </div>
-
                         </div>
                     </div>
 
@@ -95,7 +80,7 @@
             </div>
         </div>
         {{-- similar item--}}
-        <div class="center w-100 container p-0 pt-4 pb-5 position-lg-relative">
+        <div class="center w-100 container p-0 pt-4 pb-5 position-relative">
             <div class="all_computers container">
                 <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4">Similar Items</h3>
                 </div>
@@ -148,12 +133,9 @@
                                     ORDER NOW
                                 </button>
                                 <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
-
                             </div>
-
                         </div>
                     </div>
-
                 @endforeach
             </div>
         </div>

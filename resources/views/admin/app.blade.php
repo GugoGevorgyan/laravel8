@@ -50,6 +50,7 @@
 
 <!-- Theme JS -->
 <script src="{{asset('vendor/admin/assets/js/theme.min.js')}}"></script>
+<script src="{{asset('vendor/admin/assets/js/categoryDropdown.js')}}"></script>
 </body>
 
 <!-- Mirrored from dashkit.goodthemes.co/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Nov 2018 11:22:32 GMT -->
