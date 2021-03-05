@@ -72,10 +72,7 @@ class ProductSeeder extends Seeder
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
             ];
-        foreach ($products as $product) {
-            Product::create($product);
-        }
-
+            Product::insert($products);
         }
     }
 }
