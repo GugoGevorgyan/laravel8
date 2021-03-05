@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AdminProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +18,7 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        $products =  Product::with('categories')->paginate(8);
+        $products =  Product::with('categories')->paginate(10);
         return response()->view('admin/product/index', ['products' => $products]);
     }
 
@@ -73,10 +74,20 @@ class AdminProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $page,$order)
     {
-        //
+        if (!$page->page) {
+            $turn = (Cookie::get('turn') === 'asc') ? "desc" : 'asc';
+        }else{
+            $turn = Cookie::get('turn');
+        }
+
+        $products =  Product::with('categories')->orderBy($order,$turn)->paginate(10);
+        Cookie::queue('turn', $turn, 10);
+
+       return response()->view('admin/product/index', ['products' => $products])->cookie('order',$order,time()+100);
     }
+
 
     /**
      * Show the form for editing the specified resource.

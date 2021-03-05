@@ -472,6 +472,30 @@ span.shadow-sm {
 
 /*    paggination*/
 
+#vectors a,
+#vectors span[aria-disabled="true"]:nth-child(1n +2),
+#vectors span[aria-current="page"]
+{
+display: none;
+}
+ a[rel="prev"] {
+    display: block !important;
+}
+
+.rounded-md > a:nth-last-child(1){
+display: flex !important;
+}
+#vectors span{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+#vectors > nav {
+    position: absolute;
+    bottom: -23px;
+    right: -34px;
+}
+
 div.sm\:hidden {
     display: none;
 }

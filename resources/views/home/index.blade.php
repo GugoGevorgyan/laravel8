@@ -44,12 +44,22 @@
                 <h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4 container">Hot Sales</h3>
                 <div class="container pb-4">
                     <div class="line"></div>
-                    <div class="vector_left_container d-md-flex d-none center"><a href="#">
-                            <img class="vector_left rotate-180" src="{{asset('storage/images/Vector.png')}}" alt="">
-                        </a></div>
-                    <div class="vector_right_container d-md-flex d-none center"><a href="#">
-                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
-                        </a></div>
+
+
+                    <div class="row container ">
+                        <div class="col-6 d-flex justify-content-end" id="vectors">
+                            {{ $hot_sales->links() }}
+                        </div>
+                    </div>
+
+
+
+{{--                    <div class="vector_left_container d-md-flex d-none center"><a href="#">--}}
+{{--                            <img class="vector_left rotate-180" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                        </a></div>--}}
+{{--                    <div class="vector_right_container d-md-flex d-none center"><a href="#">--}}
+{{--                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                        </a></div>--}}
                 </div>
                 <div class="container">
                     <div class="evenly row">
@@ -100,48 +110,40 @@
 
 {{--             computers   --}}
 
-{{--                <div class="all_computers container">--}}
-{{--                    <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">--}}
-{{--                            {{$productCategory }}</h3>--}}
-{{--                    </div>--}}
-{{--                    <div class="just_between flex-row pb-4 pt-2 justify-content-sm-between">--}}
-{{--                        <div class="d-flex flex-row justify-content-md-between col-lg-6 col-md-8 p-0">--}}
-
-{{--                            @foreach ($subCategories as $subCategory)--}}
-{{--                                @if ($subCategory->subCategory && $subCategory->name === $productCategory)--}}
-{{--                                    @foreach($subCategory->subCategory as $sub)--}}
-{{--                                        <a class="p-0 mr-2" href="{{url('prod.index/'.$sub->name)}}">{{$sub->name}}</a>--}}
-{{--                                    @endforeach--}}
-{{--                                @endif--}}
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-{{--                </div>--}}
-
                 <div class="all_computers container">
-                    <div><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">
-                            Computers</h3></div>
-                    <div class="just_between flex-row pb-4 pt-2 ">
-                        <div class=" d-flex flex-row justify-content-between col-lg-6 col-md-12 p-0">
-                            <a class="p-0" href="#">Notebook</a>
-                            <a class="p-0" href="#">Netbook</a>
-                            <a class="p-0" href="#">All in one</a>
-                            <a class="p-0" href="#">Stacionary</a>
+                    <a href="{{route('prod.index',$productCategory)}}" class="d-block text-dark"><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">
+                            {{$productCategory }}</h3>
+                    </a>
+                    <div class="just_between flex-row pb-4 pt-2">
+                        <div class="d-flex flex-row justify-content-between col-lg-6 col-md-12 p-0">
+
+                            @foreach ($subCategories as $subCategory)
+                                @if ($subCategory->subCategory && $subCategory->name === $productCategory)
+                                    @foreach($subCategory->subCategory as $sub)
+                                        <a @if($sub->name === $prod) class="p-0 text-danger"@else class="p-0" @endif class="p-0" href="{{route('prod.index',$sub->name)}}">{{$sub->name}}</a>
+                                    @endforeach
+                                @endif
+                            @endforeach
                         </div>
                         <div class="see_more ">
-                            <a class=" " href="{{route('home.create')}}">see more</a>
+                            <a class=" " href="{{url('prod/'.$productCategory)}}">see more</a>
                         </div>
                     </div>
                 </div>
                 <div class="container pb-4">
                     <div class="line"></div>
-                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">
-                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">
-                        </a></div>
-                    <div class="vector_right_container center d-md-flex d-none"><a href="#">
-                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
-                        </a></div>
+                    <div class="row container ">
+                        <div class="col-6 d-flex justify-content-end" id="vectors">
+                            {{ $computers->onEachSide(1)->links() }}
+                        </div>
+                    </div>
+
+{{--                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">--}}
+{{--                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                        </a></div>--}}
+{{--                    <div class="vector_right_container center d-md-flex d-none"><a href="#">--}}
+{{--                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                        </a></div>--}}
                 </div>
                 <div class="container pb-md-0 pb-5">
                     <div class="evenly row">

@@ -27,7 +27,7 @@ class   HomeController extends Controller
 //        return response()->view('home/index', ['imgs' => $imgs, 'figcaption' => $figcaption,
 //            'hot_sales' => $hot_sales, 'computers' => $computers, 'brands' => $brands,
 //            'categories'=>$categories,'subCategories'=>$subCategories]);
-        $this->checkProducts('Computers','index',8);
+      return $this->checkProducts('Computers','index',8);
     }
 
     /**
@@ -153,11 +153,11 @@ class   HomeController extends Controller
 //        }
 //        return response()->view('home/product', ['computers' => $computers, 'similar' => $similar,
 //            'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory ]);
-        $this->checkProducts($prod,'product',20);
+       return $this->checkProducts($prod,'product',20);
 
     }
     public function homeProduct($prod){
-        $this->checkProducts($prod,'index',8);
+       return $this->checkProducts($prod,'index',8);
     }
 
     public function checkProducts($prod, $page, $amount){
@@ -181,6 +181,6 @@ class   HomeController extends Controller
         }
         return response()->view("home/$page", ['computers' => $computers, 'similar' => $similar,
             'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory,
-            'imgs' => $imgs, 'figcaption' => $figcaption,'hot_sales' => $hot_sales,'brands' => $brands,]);
+            'imgs' => $imgs, 'figcaption' => $figcaption,'hot_sales' => $hot_sales,'brands' => $brands,'prod'=>$prod]);
     }
 }

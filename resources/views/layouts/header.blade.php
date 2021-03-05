@@ -1,9 +1,9 @@
 @push('header')
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm pb-3 m-0">
         <div class="container-lg pb-lg-1">
-            <div class="container col-md-1 col-2 p-0 m-0">
+            <a class="container col-md-1 col-2 p-0 m-0" href="{{route('home.index')}}">
                 <img src="{{asset('storage/images/MGlogo.png')}}" class="img-fluid navbar-brand" alt="logo">
-            </div>
+            </a>
             <!-- @media -->
 
             <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0 p-0">
@@ -41,51 +41,13 @@
                                     @foreach ($subCategories as $subCategory)
                                         @if ($subCategory->subCategory && $subCategory->name === $category->name)
                                             @foreach($subCategory->subCategory as $sub)
-                                                <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">{{$sub->name}}</a></li>
+                                                <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a></li>
                                             @endforeach
                                         @endif
                                     @endforeach
-{{--                                    --}}
-{{--                                    --}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a></li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>--}}
                                 </ul>
                             </li>
-{{--                            <li class="dropdown-submenu p-0 mb-1 w-100">--}}
-{{--                                <a class="container pb-3 pt-3 text-muted media_subMenu flex-nowrap pl-4 pr-5 font-weight-bold"--}}
-{{--                                   tabindex="-1" href="#">--}}
-{{--                                    <div class="pr-3 mr-4 pl-3">--}}
-{{--                                        Printers--}}
-{{--                                    </div>--}}
-{{--                                    <span class="fa fa-angle-right "></span>--}}
-{{--                                </a>--}}
-{{--                                <ul class="dropdown-menu border-0 p-0 pl-5 ml-1 rounded-0 position-static float-none">--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
-{{--                            <li class="dropdown-submenu p-0 mb-1 w-100">--}}
-{{--                                <a class="container pb-3 pt-3  text-muted media_subMenu flex-nowrap pl-4 pr-5 font-weight-bold"--}}
-{{--                                   tabindex="-1" href="#">--}}
-{{--                                    <div class="pr-3 mr-4 pl-3">--}}
-{{--                                        Accesories--}}
-{{--                                    </div>--}}
-{{--                                    <span class="fa fa-angle-right"></span>--}}
-{{--                                </a>--}}
 
-{{--                                <ul class="dropdown-menu border-0 rounded-0 pl-5 ml-1 p-0  position-static float-none">--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Headphones</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Airpods</a></li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Earbuds</a></li>--}}
-{{--                                    <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="#">Speakers</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
                                 @endif
                             @endforeach
                         </ul>
@@ -119,35 +81,6 @@
                             </li>
                         @endif
                     @endforeach
-{{--                    <li class="nav-item d-flex flex-row col-3 align-items-center p-0 justify-content-between">--}}
-{{--                        <a class="nav-link p-0 active font18_size22" aria-current="page" href="{{asset('home')}}">Computers</a>--}}
-{{--                        <img class="h-50" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item d-flex flex-row col-3 align-items-center p-0 justify-content-between">--}}
-{{--                        <a class="nav-link font18_size22" href="{{asset('home/create')}}">Printers</a>--}}
-{{--                        <img class="h-50" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-{{--                    </li>--}}
-
-                    {{--                    <li class="nav-item dropdown col-3  d-flex flex-row col-3 align-items-center p-0 justify-content-between">--}}
-                    {{--                        <a class="nav-link p-0  font18_size22" href="#" id="navbarDropdownMenuLink"--}}
-                    {{--                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-                    {{--                            Accesories--}}
-                    {{--                        </a>--}}
-                    {{--                        <img class="h-50" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-                    {{--                        <div class="dropdown-menu menu_txt text-dark p-0 top" aria-labelledby="navbarDropdownMenuLink"--}}
-                    {{--                             id="menu_Accesories">--}}
-                    {{--                            @foreach ($categories as $category)--}}
-                    {{--                            @if (!$category->category)--}}
-                    {{--                                <a class="dropdown-item d-flex  align-items-center" href="#">{{$category->name}}</a>--}}
-                    {{--                                @endif--}}
-                    {{--                            @endforeach--}}
-
-
-                    {{--                            <a class="dropdown-item d-flex  align-items-center" href="#">Airpods</a>--}}
-                    {{--                            <a class="dropdown-item d-flex  align-items-center" href="#">Earbuds</a>--}}
-                    {{--                            <a class="dropdown-item d-flex  align-items-center" href="#">Speakers</a>--}}
-                    {{--                        </div>--}}
-                    {{--                    </li>--}}
                 </ul>
 
                 <!-- Right Side Of Navbar -->

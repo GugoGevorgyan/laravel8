@@ -12,11 +12,11 @@
                         {{$productCategory}}</h3>
                 </div>
                 <div class="just_between flex-row pb-4 pt-2 justify-content-sm-between">
-                    <div class="d-flex flex-row justify-content-md-between col-lg-6 col-md-8 p-0">
+                    <div class="d-flex flex-row justify-content-md-between col-lg-6 col-md-8 p-0"   >
                         @foreach ($subCategories as $subCategory)
                             @if ($subCategory->subCategory && $subCategory->name === $productCategory)
                                 @foreach($subCategory->subCategory as $sub)
-                                    <a class="p-0 mr-2" href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a>
+                                    <a @if($sub->name === $prod) class="p-0 mr-2 text-danger"@else class="p-0 mr-2" @endif class="p-0 mr-2" href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a>
                                 @endforeach
                             @endif
                         @endforeach
@@ -87,12 +87,19 @@
             </div>
             <div class="container pb-4">
                 <div class="line"></div>
-                <div class="vector_left_container  d-md-flex d-none center"><a href="#">
-                        <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">
-                    </a></div>
-                <div class="vector_right_container center d-md-flex d-none"><a href="#">
-                        <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
-                    </a></div>
+
+                <div class="row container ">
+                    <div class="col-6 d-flex justify-content-end" id="vectors">
+                        {{ $similar->links() }}
+                    </div>
+                </div>
+
+{{--                <div class="vector_left_container  d-md-flex d-none center"><a href="#">--}}
+{{--                        <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                    </a></div>--}}
+{{--                <div class="vector_right_container center d-md-flex d-none"><a href="#">--}}
+{{--                        <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                    </a></div>--}}
             </div>
 
             <div class="evenly d-flex flex-row flex-wrap container p-0">

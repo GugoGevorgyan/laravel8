@@ -38,49 +38,54 @@
 
                     <!-- Card -->
                     <div class="card" data-toggle="lists"
-                         data-lists-values='["prod-id", "prod-image", "prod-name", "prod-description", "prod-price", "prod-sale", "prod-category", "prod-status"]'>
+{{--                         data-lists-values='["prod-id", "prod-image", "prod-name", "prod-description", "prod-price", "prod-sale", "prod-category", "prod-status"]'--}}
+                    >
 
                         <div class="table-responsive">
                             <table class="table table-sm table-nowrap card-table">
                                 <thead>
                                 <tr>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="prod-id">
+                                        <a href="{{route('product.show','id')}}" class="text-muted " data-sort="prod-id">
                                             id
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="prod-image">
+                                        <a href="#" class="text-muted "
+{{--                                           data-sort="prod-image"--}}
+                                        >
                                             image
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="prod-name">
+                                        <a href="{{route('product.show','name')}}" class="text-muted" data-sort="prod-name">
                                             Name
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="prod-description">
+                                        <a href="{{route('product.show','description')}}" class="text-muted" data-sort="prod-description">
                                             Description
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="prod-price">
+                                        <a href="{{route('product.show','price')}}" class="text-muted" data-sort="prod-price">
                                             Price
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="prod-sale">
+                                        <a href="{{route('product.show','sale')}}" class="text-muted" data-sort="prod-sale">
                                             Sale
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="prod-category">
+                                        <a href="" class="text-muted"
+{{--                                           data-sort="prod-category"--}}
+                                        >
                                             Category
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="#" class="text-muted sort" data-sort="prod-status">
+                                        <a href="{{route('product.show','status')}}" class="text-muted " data-sort="prod-status">
                                             Status
                                         </a>
                                     </th>
