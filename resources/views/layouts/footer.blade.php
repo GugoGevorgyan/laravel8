@@ -3,7 +3,7 @@
         <div class="flex-lg-row d-flex flex-wrap col-lg-6 col-10  flex-column-reverse mt-5 mb-5 p-0">
             <div class="center  col-lg-9 col-12 justify-content-between align-items-baseline p-0 m-lg-0 mt-2 mb-2">
                 <h5 class="footer_contact font-weight-bold text-white mb-2">Contact</h5>
-                <ul class="list-unstyled contact  ">
+                <ul class="list-unstyled contact">
                     <li>
                         <div class="center">
                             <img src="{{asset('storage/images/VectorGps.png')}}" alt="">
@@ -55,5 +55,4 @@
             </div>
         </div>
     </div>
-
     @endpush

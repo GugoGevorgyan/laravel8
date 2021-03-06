@@ -6,13 +6,16 @@ if (categories){
 }
 
 const categoriesMap = new Map();
+if (dropdown){
+    dropdown.forEach(function (element) {
+        const el = element.children[0];
+        if (!categoriesMap.has(el)) {
+            categoriesMap.set(el, el.nextElementSibling);
+        }
+    })
+    start();
+}
 
-dropdown.forEach(function (element) {
-    const el = element.children[0];
-    if (!categoriesMap.has(el)) {
-        categoriesMap.set(el, el.nextElementSibling);
-    }
-})
 
 
 function start() {
@@ -24,10 +27,15 @@ function start() {
         if (checked) checkedData = index + 1;
         if (checkedData) {
             categoriesMap.forEach((elem, index) => {
-                if (!(index + 1 === checkedData)) elem.classList.add('d-none')
+                if (!(index + 1 === checkedData)) {
+                    elem.classList.add('d-none');
+                }else{
+                    elem.parentElement.childNodes[1].classList.add('bg-danger');
+                }
             })
         } else {
             el.classList.remove('d-none');
+            el.parentElement.childNodes[1].classList.remove('bg-danger');
         }
     })
 }

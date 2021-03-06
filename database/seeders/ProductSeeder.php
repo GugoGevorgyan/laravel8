@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProductSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1 ; $i <= 60 ; $i++) {
+        for ($i = 1; $i <= 60; $i++) {
             $products = [
                 [
                     'name' => 'computer',
@@ -36,7 +37,7 @@ class ProductSeeder extends Seeder
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
                 [
-                    'name' => 'Samsung Earbuds',
+                    'name' => 'comp',
                     'img' => 'computer.png',
                     'description' => 'ee',
                     'sale' => 1500,
@@ -45,7 +46,7 @@ class ProductSeeder extends Seeder
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
                 [
-                    'name' => 'Samsung Earbuds',
+                    'name' => 'LG Comp',
                     'img' => 'computer.png',
                     'description' => 'ss',
                     'sale' => 1500,
@@ -54,7 +55,7 @@ class ProductSeeder extends Seeder
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
                 [
-                    'name' => 'Samsung Earbuds',
+                    'name' => 'Aple',
                     'img' => 'computer.png',
                     'description' => 'qq',
                     'sale' => 1500,

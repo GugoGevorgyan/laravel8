@@ -77,7 +77,6 @@
                         </div>
                         <div class="form-group">
                             <label for="sale">{{ __('Sale') }}</label>
-
                             <div>
                                 <input id="sale" type="number" class="form-control @error('sale') is-invalid @enderror"
                                        name="sale" value="{{old('sale')}}">
@@ -90,23 +89,22 @@
                         </div>
                         <div class="form-group">
                             {{"Categories"}}
-                            <ul class="navbar-nav d-flex flex-row justify-content-around">
+                            <ul class="navbar-nav categories d-flex flex-row justify-content-around pt-3">
                                 @foreach ($categories as $category)
                                     @if (!$category->category)
-                                        <li class="nav-item  justify-content-between">
-                                            <a href="#topnavDashboards{{$category->name}}"
-                                               class="nav-link" data-toggle="collapse" role="button"
-                                               aria-expanded="false"
+                                        <li class="nav-item justify-content-between category">
+                                            <a href="#topnavDashboards{{$category->name}}" class="nav-link text-white btn-primary rounded"
+                                               data-toggle="collapse" role="button" aria-expanded="false"
                                                aria-controls="topnavDashboards{{$category->name}}">
                                                 {{$category->name}}
                                             </a>
-                                            <div class="collapse " id="topnavDashboards{{$category->name}}">
+                                            <div class="collapse" id="topnavDashboards{{$category->name}}">
                                                 <ul class="nav nav-sm flex-column">
                                                     @foreach ($subCategories as $subCategory)
                                                         @if ($subCategory->subCategory && $subCategory->name === $category->name)
                                                             @foreach($subCategory->subCategory as $sub)
-                                                                <li class="nav-item">
-                                                                    <input class=" " type="checkbox" id="{{$sub->name}}"
+                                                                <li class="nav-item subCategory">
+                                                                    <input type="checkbox" id="{{$sub->name}}"
                                                                            name="subCategory[]" value="{{$sub->id}}">
                                                                     <label for="{{$sub->name}}"> {{$sub->name}}</label>
                                                                 </li>
@@ -132,7 +130,6 @@
                         </div>
                         <div class="form-group">
                             <div>
-
                                 <button type="submit" class="btn btn-lg btn-block btn-primary mb-3 col-4">
                                     Create
                                 </button>
@@ -143,7 +140,6 @@
                 </div>
             </div> <!-- / .row -->
         </div>
-
     </div> <!-- / .main-content -->
 @endsection
 

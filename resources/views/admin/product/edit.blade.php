@@ -90,11 +90,11 @@
 
                         <div class="form-group">
                             {{"Categories"}}
-                            <ul class="navbar-nav categories d-flex flex-row justify-content-around">
+                            <ul class="navbar-nav categories d-flex flex-row justify-content-around pt-3">
                                 @foreach ($categories as $category)
                                     @if (!$category->category)
-                                        <li class="nav-item  justify-content-between category">
-                                            <a href="#topnavDashboards{{$category->name}}" class="nav-link"
+                                        <li class="nav-item justify-content-between category">
+                                            <a href="#topnavDashboards{{$category->name}}" class="nav-link text-white btn-primary rounded"
                                                data-toggle="collapse" role="button" aria-expanded="false"
                                                aria-controls="topnavDashboards{{$category->name}}">
                                                 {{$category->name}}

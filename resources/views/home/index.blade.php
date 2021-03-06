@@ -111,9 +111,9 @@
 {{--             computers   --}}
 
                 <div class="all_computers container">
-                    <a href="{{route('prod.index',$productCategory)}}" class="d-block text-dark"><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">
+                    <div class="d-block text-dark"><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">
                             {{$productCategory }}</h3>
-                    </a>
+                    </div>
                     <div class="just_between flex-row pb-4 pt-2">
                         <div class="d-flex flex-row justify-content-between col-lg-6 col-md-12 p-0">
 
