@@ -31,8 +31,17 @@
                                 <div>
                                     <div class="container p-0 pt-lg-0 pb-lg-0 pt-1 pb-1 ">
                                         <div class="align-items-end d-flex flex-row">
-                                            <p class="price_sale text-danger ">${{$computers[1] ->sale}}</p>
-                                            <strike class="old_price"><p>${{$computers[0] ->price}}</p></strike>
+                                            @if($computers[0]->sale)
+                                                <p class="price_sale text-danger">${{$computers[0]->sale}}</p>
+                                                <strike class="old_price"><p>${{$computers[0]->price}}</p></strike>
+                                            @else
+                                                <p class="price_sale" style="color: #151414 !important;">
+                                                    ${{$computers[0]->price}}</p>
+                                            @endif
+
+
+{{--                                            <p class="price_sale text-danger ">${{$computers[1]->sale}}</p>--}}
+{{--                                            <strike class="old_price"><p>${{$computers[0]->price}}</p></strike>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -76,9 +85,18 @@
                                 <div>
                                     <div class="container p-0 pt-lg-0 pb-lg-0 pt-1 pb-1 ">
                                         <div class="align-items-end d-flex flex-row">
-                                            <p class="price_sale ">${{$computers[1] ->sale}}</p>
-                                            <strike class="old_price d-none"><p>${{$computers[0] ->price}}</p>
-                                            </strike>
+
+                                            @if($computers[1]->sale)
+                                                <p class="price_sale text-danger">${{$computers[1]->sale}}</p>
+                                                <strike class="old_price"><p>${{$computers[1]->price}}</p></strike>
+                                            @else
+                                                <p class="price_sale" style="color: #151414 !important;">
+                                                    ${{$computers[1]->price}}</p>
+                                            @endif
+
+{{--                                            <p class="price_sale ">${{$computers[1] ->sale}}</p>--}}
+{{--                                            <strike class="old_price d-none"><p>${{$computers[0] ->price}}</p>--}}
+{{--                                            </strike>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -220,22 +238,22 @@
                                     </div>
                                     <div class="container">
                                         <div class="align-items-end d-flex flex-row">
-                                            @if($computer -> sale)
-                                                <p class="price_sale text-danger">${{$computer ->sale}}</p>
-                                                <strike class="old_price"><p>${{$computer ->price}}</p></strike>
+                                            @if($computer->sale)
+                                                <p class="price_sale text-danger">${{$computer->sale}}</p>
+                                                <strike class="old_price"><p>${{$computer->price}}</p></strike>
                                             @else
                                                 <p class="price_sale" style="color: #151414 !important;">
-                                                    ${{$computer ->price}}</p>
+                                                    ${{$computer->price}}</p>
                                             @endif
                                         </div>
                                         <div>
-                                            <p class="sales_name">{{$computer ->name}} </p>
+                                            <p class="sales_name">{{$computer->name}} </p>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-around container">
                                         <button type="button"
                                                 class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
-                                            ORDER NOW
+                                            <a href="{{route('ordernow',$computer->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
                                         </button>
                                         <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>

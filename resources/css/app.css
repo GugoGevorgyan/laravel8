@@ -541,16 +541,21 @@ span[aria-current="page"] > span {
     z-index: -1;
 }
 
-.radio_input:checked {
-    padding: 5px;
-    margin-right: 2.5px;
+.radio_input:checked,.radio_input_menu:checked{
     border-radius: 50%;
     background: black;
     color: black;
     appearance: none;
     outline: none;
 }
-
+.radio_input_menu:checked {
+    padding: 6px;
+    margin-right: 1px;
+}
+.radio_input:checked{
+    padding: 5px;
+    margin-right: 2.5px;
+}
 li::marker {
     display: none;
 }

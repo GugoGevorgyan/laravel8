@@ -113,7 +113,8 @@
                             </div>
                         </div>
                         <div class="pt-5 pb-5 pl-lg-2 pr-lg-3 mt-2 mb-2 d-flex justify-content-center">
-                                <button type="reset" class="btn focus rounded-pill capitalize pt-2 pb-2 pb-md-3 pt-md-3 col-5">Cancel</button>
+                                <button type="reset" class="btn focus rounded-pill capitalize pt-2 pb-2 pb-md-3 pt-md-3 col-5">
+                                    <a href="{{ route('cart')}}" class="text-decoration-none text-dark">Cancel</a></button>
                             <button type="submit" class="btn rounded-pill btn-dark uppercase pt-2 pb-2 pb-md-3 pt-md-3 col-5">save
                             </button>
                         </div>

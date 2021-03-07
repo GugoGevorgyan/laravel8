@@ -32,22 +32,32 @@
                         <div class="col-12 col-sm-11 bg-white p-4 m-0">
                             <div class="center p-md-5 pt-4 mt-2 m-1 mb-md-1 mb-4 pb-3 ">
                                 <div class="mb-md-3 m-md-2 pt-5 pb-4">
-                                    <img class="container p-0" src="{{asset('storage/images/image27.png')}}" alt="shipping">
+                                    @if(!empty($product))
+                                        <img class="container p-0" src="{{asset('storage/images/'.$product->img)}}" alt="computer">
+                                    @else
+                                        <img class="container p-0" src="{{asset('storage/images/image27.png')}}" alt="computer">
+                                        @endif
+
                                 </div>
                             </div>
 
                             <div class="pb-5 pl-md-5 ml-md-2 mb-md-3 mb-2">
-                                <div> <p class="font29_size24 text-cart">HP proBook 4530s</p></div>
-                                <div><h2 class="order_faster_text text-danger font-weight-bold ">$1500</h2></div>
+                                <div> <p class="font29_size24 text-cart">
+                                        @if(!empty($product)){{$product->name}}@else {{"HP proBook 4530s"}} @endif
+                                    </p></div>
+                                <div><h2 class="order_faster_text text-danger font-weight-bold ">$
+                                        @if(!empty($product)) @if($product->sale){{$product->sale}}@else {{$product->price}}@endif @else{{"1500"}} @endif
+                                    </h2></div>
                             </div>
                         </div>
                     </div>
-                    <div class=" container col-12 col-lg-6 col-md-10 pr-sm-2 p-sm-0 p-3 text-white">
+                    <div class="container col-12 col-lg-6 col-md-10 pr-sm-2 p-sm-0 p-3 text-white">
                         <div class="col-12 col-sm-11 bg-info text-white p-sm-3 p-0 m-0">
                             <div class="center">
                                 <h6 class="font29_size24 pt-5 m-0 pb-4 mb-3 mt-2 top_0">Order now and faster !</h6>
                             </div>
-                            <form class="pr-sm-4 pl-sm-4 pr-3 pl-3  shipping_text" method="get" action='{{route('home.index')}}'>
+                            <form class="pr-sm-4 pl-sm-4 pr-3 pl-3 shipping_text" method="get" action="">
+                              @csrf
                                 <div class="mr-1 ml-1 m-sm-0 bg-info text-white">
                                     <div class="flex-wrap center">
                                         <div class="col-12 p-0 m-0 d-flex flex-wrap">
@@ -125,7 +135,9 @@
                                         </div>
                                     </div>
                                     <div class="pt-5 pb-5 pl-lg-2 pr-lg-3 mt-2 mb-2 d-flex justify-content-center">
-                                        <button type="reset" class="btn text-white focus rounded-pill capitalize pt-2 pb-2 pb-md-3 pt-md-3 col-4">Cancel</button>
+                                        <button type="reset" class="btn text-white focus rounded-pill capitalize pt-2 pb-2 pb-md-3 pt-md-3 col-4">
+                                            <a href="{{ route('cart')}}" class="text-decoration-none text-white">Cancel</a>
+                                        </button>
                                         <button type="submit" class="btn rounded-pill bg-white uppercase pt-2 pb-2 pb-md-3 pt-md-3 col-7">place order
                                         </button>
                                     </div>

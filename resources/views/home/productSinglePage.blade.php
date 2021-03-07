@@ -84,7 +84,9 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row flex-wrap">
-                            <button type="button" class="order_now bg-dark center sales_name text-white col-5 p-0">ORDER NOW</button>
+                            <button type="button" class="order_now bg-dark center sales_name text-white col-5 p-0">
+                                ORDER NOW
+                            </button>
                             <a  class="center" href="#"><img class="single_cart" src="http://design/storage/Cart-with-plus.png" alt="paiment"></a>
                         </div>
                     </div>
@@ -170,7 +172,7 @@
                         <div class="col-xl-3 p-md-3 p-2   col-md-4 col-sm-6  disp2-none">
                             <div class="hot_sales_imgs_container just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
-                                    @if($computer -> old_price)
+                                    @if($computer ->sale)
                                         <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                     @endif
                                     <div class="heart">
@@ -183,9 +185,9 @@
                                 </div>
                                 <div class="container">
                                     <div class="align-items-end d-flex flex-row">
-                                        @if($computer -> old_price)
-                                            <p class="price_sale text-danger">${{$computer ->price}}</p>
-                                            <strike class="old_price"><p>${{$computer ->old_price}}</p></strike>
+                                        @if($computer -> sale)
+                                            <p class="price_sale text-danger">${{$computer ->sale}}</p>
+                                            <strike class="old_price"><p>${{$computer ->price}}</p></strike>
                                         @else
                                             <p class="price_sale" style="color: #151414 !important;">
                                                 ${{$computer ->price}}</p>
@@ -196,7 +198,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around container">
-                                    <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">ORDER NOW
+                                    <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
+                                        <a href="{{route('ordernow',$computer->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
                                     </button>
                                     <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
 

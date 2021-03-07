@@ -36,7 +36,7 @@
                             <div class="d-flex justify-content-around container">
                                 <button type="button"
                                         class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
-                                    ORDER NOW
+                                    <a href="{{route('ordernow',$computer->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
                                 </button>
                                 <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
 
@@ -96,7 +96,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around container">
-                                    <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">ORDER NOW
+                                    <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
+                                        <a href="{{route('ordernow',$computer->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
                                     </button>
                                     <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
 
@@ -108,7 +109,6 @@
                     @endforeach
                 </div>
             </div>
-            {{--  --}}
         </div>
     </div>
 @endsection

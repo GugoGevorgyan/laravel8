@@ -52,14 +52,6 @@
                         </div>
                     </div>
 
-
-
-{{--                    <div class="vector_left_container d-md-flex d-none center"><a href="#">--}}
-{{--                            <img class="vector_left rotate-180" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-{{--                        </a></div>--}}
-{{--                    <div class="vector_right_container d-md-flex d-none center"><a href="#">--}}
-{{--                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-{{--                        </a></div>--}}
                 </div>
                 <div class="container">
                     <div class="evenly row">
@@ -72,12 +64,14 @@
                                             </div>
                                         @endif
                                         <div class="heart">
-                                            <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
+                                            <img class="img_heart"
+                                                 src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">
                                         </div>
                                     </div>
                                     <div class="hot_sales_img center mt-4">
-                                        <img class="container" src="{{asset('storage/images/'.$sales->img)}}" alt="computers">
+                                        <img class="container" src="{{asset('storage/images/'.$sales->img)}}"
+                                             alt="computers">
                                     </div>
                                     <div class="container">
                                         <div class="align-items-end d-flex flex-row">
@@ -96,7 +90,7 @@
                                     <div class="d-flex justify-content-around container pb-1">
                                         <button type="button"
                                                 class="order_now   bg-dark   center sales_name text-white col-md-9 col-10 p-0">
-                                            ORDER NOW
+                                            <a href="{{route('ordernow',$sales->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
                                         </button>
                                         <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
@@ -108,10 +102,11 @@
                 </div>
 
 
-{{--             computers   --}}
+                {{--             computers   --}}
 
                 <div class="all_computers container">
-                    <div class="d-block text-dark"><h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">
+                    <div class="d-block text-dark"><h3
+                            class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4">
                             {{$productCategory }}</h3>
                     </div>
                     <div class="just_between flex-row pb-4 pt-2">
@@ -120,7 +115,9 @@
                             @foreach ($subCategories as $subCategory)
                                 @if ($subCategory->subCategory && $subCategory->name === $productCategory)
                                     @foreach($subCategory->subCategory as $sub)
-                                        <a @if($sub->name === $prod) class="p-0 text-danger"@else class="p-0" @endif class="p-0" href="{{route('prod.index',$sub->name)}}">{{$sub->name}}</a>
+                                        <a @if($sub->name === $prod) class="p-0 text-danger" @else class="p-0"
+                                           @endif class="p-0"
+                                           href="{{route('prod.index',$sub->name)}}">{{$sub->name}}</a>
                                     @endforeach
                                 @endif
                             @endforeach
@@ -138,25 +135,27 @@
                         </div>
                     </div>
 
-{{--                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">--}}
-{{--                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-{{--                        </a></div>--}}
-{{--                    <div class="vector_right_container center d-md-flex d-none"><a href="#">--}}
-{{--                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-{{--                        </a></div>--}}
+                    {{--                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">--}}
+                    {{--                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+                    {{--                        </a></div>--}}
+                    {{--                    <div class="vector_right_container center d-md-flex d-none"><a href="#">--}}
+                    {{--                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+                    {{--                        </a></div>--}}
                 </div>
                 <div class="container pb-md-0 pb-5">
                     <div class="evenly row">
                         @foreach($computers as $computer)
-                            <div class="col-xl-3 p-md-3 p-2 col-md-4 col-sm-6 ">
-                                <div class="hot_sales_imgs_container just_around ">
+                            <div class="col-xl-3 p-md-3 p-2 col-md-4 col-sm-6">
+                                <div class="hot_sales_imgs_container just_around">
+                                    @csrf
                                     <div class="d-flex flex-row position-relative h-15">
-                                        @if($sales -> sale)
+                                        @if($computer -> sale)
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
                                         <div class="heart">
-                                            <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
+                                            <img class="img_heart"
+                                                 src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">
                                         </div>
                                     </div>
@@ -166,12 +165,12 @@
                                     </div>
                                     <div class="container">
                                         <div class="align-items-end d-flex flex-row">
-                                            @if($sales -> sale)
-                                                <p class="price_sale text-danger">${{$sales ->sale}}</p>
-                                                <strike class="old_price"><p>${{$sales ->price}}</p></strike>
+                                            @if($computer -> sale)
+                                                <p class="price_sale text-danger">${{$computer ->sale}}</p>
+                                                <strike class="old_price"><p>${{$computer ->price}}</p></strike>
                                             @else
                                                 <p class="price_sale" style="color: #151414 !important;">
-                                                    ${{$sales ->price}}</p>
+                                                    ${{$computer ->price}}</p>
                                             @endif
                                         </div>
                                         <div>
@@ -181,7 +180,7 @@
                                     <div class="d-flex justify-content-around container">
                                         <button type="button"
                                                 class="order_now bg-dark center sales_name text-white  col-10 col-md-9 p-0">
-                                            ORDER NOW
+                                            <a href="{{route('ordernow',$computer->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
                                         </button>
                                         <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
@@ -199,8 +198,8 @@
                 <div class="container row p-0 ">
                     <div class="owl-carousel pb-lg-5 owl-theme  container" id="owl_1">
                         @foreach($brands as $brand)
-                                <div class="item center p-3">
-                                    <img class="w-auto" src="{{asset('storage/images/'.$brand)}}" alt="{{$brand}}">
+                            <div class="item center p-3">
+                                <img class="w-auto" src="{{asset('storage/images/'.$brand)}}" alt="{{$brand}}">
                             </div>
                         @endforeach
                     </div>

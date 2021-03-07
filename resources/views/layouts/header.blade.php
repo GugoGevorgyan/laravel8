@@ -8,12 +8,12 @@
 
             <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0 p-0">
                 <li class="media_heart container">
-                    <a href="{{asset('/cart')}}">
+                    <a href="{{asset('/cart')}}" class="text-decoration-none">
                         <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}" alt="">
                     </a>
                 </li>
                 <li class="container p-md-3 p-0">
-                    <a href="{{asset('/home/favorites')}}">
+                    <a href="{{asset('/home/favorites')}}" class="text-decoration-none">
                         <img class="img_heart" src="{{asset('storage/images/Cart-with-plus.png')}}" alt="">
                     </a>
                 </li>
@@ -102,14 +102,14 @@
 
                         <div class="dropdown-menu" aria-labelledby="DropdownMenuLink" id="hidden_menu">
                             <div class="dropdown-item flex_column just_around d-flex ">
-                                <a href="{{asset('/home/favorites')}}">
+                                <a href="{{asset('/home/favorites')}}" class="text-decoration-none">
                                     <div class="flex_row d-flex  align-items-center menu_content">
                                         <img class="menu_icon" src="{{asset('storage/images/Cart-with-plus.png')}}"
                                              alt="Favorites">
                                         <p class="menu_txt text-dark">Favorites</p>
                                     </div>
                                 </a>
-                                <a href="{{asset('/cart')}}">
+                                <a href="{{asset('/cart')}}" class="text-decoration-none">
                                     <div class="flex_row d-flex  align-items-center menu_content">
 
                                         <img class="menu_icon" src="{{asset('storage/images/add-to-favorites.png')}}"
@@ -124,13 +124,13 @@
                                     <div class="center">
                                         <div class="menu_img">
                                             <input type="radio" id="amd" name="Currency" value="AMD"
-                                                   class="radio_input">
+                                                   class="radio_input_menu">
                                             <label class="menu_txt text-dark" for="amd">AMD</label>
                                         </div>
 
                                         <div class="menu_img">
                                             <input type="radio" id="usd" name="Currency" value="USD"
-                                                   class="radio_input">
+                                                   class="radio_input_menu">
                                             <label class="menu_txt text-dark" for="usd">USD</label>
                                         </div>
                                     </div>
@@ -141,14 +141,14 @@
                                     <div class="center">
                                         <div class="menu_img">
                                             <input type="radio" id="usa" name="Language" value="usa"
-                                                   class="radio_input">
+                                                   class="radio_input_menu">
                                             <label for="usa"><img src="{{asset('storage/images/usa.png')}}"
                                                                   alt="usa"></label>
                                         </div>
 
                                         <div class="menu_img">
                                             <input type="radio" id="arm" name="Language" value="arm"
-                                                   class="radio_input">
+                                                   class="radio_input_menu">
                                             <label for="arm"><img src="{{asset('storage/images/arm.png')}}"
                                                                   alt="arm"></label>
                                         </div>

@@ -40,11 +40,9 @@
             <div class="m-lg-0 mt-5 mb-5" >
                 <h5 class="footer_contact font-weight-bold text-white mb-2">Products</h5>
                 <ul class="list-unstyled prod">
-                    <li><a href="">Laptops</a></li>
-                    <li><a href="">Headphones</a></li>
-                    <li><a href="">Speakers</a></li>
-                    <li><a href="">Airpods</a></li>
-                    <li><a href="">Keyboards</a></li>
+                    @foreach($allCategories as $category)
+                        <li><a href="{{route('prod.index',$category->name)}}">{{$category->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="d-lg-none m-lg-0 mb-2 mt-5">
