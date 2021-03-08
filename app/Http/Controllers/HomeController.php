@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 class   HomeController extends Controller
 {
@@ -15,6 +17,7 @@ class   HomeController extends Controller
      */
     public function index()
     {
+        dd(User::with('products')->findOrFail(Auth::id())->products->first()->pivot->favorit);
       return $this->checkProducts('Computers','index',8);
     }
 
@@ -44,9 +47,11 @@ class   HomeController extends Controller
     {
         if($request->name === "heart"){
             $product = Product::findOrFail($request->value);
-            return $product;
+            $product->users()->attach(Auth::id());
+            dd(User::with('products')->findOrFail(Auth::id())->products());
+            return User::with('products')->findOrFail(Auth::id());
         }
-        return $request->name;
+
 
     }
 
@@ -95,8 +100,6 @@ class   HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        return "tttt";
-        dd($request,$id);
         //
     }
 
