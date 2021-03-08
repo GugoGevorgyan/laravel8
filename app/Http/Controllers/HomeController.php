@@ -46,13 +46,25 @@ class   HomeController extends Controller
     public function store(Request $request)
     {
         if($request->name === "heart"){
+
             $product = Product::findOrFail($request->value);
-            $product->users()->attach(Auth::id());
-            dd(User::with('products')->findOrFail(Auth::id())->products());
-            return User::with('products')->findOrFail(Auth::id());
+            if ($product->users->contains(Auth::id())){
+                $favorit = $product->users()->where('user_id',Auth::id())->first()->pivot->favorit;
+                $favorit = $favorit ? false : true;
+                $product->users()->updateExistingPivot(Auth::user(),['favorit'=> $favorit]);
+                return $favorit;
+            }else{
+                $product->users()->attach(Auth::id(),['favorit'=> true]);
+                return true;
+            } ;
+
+//            $product->users()->attach(Auth::id());
+//            dd(User::with('products')->findOrFail(Auth::id())->products());
+
+//            User::with('products')->findOrFail(Auth::id())->products->first()->pivot->favorit
+//            return User::with('products')->findOrFail(Auth::id());
+
         }
-
-
     }
 
     /**
@@ -144,9 +156,7 @@ class   HomeController extends Controller
      */
     public function prod($prod)
     {
-
        return $this->checkProducts($prod,'product',20);
-
     }
     public function homeProduct($prod){
        return $this->checkProducts($prod,'index',8);

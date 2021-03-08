@@ -1,9 +1,3 @@
-// $(document).ready(function () {
-//     $('.heart').on('click',function () {
-//         console.log($(this).data('id'));
-//     });
-// })
-
 jQuery(document).ready(function(){
     jQuery('.heart').click(function(e){
         e.preventDefault();
@@ -20,7 +14,11 @@ jQuery(document).ready(function(){
                 value: $(this).data('id'),
             },
             success: function(result){
-                console.log(result);
+               if(result){
+                   console.log('ok')
+               }else{
+                   console.log('cka')
+               }
             }});
     });
 });
