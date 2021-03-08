@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
-use phpDocumentor\Reflection\Types\Null_;
 
 class   HomeController extends Controller
 {
@@ -27,7 +25,6 @@ class   HomeController extends Controller
      */
     public function create()
     {
-
         $allCategories = Category::all()->where('parent_id','=',Null);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
@@ -45,6 +42,11 @@ class   HomeController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->name === "heart"){
+            $product = Product::findOrFail($request->value);
+            return $product;
+        }
+        return $request->name;
 
     }
 
@@ -60,7 +62,7 @@ class   HomeController extends Controller
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
         $computers = Product::where('status',1)->paginate(2);
-        $similar = Product::where('status',1)->paginate(4);
+        $similar = Product::where('status',1)->paginate(20);
         return response()->view('home/favorites', ['computers' => $computers, 'similar' => $similar,
             'categories'=>$categories,'subCategories'=>$subCategories,'allCategories'=>$allCategories]);
     }
@@ -76,7 +78,7 @@ class   HomeController extends Controller
         $allCategories = Category::all()->where('parent_id','=',Null);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
-        $computers = Product::where('status',1)->paginate(4);
+        $computers = Product::where('status',1)->paginate(20);
         $colors = ['#F03A4B', '#000000', '#2672FF', '#74AB2E', '#C31FEC', '#EABD1C'];
         $product = Product::find($id);
         return response()->view('home.productSinglePage',
@@ -93,6 +95,8 @@ class   HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
+//        return "tttt";
+        dd($request,$id);
         //
     }
 
@@ -147,7 +151,7 @@ class   HomeController extends Controller
 
     public function checkProducts($prod, $page, $amount){
 
-        $hot_sales = Product::where('status',1)->paginate(4);
+        $hot_sales = Product::where('status',1)->paginate(20);
         $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
         $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
         $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];
@@ -159,7 +163,7 @@ class   HomeController extends Controller
         $subCategories = Category::with('subCategory')->get();
         $productCategory = Category::with('category')->where('name', '=',$prod)->first()->category;
 
-        $similar = Product::where('status',1)->paginate(4);
+        $similar = Product::where('status',1)->paginate(20);
         if (isset($productCategory)){
             $productCategory = $productCategory->name;
         }else{

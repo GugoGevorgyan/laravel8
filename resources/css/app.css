@@ -496,6 +496,31 @@ display: flex !important;
     right: -34px;
 }
 
+.vector {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: -54px;
+    right: 12px;
+}
+.vector button{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF !important;
+    width: 37px;
+    height: 37px;
+    border-radius: 50% !important;
+    border: 1px solid #DEDEDE!important;
+    opacity: 1 !important;
+    margin: 0 3px !important;
+}
+.vector button > span{
+  font-size: 40px !important;
+    padding: 0 0 6px 4px !important;
+}
+
+
 div.sm\:hidden {
     display: none;
 }

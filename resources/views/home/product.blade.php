@@ -88,11 +88,11 @@
             <div class="container pb-4">
                 <div class="line"></div>
 
-                <div class="row container ">
-                    <div class="col-6 d-flex justify-content-end" id="vectors">
-                        {{ $similar->links() }}
-                    </div>
-                </div>
+{{--                <div class="row container ">--}}
+{{--                    <div class="col-6 d-flex justify-content-end" id="vectors">--}}
+{{--                        {{ $similar->links() }}--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
 {{--                <div class="vector_left_container  d-md-flex d-none center"><a href="#">--}}
 {{--                        <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
@@ -103,9 +103,11 @@
             </div>
 
             <div class="evenly d-flex flex-row flex-wrap container p-0">
-
+                <div class=" owl-carousel owl-theme owl_3" id="owl_3">
                 @foreach($similar as $computer)
-                    <div class="col-xl-3 p-md-3 p-2   col-md-4 col-sm-6  disp2-none">
+                    <div class="p-md-3 p-2
+{{--                    col-xl-3 col-md-4 col-sm-6n disp2-noe--}}
+                        ">
                         <div class="hot_sales_imgs_container just_around ">
                             <div class="d-flex flex-row position-relative h-15">
                                 @if($computer -> sale)
@@ -144,6 +146,7 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
             </div>
         </div>
 

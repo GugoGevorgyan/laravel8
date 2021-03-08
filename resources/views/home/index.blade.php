@@ -46,24 +46,27 @@
                     <div class="line"></div>
 
 
-                    <div class="row container ">
-                        <div class="col-6 d-flex justify-content-end" id="vectors">
-                            {{ $hot_sales->links() }}
-                        </div>
-                    </div>
+{{--                    <div class="row container ">--}}
+{{--                        <div class="col-6 d-flex justify-content-end" id="vectors">--}}
+{{--                            {{ $hot_sales->links() }}--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                 </div>
                 <div class="container">
                     <div class="evenly row">
+                        <div class=" owl-carousel owl-theme owl_3" id="owl_3">
                         @foreach($hot_sales as $sales)
-                            <div class="col-xl-3 p-md-3 p-2  col-md-4 col-sm-6  disp2-none">
+                            <div class="p-md-3 p-2
+{{--                            col-xl-3 p-md-3 p-2  col-md-4 col-sm-6  disp2-none--}}
+                                ">
                                 <div class="hot_sales_imgs_container   just_around ">
                                     <div class="d-flex flex-row position-relative h-15">
                                         @if($sales -> sale)
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
-                                        <div class="heart">
+                                        <div class="heart" data-id="{{$sales->id}}" >
                                             <img class="img_heart"
                                                  src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">
@@ -99,6 +102,7 @@
                             </div>
                         @endforeach
                     </div>
+                    </div>
                 </div>
 
 
@@ -111,7 +115,6 @@
                     </div>
                     <div class="just_between flex-row pb-4 pt-2">
                         <div class="d-flex flex-row justify-content-between col-lg-6 col-md-12 p-0">
-
                             @foreach ($subCategories as $subCategory)
                                 @if ($subCategory->subCategory && $subCategory->name === $productCategory)
                                     @foreach($subCategory->subCategory as $sub)
@@ -135,17 +138,20 @@
                         </div>
                     </div>
 
-                    {{--                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">--}}
-                    {{--                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-                    {{--                        </a></div>--}}
-                    {{--                    <div class="vector_right_container center d-md-flex d-none"><a href="#">--}}
-                    {{--                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-                    {{--                        </a></div>--}}
+{{--                                        <div class="vector_left_container  d-md-flex d-none center"><a href="#">--}}
+{{--                                                <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                                            </a></div>--}}
+{{--                                        <div class="vector_right_container center d-md-flex d-none"><a href="#">--}}
+{{--                                                <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                                            </a></div>--}}
                 </div>
                 <div class="container pb-md-0 pb-5">
                     <div class="evenly row">
+{{--                        <div class=" owl-carousel owl-theme owl_3" id="owl_4">--}}
                         @foreach($computers as $computer)
-                            <div class="col-xl-3 p-md-3 p-2 col-md-4 col-sm-6">
+                            <div class="p-md-3 p-2
+                            col-xl-3 col-md-4 col-sm-6
+                                ">
                                 <div class="hot_sales_imgs_container just_around">
                                     @csrf
                                     <div class="d-flex flex-row position-relative h-15">
@@ -189,6 +195,7 @@
                             </div>
 
                         @endforeach
+{{--                    </div>--}}
                     </div>
 
                 </div>

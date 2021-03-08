@@ -158,18 +158,20 @@
                 </div>
                 <div class="container pb-4">
                     <div class="line"></div>
-                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">
-                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">
-                        </a></div>
-                    <div class="vector_right_container center d-md-flex d-none"><a href="#">
-                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">
-                        </a></div>
+{{--                    <div class="vector_left_container  d-md-flex d-none center"><a href="#">--}}
+{{--                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                        </a></div>--}}
+{{--                    <div class="vector_right_container center d-md-flex d-none"><a href="#">--}}
+{{--                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
+{{--                        </a></div>--}}
                 </div>
 
                 <div class="evenly d-flex flex-row flex-wrap container p-0">
-
+                    <div class=" owl-carousel owl-theme owl_3" id="owl_3">
                     @foreach($computers as $computer)
-                        <div class="col-xl-3 p-md-3 p-2   col-md-4 col-sm-6  disp2-none">
+                        <div class="p-md-3 p-2
+{{--                        col-xl-3 col-md-4 col-sm-6  disp2-none--}}
+                            ">
                             <div class="hot_sales_imgs_container just_around ">
                                 <div class="d-flex flex-row position-relative h-15">
                                     @if($computer ->sale)
@@ -209,6 +211,7 @@
                         </div>
 
                     @endforeach
+                </div>
                 </div>
             </div>
 {{--  --}}

@@ -73,9 +73,6 @@
         height: auto;
     }
 
-    .hot_sales_imgs_container {
-        height: 250px;
-    }
 
     .Rectangle1 {
         background-image: url('/storage/images/Rectangle3.png');
@@ -170,7 +167,9 @@
 }
 
 @media all and (min-width: 412px) and (max-width: 768px) {
-
+    .hot_sales_imgs_container {
+        height: 250px;
+    }
     .h4 {
         font-size: 0.9rem !important;
     }

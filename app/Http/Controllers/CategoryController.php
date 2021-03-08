@@ -25,21 +25,21 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::all()->where('parent_id','=',Null);
-        return response()->view('admin/category/create',['categories' => $categories]);
+        $categories = Category::all()->where('parent_id', '=', Null);
+        return response()->view('admin/category/create', ['categories' => $categories]);
 
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $parent = intval($request->parent_category) ;
-        if ($request->parent_category === 'main'){
+        $parent = intval($request->parent_category);
+        if ($request->parent_category === 'main') {
             $parent = null;
         }
         $request->validate([
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -73,21 +73,21 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $edit = Category::find($id);
-        $categories = Category::all()->where('parent_id','=',Null);
-        return response()->view('admin/category/edit',['categories' => $categories, 'edit'=>$edit]);
+        $categories = Category::all()->where('parent_id', '=', Null);
+        return response()->view('admin/category/edit', ['categories' => $categories, 'edit' => $edit]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
     {
-        $parent = intval($request->parent_category) ;
-        if ($request->parent_category === 'main'){
+        $parent = intval($request->parent_category);
+        if ($request->parent_category === 'main') {
             $parent = null;
         }
         $request->validate([
@@ -95,10 +95,10 @@ class CategoryController extends Controller
         ]);
 
         $category->update([
-            'name'=> $request->name,
-            'parent_id'=>$parent
+            'name' => $request->name,
+            'parent_id' => $parent
         ]);
-        return redirect()-> route('category.index')
+        return redirect()->route('category.index')
             ->with(['message' => 'The category was successfully updated']);
 
     }
@@ -106,14 +106,13 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
     {
         $name = $category->name;
-       $result = $category->delete();
-//       dd($result);
+        $category->delete();
         return redirect()->back()->with(['message' => 'you have successfully removed ' . $name . ' category ']);
     }
 }

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Mail\AdminShop;
-use App\Models\Category;
-use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,8 +19,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-//       $result = Product::with('categories')->find(10);
-//        dd($result);
         $admins = User::all()->where('role_id', 2);
         return response()->view('admin/profile-admins',['admins'=>$admins]);
     }
@@ -185,8 +181,6 @@ class AdminController extends Controller
             return redirect('admin')->
             with(['message' => 'your password has been changed']);
         }
-
         return redirect()->back()->with(['message'=>'Your password was incorrect']);
     }
-
 }

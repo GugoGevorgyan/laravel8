@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->string('status')->default(1);
             $table->float('sale',10,2)->nullable();
             $table->timestamps();
+//            $table ->string('favorit')->default(false);
         });
     }
 

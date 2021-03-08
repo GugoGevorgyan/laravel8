@@ -28,7 +28,7 @@ class AdminProductRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'img' => 'file|image|mimes:jpeg,png,jpg,svg|dimensions:max_width=250,max_height=150|max:960',
+            'img' => 'file|image|mimes:jpeg,png,jpg,svg|dimensions:max_width=400,max_height=300|max:960',
             'description' => 'required|max:255',
             'price' => 'required|max:8',
             'sale' => 'max:8'

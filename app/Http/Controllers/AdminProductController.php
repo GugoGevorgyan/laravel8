@@ -138,7 +138,6 @@ class AdminProductController extends Controller
             'price' => intval($request->price),
             'sale' => intval($request->sale),
             'description' => $request->description,
-//            'category_id' => $request->category_id,
             'user_id' => Auth::id(),
         ]);
         return redirect('admin/product')
