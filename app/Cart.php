@@ -19,24 +19,25 @@ class Cart
         }
     }
 
-    public function add($item,$id){
+    public function add($item, $id)
+    {
         $store_item = [
-            'qty' => 0,
-            'price'=> $item->price,
-            'product' => $item,
+            'qty'=>0,
+            'price'=>$item->price,
+            'product'=>$item
         ];
-        if(!empty($this->items)){
-            if(!array_key_exists($id, $this->items)){
+        if (!empty($this->items)){
+            if (!array_key_exists($id,$this->items)){
                 $this->items[$id] = $store_item;
             }
         }else{
             $this->items[$id] = $store_item;
         }
-
         $this->items[$id]['qty']++;
-        $this->items[$id]['price'] = $this->items[$id]['qty']* $item->price;
-        $this->total_qty ++;
+        $this->items[$id]['price']=$this->items[$id]['qty']*$item->price;
+        $this->total_qty++;
         $this->total_price += $item->price;
+
     }
 
 

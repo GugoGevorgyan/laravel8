@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class   HomeController extends Controller
 {
@@ -132,9 +134,14 @@ class   HomeController extends Controller
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
         $computers = Product::where('status',1)->paginate(2);
+        $cart = Session::has('cart') ? \session()->get('cart'):[];
+
+//        return response()->view('user.show_cart', compact('cart'));
+
+
         $similar = Product::where('status',1)->paginate(4);
-        return response()->view('home/cart', ['computers' => $computers, 'similar' => $similar,
-            'categories'=>$categories,'subCategories'=>$subCategories,'allCategories'=>$allCategories]);
+//dd($cart);
+        return response()->view('home/cart',compact('cart','computers','similar','categories','subCategories','allCategories'));
     }
 
     public function shipping(Request $request)
@@ -187,5 +194,21 @@ class   HomeController extends Controller
             'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory,
             'imgs' => $imgs, 'figcaption' => $figcaption,'hot_sales' => $hot_sales,'brands' => $brands,
             'prod'=>$prod,'allCategories'=>$allCategories]);
+    }
+
+    public function addToCart(Request $request)
+    {
+//        dd($request->id);
+        $products = Product::all();
+//        $order = Order::all()->where('user_id',Auth::id());
+        if (!empty($request->id)) {
+            $product = Product::findorfail($request->id);
+            $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+            $cart = new Cart($old_cart);
+            $cart->add($product, $request->id);
+            Session::put('cart', $cart);
+//            dd( $request->session()->get('cart'));
+        }
+        return $this->checkProducts('Computers','index',8);
     }
 }

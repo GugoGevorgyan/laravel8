@@ -44,14 +44,6 @@
                 <h3 class="justify-content-sm-center d-flex d-lg-block popular_text  pt-4 pb-4 container">Hot Sales</h3>
                 <div class="container pb-4">
                     <div class="line"></div>
-
-
-{{--                    <div class="row container ">--}}
-{{--                        <div class="col-6 d-flex justify-content-end" id="vectors">--}}
-{{--                            {{ $hot_sales->links() }}--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
                 </div>
                 <div class="container">
                     <div class="evenly row">
@@ -95,7 +87,7 @@
                                                 class="order_now   bg-dark   center sales_name text-white col-md-9 col-10 p-0">
                                             <a href="{{route('ordernow',$sales->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
                                         </button>
-                                        <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
+                                        <a href="{{route('addToCart',['id'=>$sales->id])}}"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
                                     </div>
                                 </div>
