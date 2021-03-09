@@ -56,17 +56,17 @@
                 <div class="container">
                     <div class="evenly row">
                         <div class=" owl-carousel owl-theme owl_3" id="owl_3">
+
                         @foreach($hot_sales as $sales)
-                            <div class="p-md-3 p-2
-{{--                            col-xl-3 p-md-3 p-2  col-md-4 col-sm-6  disp2-none--}}
-                                ">
-                                <div class="hot_sales_imgs_container   just_around ">
+                            <div class="p-md-3 p-2">
+                                <div class="hot_sales_imgs_container just_around ">
                                     <div class="d-flex flex-row position-relative h-15">
                                         @if($sales -> sale)
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
                                         <div class="heart" data-id="{{$sales->id}}" >
+                                       <div class="black-heart {{!empty($sales->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
                                             <img class="img_heart"
                                                  src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">
@@ -159,7 +159,8 @@
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
-                                        <div class="heart">
+                                        <div class="heart" data-id="{{$computer->id}}">
+                                            <div class="black-heart {{!empty($computer->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
                                             <img class="img_heart"
                                                  src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">

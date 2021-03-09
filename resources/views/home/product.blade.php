@@ -36,7 +36,8 @@
                                 @if($computer -> sale)
                                     <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                 @endif
-                                <div class="heart">
+                                    <div class="heart" data-id="{{$computer->id}}">
+                                        <div class="black-heart {{!empty($computer->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
                                     <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
                                          alt="favorites">
                                 </div>
@@ -113,7 +114,8 @@
                                 @if($computer -> sale)
                                     <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                 @endif
-                                <div class="heart">
+                                    <div class="heart" data-id="{{$computer->id}}">
+                                        <div class="black-heart {{!empty($computer->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
                                     <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
                                          alt="favorites">
                                 </div>

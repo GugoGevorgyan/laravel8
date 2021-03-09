@@ -21,7 +21,7 @@ use App\Http\Controllers\adminDashboardController;
 Auth::routes();
 Route::resource('/home', HomeController::class);
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
-Route::middleware('admin','auth')->group(function () {
+Route::middleware('admin')->group(function () {
     Route::prefix('admin')->group(function (){
         Route::put('/status/{admin}', [AdminController::class, 'status'])->name('admin.status');
         Route::put('/password/{id}', [AdminController::class, 'update_password'])->name('admin.update.password');

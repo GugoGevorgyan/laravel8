@@ -5,14 +5,16 @@
         <div class="container-md container-fluid pt-4">
             <div class="d-flex flex-row flex-wrap container p-0">
                 @foreach($computers as $computer)
+                    @if($computer->pivot->favorite)
                     <div class="col-xl-3 p-3 position-static col-md-4 col-sm-6 ">
                         <div class="hot_sales_imgs_container just_around ">
                             <div class="d-flex flex-row position-relative h-15">
                                 @if($computer -> sale)
                                     <div class="yes_sale text-white position-absolute bg-danger center"> Sale</div>
                                 @endif
-                                <div class="heart">
-                                    <img class="img_heart" src="{{asset('storage/images/favorites_black.png')}}"
+                                    <div class="heart" data-id="{{$computer->id}}">
+                                        <div class="black-heart {{!empty($computer->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
+                                    <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
                                          alt="favorites">
                                 </div>
                             </div>
@@ -46,7 +48,7 @@
 
                         </div>
                     </div>
-
+                    @endif
                 @endforeach
             </div>
             {{--                   similar Items               --}}
@@ -62,12 +64,6 @@
                 </div>
                 <div class="container pb-4">
                     <div class="line"></div>
-{{--                    <div class="vector_left_container  d-lg-flex d-none center"><a href="#">--}}
-{{--                            <img class="vector_left" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-{{--                        </a></div>--}}
-{{--                    <div class="vector_right_container center d-lg-flex d-none"><a href="#">--}}
-{{--                            <img class="vector_right" src="{{asset('storage/images/Vector.png')}}" alt="">--}}
-{{--                        </a></div>--}}
                 </div>
 
                 <div class="evenly d-flex flex-row flex-wrap container p-0">
@@ -82,7 +78,8 @@
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
-                                        <div class="heart">
+                                            <div class="heart" data-id="{{$computer->id}}">
+                                                <div class="black-heart {{!empty($computer->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
                                             <img class="img_heart"
                                                  src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">

@@ -17,7 +17,7 @@ class   HomeController extends Controller
      */
     public function index()
     {
-        dd(User::with('products')->findOrFail(Auth::id())->products->first()->pivot->favorit);
+//        dd(User::with('products')->findOrFail(Auth::id())->products->first()->pivot->favorite);
       return $this->checkProducts('Computers','index',8);
     }
 
@@ -48,22 +48,16 @@ class   HomeController extends Controller
         if($request->name === "heart"){
 
             $product = Product::findOrFail($request->value);
+//            dd($product->users->contains(Auth::id())) ;
             if ($product->users->contains(Auth::id())){
-                $favorit = $product->users()->where('user_id',Auth::id())->first()->pivot->favorit;
-                $favorit = $favorit ? false : true;
-                $product->users()->updateExistingPivot(Auth::user(),['favorit'=> $favorit]);
-                return $favorit;
+                $favorite = $product->users()->where('user_id',Auth::id())->first()->pivot->favorite;
+                $favorite = $favorite ? false : true;
+                $product->users()->updateExistingPivot(Auth::user(),['favorite'=> $favorite]);
+                return $favorite;
             }else{
-                $product->users()->attach(Auth::id(),['favorit'=> true]);
+                $product->users()->attach(Auth::id(),['favorite'=> true]);
                 return true;
-            } ;
-
-//            $product->users()->attach(Auth::id());
-//            dd(User::with('products')->findOrFail(Auth::id())->products());
-
-//            User::with('products')->findOrFail(Auth::id())->products->first()->pivot->favorit
-//            return User::with('products')->findOrFail(Auth::id());
-
+            }
         }
     }
 
@@ -78,7 +72,13 @@ class   HomeController extends Controller
         $allCategories = Category::all()->where('parent_id','=',Null);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
-        $computers = Product::where('status',1)->paginate(2);
+//        $computers = Product::where('status',1)->paginate(20);
+
+//        $computers = User::with('products')->findOrFail(Auth::id())->products->;
+        $computers = User::with('products')->findOrFail(Auth::id())->products;
+//        dd($computers);
+
+
         $similar = Product::where('status',1)->paginate(20);
         return response()->view('home/favorites', ['computers' => $computers, 'similar' => $similar,
             'categories'=>$categories,'subCategories'=>$subCategories,'allCategories'=>$allCategories]);
@@ -165,6 +165,7 @@ class   HomeController extends Controller
     public function checkProducts($prod, $page, $amount){
 
         $hot_sales = Product::where('status',1)->paginate(20);
+//        dd($hot_sales[0]->users()->first()->id);
         $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
         $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
         $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];

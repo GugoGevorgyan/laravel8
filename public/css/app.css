@@ -637,6 +637,14 @@ li.dropdown-submenu {
    display: none;
 }
 
+.black-heart::before{
+    margin: -2px 0 0 -2px;
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-image: url("/storage/images/favorites_black.png");
+}
 
 @media all and (min-width: 994px) and (max-width: 1200px) {
     .nav-link {

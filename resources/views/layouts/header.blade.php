@@ -27,6 +27,8 @@
                             <li class="list-unstyled col-12 d-flex justify-content-end pb-3 pt-3 mt-1 mb-1 pr-3">
                                 <img class="pr-1" src="{{asset('storage/images/menu-alt2-2.png')}}" alt="menu">
                             </li>
+                            @if(!empty($categories))
+
                             @foreach ($categories as $category)
                                 @if (!$category->category)
                             <li class="dropdown-submenu p-0 mb-1 w-100">
@@ -50,6 +52,7 @@
 
                                 @endif
                             @endforeach
+                            @endif
                         </ul>
                     </div>
                 </li>
@@ -57,6 +60,7 @@
 
             <div class="collapse navbar-collapse pt-5" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-6 justify-content-around">
+                    @if(!empty($categories))
                     @foreach ($categories as $category)
                         @if (!$category->category)
                             <li class="nav-item dropdown col-3  d-flex flex-row col-3 align-items-center p-0 justify-content-between">
@@ -81,6 +85,7 @@
                             </li>
                         @endif
                     @endforeach
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

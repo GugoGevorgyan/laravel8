@@ -25,7 +25,7 @@ class CreateProductUserTable extends Migration
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->boolean('favorit')->default(false);
+            $table->boolean('favorite')->default(false);
             $table->timestamps();
         });
     }
