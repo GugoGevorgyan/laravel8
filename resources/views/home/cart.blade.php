@@ -5,120 +5,125 @@
         <div class="container-md container-fluid pt-lg-5 p-0">
             <div class="container col-12 m-0 pb-lg-5 p-0 d-flex flex-lg-row flex-column position-static" id="cart">
                 <div class="col-lg-8 col-12 m-0 row position-static d-lg-block d-flex flex-row">
-                   @if(!empty($cart->items))
-                    @foreach($cart->items as $product)
-                        <div class="pt-3 pb-2 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">
-                            <div class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0
+                    @if(!empty($cart->items))
+                        @foreach($cart->items as $product)
+                            <div class="pt-3 pb-2 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">
+                                <div class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0
                                     pt-lg-4 pb-lg-4 m-0 rounded shadow position-static">
-                                <div class="container col-lg-1 pb-lg-0 pb-4 col-12 m-0 center order-lg-0 order-2">
-                                    <input checked type="checkbox" name="cart" class="radio_input appearance p-2 rounded-circle"
-                                           value="@if($product['product']->sale){{$product['product']->sale}}@else{{$product['product']->price}} @endif">
-                                </div>
-                                <div class="container p-0 pt-lg-0 pt-4 col-lg-4 col-12 m-0 position-static
+                                    <div class="container col-lg-1 pb-lg-0 pb-4 col-12 m-0 center order-lg-0 order-2">
+                                        <input checked type="checkbox" name="cart"
+                                               class="radio_input appearance p-2 rounded-circle"
+                                               value="@if($product['product']->sale){{$product['product']->sale}}@else{{$product['product']->price}} @endif">
+                                    </div>
+                                    <div class="container p-0 pt-lg-0 pt-4 col-lg-4 col-12 m-0 position-static
                                         order-lg-1 order-0">
-                                    <div class="hot_sales_img center">
-                                        <img class="container p-0" src="{{asset('storage/images/'.$product['product']->img)}}" alt="computers">
+                                        <div class="hot_sales_img center">
+                                            <img class="container p-0"
+                                                 src="{{asset('storage/images/'.$product['product']->img)}}"
+                                                 alt="computers">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="d-lg-block d-flex flex-column-reverse
+                                    <div class="d-lg-block d-flex flex-column-reverse
                                         container p-0 col-lg-4 col-12 m-0 position-static order-lg-2 order-1">
-                                    <div>
                                         <div>
-                                            <p class="font29_size24 text-cart">{{$product['product']->name}}</p>
+                                            <div>
+                                                <p class="font29_size24 text-cart">{{$product['product']->name}}</p>
+                                            </div>
+                                            <div class="d-flex flex-column pt-lg-2 pb-3 font_16_20 text-cart">
+                                                <p class="">{{$product['product']->description}}</p>
+                                                <p> Color: black</p>
+                                            </div>
                                         </div>
-                                        <div class="d-flex flex-column pt-lg-2 pb-3 font_16_20 text-cart">
-                                            <p class="">{{$product['product']->description}}</p>
-                                            <p> Color: black</p>
+                                        <div>
+                                            <div class="container p-0 pt-lg-0 pb-lg-0 pt-1 pb-1 ">
+                                                <div class="align-items-end d-flex flex-row">
+                                                    @if($product['product']->sale)
+                                                        <p class="price_sale text-danger">
+                                                            ${{$product['product']->sale}}</p>
+                                                        <strike class="old_price"><p>${{$product['product']->price}}</p>
+                                                        </strike>
+                                                    @else
+                                                        <p class="price_sale" style="color: #151414 !important;">
+                                                            ${{$product['product']->price}}</p>
+                                                    @endif
+
+
+                                                    {{--                                            <p class="price_sale text-danger ">${{$computers[1]->sale}}</p>--}}
+                                                    {{--                                            <strike class="old_price"><p>${{$computers[0]->price}}</p></strike>--}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="container p-0 pt-lg-0 pb-lg-0 pt-1 pb-1 ">
-                                            <div class="align-items-end d-flex flex-row">
-                                                @if($product['product']->sale)
-                                                    <p class="price_sale text-danger">${{$product['product']->sale}}</p>
-                                                    <strike class="old_price"><p>${{$product['product']->price}}</p></strike>
-                                                @else
-                                                    <p class="price_sale" style="color: #151414 !important;">
-                                                        ${{$product['product']->price}}</p>
-                                                @endif
-
-
-                                                {{--                                            <p class="price_sale text-danger ">${{$computers[1]->sale}}</p>--}}
-                                                {{--                                            <strike class="old_price"><p>${{$computers[0]->price}}</p></strike>--}}
+                                    <div class="container pl-3 pr-2 p-0 col-lg-3 col-12 m-0 position-static order-lg-3">
+                                        <div class="d-lg-flex d-none flex-row justify-content-between">
+                                            <div class="font_16_20 pr-3 pl-3 text-white bg-danger center"> Sale</div>
+                                            <div class="pr-3">
+                                                <img class=""
+                                                     src="{{asset('storage/images/add-to-favorites.png')}}"
+                                                     alt="favorites">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="container pl-3 pr-2 p-0 col-lg-3 col-12 m-0 position-static order-lg-3">
-                                    <div class="d-lg-flex d-none flex-row justify-content-between">
-                                        <div class="font_16_20 pr-3 pl-3 text-white bg-danger center"> Sale</div>
-                                        <div class="pr-3">
-                                            <img class=""
-                                                 src="{{asset('storage/images/add-to-favorites.png')}}"
-                                                 alt="favorites">
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
                     @endif
 
                     {{--                    two--}}
-{{--                    <div class="pt-3 pb-3 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">--}}
-{{--                        <div--}}
-{{--                            class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0 pt-lg-4 pb-lg-4 m-0 rounded shadow position-static">--}}
-{{--                            <div class="container col-lg-1 pb-lg-0 pb-4 col-12 m-0 center order-lg-0 order-2">--}}
-{{--                                <input type="radio" name="cart" class="radio_input appearance p-2 rounded-circle ">--}}
-{{--                            </div>--}}
-{{--                            <div--}}
-{{--                                class="container p-0 pt-lg-0 pt-4 col-lg-4 col-12 m-0 position-static order-lg-1 order-0">--}}
-{{--                                <div class="hot_sales_img center">--}}
-{{--                                    <img class="container p-0" src="{{asset('storage/images/computer.png')}}" alt="computers">--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="d-lg-block d-flex flex-column-reverse--}}
-{{--                                        container p-0 col-lg-4 col-12 m-0 position-static order-lg-2 order-1">--}}
-{{--                                <div>--}}
-{{--                                    <div>--}}
-{{--                                        <p class="font29_size24 text-cart">HP proBook 4530s</p>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-flex flex-column pt-lg-2 pb-3 font_16_20 text-cart">--}}
-{{--                                        <p class="">15-inch display </p>--}}
-{{--                                        <p> Color: black</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div>--}}
-{{--                                    <div class="container p-0 pt-lg-0 pb-lg-0 pt-1 pb-1 ">--}}
-{{--                                        <div class="align-items-end d-flex flex-row">--}}
+                    {{--                    <div class="pt-3 pb-3 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">--}}
+                    {{--                        <div--}}
+                    {{--                            class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0 pt-lg-4 pb-lg-4 m-0 rounded shadow position-static">--}}
+                    {{--                            <div class="container col-lg-1 pb-lg-0 pb-4 col-12 m-0 center order-lg-0 order-2">--}}
+                    {{--                                <input type="radio" name="cart" class="radio_input appearance p-2 rounded-circle ">--}}
+                    {{--                            </div>--}}
+                    {{--                            <div--}}
+                    {{--                                class="container p-0 pt-lg-0 pt-4 col-lg-4 col-12 m-0 position-static order-lg-1 order-0">--}}
+                    {{--                                <div class="hot_sales_img center">--}}
+                    {{--                                    <img class="container p-0" src="{{asset('storage/images/computer.png')}}" alt="computers">--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="d-lg-block d-flex flex-column-reverse--}}
+                    {{--                                        container p-0 col-lg-4 col-12 m-0 position-static order-lg-2 order-1">--}}
+                    {{--                                <div>--}}
+                    {{--                                    <div>--}}
+                    {{--                                        <p class="font29_size24 text-cart">HP proBook 4530s</p>--}}
+                    {{--                                    </div>--}}
+                    {{--                                    <div class="d-flex flex-column pt-lg-2 pb-3 font_16_20 text-cart">--}}
+                    {{--                                        <p class="">15-inch display </p>--}}
+                    {{--                                        <p> Color: black</p>--}}
+                    {{--                                    </div>--}}
+                    {{--                                </div>--}}
+                    {{--                                <div>--}}
+                    {{--                                    <div class="container p-0 pt-lg-0 pb-lg-0 pt-1 pb-1 ">--}}
+                    {{--                                        <div class="align-items-end d-flex flex-row">--}}
 
-{{--                                            @if($computers[1]->sale)--}}
-{{--                                                <p class="price_sale text-danger">${{$computers[1]->sale}}</p>--}}
-{{--                                                <strike class="old_price"><p>${{$computers[1]->price}}</p></strike>--}}
-{{--                                            @else--}}
-{{--                                                <p class="price_sale" style="color: #151414 !important;">--}}
-{{--                                                    ${{$computers[1]->price}}</p>--}}
-{{--                                            @endif--}}
+                    {{--                                            @if($computers[1]->sale)--}}
+                    {{--                                                <p class="price_sale text-danger">${{$computers[1]->sale}}</p>--}}
+                    {{--                                                <strike class="old_price"><p>${{$computers[1]->price}}</p></strike>--}}
+                    {{--                                            @else--}}
+                    {{--                                                <p class="price_sale" style="color: #151414 !important;">--}}
+                    {{--                                                    ${{$computers[1]->price}}</p>--}}
+                    {{--                                            @endif--}}
 
-{{--                                            <p class="price_sale ">${{$computers[1] ->sale}}</p>--}}
-{{--                                            <strike class="old_price d-none"><p>${{$computers[0] ->price}}</p>--}}
-{{--                                            </strike>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="container pl-3 pr-2 p-0 col-lg-3 col-12 m-0 position-static order-lg-3">--}}
-{{--                                <div class="d-lg-flex d-none flex-row justify-content-end">--}}
-{{--                                    <div class="d-none font_16_20 pr-3 pl-3 text-white bg-danger center"> Sale</div>--}}
-{{--                                    <div class="pr-3">--}}
-{{--                                        <img class=""--}}
-{{--                                             src="{{asset('storage/images/add-to-favorites.png')}}"--}}
-{{--                                             alt="favorites">--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                                            <p class="price_sale ">${{$computers[1] ->sale}}</p>--}}
+                    {{--                                            <strike class="old_price d-none"><p>${{$computers[0] ->price}}</p>--}}
+                    {{--                                            </strike>--}}
+                    {{--                                        </div>--}}
+                    {{--                                    </div>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="container pl-3 pr-2 p-0 col-lg-3 col-12 m-0 position-static order-lg-3">--}}
+                    {{--                                <div class="d-lg-flex d-none flex-row justify-content-end">--}}
+                    {{--                                    <div class="d-none font_16_20 pr-3 pl-3 text-white bg-danger center"> Sale</div>--}}
+                    {{--                                    <div class="pr-3">--}}
+                    {{--                                        <img class=""--}}
+                    {{--                                             src="{{asset('storage/images/add-to-favorites.png')}}"--}}
+                    {{--                                             alt="favorites">--}}
+                    {{--                                    </div>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                 </div>
 
                 {{--                Summary     --}}
@@ -138,11 +143,11 @@
                                         </div>
                                         <div class="d-flex flex-row">
                                             <div>
-                                                <p class="text-uppercase">us$</p>
+                                                <p class="text-uppercase">us $</p>
                                             </div>
                                             <div>
                                                 <p>
-                                                    @if(!empty($cart))${{$cart->getTotalPrice()}}@endif
+                                                    @if(!empty($cart)){{$cart->getTotalPrice()}}@endif
                                                 </p>
                                             </div>
                                         </div>
@@ -156,7 +161,7 @@
                                         </div>
                                         <div class="d-flex flex-row">
                                             <div>
-                                                <p class="text-uppercase">us$</p>
+                                                <p class="text-uppercase">us $</p>
                                             </div>
                                             <div>
                                                 <p>
@@ -174,7 +179,7 @@
                                         </div>
                                         <div class="d-flex flex-row">
                                             <div>
-                                                <p class="text-uppercase">us$</p>
+                                                <p class="text-uppercase">us $</p>
                                             </div>
                                             <div>
                                                 <p>
@@ -189,8 +194,9 @@
                                         <h2 class="text-dark font29_size24">Subtotal</h2>
                                     </div>
                                     <div class="d-flex flex-row">
-                                        <h2 class="text-dark font29_size24 text-uppercase">us</h2>
-                                        <h2 class="text-dark font29_size24" id="totalPrice">@if(!empty($cart))${{$cart->getTotalPrice() + 10}}@endif</h2>
+                                        <h2 class="text-dark font29_size24 text-uppercase">us $</h2>
+                                        <h2 class="text-dark font29_size24" id="totalPrice">@if(!empty($cart))
+                                                {{$cart->getTotalPrice() + 10}}@endif</h2>
                                     </div>
                                 </div>
                                 <div class="container-fluid p-0 d-flex justify-content-end pt-4 pb-lg-4 pb-5">
@@ -233,9 +239,11 @@
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
-                                            <div class="heart" data-id="{{$computer->id}}">
-                                                <div class="black-heart {{!empty($computer->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
-                                                <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}"
+                                        <div class="heart" data-id="{{$computer->id}}">
+                                            <div
+                                                class="black-heart {{!empty($computer->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
+                                            <img class="img_heart"
+                                                 src="{{asset('storage/images/add-to-favorites.png')}}"
                                                  alt="favorites">
                                         </div>
                                     </div>
@@ -260,7 +268,8 @@
                                     <div class="d-flex justify-content-around container">
                                         <button type="button"
                                                 class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
-                                            <a href="{{route('ordernow',$computer->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
+                                            <a href="{{route('ordernow',$computer->id)}}"
+                                               class="text-decoration-none text-white">ORDER NOW</a>
                                         </button>
                                         <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
                                                          alt="paiment"></a>
