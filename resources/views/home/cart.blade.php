@@ -9,7 +9,7 @@
                         @foreach($cart->items as $product)
                             <div class="pt-3 pb-2 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">
                                 <div class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0
-                                    pt-lg-4 pb-lg-4 m-0 rounded shadow position-static">
+                                    pt-lg-4 pb-lg-4 m-0 rounded shadow position-static" id="cart-container">
                                     <div class="container col-lg-1 pb-lg-0 pb-4 col-12 m-0 center order-lg-0 order-2">
                                         <input checked type="checkbox" name="cart"
                                                class="radio_input appearance p-2 rounded-circle"
@@ -62,6 +62,9 @@
                                                      src="{{asset('storage/images/add-to-favorites.png')}}"
                                                      alt="favorites">
                                             </div>
+                                        </div>
+                                        <div class="pt-5" id="cart-delete">
+                                            <a href="" class="btn btn-success">delete</a>
                                         </div>
                                     </div>
                                 </div>

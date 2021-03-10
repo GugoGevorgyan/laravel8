@@ -633,7 +633,7 @@ li.dropdown-submenu {
     position: absolute;
     bottom: 0;
 }
-#owl_2 .owl-nav  {
+#cart-delete, #owl_2 .owl-nav  {
    display: none;
 }
 
@@ -644,6 +644,10 @@ li.dropdown-submenu {
     height: 40px;
     position: absolute;
     background-image: url("/storage/images/favorites_black.png");
+}
+
+#cart-container:hover #cart-delete{
+    display: block;
 }
 
 @media all and (min-width: 994px) and (max-width: 1200px) {
