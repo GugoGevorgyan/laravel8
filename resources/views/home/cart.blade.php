@@ -3,14 +3,16 @@
 @section('content')
     <div class="center">
         <div class="container-md container-fluid pt-lg-5 p-0">
-            <div class="container col-12 m-0 pb-lg-5 p-0 d-flex flex-lg-row flex-column position-static">
+            <div class="container col-12 m-0 pb-lg-5 p-0 d-flex flex-lg-row flex-column position-static" id="cart">
                 <div class="col-lg-8 col-12 m-0 row position-static d-lg-block d-flex flex-row">
+                   @if(!empty($cart->items))
                     @foreach($cart->items as $product)
                         <div class="pt-3 pb-2 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">
                             <div class="d-flex flex-lg-row flex-column align-items-lg-start col-12 p-lg-0
                                     pt-lg-4 pb-lg-4 m-0 rounded shadow position-static">
                                 <div class="container col-lg-1 pb-lg-0 pb-4 col-12 m-0 center order-lg-0 order-2">
-                                    <input type="radio" name="cart" class="radio_input appearance p-2 rounded-circle ">
+                                    <input checked type="checkbox" name="cart" class="radio_input appearance p-2 rounded-circle"
+                                           value="@if($product['product']->sale){{$product['product']->sale}}@else{{$product['product']->price}} @endif">
                                 </div>
                                 <div class="container p-0 pt-lg-0 pt-4 col-lg-4 col-12 m-0 position-static
                                         order-lg-1 order-0">
@@ -60,6 +62,7 @@
                             </div>
                         </div>
                     @endforeach
+                    @endif
 
                     {{--                    two--}}
 {{--                    <div class="pt-3 pb-3 pr-2 pl-0 col-lg-12 col-6 m-0 position-static">--}}
@@ -139,15 +142,15 @@
                                             </div>
                                             <div>
                                                 <p>
-                                                    4500
+                                                    @if(!empty($cart))${{$cart->getTotalPrice()}}@endif
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row justify-content-between  pt-2 pb-2">
                                         <div class="d-flex flex-row align-items-start">
-                                            <input type="radio" id="shipping" name="summary"
-                                                   value="shipping"
+                                            <input type="radio" id="shipping" name="cart"
+                                                   value="20"
                                                    class="radio_input appearance p-2 rounded-circle m-0 mr-2">
                                             <label class="" for="shipping">Shipping</label>
                                         </div>
@@ -164,8 +167,8 @@
                                     </div>
                                     <div class="d-flex flex-row justify-content-between pt-2 pb-2 pb-lg-5">
                                         <div class="d-flex flex-row align-items-start">
-                                            <input type="radio" id="sale" name="summary"
-                                                   value="sale"
+                                            <input type="radio" id="sale" name="cart"
+                                                   value="10" checked
                                                    class="radio_input appearance p-2 rounded-circle m-0 mr-2">
                                             <label class="pb-3" for="sale">Sale</label>
                                         </div>
@@ -187,7 +190,7 @@
                                     </div>
                                     <div class="d-flex flex-row">
                                         <h2 class="text-dark font29_size24 text-uppercase">us</h2>
-                                        <h2 class="text-dark font29_size24">$4510</h2>
+                                        <h2 class="text-dark font29_size24" id="totalPrice">@if(!empty($cart))${{$cart->getTotalPrice() + 10}}@endif</h2>
                                     </div>
                                 </div>
                                 <div class="container-fluid p-0 d-flex justify-content-end pt-4 pb-lg-4 pb-5">

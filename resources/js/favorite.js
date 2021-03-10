@@ -17,14 +17,17 @@ jQuery(document).ready(function(){
             },
             success: function(result){
                 $('.heart[data-id="'+id+'"]').find('.black-heart').toggleClass('d-none');
-     /*          if(result){
-                   $('.heart[data-id="'+id+'"]').addClass('zmruxt');
-                   // console.log(e.target.classList.add('d-none'),'ok')
-               }else{
-                   console.log($(this));
-                   // console.log(e.target);
-                   // console.log(e.target(),'cka')
-               }*/
             }});
+    });
+
+    jQuery('#cart').click(function(e){
+        let price = 0;
+        // let checkbox = document.getElementsByName('cart[]');
+        let checkboxes = $('input[name="cart"]:checked');
+        $(checkboxes).each(function() {
+            price += parseInt($(this).val());
+        });
+        jQuery('#totalPrice').text(price);
+        console.log(price);
     });
 });

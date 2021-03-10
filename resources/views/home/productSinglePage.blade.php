@@ -87,7 +87,7 @@
                             <button type="button" class="order_now bg-dark center sales_name text-white col-5 p-0">
                                 ORDER NOW
                             </button>
-                            <a  class="center" href="#"><img class="single_cart" src="http://design/storage/Cart-with-plus.png" alt="paiment"></a>
+                            <a  class="center" href="#"><img class="single_cart" src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,8 @@
                                     <button type="button" class="order_now bg-dark center sales_name text-white col-md-9  col-10 p-0">
                                         <a href="{{route('ordernow',$computer->id)}}" class="text-decoration-none text-white">ORDER NOW</a>
                                     </button>
-                                    <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
+                                    <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
+                                                     alt="paiment"></a>
 
                                 </div>
 

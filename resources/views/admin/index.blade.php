@@ -12,6 +12,4 @@
 
 </div> <!-- / .main-content -->
 
-
-
 @endsection

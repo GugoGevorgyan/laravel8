@@ -198,17 +198,17 @@ class   HomeController extends Controller
 
     public function addToCart(Request $request)
     {
-//        dd($request->id);
-        $products = Product::all();
-//        $order = Order::all()->where('user_id',Auth::id());
         if (!empty($request->id)) {
             $product = Product::findorfail($request->id);
             $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+//            $old_cart = null;
             $cart = new Cart($old_cart);
             $cart->add($product, $request->id);
             Session::put('cart', $cart);
-//            dd( $request->session()->get('cart'));
+//            session()->forget(['cart']);
+
         }
+//        dd( $request->session()->get('cart'));
         return $this->checkProducts('Computers','index',8);
     }
 }
