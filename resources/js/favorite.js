@@ -50,21 +50,21 @@ jQuery(document).ready(function(){
                 id: id,
             },
             success: function(result){
+                console.log(result)
                 if (result) {
+
                     totalCarText(el);
                 }
             }});
     });
 
     function totalCarText(el){
-        console.log(el.target);
-        // let card_color = jQuery('.cart-color');
         el.target.classList.remove('fill-black');
         el.target.classList.add('fill-red');
         toastr.success('product added to cart successfully');
         let div = jQuery('#total_qty');
         let total_qty = div.text();
-        if (total_qty[1]){
+        if (total_qty){
             div.text('('+(+total_qty[1] + 1)+')');
         }else {
             div.text('('+(1)+')');

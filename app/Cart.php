@@ -26,7 +26,7 @@ class Cart
 
     public function add($item,$id){
 
-        if(array_key_exists($id, $this->items)){
+        if($this->items && array_key_exists($id, $this->items)){
             return false;
         }
         $price = $item->price;
@@ -59,10 +59,8 @@ class Cart
     }
     public function deleteItem($item){
         $price = $item->sale ? $item->sale : $item->price;
-//        dd($price);
-//        $this->total_price -= $price ;
+        $this->total_price -= $price ;
         unset( $this->items[$item->id]);
-
-
+        $this->total_qty = count($this->items);
     }
 }

@@ -671,6 +671,10 @@ li.dropdown-submenu {
     fill: red;
 }
 
+main:hover .z-index-n1{
+    z-index: 0;
+    }
+
 @media all and (min-width: 994px) and (max-width: 1200px) {
     .nav-link {
         font-size: 14px;

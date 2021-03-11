@@ -129,9 +129,9 @@ class   HomeController extends Controller
         $subCategories = Category::with('subCategory')->get();
         $computers = Product::where('status',1)->paginate(2);
         $cart = Session::has('cart') ? \session()->get('cart'):[];
-
+        $cart_session = session()->has('cart') ? session()->get('cart')->items : [];
         $similar = Product::where('status',1)->paginate(4);
-        return response()->view('home/cart',compact('cart','computers','similar','categories','subCategories','allCategories'));
+        return response()->view('home/cart',compact('cart_session','cart','computers','similar','categories','subCategories','allCategories'));
     }
 
     public function shipping(Request $request)

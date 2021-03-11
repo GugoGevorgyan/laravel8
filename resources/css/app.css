@@ -665,3 +665,7 @@ li.dropdown-submenu {
 .fill-red{
     fill: red;
 }
+
+main:hover .z-index-n1{
+    z-index: 0;
+    }
