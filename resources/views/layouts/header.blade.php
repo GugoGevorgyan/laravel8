@@ -19,7 +19,7 @@
                 </li>
                 <li class="container p-0 pl-md-3 nav-item dropdown dropleft">
                     <a class="nav-link" id="dropDownMenuMedia" role="button"
-                       data-toggle="dropdown" data-hover="dropdown"  aria-haspopup="true" aria-expanded="false" href="#">
+                       data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
                         <img class="img_heart" src="{{asset('storage/images/menu-alt-2.png')}}" alt="">
                     </a>
                     <div class="dropdown-menu border-0 bg-white p-0 transform106" aria-labelledby="dropDownMenuMedia">
@@ -29,29 +29,31 @@
                             </li>
                             @if(!empty($categories))
 
-                            @foreach ($categories as $category)
-                                @if (!$category->category)
-                            <li class="dropdown-submenu p-0 mb-1 w-100">
-                                <a class="container text-muted media_subMenu flex-nowrap pl-4 pr-5 pb-3 pt-3 font-weight-bold"
-                                   tabindex="-1" href="#">
-                                    <div class="pr-3 mr-4 pl-3">
-                                        {{$category->name}}
-                                    </div>
-                                    <span class="fa fa-angle-right ml-1 pl-5"></span>
-                                </a>
-                                <ul class="dropdown-menu m-0 border-0 rounded-0 pl-5 ml-1 p-0 position-static float-none">
-                                    @foreach ($subCategories as $subCategory)
-                                        @if ($subCategory->subCategory && $subCategory->name === $category->name)
-                                            @foreach($subCategory->subCategory as $sub)
-                                                <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1" href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a></li>
-                                            @endforeach
-                                        @endif
-                                    @endforeach
-                                </ul>
-                            </li>
+                                @foreach ($categories as $category)
+                                    @if (!$category->category)
+                                        <li class="dropdown-submenu p-0 mb-1 w-100">
+                                            <a class="container text-muted media_subMenu flex-nowrap pl-4 pr-5 pb-3 pt-3 font-weight-bold"
+                                               tabindex="-1" href="#">
+                                                <div class="pr-3 mr-4 pl-3">
+                                                    {{$category->name}}
+                                                </div>
+                                                <span class="fa fa-angle-right ml-1 pl-5"></span>
+                                            </a>
+                                            <ul class="dropdown-menu m-0 border-0 rounded-0 pl-5 ml-1 p-0 position-static float-none">
+                                                @foreach ($subCategories as $subCategory)
+                                                    @if ($subCategory->subCategory && $subCategory->name === $category->name)
+                                                        @foreach($subCategory->subCategory as $sub)
+                                                            <li class="pt-3 pb-3"><a class="text-muted" tabindex="-1"
+                                                                                     href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        </li>
 
-                                @endif
-                            @endforeach
+                                    @endif
+                                @endforeach
                             @endif
                         </ul>
                     </div>
@@ -61,30 +63,30 @@
             <div class="collapse navbar-collapse pt-5" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-6 justify-content-around">
                     @if(!empty($categories))
-                    @foreach ($categories as $category)
-                        @if (!$category->category)
-                            <li class="nav-item dropdown col-3  d-flex flex-row col-3 align-items-center p-0 justify-content-between">
-                                <a class="nav-link p-0 font18_size22" href="{{url('prod/'.$category->name)}}"
-                                   id="navbarDropdownMenuLink{{$category->name}}">
-                                    {{$category->name}}
-                                </a>
-                                <img class="h-50" src="{{asset('storage/images/Vector.png')}}" alt=">">
-                               <div class="dropdown-menu border-0 bg-transparent m-0 pt-4">
-                                   <div class="dropdown-menu m-0 menu_txt text-dark p-0 top menu_Accesories"
-                                        aria-labelledby="navbarDropdownMenuLink{{$category->name}}">
-                                       @foreach ($subCategories as $subCategory)
-                                           @if ($subCategory->subCategory && $subCategory->name === $category->name)
-                                               @foreach($subCategory->subCategory as $sub)
-                                                   <a class="dropdown-item d-flex  align-items-center"
-                                                      href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a>
-                                               @endforeach
-                                           @endif
-                                       @endforeach
-                                   </div>
-                               </div>
-                            </li>
-                        @endif
-                    @endforeach
+                        @foreach ($categories as $category)
+                            @if (!$category->category)
+                                <li class="nav-item dropdown col-3  d-flex flex-row col-3 align-items-center p-0 justify-content-between">
+                                    <a class="nav-link p-0 font18_size22" href="{{url('prod/'.$category->name)}}"
+                                       id="navbarDropdownMenuLink{{$category->name}}">
+                                        {{$category->name}}
+                                    </a>
+                                    <img class="h-50" src="{{asset('storage/images/Vector.png')}}" alt=">">
+                                    <div class="dropdown-menu border-0 bg-transparent m-0 pt-4">
+                                        <div class="dropdown-menu m-0 menu_txt text-dark p-0 top menu_Accesories"
+                                             aria-labelledby="navbarDropdownMenuLink{{$category->name}}">
+                                            @foreach ($subCategories as $subCategory)
+                                                @if ($subCategory->subCategory && $subCategory->name === $category->name)
+                                                    @foreach($subCategory->subCategory as $sub)
+                                                        <a class="dropdown-item d-flex  align-items-center"
+                                                           href="{{url('prod/'.$sub->name)}}">{{$sub->name}}</a>
+                                                    @endforeach
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </li>
+                            @endif
+                        @endforeach
                     @endif
                 </ul>
 
@@ -121,7 +123,9 @@
                                              alt="Cart">
 
 
-                                        <p class="menu_txt text-dark">Cart</p>
+                                        <p class="menu_txt text-dark">
+                                            Cart </p>
+                                        <p id="total_qty">@if(Session::has('cart') && Session::get('cart')->total_qty)({{Session::get('cart')->total_qty}})@endif</p>
                                     </div>
                                 </a>
                                 <div class="flex_row  justify-content-between menu_content">

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use PhpParser\Node\Stmt\DeclareDeclare;
 
 class   HomeController extends Controller
 {
@@ -19,7 +20,6 @@ class   HomeController extends Controller
      */
     public function index()
     {
-//        dd(User::with('products')->findOrFail(Auth::id())->products->first()->pivot->favorite);
       return $this->checkProducts('Computers','index',8);
     }
 
@@ -50,7 +50,6 @@ class   HomeController extends Controller
         if($request->name === "heart"){
 
             $product = Product::findOrFail($request->value);
-//            dd($product->users->contains(Auth::id())) ;
             if ($product->users->contains(Auth::id())){
                 $favorite = $product->users()->where('user_id',Auth::id())->first()->pivot->favorite;
                 $favorite = $favorite ? false : true;
@@ -74,12 +73,7 @@ class   HomeController extends Controller
         $allCategories = Category::all()->where('parent_id','=',Null);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
-//        $computers = Product::where('status',1)->paginate(20);
-
-//        $computers = User::with('products')->findOrFail(Auth::id())->products->;
         $computers = User::with('products')->findOrFail(Auth::id())->products;
-//        dd($computers);
-
 
         $similar = Product::where('status',1)->paginate(20);
         return response()->view('home/favorites', ['computers' => $computers, 'similar' => $similar,
@@ -136,20 +130,15 @@ class   HomeController extends Controller
         $computers = Product::where('status',1)->paginate(2);
         $cart = Session::has('cart') ? \session()->get('cart'):[];
 
-//        return response()->view('user.show_cart', compact('cart'));
-
-
         $similar = Product::where('status',1)->paginate(4);
-//dd($cart);
         return response()->view('home/cart',compact('cart','computers','similar','categories','subCategories','allCategories'));
     }
 
     public function shipping(Request $request)
     {
-//        dd($request->summary);
-        if ($request->summary === 'shipping') return view('home/shipping');
-        if ($request->summary === 'sale' || $request->summary === null) return view('home/orderNow');
-//        return view('home/shipping');
+//        dd($request);
+        if ($request->cart === '20') return view('home/shipping');
+        if ($request->cart === '10' || $request->summary === null) return view('home/orderNow');
     }
 
     public function orderNow(Product $product)
@@ -172,11 +161,10 @@ class   HomeController extends Controller
     public function checkProducts($prod, $page, $amount){
 
         $hot_sales = Product::where('status',1)->paginate(20);
-//        dd($hot_sales[0]->users()->first()->id);
         $brands = ['image10.png', 'image15.png', 'image16.png', 'image17.png', 'image18.png', 'image19.png'];
         $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
         $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];
-
+        $cart_session = session()->has('cart') ? session()->get('cart')->items : [];
         $allCategories = Category::all()->where('parent_id','=',Null);
         $products = Category::with('products')->where('name','=',$prod)->first();
         $computers = $products->products()->where('status','=',1)->paginate($amount);
@@ -190,25 +178,44 @@ class   HomeController extends Controller
         }else{
             $productCategory = $prod;
         }
-        return response()->view("home/$page", ['computers' => $computers, 'similar' => $similar,
-            'categories'=>$categories,'subCategories'=>$subCategories,'productCategory'=>$productCategory,
-            'imgs' => $imgs, 'figcaption' => $figcaption,'hot_sales' => $hot_sales,'brands' => $brands,
-            'prod'=>$prod,'allCategories'=>$allCategories]);
+        return response()->view("home/$page",compact('computers','similar','categories','subCategories','productCategory',
+            'imgs','figcaption','hot_sales','brands','prod','allCategories','cart_session'));
     }
 
     public function addToCart(Request $request)
     {
+        $cart = $this->checkCart($request);
+        if ($cart){
+          $result =  $cart[0]->add($cart[1], $request->id);
+          if ($result){
+              Session::put('cart', $cart[0]);
+//            dd(session()->get('cart'));
+              return $this->checkProducts('Computers','index',8);
+          }
+           return false;
+        }
+       return false;
+    }
+
+
+
+    public function deleteToCart(Request $request){
+        $cart = $this->checkCart($request);
+        if ($cart){
+            $cart[0]->deleteItem($cart[1]);
+            Session::put('cart', $cart[0]);
+            return $this->cart();
+        }
+       return false;
+    }
+
+    public function checkCart($request){
         if (!empty($request->id)) {
             $product = Product::findorfail($request->id);
             $old_cart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
-//            $old_cart = null;
             $cart = new Cart($old_cart);
-            $cart->add($product, $request->id);
-            Session::put('cart', $cart);
-//            session()->forget(['cart']);
-
+            return [$cart,$product];
         }
-//        dd( $request->session()->get('cart'));
-        return $this->checkProducts('Computers','index',8);
+        return false;
     }
 }

@@ -64,7 +64,7 @@
                                             </div>
                                         </div>
                                         <div class="pt-5" id="cart-delete">
-                                            <a href="" class="btn btn-success">delete</a>
+                                            <a href="{{route('deleteToCart',['id'=>$product['product']->id])}}" class="btn btn-danger">Remove</a>
                                         </div>
                                     </div>
                                 </div>

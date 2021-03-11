@@ -46,4 +46,5 @@ Route::get('/shipping', [HomeController::class, 'shipping'])->name('shipping');
 Route::get('/ordernow/{product}', [HomeController::class, 'orderNow'])->name('ordernow');
 Route::get('/prod/{prod}', [HomeController::class, 'prod'])->name('prod');
 Route::get('/prod/index/{prod}', [HomeController::class, 'homeProduct'])->name('prod.index');
-Route::get('/addToCart', [HomeController::class, 'addToCart'])->name('addToCart');
+Route::post('/addToCart', [HomeController::class, 'addToCart'])->name('addToCart');
+Route::get('/deleteToCart', [HomeController::class, 'deleteToCart'])->name('deleteToCart');

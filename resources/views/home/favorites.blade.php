@@ -42,7 +42,7 @@
                                     <a href="{{route('ordernow',$computer->id)}}"
                                        class="text-decoration-none text-white">ORDER NOW</a>
                                 </button>
-                                <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></a>
+                                <div class="addToCart" data-id="{{$computer->id}}"><img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment"></div>
 
                             </div>
 
@@ -109,8 +109,8 @@
                                             <a href="{{route('ordernow',$computer->id)}}"
                                                class="text-decoration-none text-white">ORDER NOW</a>
                                         </button>
-                                        <a href="#"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
-                                                         alt="paiment"></a>
+                                        <div class="addToCart" data-id="{{$computer->id}}"><img src="{{asset('storage/images/Cart-with-plus.png')}}"
+                                                         alt="paiment"></div>
 
                                     </div>
 
