@@ -342,6 +342,18 @@ span.shadow-sm {
 #hidden_menu {
     left: -120px;
     top: 67px;
+    -webkit-animation: menu .8s;
+            animation: menu .8s;
+}
+
+@-webkit-keyframes menu {
+    from {left: 50px;}
+    to {left: -120px;}
+}
+
+@keyframes menu {
+    from {left: 50px;}
+    to {left: -120px;}
 }
 
 .dropdown-menu {
@@ -559,16 +571,32 @@ span[aria-current="page"] > span {
     display: none;
 }
 
-.dropdown:hover > .dropdown-menu {
+.drop:hover > .dropdown-menu {
     display: block;
+    -webkit-animation: mymove .5s ;
+            animation: mymove .5s ;
 }
 
-.dropdown:hover > .dropdown-menu > .dropdown-menu {
+.drop:hover > .dropdown-menu > .dropdown-menu {
     display: block;
+    /*animation: mymove 1s infinite;*/
 }
 
 .dropdown-menu:hover > .dropdown-menu {
     display: block;
+
+}
+@-webkit-keyframes mymove {
+    from {left: 50px;}
+    from {top: 50px}
+    to {left: 0;}
+    to {top: 20px}
+}
+@keyframes mymove {
+    from {left: 50px;}
+    from {top: 50px}
+    to {left: 0;}
+    to {top: 20px}
 }
 
 .z-index-n1 {

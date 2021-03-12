@@ -70,14 +70,15 @@ class   HomeController extends Controller
      */
     public function show($id)
     {
+        $cart_session = session()->has('cart') ? session()->get('cart')->items : [];
         $allCategories = Category::all()->where('parent_id','=',Null);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
         $computers = User::with('products')->findOrFail(Auth::id())->products;
 
         $similar = Product::where('status',1)->paginate(20);
-        return response()->view('home/favorites', ['computers' => $computers, 'similar' => $similar,
-            'categories'=>$categories,'subCategories'=>$subCategories,'allCategories'=>$allCategories]);
+        return response()->view('home/favorites',
+            compact('computers','similar','categories','subCategories','allCategories','cart_session'));
     }
 
     /**
@@ -88,6 +89,7 @@ class   HomeController extends Controller
      */
     public function edit($id)
     {
+        $cart_session = session()->has('cart') ? session()->get('cart')->items : [];
         $allCategories = Category::all()->where('parent_id','=',Null);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
@@ -95,8 +97,7 @@ class   HomeController extends Controller
         $colors = ['#F03A4B', '#000000', '#2672FF', '#74AB2E', '#C31FEC', '#EABD1C'];
         $product = Product::find($id);
         return response()->view('home.productSinglePage',
-            ['product' => $product, 'colors' => $colors, 'computers' => $computers,
-                'categories'=>$categories,'subCategories'=>$subCategories,'allCategories'=>$allCategories]);
+            compact('product','colors','computers','categories','subCategories','allCategories','cart_session'));
     }
 
     /**
@@ -124,14 +125,24 @@ class   HomeController extends Controller
 
     public function cart()
     {
+
+//        dd($xx);
+
+
         $allCategories = Category::all()->where('parent_id','=',Null);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
         $computers = Product::where('status',1)->paginate(2);
-        $cart = Session::has('cart') ? \session()->get('cart'):[];
+//        $cart = Session::has('cart') ? \session()->get('cart'):[];
         $cart_session = session()->has('cart') ? session()->get('cart')->items : [];
+        $cart_products = Product::where('status',1)->whereIn('id', array_keys($cart_session))->get();
         $similar = Product::where('status',1)->paginate(4);
-        return response()->view('home/cart',compact('cart_session','cart','computers','similar','categories','subCategories','allCategories'));
+        $totalPrice = 0;
+         foreach ($cart_products as $val){
+             $price = $val->sale ? $val->sale:$val->price;
+             $totalPrice += $price;
+         }
+        return response()->view('home/cart',compact('totalPrice','cart_session','cart_products','computers','similar','categories','subCategories','allCategories'));
     }
 
     public function shipping(Request $request)

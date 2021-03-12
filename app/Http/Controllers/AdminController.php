@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserAdminRequest;
 use App\Mail\AdminShop;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class AdminController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function create()
     {
@@ -43,18 +44,8 @@ class AdminController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(UserAdminRequest $request)
     {
-        $rules = [
-            'name' => 'required|string|alpha',
-            'email' => 'sometimes|required|email|unique:users',
-            'password' => 'required|string|min:4|confirmed',
-        ];
-        $customMessages = [
-            'required' => 'The :attribute field is required.'
-        ];
-        $this->validate($request, $rules, $customMessages);
-
         $code = Str::random(10) . time();
 
         $toEmail = $this->send($code, $request['email'], $request['password']);
@@ -112,10 +103,8 @@ class AdminController extends Controller
         $rules = [
             'name' => 'required|string|alpha',
         ];
-        $customMessages = [
-            'required' => 'The :attribute field is required.'
-        ];
-        $this->validate($request, $rules, $customMessages);
+
+        $this->validate($request, $rules);
         User::find($id) ->update([
             'name'=> $request->name,
         ]);
@@ -145,11 +134,9 @@ class AdminController extends Controller
     {
         try {
             Mail::to($email)->send(new AdminShop($code, $password));
-
         } catch (\Exception $err) {
             return $err;
         }
-        return 'true';
     }
 
     public function status(Request $request, $id){
@@ -159,7 +146,6 @@ class AdminController extends Controller
         ]);
         return redirect('admin')
             ->with(['message' => 'The admin successfully update status']);
-
     }
 
     public function update_password(Request $request, $id){
@@ -167,11 +153,8 @@ class AdminController extends Controller
             '_token' => 'required',
             'password_new' => 'required|string|min:5|same:password_confirmation',
         ];
-        $customMessages = [
-            'required' => 'The :attribute field is required.'
-        ];
 
-        $this->validate($request, $rules, $customMessages);
+        $this->validate($request, $rules);
 
         $checkPassword = Hash::check($request->password,Auth::user()->password);
         if ($checkPassword){

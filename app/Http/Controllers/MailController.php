@@ -75,10 +75,8 @@ class MailController extends Controller
         $rules = [
             'password_new' => 'required|string|min:4|same:password_confirmation',
         ];
-        $customMessages = [
-            'required' => 'The :attribute field is required.'
-        ];
-        $this->validate($request, $rules, $customMessages);
+
+        $this->validate($request, $rules);
         $user = User::find($id);
         $password = $user->password;
         $checkPassword = Hash::check($request->password,$password);

@@ -58,7 +58,7 @@
                                                     Sale
                                                 </div>
                                             @endif
-                                            <div class="heart" data-id="{{$sales->id}}">
+                                            <div class="heart" data-id="{{$sales->id}}" role="button">
                                                 <div
                                                     class="black-heart {{!empty($sales->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
                                                 <img class="img_heart"
@@ -90,7 +90,7 @@
                                                 <a href="{{route('ordernow',$sales->id)}}"
                                                    class="text-decoration-none text-white">ORDER NOW</a>
                                             </button>
-                                            <div class="addToCart" data-id="{{$sales->id}}">
+                                            <div class="addToCart" data-id="{{$sales->id}}" role="button">
 {{--                                                <img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment">--}}
                                                 <svg class="cart-color
                                             @if(!count($cart_session)) fill-black @endif
@@ -166,7 +166,7 @@
                                             <div class="yes_sale text-white position-absolute bg-danger center"> Sale
                                             </div>
                                         @endif
-                                        <div class="heart" data-id="{{$computer->id}}">
+                                        <div class="heart" data-id="{{$computer->id}}" role="button">
                                             <div
                                                 class="black-heart {{!empty($computer->users->first()->pivot->favorite) ? '' : 'd-none'}}"></div>
                                             <img class="img_heart"
@@ -200,7 +200,7 @@
                                         </button>
                                         {{--                                        <a href="{{route('addToCart',['id'=>$computer->id])}}" id="addToCart" data-id="{{$computer->id}}"><img src="{{asset('storage/images/Cart-with-plus.png')}}"--}}
                                         {{--                                                         alt="paiment"></a> --}}
-                                        <div class="addToCart" data-id="{{$computer->id}}">
+                                        <div class="addToCart" data-id="{{$computer->id}}" role="button">
                                             {{--                                            <img src="{{asset('storage/images/Cart-with-plus.png')}}" alt="paiment">--}}
                                             <svg class="cart-color
                                             @if(!count($cart_session))

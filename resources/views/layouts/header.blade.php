@@ -8,12 +8,12 @@
 
             <ul class="navbar-toggler  list-unstyled d-lg-none  d-sm-flex m-0 border-0 p-0">
                 <li class="media_heart container">
-                    <a href="{{asset('/cart')}}" class="text-decoration-none">
+                    <a href="{{route('home.show','favorites')}}" class="text-decoration-none">
                         <img class="img_heart" src="{{asset('storage/images/add-to-favorites.png')}}" alt="">
                     </a>
                 </li>
                 <li class="container p-md-3 p-0">
-                    <a href="{{asset('/home/favorites')}}" class="text-decoration-none">
+                    <a href="{{route('cart')}}" class="text-decoration-none">
                         <img class="img_heart" src="{{asset('storage/images/Cart-with-plus.png')}}" alt="">
                     </a>
                 </li>
@@ -65,13 +65,14 @@
                     @if(!empty($categories))
                         @foreach ($categories as $category)
                             @if (!$category->category)
-                                <li class="nav-item dropdown col-3  d-flex flex-row col-3 align-items-center p-0 justify-content-between">
+                                <li class="drop nav-item dropdown col-3  d-flex flex-row align-items-center p-0 justify-content-between">
                                     <a class="nav-link p-0 font18_size22" href="{{url('prod/'.$category->name)}}"
                                        id="navbarDropdownMenuLink{{$category->name}}">
                                         {{$category->name}}
                                     </a>
                                     <img class="h-50" src="{{asset('storage/images/Vector.png')}}" alt=">">
-                                    <div class="dropdown-menu border-0 bg-transparent m-0 pt-4">
+{{--                                    {{dd($category)}}--}}
+                                    <div class=" dropdown-menu border-0 bg-transparent m-0 pt-4 swing">
                                         <div class="dropdown-menu m-0 menu_txt text-dark p-0 top menu_Accesories"
                                              aria-labelledby="navbarDropdownMenuLink{{$category->name}}">
                                             @foreach ($subCategories as $subCategory)
@@ -109,14 +110,14 @@
 
                         <div class="dropdown-menu" aria-labelledby="DropdownMenuLink" id="hidden_menu">
                             <div class="dropdown-item flex_column just_around d-flex ">
-                                <a href="{{asset('/home/favorites')}}" class="text-decoration-none">
+                                <a href="{{route('home.show','favorites')}}" class="text-decoration-none">
                                     <div class="flex_row d-flex  align-items-center menu_content">
                                         <img class="menu_icon" src="{{asset('storage/images/Cart-with-plus.png')}}"
                                              alt="Favorites">
                                         <p class="menu_txt text-dark">Favorites</p>
                                     </div>
                                 </a>
-                                <a href="{{asset('/cart')}}" class="text-decoration-none">
+                                <a href="{{route('cart')}}" class="text-decoration-none">
                                     <div class="flex_row d-flex  align-items-center menu_content">
 
                                         <img class="menu_icon" src="{{asset('storage/images/add-to-favorites.png')}}"
@@ -133,13 +134,13 @@
                                     <div class="center">
                                         <div class="menu_img">
                                             <input type="radio" id="amd" name="Currency" value="AMD"
-                                                   class="radio_input_menu">
+                                                   class="radio_input_menu" role="button">
                                             <label class="menu_txt text-dark" for="amd">AMD</label>
                                         </div>
 
                                         <div class="menu_img">
                                             <input type="radio" id="usd" name="Currency" value="USD"
-                                                   class="radio_input_menu">
+                                                   class="radio_input_menu" role="button">
                                             <label class="menu_txt text-dark" for="usd">USD</label>
                                         </div>
                                     </div>
@@ -150,14 +151,14 @@
                                     <div class="center">
                                         <div class="menu_img">
                                             <input type="radio" id="usa" name="Language" value="usa"
-                                                   class="radio_input_menu">
+                                                   class="radio_input_menu" role="button">
                                             <label for="usa"><img src="{{asset('storage/images/usa.png')}}"
                                                                   alt="usa"></label>
                                         </div>
 
                                         <div class="menu_img">
                                             <input type="radio" id="arm" name="Language" value="arm"
-                                                   class="radio_input_menu">
+                                                   class="radio_input_menu" role="button">
                                             <label for="arm"><img src="{{asset('storage/images/arm.png')}}"
                                                                   alt="arm"></label>
                                         </div>
