@@ -125,15 +125,10 @@ class   HomeController extends Controller
 
     public function cart()
     {
-
-//        dd($xx);
-
-
         $allCategories = Category::all()->where('parent_id','=',Null);
         $categories = Category::with('category')->get();
         $subCategories = Category::with('subCategory')->get();
         $computers = Product::where('status',1)->paginate(2);
-//        $cart = Session::has('cart') ? \session()->get('cart'):[];
         $cart_session = session()->has('cart') ? session()->get('cart')->items : [];
         $cart_products = Product::where('status',1)->whereIn('id', array_keys($cart_session))->get();
         $similar = Product::where('status',1)->paginate(4);
@@ -147,7 +142,6 @@ class   HomeController extends Controller
 
     public function shipping(Request $request)
     {
-//        dd($request);
         if ($request->cart === '20') return view('home/shipping');
         if ($request->cart === '10' || $request->summary === null) return view('home/orderNow');
     }
@@ -200,7 +194,6 @@ class   HomeController extends Controller
           $result =  $cart[0]->add($cart[1], $request->id);
           if ($result){
               Session::put('cart', $cart[0]);
-//            dd(session()->get('cart'));
               return $this->checkProducts('Computers','index',8);
           }
            return false;

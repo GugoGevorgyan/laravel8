@@ -120,9 +120,12 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $name = User::find($id)->name;
-        User::destroy($id);
-        return redirect()->back()->with(['message'=>'you have successfully removed '. $name.' from admin']);
+        if (Auth::id() === '1' && $id !== '1'){
+            $name = User::find($id)->name;
+            User::destroy($id);
+            return redirect()->back()->with(['message'=>'you have successfully removed '. $name.' from admin']);
+        }
+        return redirect()->back()->with(['message'=>'Oops, something went wrong']);
     }
 
     public function login()

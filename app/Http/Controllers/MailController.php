@@ -48,8 +48,12 @@ class MailController extends Controller
      */
     public function show($code)
     {
-        $user_id = User::where('remember_token', $code)->first()->id;
-        return response()->view('admin/confirmPassword', ['id' => $user_id]);
+        $user = User::where('remember_token', $code)->first();
+        if ($user){
+            $user_id = User::where('remember_token', $code)->first()->id;
+            return response()->view('admin/confirmPassword', ['id' => $user_id]);
+        }
+        return redirect('https://e.mail.ru');
     }
 
     /**
