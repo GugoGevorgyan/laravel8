@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use PhpParser\Node\Stmt\DeclareDeclare;
 
 class   HomeController extends Controller
 {

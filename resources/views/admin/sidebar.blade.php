@@ -182,11 +182,13 @@
                                 </a>
                                 <div class="collapse " id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
+                                        @can('isSuperAdmin')
                                         <li class="nav-item">
                                             <a href="{{route('admin.index')}}" class="nav-link ">
                                                 Admins
                                             </a>
                                         </li>
+                                        @endcan
                                     </ul>
                                 </div>
                             </li>

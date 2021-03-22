@@ -30,11 +30,11 @@
 
                                     <!-- Button -->
 
-                                    @if( Auth::user()->role_id === 1)
+                                    @can('isSuperAdmin')
                                         <a href="{{route('admin.create')}}" class="btn btn-primary">
                                             {{ __('Create Admin') }}
                                         </a>
-                                    @endif
+                                    @endcan
 
                                 </div>
                             </div> <!-- / .row -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserAdminRequest;
 use App\Mail\AdminShop;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -27,15 +28,16 @@ class AdminController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        if (Auth::user()->role_id !== 1) {
+        if (Gate::allows('isSuperAdmin')) {
+            return response()->view('admin/creatAdmin');
+        } else {
             return redirect()->back()->
             with(['message' => 'you are not an SuperAdmin']);
         }
-        return response()->view('admin/creatAdmin');
     }
 
     /**
@@ -49,7 +51,7 @@ class AdminController extends Controller
         $code = Str::random(10) . time();
 
         $toEmail = $this->send($code, $request['email'], $request['password']);
-        if ($toEmail === "true") {
+        if ($toEmail === "ok") {
             User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
@@ -116,16 +118,18 @@ class AdminController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        if (Auth::id() === '1' && $id !== '1'){
+        if (Gate::allows('isSuperAdmin') && $id !== '1' ) {
             $name = User::find($id)->name;
             User::destroy($id);
             return redirect()->back()->with(['message'=>'you have successfully removed '. $name.' from admin']);
+        } else {
+            return redirect()->back()->with(['message'=>'Oops, something went wrong']);
         }
-        return redirect()->back()->with(['message'=>'Oops, something went wrong']);
+
     }
 
     public function login()
@@ -140,15 +144,22 @@ class AdminController extends Controller
         } catch (\Exception $err) {
             return $err;
         }
+        return 'ok';
     }
 
     public function status(Request $request, $id){
-        $status = User::find($id)->status === '1' ? 0 : 1;
-        User::find($id)->update([
-            'status' => $status,
-        ]);
-        return redirect('admin')
-            ->with(['message' => 'The admin successfully update status']);
+
+        if (Gate::allows('isSuperAdmin') && $id !== '1' ) {
+            $status = User::find($id)->status === '1' ? 0 : 1;
+            User::find($id)->update([
+                'status' => $status,
+            ]);
+            return redirect('admin')
+                ->with(['message' => 'The admin successfully update status']);
+        } else {
+            return redirect()->back()->with(['message'=>'Oops, something went wrong']);
+        }
+
     }
 
     public function update_password(Request $request, $id){
