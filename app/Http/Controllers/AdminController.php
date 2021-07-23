@@ -21,6 +21,10 @@ class AdminController extends Controller
      */
     public function index()
     {
+        if (!Gate::allows('isSuperAdmin')) {
+            return redirect('admin/adminDashboard');
+        }
+
         $admins = User::all()->where('role_id', 2);
         return response()->view('admin/profile-admins',['admins'=>$admins]);
     }

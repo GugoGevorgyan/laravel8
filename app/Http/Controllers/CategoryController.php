@@ -27,7 +27,6 @@ class CategoryController extends Controller
     {
         $categories = Category::all()->where('parent_id', '=', Null);
         return response()->view('admin/category/create', ['categories' => $categories]);
-
     }
 
     /**

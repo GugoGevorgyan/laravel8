@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminProductRequest extends FormRequest
+class   AdminProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
